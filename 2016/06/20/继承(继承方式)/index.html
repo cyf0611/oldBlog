@@ -1,0 +1,517 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>继承 | Hexo</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="一个对象可以使用另一个对象的东西
+可以使用本不属于自己的东西
+代码的复用
+js中的原型就是对继承这个特性的实现
+
+[TOC]
+继承方式1、默认的原型继承(常用)
+动态修改原型对象，添加新方法也可继承
+添加完之后实例才可以用123function Fn() &amp;#123;&amp;#125;Fn.prototy">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="继承"/>
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <!-- wumiiVerification -->
+  <meta name="wumiiVerification" content="fb50a101-84fe-4ca2-91a7-ae8cf792978b" />
+  <meta name="wumiiVerification" content="d73b5866-c390-4156-a4dd-51b526b5335e" />
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <header id="header"><div class= "header-content inner">
+	<div class = "alignleft col-one">
+		
+			<div class='avatar'>
+				<img src = "/img/default/avatar.png">
+              </div>
+		
+		<div class="header-div">
+		    <h1><a href="/">Hexo</a></h1>
+		    <h2><a href="/"></a></h2>
+		</div>
+	</div>
+	<div class = "alignright col-two">
+		
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class= "header-nav">
+	<div class='header-nav-content inner'>
+		<div id="main-nav" class="alignleft">
+		    		
+		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
+		    		
+		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+		    		
+		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
+		    		
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>关于我</a>
+		    		
+		</div>
+		<div id="sub-nav" class="alignright">
+		    
+		      <a href=""><i class="fa fa-rss"></i>订阅</a>
+		    
+		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
+		    
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+</header>
+  
+    <div id="content" class="inner">
+      <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-06-20T10:24:01.000Z"><a href="/2016/06/20/继承(继承方式)/">2016-06-20</a></time>
+        
+  
+    <h1 class="title">继承</h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#继承方式"><span class="toc-text">继承方式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、默认的原型继承-常用"><span class="toc-text">1、默认的原型继承(常用)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、原型覆写-覆写prototype属性值【原型地址】-常用"><span class="toc-text">2、原型覆写(覆写prototype属性值【原型地址】)(常用)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、显示原型混入属性【可多继承】-常用-–-gt-组合式继承extend"><span class="toc-text">3、显示原型混入属性【可多继承】(常用)–>组合式继承extend</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4、Object-create方法【会创建出一个新的对象】"><span class="toc-text">4、Object.create方法【会创建出一个新的对象】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5、借用Object-create方法，覆写显示原型"><span class="toc-text">5、借用Object.create方法，覆写显示原型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6、复合式原型继承"><span class="toc-text">6、复合式原型继承</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编程技巧"><span class="toc-text">编程技巧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承的规律："><span class="toc-text">继承的规律：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#instanceof"><span class="toc-text">instanceof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-in"><span class="toc-text">for  in</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数的属性"><span class="toc-text">函数的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#in运算符"><span class="toc-text">in运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#delete运算符"><span class="toc-text">delete运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Function-的使用"><span class="toc-text">Function 的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#eval"><span class="toc-text">eval</span></a></li></ol>
+    </div>
+
+        <ul>
+<li>一个对象可以使用另一个对象的东西</li>
+<li>可以使用本不属于自己的东西</li>
+<li>代码的复用</li>
+<li>js中的原型就是对继承这个特性的实现</li>
+</ul>
+<p>[TOC]</p>
+<h3 id="继承方式"><a href="#继承方式" class="headerlink" title="继承方式"></a>继承方式</h3><h5 id="1、默认的原型继承-常用"><a href="#1、默认的原型继承-常用" class="headerlink" title="1、默认的原型继承(常用)"></a>1、默认的原型继承(常用)</h5><ul>
+<li>动态修改原型对象，添加新方法也可继承</li>
+<li>添加完之后实例才可以用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function Fn() &#123;&#125;</div><div class="line">Fn.prototype.value = 100;</div><div class="line">var fn = new Fn();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="2、原型覆写-覆写prototype属性值【原型地址】-常用"><a href="#2、原型覆写-覆写prototype属性值【原型地址】-常用" class="headerlink" title="2、原型覆写(覆写prototype属性值【原型地址】)(常用)"></a>2、原型覆写(覆写prototype属性值【原型地址】)(常用)</h5><ul>
+<li>把构造函数.prototype指向修改为一个新的自定义对象</li>
+<li>书写方便，不用再用 . 的方式添加方法</li>
+<li><p>原型覆盖以后，实例继承自这个自定义的原型对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function Fn() &#123;&#125;</div><div class="line">Fn.prototype = &#123;</div><div class="line">	constructor : Fn,</div><div class="line">	value: 100,</div><div class="line">	func : function () &#123;</div><div class="line">		console.log(&quot;&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">var fn = new Fn();</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>注意</strong></p>
+<ul>
+<li>相比默认原型对象，原型覆写没有<code>constructor</code>属性，可以给自定义对象添加<code>constructor</code>属性<strong>【constrcutor : 构造函数名】</strong>，以便模拟对象(实例)类型</li>
+<li>★覆写后注意代码顺序[先覆写，再创建对象]</li>
+<li>如果把原型覆写，写在创建(实例)对象之后，则实例无法访问覆盖后的原型对象（实例还是指向覆写前的对象）</li>
+<li>原型覆写是尽量使用新对象，不要使用已有的对象。<ul>
+<li>1、为了避免混淆</li>
+<li>2、如果修改了原型对象的方法，同时是也修改了已有对象的方法，这会造成一些未知的错误</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="3、显示原型混入属性【可多继承】-常用-–-gt-组合式继承extend"><a href="#3、显示原型混入属性【可多继承】-常用-–-gt-组合式继承extend" class="headerlink" title="3、显示原型混入属性【可多继承】(常用)–&gt;组合式继承extend"></a>3、显示原型混入属性【可多继承】(常用)–&gt;<em>组合式继承<code>extend</code></em></h5><ul>
+<li>extend方法可以把第二个对象的属性copy到第一个对象中</li>
+<li>copy继承【给原型copy东西】<ul>
+<li>不会去改构造函数原生的原型对象</li>
+<li>可以替代原型覆写，同时避免原型覆写的三个弊端</li>
+<li>可以实现多继承(继承自多个对象)<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">o1, o2</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> ( <span class="keyword">var</span> key <span class="keyword">in</span> o2 ) &#123;</div><div class="line">        o1[key] = o2[key];</div><div class="line">    &#125;  </div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> obj = &#123; </div><div class="line">	<span class="attr">add</span>: <span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>) </span>&#123; </div><div class="line">		<span class="built_in">console</span>.log(a+b) </div><div class="line">		&#125; </div><div class="line">&#125; </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">extend(Fn.prototype, obj);</div><div class="line">extend(Fn.prototype, &#123;</div><div class="line">    <span class="attr">value</span>: <span class="number">100</span></div><div class="line">&#125;);</div><div class="line"><span class="keyword">var</span> fn = <span class="keyword">new</span> Fn();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="4、Object-create方法【会创建出一个新的对象】"><a href="#4、Object-create方法【会创建出一个新的对象】" class="headerlink" title="4、Object.create方法【会创建出一个新的对象】"></a>4、Object.create方法【会创建出一个新的对象】</h5><ul>
+<li><code>Object</code>是一个内置构造函数，自身有很多方法，其中有一个<code>create</code>方法，可以实现继承</li>
+<li><strong>IE8之前不支持</strong></li>
+<li><strong>语法：</strong> <code>构造函数名.prototype = Object.create(传入被继承对象)</code></li>
+<li><strong>返回值：</strong> 返回一个新对象，这个新对象继承于传入到 <code>create</code> 方法的那个<code>被继承的对象</code></li>
+<li><strong>作用：</strong> <code>创建一个新对象</code>，并且指定新对象继承的对象</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">//兼容ie6,7,8写法</div><div class="line">//1、原生对象中提供方法</div><div class="line">if (!Object.create) &#123;</div><div class="line">	Object.create = function (obj) &#123;</div><div class="line">		function F () &#123;&#125;</div><div class="line">		F.prototype = obj;</div><div class="line">		return new F();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">//2、统一的新方法(判断原生的是否支持，不支持则使用自己添加的方法)</div><div class="line">var create = function (obj) &#123;</div><div class="line">	if (Object.create) &#123;</div><div class="line">		return Object.create(obj);</div><div class="line">	&#125; else &#123;</div><div class="line">		function F () &#123;&#125;</div><div class="line">		F.prototype = obj;</div><div class="line">		return new F();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="5、借用Object-create方法，覆写显示原型"><a href="#5、借用Object-create方法，覆写显示原型" class="headerlink" title="5、借用Object.create方法，覆写显示原型"></a>5、借用Object.create方法，覆写显示原型</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">value</span>: <span class="number">100</span> &#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">Fn.prototype = <span class="built_in">Object</span>.create(obj);</div><div class="line"><span class="keyword">var</span> fn = <span class="keyword">new</span> Fn();</div></pre></td></tr></table></figure>
+<h5 id="6、复合式原型继承"><a href="#6、复合式原型继承" class="headerlink" title="6、复合式原型继承"></a>6、复合式原型继承</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">PrFn</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">PrFn.prototype.value = <span class="number">100</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">Fn.prototype = <span class="keyword">new</span> PrFn()</div><div class="line"><span class="keyword">var</span> fn = <span class="keyword">new</span> Fn();</div></pre></td></tr></table></figure>
+<h3 id="编程技巧"><a href="#编程技巧" class="headerlink" title="编程技巧"></a>编程技巧</h3><ul>
+<li><p>js中是对象与对象之间的继承</p>
+<ul>
+<li>一个对象<code>(obj2)</code>通过<code>obj2.__proto__ = obj1</code>可以指向另一个对象<code>(obj1)</code></li>
+</ul>
+</li>
+<li><p>copy继承【表面现象，和上面不一样】</p>
+<ul>
+<li>让一个对象继承另一个对象的属性，可以考虑把另一个对象的属性copy到这个对象身上【利用for  in 】</li>
+</ul>
+</li>
+<li><p>内置的属性不可枚举(遍历)</p>
+<ul>
+<li>可被遍历的，就叫枚举</li>
+<li>浏览器内置的属性，不可使用for in 遍历出来</li>
+<li>只把自己添加的属性遍历出来[例如：tostring()、valueof()、…]</li>
+</ul>
+</li>
+<li><p>函数代码复用(func2想要共用func1的代码)【构造函数借用 】</p>
+<ul>
+<li>把func1作为属性添加到func2的实例自身(<code>this.__func1__ = func1</code>)</li>
+<li>然后通过func2的实例调用func1，那么func1执行时里面的this就指向了func2的实例</li>
+<li><code>func1.apply(this,arguments)</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>只有变量才可被覆盖修改，对象不能被覆盖</strong></p>
+<h3 id="继承的规律："><a href="#继承的规律：" class="headerlink" title="继承的规律："></a>继承的规律：</h3><ul>
+<li>1、所有对象继承的终点，是<code>Object.prototype</code></li>
+<li>2、所有构造函数默认的显示原型<code>(prototype)</code>，都继承自<code>Object.prototype</code></li>
+<li>3、谁的实例，这个实例就继承谁的<code>prototype</code><ul>
+<li>所有函数，都被看成是Function的实例，所以都继承<code>Function.prototype</code></li>
+<li>所有正则，都被看成是RegExp的实例，所以都继承<code>RegExp.prototype</code></li>
+<li>所有数组，都被看成是Array的实例，所以都继承<code>Array.prototype</code></li>
+</ul>
+</li>
+<li>4、给<code>Object.prototype</code>扩展的东西，所有对象都可以用</li>
+<li>5、<strong>所有函数，都继承Function.prototype</strong></li>
+<li>6、<strong>实例中没有constructor属性</strong>，当实例要使用<code>constructor</code>属性时回去它的原型对象中找，找不到，再去上一级找，直到<code>object.prototype</code></li>
+</ul>
+<h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><ul>
+<li>本意：<ul>
+<li>用来判断<code>一个对象是不是继承自另一个构造函数的实例</code></li>
+</ul>
+</li>
+<li>运算规则：<ul>
+<li>可以用来判断<strong>前一个对象</strong>是否继承自<strong>后一个构造函数</strong>的<strong>显示原型</strong></li>
+<li>判断<strong>左边对象</strong>的原型链结构中，是否存在<strong>右边构造函数</strong>的显示原型</li>
+</ul>
+</li>
+<li>例外：<ul>
+<li>把构造函数的显示原型覆写之后，此显示原型不在实例的原型链中</li>
+</ul>
+</li>
+<li>语法：<ul>
+<li><code>对象 instanceof 构造函数</code></li>
+</ul>
+</li>
+<li>返回值：<ul>
+<li>boolean</li>
+</ul>
+</li>
+</ul>
+<h3 id="for-in"><a href="#for-in" class="headerlink" title="for  in"></a>for  in</h3><ul>
+<li>可以遍历一个对象<strong>继承的</strong>属性(<strong>必须是可枚举的</strong>)</li>
+</ul>
+<p><strong>构造函数默认的显示原型对象的类型，是此构造函数的名字 </strong></p>
+<h3 id="函数的属性"><a href="#函数的属性" class="headerlink" title="函数的属性"></a>函数的属性</h3><ul>
+<li><strong>arguments:</strong><ul>
+<li>代表<strong>实参</strong>的伪数组对象，之前是fn 的属性需要通过  函数.arguments  使用(fn.arguments)，但已被废除，先已经是关键字，可以直接使用(arguments)</li>
+</ul>
+</li>
+<li><p><strong>callee:</strong></p>
+<ul>
+<li>会返回被调用的函数，就是返回函数自己</li>
+</ul>
+</li>
+<li><p><strong>caller:</strong></p>
+<ul>
+<li>返回调用该函数的函数</li>
+</ul>
+</li>
+<li><p><strong>length:</strong></p>
+<ul>
+<li>代表<strong>形参</strong>个数</li>
+</ul>
+</li>
+<li><p><strong>name：</strong></p>
+<ul>
+<li>函数名</li>
+</ul>
+</li>
+</ul>
+<h3 id="in运算符"><a href="#in运算符" class="headerlink" title="in运算符"></a>in运算符</h3><ul>
+<li>判断一个对象能否使用某个属性</li>
+<li>语法：<ul>
+<li><code>&#39;属性名&#39;   in    对象</code></li>
+</ul>
+</li>
+<li>返回值：<ul>
+<li>boolean</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;aa : 11&#125;;</div><div class="line"></div><div class="line">console.log(&apos;aa&apos; in obj);//true</div><div class="line">console.log(&apos;bb&apos; in obj);//false</div><div class="line">console.log(&apos;hasOwnproperty&apos; in obj);//true</div></pre></td></tr></table></figure>
+<h3 id="delete运算符"><a href="#delete运算符" class="headerlink" title="delete运算符"></a>delete运算符</h3><ul>
+<li>作用：<ul>
+<li>删除对象的属性</li>
+</ul>
+</li>
+<li>语法：<ul>
+<li><code>delete  对象.属性名</code></li>
+</ul>
+</li>
+<li>返回值：<ul>
+<li>boolean(<strong>成功删除返回true</strong>)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;aa : 11,bb : 22,cc:232,2 :12&#125;;</div><div class="line">delete obj.bb;</div><div class="line">delete obj[&quot;cc&quot;];</div><div class="line">delete obj[2];</div><div class="line">console.log(obj);</div><div class="line">// obj &#123;aa : 11&#125;</div></pre></td></tr></table></figure>
+<h3 id="Function-的使用"><a href="#Function-的使用" class="headerlink" title="Function 的使用"></a>Function 的使用</h3><ul>
+<li><code>Function</code>创建函数的语法：<ul>
+<li><code>new Function( arg_name1, arg_name2, arg_name3, functionBody )</code></li>
+<li>前面可以定义任意数量的形参，最后一个参数代表函数的代码体。</li>
+<li><strong>注意：这些参数必须是字符串的形式。</strong></li>
+<li>返回值：一个新创建的函数实例。</li>
+</ul>
+</li>
+<li>如果使用Function创建函数，很繁琐，一般不会采纳。但是这种方式有一个亮点，就是会把字符串当做代码执行。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var addObj = new Function(&apos;a&apos;, &apos;b&apos;, &apos;console.log(a + b);&apos;);</div><div class="line">addObj(10, 60);</div></pre></td></tr></table></figure>
+<h3 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h3><ul>
+<li>可以直接把字符串当做代码执行</li>
+<li>语法：<ul>
+<li><code>eval(字符串代码)</code></li>
+<li><code>eval(&#39;console.log(123223)&#39;);</code></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+        
+  <div class="tags">
+    <a href="/tags/继承/">继承</a>
+  </div>
+
+        <div class = "counter">
+  <span id="busuanzi_container_page_pv" style="display:none">
+      总访问&nbsp<span id="busuanzi_value_page_pv"></span>&nbsp次
+  </span>
+</div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+  
+<section id = "relate">
+	
+                <div id="null"></div>
+	
+</section>
+
+
+  
+    <section id="comment">
+    <!--   <h1 class="title">留言</h1> -->
+    
+    
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="2016/06/20/继承(继承方式)/" data-title="继承" data-url="http://yoursite.com/2016/06/20/继承(继承方式)/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"lupeng-test"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+          </script>
+        <!-- 多说公共JS代码 end -->
+
+      
+    </section>
+
+
+
+
+</div></div>
+      <aside id="sidebar" class="alignright">
+  
+<div class="widget tag">
+  <h3 class="title" id="categories">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
+</div>
+ 
+
+
+  <!--
+<div class="widget tag">
+  <h3 class="title">微信公众账号</h3>
+    <ul class="entry">
+      <img src="/img/default/qrcode.jpg" alt="欢迎关注，该账号供个人学习使用，偶尔做一些开发尝试，更新频率较低。" style= "width: 100%">
+    </ul>
+</div>-->
+
+
+  <div class="widget tag">
+  <h3 class="title">日历云</h3>
+  <div id="calendar"></div>
+</div>
+
+
+  
+<div class="widget">
+  <h3 class="title">最新评论</h3>
+  	<!-- 多说最新评论 start -->
+	<div class="ds-recent-comments ds-recent-user" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+	<!-- 多说最新评论 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lupeng-test"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+		</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+  
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+  </div>
+</div>
+
+
+  
+  <div class="widget tag">
+    <h3 class="title">归档</h3>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">27</span></li></ul>
+  </div>
+
+</aside>
+      <div class="clearfix"></div>
+    </div>
+  
+  <footer id="footer"><div class="footer-content inner">
+  <div class="alignleft">
+  
+    &copy; 2017 John Doe
+    
+  </div>
+  <div class="alignright">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme
+    <a href="https://github.com/pengloo53/Hexo-theme-light_cn">light_cn</a>
+  </div>
+  
+  <div class="visit">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </div>
+  
+  <div class="clearfix"></div>
+</div></footer>
+  <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<!-- calendar widget -->
+
+  <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script type="text/javascript">
+    $(function() {
+    
+      $('#calendar').aCalendar('zh-CN',{single:undefined, root:'calendar'});
+    
+    });
+  </script>
+
+
+<!-- 『不蒜子』计数服务 -->
+<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- wumii关联推荐 -->
+<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+
+<!-- 百度推荐 -->
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?9acf0cedd48dc53be256ede5a98c2aaa";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<!-- 返回顶部 -->
+<div id="toTop">
+	<a href="#">▲</a>
+	<a href="#footer">▼</a>
+</div>
+
+<!-- 站内搜索-Swiftype -->
+<!-- <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','sC-iNFrvTTNtiXEVNwo1','2.0.0');
+</script> -->
+
+<!-- fancybox -->
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

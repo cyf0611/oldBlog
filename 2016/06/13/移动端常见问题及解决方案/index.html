@@ -1,0 +1,637 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动端常见问题及解决方案 | Hexo</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="目前移动端的web站点多数是运行在基于webkit内核的浏览器或webview中，所以我们在日常开发中所要兼容的系统是 android和ios，在这两个平台上运行的浏览器都是基于webkit内核的，虽然没有了像pc端那样繁琐的需要兼容ie一系列的浏览器，但是在ios和android上还是会出现你意想">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="移动端常见问题及解决方案"/>
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <!-- wumiiVerification -->
+  <meta name="wumiiVerification" content="fb50a101-84fe-4ca2-91a7-ae8cf792978b" />
+  <meta name="wumiiVerification" content="d73b5866-c390-4156-a4dd-51b526b5335e" />
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <header id="header"><div class= "header-content inner">
+	<div class = "alignleft col-one">
+		
+			<div class='avatar'>
+				<img src = "/img/default/avatar.png">
+              </div>
+		
+		<div class="header-div">
+		    <h1><a href="/">Hexo</a></h1>
+		    <h2><a href="/"></a></h2>
+		</div>
+	</div>
+	<div class = "alignright col-two">
+		
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class= "header-nav">
+	<div class='header-nav-content inner'>
+		<div id="main-nav" class="alignleft">
+		    		
+		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
+		    		
+		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+		    		
+		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
+		    		
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>关于我</a>
+		    		
+		</div>
+		<div id="sub-nav" class="alignright">
+		    
+		      <a href=""><i class="fa fa-rss"></i>订阅</a>
+		    
+		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
+		    
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+</header>
+  
+    <div id="content" class="inner">
+      <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-06-13T04:10:32.000Z"><a href="/2016/06/13/移动端常见问题及解决方案/">2016-06-13</a></time>
+        
+  
+    <h1 class="title">移动端常见问题及解决方案</h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、meta基础知识"><span class="toc-text">一、meta基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#设计高性能CSS3动画的几个要素"><span class="toc-text">设计高性能CSS3动画的几个要素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fixed-bug"><span class="toc-text">fixed bug</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用的移动端框架"><span class="toc-text">常用的移动端框架</span></a></li></ol>
+    </div>
+
+        <blockquote>
+<p>目前移动端的web站点多数是运行在基于webkit内核的浏览器或webview中，<br>所以我们在日常开发中所要兼容的系统是 android和ios，<br>在这两个平台上运行的浏览器都是基于webkit内核的，<br>虽然没有了像pc端那样繁琐的需要兼容ie一系列的浏览器，<br>但是在ios和android上还是会出现你意想不到的一些浏览器解析bug</p>
+</blockquote>
+<p>[TOC]</p>
+<h2 id="一、meta基础知识"><a href="#一、meta基础知识" class="headerlink" title="一、meta基础知识"></a>一、meta基础知识</h2><ul>
+<li><p>H5页面窗口自动调整到设备宽度，并禁止用户缩放页面</p>
+<ul>
+<li><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&quot; /&gt;</code></li>
+</ul>
+</li>
+<li><p>忽略将页面中的数字识别为电话号码</p>
+<ul>
+<li><code>&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot; /&gt;</code></li>
+</ul>
+</li>
+<li><p>忽略Android平台中对邮箱地址的识别</p>
+<ul>
+<li><code>&lt;meta name=&quot;format-detection&quot; content=&quot;email=no&quot; /&gt;</code></li>
+</ul>
+</li>
+<li><p>当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safar</p>
+<ul>
+<li><code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt;</code><blockquote>
+<p><code>&lt;!-- ios7.0版本以后，safari上已看不到效果 --&gt;</code></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式</p>
+<ul>
+<li><code>&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot; /&gt;</code><blockquote>
+<p><code>&lt;!-- 可选default、black、black-translucent --&gt;</code></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>常见问题</strong></p>
+<ul>
+<li><p><strong>移动端如何定义字体<code>font-family</code></strong></p>
+<ul>
+<li>中文字体使用系统默认即可，</li>
+<li>英文用Helvetica</li>
+</ul>
+</li>
+<li><p><strong>移动端字体单位font-size选择px还是rem</strong></p>
+<ul>
+<li>对于只需要适配手机设备，使用px即可，</li>
+<li>对于需要适配各种移动设备，使用rem，</li>
+<li>例如只需要适配iPhone和iPad等分辨率差别比较挺大的设备</li>
+</ul>
+</li>
+<li><p><strong>移动端touch事件(区分webkit 和 winphone)</strong></p>
+<ul>
+<li>当用户手指放在移动设备的屏幕上滑动会触发的touch事件</li>
+<li>以下支持webkit：<ul>
+<li><code>touchstart</code>——当手指触碰屏幕时候发生。不管当前有多少只手指</li>
+<li><code>touchmove</code>——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preventDefault()可以阻止默认情况的发生：阻止页面滚动</li>
+<li><code>touchend</code>——当手指离开屏幕时触发</li>
+<li><code>touchcancel</code>——系统停止跟踪触摸时候会触发。例如在触摸过程中突然页面alert()一个提示框，此时会触发该事件，这个事件比较少用</li>
+</ul>
+</li>
+<li><strong>移动端click屏幕产生200-300 ms的延迟响应</strong></li>
+<li><strong>移动设备上的web网页是有300ms延迟的，往往会造成按钮点击延迟甚至是点击失效</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>解决方案</strong></p>
+<ul>
+<li><strong><code>fastclick</code>可以解决在手机上点击事件的300ms延迟</strong></li>
+<li><strong>解决300ms延迟的问题，也可以通过绑定<code>ontouchstart</code>事件，加快对事件的响应</strong></li>
+<li><strong>zepto的touch模块，tap事件也是为了解决在click的延迟问题</strong></li>
+<li><strong>触摸事件的响应顺序</strong><ul>
+<li><code>ontouchstart</code></li>
+<li><code>ontouchmove</code></li>
+<li><code>ontouchend</code></li>
+<li><code>onclick</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>在高清显示屏中的位图被放大，图片会变得模糊</strong></p>
+<ul>
+<li>移动端的视觉高，通常会设计为传统PC的2倍</li>
+<li>前端的应对方案是：设计稿切出来的图片长宽保证为偶数，并使用backgroud-size把图片缩小为原来的1/2<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">例如图片宽高为：200px*200px，那么写法如下：</div><div class="line">.css&#123;</div><div class="line">	width:100px;</div><div class="line">	height:100px;</div><div class="line">	background-size:100px 100px;</div><div class="line">	&#125;</div><div class="line">其它元素的取值为原来的1/2，</div><div class="line">例如视觉稿40px的字体，使用样式的写法为20px：</div><div class="line">.css&#123;</div><div class="line">	font-size:20px</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>ios系统中元素被触摸时产生的半透明灰色遮罩怎么去掉</strong></p>
+<ul>
+<li><code>ios</code>用户点击一个链接，会出现一个半透明灰色遮罩, 如果想要禁用，可设置<code>-webkit-tap-highlight-color的alpha值为0</code>，也就是属性值的最后一位设置为0就可以去除半透明灰色遮罩<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a,button,input,textarea&#123;</div><div class="line">-webkit-tap-highlight-color: rgba(0,0,0,0;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>部分android系统中元素被点击时产生的边框怎么去掉</strong></p>
+<ul>
+<li><p><code>android</code>用户点击一个链接，会出现一个边框或者半透明灰色遮罩, 不同生产商定义出来额效果不一样，可设置<code>-webkit-tap-highlight-color的alpha值为0</code>，去除部分机器自带的效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a,button,input,textarea&#123; </div><div class="line">-webkit-tap-highlight-color: rgba(0,0,0,0); </div><div class="line">-webkit-user-modify: read-write-plaintext-only;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>-webkit-user-modify有个副作用</code>，就是输入法不再能够输入多个字符</p>
+</li>
+<li>另外，有些机型去除不了，如小米2</li>
+<li>对于按钮类还有个办法，不使用a或者input标签，直接用div标签</li>
+</ul>
+<p><strong>winphone系统a、input标签被点击时产生的半透明灰色背景怎么去掉</strong></p>
+<ul>
+<li><code>&lt;meta name=&quot;msapplication-tap-highlight&quot; content=&quot;no&quot;&gt;</code></li>
+</ul>
+<p><strong><code>webkit</code>表单元素的默认外观怎么重置</strong></p>
+<ul>
+<li><code>.css{-webkit-appearance:none;}</code></li>
+</ul>
+<p><strong><code>webkit</code>表单输入框<code>placeholder</code>的<code>颜色</code>值能改变么</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 无焦点时状态</div><div class="line">input::-webkit-input-placeholder&#123;</div><div class="line">	color:#AAAAAA;</div><div class="line">&#125;</div><div class="line">// focus时状态</div><div class="line">input:focus::-webkit-input-placeholder&#123;</div><div class="line">	color:#EEEEEE;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>webkit表单输入框placeholder的文字能换行么</strong></p>
+<ul>
+<li>ios可以，android不行</li>
+</ul>
+<p><strong>IE10（winphone8）表单元素默认外观如何重置</strong></p>
+<ul>
+<li>禁用 <code>select</code> 默认下拉箭头<ul>
+<li><code>::-ms-expand</code> 适用于<code>表单选择控件下拉箭头的修改</code>，有多个属性值，<code>设置它隐藏 (display:none)</code>， <code>并使用背景图片来修饰</code>可得到我们想要的效果</li>
+<li><code>select::-ms-expand {display: none;}</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>禁用 radio 和 checkbox 默认样式</strong></p>
+<ul>
+<li><code>::-ms-check</code> 适用于<code>表单复选框或单选按钮默认图标的修改</code>，同样有多个属性值，<code>设置它隐藏 (display:none)</code>，<code>并使用背景图片来修饰</code>可得到我们想要的效果<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">input[type=radio]::-ms-check,input[type=checkbox]::-ms-check&#123; </div><div class="line">	display: none; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>禁用PC端表单输入框默认清除按钮</strong></p>
+<ul>
+<li>当表单文本输入框输入内容后会显示文本清除按钮，<code>::-ms-clear</code> 适用于该清除按钮的修改，同样<code>设置使它隐藏 (display:none)</code>并使用背景图片来修饰可得到我们想要的效果<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">input[type=text]::-ms-clear,input[type=tel]::-ms-clear,input[type=number]::-ms-clear&#123; </div><div class="line">	display: none; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>禁止ios 长按时不触发系统的菜单，禁止ios&amp;android长按时下载图片</strong></p>
+<ul>
+<li><code>.css{-webkit-touch-callout: none}</code></li>
+</ul>
+<p><strong>禁止ios和android用户选中文字</strong></p>
+<ul>
+<li><code>.css{-webkit-user-select:none}</code></li>
+</ul>
+<p><strong>打电话发短信的怎么实现？</strong></p>
+<ul>
+<li><code>&lt;a href=&quot;tel:0755-10086&quot;&gt;打电话给:0755-10086&lt;/a&gt;</code></li>
+</ul>
+<p><strong>发短信</strong></p>
+<ul>
+<li><code>&lt;a href=&quot;sms:10086&quot;&gt;发短信给: 10086&lt;/a&gt;</code></li>
+<li><strong><code>winphone系统无效</code></strong></li>
+</ul>
+<p><strong>模拟按钮hover效果</strong></p>
+<ul>
+<li><p>移动端触摸按钮的效果，可明示用户有些事情正要发生，是一个比较好体验，但是移动设备中并没有鼠标指针，使用css的hover并不能满足我们的需求，还好国外有个激活css的active效果，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;btn-blue&quot;&gt;按钮&lt;/div&gt; </div><div class="line"> </div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt; </div><div class="line">document.addEventListener(&quot;touchstart&quot;, function()&#123;</div><div class="line">	</div><div class="line">&#125;, true) </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>兼容性ios5+、部分android 4+、winphone 8</p>
+</li>
+<li>要做到全兼容的办法，可通过绑定ontouchstart和ontouchend来控制按钮的类名<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;btn-blue&quot;&gt;按钮&lt;/div&gt; </div><div class="line"> </div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt; </div><div class="line">	varbtnBlue = document.querySelector(&quot;.btn-blue&quot;); </div><div class="line">	btnBlue.ontouchstart = function()&#123; </div><div class="line">		this.className = &quot;btn-blue btn-blue-on&quot; </div><div class="line">	&#125; </div><div class="line">	btnBlue.ontouchend = function()&#123; </div><div class="line">		this.className = &quot;btn-blue&quot; </div><div class="line">	&#125; </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>屏幕旋转的事件和样式</strong></p>
+<ul>
+<li><strong><code>事件</code></strong><ul>
+<li><code>window.orientation</code>，</li>
+</ul>
+</li>
+<li>取值：<ul>
+<li><code>正负90</code>表示横屏模式</li>
+<li><code>0和180</code>表现为竖屏模式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">window.onorientationchange = function()&#123; </div><div class="line">switch(window.orientation)&#123; </div><div class="line">	case -90: </div><div class="line">	case 90: </div><div class="line">	    alert(&quot;横屏:&quot; + window.orientation); </div><div class="line">	case 0: </div><div class="line">	case 180: </div><div class="line">        alert(&quot;竖屏:&quot; + window.orientation); </div><div class="line">	break; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong><code>样式</code></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/*竖屏时使用的样式*/ </div><div class="line">@media all and (orientation:portrait) &#123;</div><div class="line">	.css&#123;&#125;</div><div class="line">&#125;  </div><div class="line"> </div><div class="line">/*横屏时使用的样式*/ </div><div class="line">@media all and (orientation:landscape) &#123;</div><div class="line">	.css&#123;&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>audio元素和video元素在ios和andriod中无法自动播放</strong></p>
+<ul>
+<li>解决：<code>触屏即播</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;html&apos;).one(&apos;touchstart&apos;, function()&#123;</div><div class="line">	audio.play();</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>摇一摇功能</strong></p>
+<ul>
+<li>HTML5 <code>deviceMotion</code>：封装了运动传感器数据的事件，可以获取手机运动状态下的运动加速度等数据</li>
+</ul>
+<p><strong>手机拍照和上传图片</strong></p>
+<ul>
+<li><code>&lt;input type=&quot;file&quot;&gt;</code>的<code>accept</code>属性</li>
+<li><strong>选择照片</strong><ul>
+<li><code>&lt;input type=&#39;file&#39; accept=&quot;image/*&quot;&gt;</code></li>
+</ul>
+</li>
+<li><strong>选择视频</strong><ul>
+<li><code>&lt;input type=&#39;file&#39; accept=&quot;video/*&quot;&gt;</code></li>
+</ul>
+</li>
+<li><code>使用总结：</code><ul>
+<li>ios 有拍照、录像、选取本地图片功能，</li>
+<li>部分android只有选取本地图片功能，</li>
+<li>winphone不支持</li>
+</ul>
+</li>
+</ul>
+<p><strong>微信浏览器用户调整字体大小后页面矬了，怎么阻止用户调整</strong></p>
+<ul>
+<li>Anroid则是复写了<code>layoutinflater</code> 对<code>textview</code>做了统一处理</li>
+<li>ios则是修改了<code>body.style.webkitTextSizeAdjust</code>值</li>
+<li>普通解决方案：<ul>
+<li><code>android暂无方案</code></li>
+<li>ios使用<code>-webkit-text-size-adjust</code>禁止调整字体大小</li>
+<li><code>body{-webkit-text-size-adjust: 100%!important;}</code></li>
+</ul>
+</li>
+<li><strong>最好的解决方案：整个页面用rem或者百分比布局</strong></li>
+</ul>
+<p><strong>消除transition闪屏</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.css&#123; </div><div class="line">	/*设置内嵌的元素在 3D 空间如何呈现：保留 3D*/ </div><div class="line">	-webkit-transform-style: preserve-3d; </div><div class="line">	/*（设置进行转换的元素的背面在面对用户时是否可见：隐藏）*/ </div><div class="line">	-webkit-backface-visibility: hidden; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>开启硬件加速，解决页面闪白，保证动画流畅<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.css &#123;  </div><div class="line">   -webkit-transform: translate3d(0, 0, 0);  </div><div class="line">   -moz-transform: translate3d(0, 0, 0);  </div><div class="line">   -ms-transform: translate3d(0, 0, 0);  </div><div class="line">   transform: translate3d(0, 0, 0);  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>取消input在ios下，输入的时候英文首字母的默认大写</strong></p>
+<ul>
+<li><code>&lt;input autocapitalize=&quot;off&quot; autocorrect=&quot;off&quot; /&gt;</code></li>
+</ul>
+<p><strong>android 上去掉语音输入按钮</strong></p>
+<ul>
+<li><code>input::-webkit-input-speech-button {display: none}</code></li>
+</ul>
+<p><strong>android 2.3 bug</strong></p>
+<p><strong><code>@-webkit-keyframes</code> 需要以0%开始100%结束，0%的百分号不能去掉</strong></p>
+<p><strong><code>after和before伪类</code>无法使用动画</strong></p>
+<p><strong><code>border-radius</code>不支持%单位</strong></p>
+<p><strong>translate百分比的写法和scale在一起会导致失效</strong></p>
+<ul>
+<li>例如<code>-webkit-transform: translate(-50%,-50%) scale(-0.5, 1)</code></li>
+</ul>
+<p><strong>android 4.x bug</strong></p>
+<ul>
+<li>三星 Galaxy S4中自带浏览器不支持<code>border-radius</code>缩写</li>
+<li>同时设置<code>border-radius</code>和背景色的时候，背景色会溢出到圆角以外部分</li>
+<li>部分手机(如三星)，a链接支持鼠标:visited事件，也就是说链接访问后文字变为紫色</li>
+</ul>
+<h4 id="设计高性能CSS3动画的几个要素"><a href="#设计高性能CSS3动画的几个要素" class="headerlink" title="设计高性能CSS3动画的几个要素"></a>设计高性能CSS3动画的几个要素</h4><ul>
+<li>尽可能地使用合成属性<code>transform</code>和<code>opacity</code>来设计CSS3动画，<code>不使用position的left和top来定位</code></li>
+<li>利用translate3D开启GPU加速</li>
+</ul>
+<h4 id="fixed-bug"><a href="#fixed-bug" class="headerlink" title="fixed bug"></a><code>fixed bug</code></h4><ul>
+<li>ios下fixed元素容易定位出错，软键盘弹出时，影响fixed元素定位</li>
+<li>android下fixed表现要比iOS更好，软键盘弹出时，不会影响fixed元素定位</li>
+<li>ios9下不支持position:fixed</li>
+<li>解决方案：可用isroll.js，暂无完美方案</li>
+</ul>
+<p><strong>如何阻止windows Phone的默认触摸事件</strong></p>
+<ul>
+<li>winphone下默认触摸事件事件使用<code>e.preventDefault</code>是无效的</li>
+<li>目前解决方法是使用样式来禁用<ul>
+<li><code>html{-ms-touch-action: none;}/* 禁止winphone默认触摸事件 */</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="常用的移动端框架"><a href="#常用的移动端框架" class="headerlink" title="常用的移动端框架"></a>常用的移动端框架</h2><p><strong><code>zepto.js</code></strong></p>
+<ul>
+<li>语法与jquery几乎一样，会jquery基本会zepto</li>
+<li><a href="http://zeptojs.com/" target="_blank" rel="external">官网</a></li>
+<li><a href="http://www.css88.com/doc/zeptojs_api/" target="_blank" rel="external">中文(非官网)</a></li>
+<li><a href="https://github.com/madrobby/zepto/blob/master/src/detect.js" target="_blank" rel="external">浏览器检测</a></li>
+<li><a href="https://github.com/madrobby/zepto/blob/master/src/touch.js" target="_blank" rel="external">tap事件</a></li>
+</ul>
+<p><strong><code>iscroll.js</code></strong></p>
+<ul>
+<li>解决页面不支持弹性滚动，不支持fixed引起的问题~，实现下拉刷新，滑屏，缩放等功能</li>
+<li><a href="http://cubiq.org/iscroll-5" target="_blank" rel="external">官网</a></li>
+</ul>
+<p><strong>滑屏框架</strong></p>
+<ul>
+<li><code>slip.js</code></li>
+<li><code>iSlider.js</code></li>
+<li><code>fullpage.js</code></li>
+</ul>
+<hr>
+<p><strong>应用css3 translate3d 平移效果后的标签元素，在ios上的safari以及app的webview中会出现页面加载完成后其子元素闪动现象</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;ul style=”-webkit-transform: translate3d(0, 0, 0); -webkit-transition: 0ms; “&gt;</div><div class="line">	&lt;li&gt;</div><div class="line">		&lt;img src=”http://pic2.58.com/m58/m3/img/imglogo_gray.png” ref=”http://1.pic.58control.cn/p1/big/n_22998799743506.jpg”&gt;</div><div class="line">	&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure></p>
+<ul>
+<li><p><strong>解决一：</strong></p>
+<ul>
+<li>可在其子元素中统一添加和其相同的属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;ul style=”-webkit-transform: translate3d(0, 0, 0); -webkit-transition: 0ms; “&gt;</div><div class="line">	&lt;li style=”-webkit-transform: translate3d(0, 0, 0); “&gt;</div><div class="line">		&lt;img src=”http://pic2.58.com/m58/m3/img/imglogo_gray.png” ref=”http://1.pic.58control.cn/p1/big/n_22998799743506.jpg”&gt;</div><div class="line">	&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>解决二：</strong></p>
+<ul>
+<li>在其元素中添加如下属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-webkit-backface-visibility: hidden; </div><div class="line">//(设置进行转换的元素的背面在面对用户时是否可见：隐藏）</div><div class="line">-webkit-transform-style: preserve-3d; </div><div class="line">//(设置内嵌的元素在 3D 空间如何呈现：保留 3D ）</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>个人猜测应该是ios上的safari在解析translate3d的错误导致影响到其他元素的展示，希望以后apple会修复此bug</p>
+</blockquote>
+<p><strong>使用touch事件时，android和ios对touchend的响应处理方式不一致，比如在a元素上使用touchend触发一个弹出层显示，在android上面的浏览器手指在a元素上做滑动操作，然后手指离开，结果不会触发 touchend事件，同样的操作在ios上会触发 touchend</strong></p>
+<ul>
+<li><strong>解决：</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var isSlide=false;</div><div class="line">$(“a”).bind(“touchstart”,function()&#123;</div><div class="line">	isSlide=false;</div><div class="line">&#125;);</div><div class="line">$(“a”).bind(“touchmove”,function()&#123;</div><div class="line">	isSlide=true;</div><div class="line">&#125;);</div><div class="line">$(“a”).bind(“touchend”,function()&#123;</div><div class="line">	if(isSlide)&#123;</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	//执行代码</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>在触摸设备上当用手指触摸到屏幕到离开屏幕其实已经触发了三种事件：<br>touchstart,touchmove,touchend,<br>在iphone上的自然会弹出层，<br>至于android上我想有一部分原因是和硬件有关，比如触摸屏的灵敏度不够高，导致touchend事件丢失，或者到touchmove事件之后就终止掉，都有可能</p>
+</blockquote>
+<p><strong>ios6修复了css position:fixed 1像素抖动的bug，不过引出另一个bug：当给指定元素添加 position:fixed时首次加载页面完成后，滑动整个网页，添加此样式的元素会跟随页面滚动（目的是固定此元素）</strong></p>
+<ul>
+<li><strong>解决：</strong><ul>
+<li>其元素添加如下css属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">-webkit-transform：translate3d(0,0,0);</div><div class="line">//（具体原因不知）</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>android上的chrome bug， 当在某一个页面的其中一个元素中使用<code>-webkit-transform:translate3d;</code>属性时，在其页面中的其他元素中使用<code>-webkit-transform:rotate(xxx deg);</code>会失效，比如你要设置一个元素的旋转角度都会失效</strong>（这个bug表现的很奇怪，我一直没有搞明白是为什么，还是我自己的写法有问题？）</p>
+<ul>
+<li><strong>解决：</strong><ul>
+<li>在失效的元素的直接父级标签上添加：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-webkit-transform:translate3d(0,0,0);</div></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/移动WEB/">移动WEB</a>
+  </div>
+
+        
+  <div class="tags">
+    <a href="/tags/移动WEB/">移动WEB</a>
+  </div>
+
+        <div class = "counter">
+  <span id="busuanzi_container_page_pv" style="display:none">
+      总访问&nbsp<span id="busuanzi_value_page_pv"></span>&nbsp次
+  </span>
+</div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+  
+<section id = "relate">
+	
+                <div id="null"></div>
+	
+</section>
+
+
+  
+    <section id="comment">
+    <!--   <h1 class="title">留言</h1> -->
+    
+    
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="2016/06/13/移动端常见问题及解决方案/" data-title="移动端常见问题及解决方案" data-url="http://yoursite.com/2016/06/13/移动端常见问题及解决方案/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"lupeng-test"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+          </script>
+        <!-- 多说公共JS代码 end -->
+
+      
+    </section>
+
+
+
+
+</div></div>
+      <aside id="sidebar" class="alignright">
+  
+<div class="widget tag">
+  <h3 class="title" id="categories">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
+</div>
+ 
+
+
+  <!--
+<div class="widget tag">
+  <h3 class="title">微信公众账号</h3>
+    <ul class="entry">
+      <img src="/img/default/qrcode.jpg" alt="欢迎关注，该账号供个人学习使用，偶尔做一些开发尝试，更新频率较低。" style= "width: 100%">
+    </ul>
+</div>-->
+
+
+  <div class="widget tag">
+  <h3 class="title">日历云</h3>
+  <div id="calendar"></div>
+</div>
+
+
+  
+<div class="widget">
+  <h3 class="title">最新评论</h3>
+  	<!-- 多说最新评论 start -->
+	<div class="ds-recent-comments ds-recent-user" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+	<!-- 多说最新评论 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lupeng-test"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+		</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+  
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+  </div>
+</div>
+
+
+  
+  <div class="widget tag">
+    <h3 class="title">归档</h3>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">27</span></li></ul>
+  </div>
+
+</aside>
+      <div class="clearfix"></div>
+    </div>
+  
+  <footer id="footer"><div class="footer-content inner">
+  <div class="alignleft">
+  
+    &copy; 2017 John Doe
+    
+  </div>
+  <div class="alignright">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme
+    <a href="https://github.com/pengloo53/Hexo-theme-light_cn">light_cn</a>
+  </div>
+  
+  <div class="visit">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </div>
+  
+  <div class="clearfix"></div>
+</div></footer>
+  <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<!-- calendar widget -->
+
+  <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script type="text/javascript">
+    $(function() {
+    
+      $('#calendar').aCalendar('zh-CN',{single:undefined, root:'calendar'});
+    
+    });
+  </script>
+
+
+<!-- 『不蒜子』计数服务 -->
+<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- wumii关联推荐 -->
+<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+
+<!-- 百度推荐 -->
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?9acf0cedd48dc53be256ede5a98c2aaa";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<!-- 返回顶部 -->
+<div id="toTop">
+	<a href="#">▲</a>
+	<a href="#footer">▼</a>
+</div>
+
+<!-- 站内搜索-Swiftype -->
+<!-- <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','sC-iNFrvTTNtiXEVNwo1','2.0.0');
+</script> -->
+
+<!-- fancybox -->
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

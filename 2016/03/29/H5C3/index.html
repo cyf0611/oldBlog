@@ -1,0 +1,920 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HTML5 | Hexo</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="[TOC]
+
+HTML5定义了一系列新元素，如新语义标签、智能表单、多媒体标签等，可以帮助开发者创建富互联网应用，还提供了一些Javascript API，如地理定位、重力感应、硬件访问等，可以在浏览器内实现类原生应用，甚至结合Canvas我们可开发网页版游戏。广义概念：HTML5代表浏览器端技术的">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="HTML5"/>
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <!-- wumiiVerification -->
+  <meta name="wumiiVerification" content="fb50a101-84fe-4ca2-91a7-ae8cf792978b" />
+  <meta name="wumiiVerification" content="d73b5866-c390-4156-a4dd-51b526b5335e" />
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <header id="header"><div class= "header-content inner">
+	<div class = "alignleft col-one">
+		
+			<div class='avatar'>
+				<img src = "/img/default/avatar.png">
+              </div>
+		
+		<div class="header-div">
+		    <h1><a href="/">Hexo</a></h1>
+		    <h2><a href="/"></a></h2>
+		</div>
+	</div>
+	<div class = "alignright col-two">
+		
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class= "header-nav">
+	<div class='header-nav-content inner'>
+		<div id="main-nav" class="alignleft">
+		    		
+		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
+		    		
+		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+		    		
+		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
+		    		
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>我的简历</a>
+		    		
+		</div>
+		<div id="sub-nav" class="alignright">
+		    
+		      <a href=""><i class="fa fa-rss"></i>订阅</a>
+		    
+		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
+		    
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+</header>
+  
+    <div id="content" class="inner">
+      <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-03-29T03:41:48.000Z"><a href="/2016/03/29/H5C3/">2016-03-29</a></time>
+        
+  
+    <h1 class="title">HTML5</h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#表单"><span class="toc-text">表单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多媒体"><span class="toc-text">多媒体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM扩展"><span class="toc-text">DOM扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择器"><span class="toc-text">选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#颜色"><span class="toc-text">颜色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shadow（文本阴影）"><span class="toc-text">shadow（文本阴影）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#盒模型（box-sizing）"><span class="toc-text">盒模型（box-sizing）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#边框border"><span class="toc-text">边框border</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#背景background"><span class="toc-text">背景background</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渐变background-image"><span class="toc-text">渐变background-image</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过渡transition【加给发生变化的标签本身】"><span class="toc-text">过渡transition【加给发生变化的标签本身】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2D变换"><span class="toc-text">2D变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3D变换"><span class="toc-text">3D变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动画-keyframes"><span class="toc-text">动画@keyframes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多列布局"><span class="toc-text">多列布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#伸缩布局display-flex"><span class="toc-text">伸缩布局display:flex;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEB字体"><span class="toc-text">WEB字体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拖拽"><span class="toc-text">拖拽</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#历史纪录"><span class="toc-text">历史纪录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#地理定位"><span class="toc-text">地理定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEB存储"><span class="toc-text">WEB存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全屏显示"><span class="toc-text">全屏显示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络状态【当网线断开，链接时触发】"><span class="toc-text">网络状态【当网线断开，链接时触发】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用缓存"><span class="toc-text">应用缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过渡结束事件"><span class="toc-text">过渡结束事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css3滤镜"><span class="toc-text">css3滤镜</span></a></li></ol>
+    </div>
+
+        <p>[TOC]</p>
+<blockquote>
+<p>HTML5定义了一系列新元素，如新语义标签、智能表单、多媒体标签等，可以帮助开发者创建富互联网应用，还提供了一些Javascript API，如地理定位、重力感应、硬件访问等，可以在浏览器内实现类原生应用，甚至结合Canvas我们可开发网页版游戏。<br>广义概念：HTML5代表浏览器端技术的一个发展阶段。在这个阶段，浏览器呈现技术得到了一个飞跃发展和广泛支持,<br>更宽松<br>更简洁<br>单标签不用写关闭符号<br>双标签省略结束标签<br>html、head、body、colgroup、tbody可以完全省略<br>实际开发中应规范书写，不建议太随意 ！</p>
+</blockquote>
+<p> <strong>H5 经典网页布局：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 头部 --&gt;</div><div class="line">&lt;header&gt;</div><div class="line">	&lt;ul class=&quot;nav&quot;&gt;&lt;/ul&gt;</div><div class="line">&lt;/header&gt;</div><div class="line">&lt;!-- 主体部分 --&gt;</div><div class="line">&lt;div class=&quot;main&quot;&gt;</div><div class="line">   	&lt;!-- 文章 --&gt;</div><div class="line">   	&lt;article&gt;&lt;/article&gt;</div><div class="line">   	&lt;!-- 侧边栏 --&gt;</div><div class="line">   	&lt;aside&gt;&lt;/aside&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;!-- 底部 --&gt;</div><div class="line">&lt;footer&gt;&lt;/footer&gt;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>标签语义化<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;header&gt;header&lt;/header&gt;</div><div class="line">&lt;nav&gt;nav&lt;/nav&gt;</div><div class="line">&lt;main&gt;</div><div class="line">    	&lt;aside&gt;aside&lt;/aside&gt;</div><div class="line">    	&lt;article&gt;article&lt;/article&gt;</div><div class="line">&lt;/main&gt;</div><div class="line">&lt;footer&gt;footer&lt;/footer</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>常用新语义标签</strong><br>|<code>&lt;nav&gt;</code> |表示导航|<br>|—|—|<br>|<code>&lt;header&gt;</code> |表示页眉（头部）|<br>|<code>&lt;footer&gt;</code> |表示页脚（尾部）|<br>|<code>&lt;section&gt;</code> |表示区块|<br>|<code>&lt;article&gt;</code>| 表示文章 如文章、评论、帖子、博客|<br>|<code>&lt;aside&gt;</code> |表示侧边栏 如文章的侧栏|<br>|<code>&lt;figure&gt;</code>| 表示媒介内容分组 与 ul &gt; li 做个比较|<br>|<code>&lt;figscaption&gt;</code>||</p>
+<p><strong>兼容处理</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lt ie 8]&gt;</div><div class="line">    &lt;script src=&quot;html5shiv.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><p><strong>表单类型，表单元素，表单属性,表单事件</strong></p>
+<hr>
+<p><strong>表单<code>类型</code> </strong><br>|email |输入email格式|<br>|—|—|<br>|tel |手机号码|<br>|url |只能输入url格式（网址）|<br>|number |只能输入数字（step步长设置，一次点击可以加减多少）|<br>|search |搜索框|<br>|range| 范围（滑动条）|<br>|color |拾色器（取色器）|<br>|time    |时间|<br>|date| 日期 不是绝对的|<br>|datetime |时间日期|<br>|month |月份|<br>|week |星期|</p>
+<blockquote>
+<p>部分类型是针对移动设备生效的，且具有一定的兼容性，在实际应用当中可选择性的使用</p>
+</blockquote>
+<p><strong>表单元素<code>（标签）</code></strong></p>
+<ul>
+<li><p><code>&lt;datalist&gt;&lt;/datalist&gt;</code>数据列表（下拉选项）与input 配合使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;input type=”text[类型可变]” list=”data”&gt;</div><div class="line"></div><div class="line">&lt;datalist id=”data”&gt;	id指向上部input的list 对应</div><div class="line"> 		&lt;option&gt;男&lt;/option&gt;</div><div class="line"> 		&lt;option&gt;女&lt;/option&gt;</div><div class="line"> 		&lt;option&gt;不详&lt;/option&gt; </div><div class="line">&lt;/datalist&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>&lt;keygen/&gt;</code> 生成加密字符串</p>
+</li>
+<li><p><code>&lt;output&gt;</code>在页面中显示(不可当做数据提交)</p>
+</li>
+<li><p><code>&lt;meter&gt;</code>表示度量器，不建议用作进度条</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;meter value=&quot;81&quot; min=&quot;0&quot; max=&quot;100&quot; low=&quot;60&quot; high=&quot;80&quot; /&gt;</div><div class="line">			   最小值	  最大值	  偏低值	  偏高值</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>&lt;progress&gt;&lt;/progress&gt;</code>进度条</p>
+</li>
+</ul>
+<p><strong>表单<code>属性</code>（input）</strong><br>|placeholder |占位符（内填设置输入框提示文本）|<br>|—|—|<br>|autofocus| 获取焦点（自动获取焦点）|<br>|multiple |文件上传多选或多个邮箱地址  |<br>|autocomplete |自动完成，用于表单元素，也可用于表单自身|<br>|form| 指定外部表单项属于哪个form，处理复杂表单时会需要（指向表单id）|<br>|novalidate |关闭验证，只用于<code>&lt;form&gt;</code>标签|<br>|required |验证条件，必填项（标签内加此属性，则此标签为必填项）|<br>|pattern |正则表达式 验证表单（内传正则表达式）|</p>
+<p><strong>表单<code>事件</code></strong></p>
+<ul>
+<li><code>oninput</code><ul>
+<li>用户输入内容时触发，可用于移动端输入字数统计</li>
+</ul>
+</li>
+<li><code>oninvalid</code><ul>
+<li>验证不通过时触发</li>
+</ul>
+</li>
+</ul>
+<h3 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h3><p><strong>video（视频）</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;video src=&quot;&quot; controls=&quot;controls&quot; autoplay loop&gt;&lt;/video&gt;</div><div class="line"></div><div class="line">兼容性写法</div><div class="line">&lt;video controls=&quot;controls&quot; autoplay&gt;</div><div class="line">    	&lt;source src=&quot;&quot;/&gt;</div><div class="line">    	&lt;source src=&quot;&quot;/&gt;</div><div class="line">    	&lt;source src=&quot;&quot;/&gt;</div><div class="line">    	对不起你的浏览器不支持此功能！</div><div class="line">&lt;/video&gt;</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>autoplay</th>
+<th>自动播放</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>controls</td>
+<td>是否显示默认播放控件</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>循环播放</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>预加载，如果同时设置了autoplay，此属性将失效</td>
+</tr>
+<tr>
+<td>width</td>
+<td>设置播放窗口宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>设置播放窗口的高度</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>由于版权等原因，不同的浏览器可支持播放的格式是不一样的**<ul>
+<li><code>.ogg</code></li>
+<li><code>.mp4</code></li>
+<li><code>.webm</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>audio（音频）</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;audio src=&quot;&quot; autoplay controls loop&gt;&lt;/audio&gt;</div><div class="line"></div><div class="line">兼容性写法</div><div class="line">&lt;audio autoplay controls&gt;</div><div class="line">    	&lt;source src=&quot;&quot;/&gt;</div><div class="line">    	&lt;source src=&quot;&quot;/&gt;</div><div class="line">    	&lt;source src=&quot;&quot;/&gt;</div><div class="line">    	抱歉你的浏览器版本过低，请更新！</div><div class="line">&lt;/audio&gt;</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>autoplay</th>
+<th>自动播放</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>controls</td>
+<td>是否显示默认播放控件</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>循环播放</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>预加载，如果同时设置了autoplay，此属性将失效</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>由于版权等原因，不同的浏览器可支持播放的格式是不一样的**<ul>
+<li><code>.ogg</code></li>
+<li><code>.mp3</code></li>
+<li><code>.wav</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>方法</strong></p>
+<ul>
+<li><code>load()</code> 加载、</li>
+<li><code>play()</code> 播放、</li>
+<li><code>pause()</code> 暂停</li>
+</ul>
+<p><strong>属性</strong></p>
+<ul>
+<li><code>currentTime</code> 视频播放的当前进度(以妙计)</li>
+<li><code>duration</code>:视频的总时间(以妙计)</li>
+<li><code>paused</code>:视频播放的状态</li>
+</ul>
+<p><strong>事件</strong></p>
+<ul>
+<li><code>oncanplay</code>: 事件在用户可以开始播放视频/音频（audio/video）时触发</li>
+<li><code>ontimeupdate</code>:通过该事件来报告当前的播放进度</li>
+<li><code>onended</code>:播放完时触发</li>
+</ul>
+<h3 id="DOM扩展"><a href="#DOM扩展" class="headerlink" title="DOM扩展"></a>DOM扩展</h3><ul>
+<li><p><strong>获取元素</strong></p>
+<ul>
+<li><code>document.querySelector(&#39;selector&#39;)</code><ul>
+<li>参数可传，id  类名  标签  子代选择器 …</li>
+<li>通过CSS选择器获取元素，符合匹配条件的<code>第1个元素</code>。（一次只能获取一个标签）</li>
+</ul>
+</li>
+<li><code>document.querySelectorAll(&#39;selector&#39;)</code><ul>
+<li>通过CSS选择器获取元素，以类<code>数组</code>形式存在</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>类名操作</strong><br>|<code>.classList.add(&#39;class&#39;)</code>|添加class|<br>|—|—|<br>|<code>.classList.remove(&#39;class&#39;)</code>|移除class|<br>|<code>.classList.toggle(&#39;class&#39;)</code>|切换class，有则移除，无则添加|<br>|<code>.classList.contains(&#39;class&#39;)</code>|检测是否存在class    (结果为   布尔型  true   false)|<br>|<code>classList</code>|获取到类名列表|</p>
+</li>
+<li><p><strong>自定义属性</strong></p>
+<ul>
+<li><code>data-名字=&quot;&quot;</code></li>
+<li>如：<code>data-info=&quot;我是自定义属性&quot;</code></li>
+<li><code>Node.dataset[&#39;info&#39;]</code>    获取自定义属性</li>
+<li><code>.dataset</code>是以类对象形式存在的</li>
+<li><code>data-my-name=&quot;box&quot;</code>，获取<code>Node.dataset[&#39;myName&#39;]</code>以上格式设置时，则需要以驼峰格式才能正确获取</li>
+</ul>
+</li>
+</ul>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p><strong><code>属性</code>选择器    [ ]</strong>（权重和标签指定式选择器相同）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">/*选中所有带class属性的div*/</div><div class="line">div[class] &#123;</div><div class="line">	background-color: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*选中带有class属性并且属性名为box*/</div><div class="line">div[class= &quot;box&quot;] &#123;</div><div class="line">	background-color: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*选中带有class属性并且属性名以a开头*/</div><div class="line">div[class^= &quot;a&quot;] &#123;</div><div class="line">	background-color: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*选中带有class属性并且属性名以a结尾*/</div><div class="line">div[class$= &quot;a&quot;] &#123;</div><div class="line">	background-color: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*选中带有class属性并且属性名包含有a*/</div><div class="line">div[class*= &quot;a&quot;] &#123;</div><div class="line">	background-color: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">div~p: 选中div 后面所有同级的p标签(不包括子代)</div><div class="line">&lt;div&gt;&lt;/div&gt;</div><div class="line">&lt;p&gt;&lt;/p&gt;</div><div class="line">&lt;p&gt;&lt;/p&gt;</div><div class="line">&lt;p&gt;&lt;/p&gt;</div><div class="line"></div><div class="line">box+p: 选中div后面的第一个同级的p标签</div><div class="line">&lt;div&gt;&lt;/div&gt;</div><div class="line">&lt;p&gt;&lt;/p&gt;</div></pre></td></tr></table></figure>
+<p><strong><code>伪类</code>选择器</strong>——标志性符号（<code>:</code>）</p>
+<ul>
+<li><code>:link、:active、:visited、:hover</code></li>
+<li><code>:first-child</code>第一个子元素</li>
+<li><code>:last-child</code>最后一个子元素</li>
+<li><code>:nth-child(n)</code> 第n个子元素<ul>
+<li><code>n不是索引</code>     n遵循线性变化其取值0、1、2、3、4、… 但是当n&lt;=0时，选取无效</li>
+</ul>
+</li>
+<li><code>:empty</code> 选中没有任何子节点的元素<ul>
+<li>没有任何的子元素，子元素包括空格,标签，文本</li>
+</ul>
+</li>
+<li><code>:target</code> 结合锚点进行使用，处于当前锚点的元素会被选中</li>
+</ul>
+<p><strong><code>伪元素</code>选择器</strong>——标志符号（<code>::</code>）</p>
+<ul>
+<li><code>::before</code>在元素前面<ul>
+<li><code>必须有content属性</code>    为行内元素</li>
+</ul>
+</li>
+<li><code>::after</code>在元素后面<ul>
+<li><code>必须有content属性</code>    为行内元素</li>
+</ul>
+</li>
+<li><code>::first-letter</code>文本的第一个字母或字</li>
+<li><code>::ifrst-line</code>文本第一行</li>
+<li><code>::selection</code>为被选中文本区域设置样式[通常设置color和background-color]</li>
+</ul>
+<h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><p><strong><code>rgba()</code></strong></p>
+<ul>
+<li>Red（红色） </li>
+<li>Green（绿色）</li>
+<li>Blue（蓝色）</li>
+<li>Alpha的色彩空间    </li>
+<li>R、G、B 取值范围0~255</li>
+<li><code>不具有继承性，即不会影响子元素的透明度</code></li>
+</ul>
+<p><strong><code>hsla()</code></strong></p>
+<ul>
+<li>H 色调 取值范围0~360  </li>
+<li>S 饱和度 取值范围0%~100%  </li>
+<li>L 亮度 取值范围0%~100%  </li>
+<li>A 透明度 取值范围0~1</li>
+</ul>
+<p><strong><code>transparent</code></strong></p>
+<ul>
+<li>不可调节透明度，始终完全透明</li>
+</ul>
+<p><strong><code>opacity</code></strong></p>
+<ul>
+<li>可调节透明度，但会有继承问题，不好解决</li>
+</ul>
+<h3 id="shadow（文本阴影）"><a href="#shadow（文本阴影）" class="headerlink" title="shadow（文本阴影）"></a>shadow（文本阴影）</h3><ul>
+<li>四个值、【可写多个，并列书写】</li>
+<li><code>text-shadow: 1px 1px 1px #aaa, 1px 1px 1px #aaa;</code><ul>
+<li>1、水平偏移量 正值向右 负值向左；</li>
+<li>2、垂直偏移量 正值向下 负值向上；</li>
+<li>3、模糊度是不能为负值</li>
+<li>4、字体颜色</li>
+</ul>
+</li>
+</ul>
+<h3 id="盒模型（box-sizing）"><a href="#盒模型（box-sizing）" class="headerlink" title="盒模型（box-sizing）"></a>盒模型（box-sizing）</h3><ul>
+<li><code>content-box:(内容宽度)</code><ul>
+<li>对象的实际宽度等于设置的width值和border、padding之和</li>
+</ul>
+</li>
+<li><code>padding-box:()</code><ul>
+<li>对象的实际宽度就等于设置的width值，即使定义有border和padding也不会改变对象的实际宽度，即 ( Element.width = width )</li>
+</ul>
+</li>
+<li><code>border-box:（边框宽度）</code></li>
+</ul>
+<p><strong>私有化前缀</strong><br>|谷歌 苹果:|    -webkit-|<br>|—|—|<br>|火狐:|-moz-|<br>|IE:|-ms-|<br>|欧鹏:|-o-|</p>
+<h3 id="边框border"><a href="#边框border" class="headerlink" title="边框border"></a>边框border</h3><p><strong>border-radius边框圆角</strong></p>
+<ul>
+<li><code>border-(top/bottom/left/right)-radius:</code>水平半径 垂直半径;</li>
+<li><code>border-radius:水平位置{1,4}/垂直位置{1,4};</code><ul>
+<li>【赋值顺序    左上，右上，右下，左下】</li>
+<li>一个值时：四个角相同</li>
+<li>两个值时：对角(左上，右下)/(右上，左下)</li>
+<li>三个值时：左上，右上和左下，右下</li>
+<li>四个值时：左上，右上，右下，左下</li>
+</ul>
+</li>
+</ul>
+<p><strong>border-shadow边框阴影</strong></p>
+<ul>
+<li>border-shadow:<ul>
+<li>水平位移</li>
+<li>垂直位移</li>
+<li>模糊程度(不能为负值)</li>
+<li>阴影大小(可省略)</li>
+<li>阴影颜色</li>
+<li>内阴影(inset)/外阴影（outset）[默认值，不写];</li>
+<li><code>box-shadow: 5px 5px 27px red, -5px -5px 27px green;</code><ul>
+<li>可设置多重阴影，用逗号隔开</li>
+</ul>
+</li>
+<li>设置边框阴影不会改变盒子的大小，也不会影响其兄弟元素的布局</li>
+</ul>
+</li>
+</ul>
+<p><strong>border-image边框图片</strong> </p>
+<ul>
+<li><code>border-image-source: url();</code>    图片地址</li>
+<li><code>border-image-slice:;</code>        参见尺寸[不带单位]</li>
+<li><code>border-image-width:;</code>        边框宽度</li>
+<li><code>border-image-repeat:;</code>        边框图片平铺<ul>
+<li><code>repeate</code>[单纯平铺,多余部分会被“裁切”而不能完整显示]</li>
+<li><code>round</code>[会自动调整尺寸，完整显示边框图片]</li>
+<li><code>stretch</code>[拉伸]</li>
+</ul>
+</li>
+<li><code>裁剪顺序：上 右 下 左</code></li>
+</ul>
+<h3 id="背景background"><a href="#背景background" class="headerlink" title="背景background"></a>背景background</h3><ul>
+<li><code>background-size</code>图片尺寸<ul>
+<li>值可以是具体值</li>
+<li>或者百分比</li>
+<li><code>cover（覆盖）</code>    图片会完全覆盖盒子，有可能显示不完全，缩放是等比例的</li>
+<li><code>contain（包含）</code>    背景图片会完全等比例显示在盒子中，有可能不会铺满</li>
+</ul>
+</li>
+<li><code>background-origin</code>图片左上角开始平铺的位置（背景原点）<ul>
+<li><code>background-origin: content-box / border-box / padding-box;</code></li>
+</ul>
+</li>
+<li><code>background-clip</code>图片裁剪位置<ul>
+<li><code>background-clip:content-box / border-box / padding-box;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="渐变background-image"><a href="#渐变background-image" class="headerlink" title="渐变background-image"></a>渐变background-image</h3><p><strong>background-image:方向、开始颜色、结束颜色</strong></p>
+<ul>
+<li>方向    to right/left/top/bottom    /角度（deg）</li>
+<li><strong>线性渐变：</strong><ul>
+<li><code>linear-gradient(方向, 开始色，结束色, 开始色，结束色, 开始色，结束色 ...);</code></li>
+<li>例：<code>linear-gradient(135deg, #000 0%, #000 25%, #fff 25%, #fff 50%, #000 50%, #000 75%, #fff 75%, #fff 100% );</code></li>
+</ul>
+</li>
+<li><strong>径向渐变</strong>【从中心点向四周渐变扩散】：<code>radial-gradient();</code><ul>
+<li></li>
+<li>例：<code>background-image: radial-gradient(120px 100px at 0 0 yellow green);</code></li>
+<li>其辐射半径（横轴120px、纵轴100px）,圆心点为左上角，起始色yellow，终止色green</li>
+<li>辐射范围即圆半径</li>
+<li>中心点 即圆的中心</li>
+<li>渐变起始色</li>
+<li>渐变终止色</li>
+<li>渐变范围</li>
+</ul>
+</li>
+</ul>
+<h3 id="过渡transition【加给发生变化的标签本身】"><a href="#过渡transition【加给发生变化的标签本身】" class="headerlink" title="过渡transition【加给发生变化的标签本身】"></a>过渡transition【加给发生变化的标签本身】</h3><p><strong><code>transition:param1 param2</code></strong></p>
+<ul>
+<li><code>transition-property</code>    设置过渡属性</li>
+<li><code>transition-duration</code>    设置过渡时间 用来控制速度        linear(匀速)    ease-in (加速)</li>
+<li><code>transition-timing-function</code>    设置过渡速度</li>
+<li><code>transition-delay</code>设置过渡延时  延迟设置的时间后再执行动画</li>
+</ul>
+<h3 id="2D变换"><a href="#2D变换" class="headerlink" title="2D变换"></a>2D变换</h3><p><strong><code>transform:(x, y);</code>移动</strong></p>
+<ul>
+<li>移动位置相当于自身原来位置</li>
+<li>y轴正方向朝下，除了可以像素值，也可以是百分比，相对于自身的宽度或高度<code>transform:(50%, 50%);</code></li>
+</ul>
+<p><strong><code>scale(x,y);</code>缩放</strong></p>
+<ul>
+<li>可以对元素进行水平和垂直方向的缩放，x、y的取值可为小数</li>
+<li>只有一个值，等比例缩放    </li>
+<li>大于1：放大    小于1：缩小</li>
+</ul>
+<p><strong><code>rotate(deg);</code>旋转</strong></p>
+<ul>
+<li>可以对元素进行旋转，正值为顺时针，负值为逆时针</li>
+<li>当元素旋转以后，坐标轴也跟着发生的转变</li>
+<li>设置旋转并移动，要先设置移动，在旋转</li>
+</ul>
+<p><strong><code>skew(deg,deg);</code>倾斜</strong></p>
+<ul>
+<li>可以使元素按一定的角度进行倾斜，可为负值</li>
+<li>第一个参数对应X轴，第二个参数对应Y轴。</li>
+<li>如果第二个参数未提供，则默认值为0</li>
+</ul>
+<p><strong><code>matrix();</code>矩阵</strong></p>
+<ul>
+<li>把所有的2D转换组合到一起，需要6个参数（了解）</li>
+</ul>
+<p><strong>transform-origin:;调整元素转换的原点</strong></p>
+<p><strong>我们可以同时使用多个转换，其格式为：</strong></p>
+<ul>
+<li><code>transform: translateX/Y/Z( , ) rotateX/Y/Z( , ) scale( , ) ...</code></li>
+<li>其顺序会影响转换的效果</li>
+</ul>
+<h3 id="3D变换"><a href="#3D变换" class="headerlink" title="3D变换"></a>3D变换</h3><p><strong>屏幕三维坐标：</strong></p>
+<ul>
+<li>原点：     左上角为</li>
+<li>X正方向：水平向右</li>
+<li>Y正方向：垂直向下</li>
+<li>Z正方向：垂直屏幕向外</li>
+</ul>
+<p><strong>透视perspective</strong></p>
+<ul>
+<li>要有透视效果，须给可以呈现3D效果的元素的父盒子设置<code>perspective:;</code>和    <code>transform-style: preserve-3d;</code></li>
+<li>透视可以将一个2D平面，在转换的过程当中，呈现3D效果。<code>没有perspective，便“没有”Z轴</code></li>
+<li>perspective  指的是观察者与平面的距离，可以调整. 使具有变换的元素产生透视效果</li>
+<li>perspective    也可以说是元素距离屏幕的距离，<ul>
+<li>值越大，距离屏幕越远，看到的元素越小</li>
+<li>值越小，距离屏幕越近，看到的元素越大</li>
+</ul>
+</li>
+</ul>
+<p><strong><code>backface-visibility: hidden/visibile;</code>（设置背面的盒子是否可见）</strong></p>
+<table>
+<thead>
+<tr>
+<th>绕X轴旋转</th>
+<th>rotateX(deg)</th>
+<th>角度值正为顺，逆为负</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>绕Y轴旋转</td>
+<td>rotateY(deg)</td>
+<td>角度值正为顺，逆为负</td>
+</tr>
+<tr>
+<td>绕Z轴旋转</td>
+<td>rotateZ(deg)</td>
+<td>角度值正为顺，逆为负</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>绕X轴移动</td>
+<td>translateX(px)</td>
+<td>值正为向右，负为向左</td>
+</tr>
+<tr>
+<td>绕X轴移动</td>
+<td>translateY(px)</td>
+<td>值正为向下，负为向上</td>
+</tr>
+<tr>
+<td>绕X轴移动</td>
+<td>translateZ(px)</td>
+<td>值正为向外，负为向里</td>
+</tr>
+</tbody>
+</table>
+<h3 id="动画-keyframes"><a href="#动画-keyframes" class="headerlink" title="动画@keyframes"></a>动画@keyframes</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@keyframes 动画名&#123;</div><div class="line">	from/0%&#123;</div><div class="line">	    动画初始状态（可忽略不写）</div><div class="line">	&#125;</div><div class="line">	to/100%&#123;</div><div class="line">	    动画结束状态</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong><code>animation: 动画名称  一次动画持续时间  延迟时间  执行次数  执行速度  动画逆播  动画完成后状态</code></strong></p>
+<ul>
+<li><code>animation-name:;</code>动画名称</li>
+<li><code>animation-duration:;</code>动画持续时间</li>
+<li><code>animation-delay:;</code>动画延时</li>
+<li><code>animation-iteration-count</code>动画执行次数(数字n)，inifinate(无限)等</li>
+<li><code>animation-timing-function:;</code>动画执行速度    linear(线性)、ease-in-out(默认)、step()【步数，分几步执行动画】等</li>
+<li><code>animation-direction</code>动画逆播normal(正常 默认)，alternate(反向)等</li>
+<li><code>animation-fill-mode</code>动画执行完毕后状态，forwards(保持动画结束后状态)、backwards(保持动画开始时的状态)</li>
+<li><strong><code>animation-play-state: paused|running;</code>规定动画正在<code>暂停(paused)</code>还是<code>运行(running)</code></strong></li>
+</ul>
+<h3 id="多列布局"><a href="#多列布局" class="headerlink" title="多列布局"></a>多列布局</h3><ul>
+<li><code>column-count:</code>分几列</li>
+<li><code>column-width:</code> 列宽</li>
+<li><code>column-gap:</code>列间距</li>
+<li>c<code>olumn-rule</code>设置列之间的边线</li>
+<li><code>column-span: all;</code>  设置标题后面的列也会跟着和第一列对齐</li>
+</ul>
+<h3 id="伸缩布局display-flex"><a href="#伸缩布局display-flex" class="headerlink" title="伸缩布局display:flex;"></a>伸缩布局display:flex;</h3><ul>
+<li>将对象作为弹性伸缩盒显示(给父元素设置弹性伸缩布局样式后，再给子元素设置伸缩样式)</li>
+<li><p><code>flex-direction</code>排列方式【调整主轴方向（默认为水平方向）】</p>
+<ul>
+<li><code>flex-direction:        row | row-reverse | column | column-reverse;</code><ul>
+<li>row(默认值)    横向从左到右排列（左对齐）</li>
+<li>row-reverse    横向从右到左排列（右对齐）</li>
+<li>column        纵向从上到下排列（顶对齐）</li>
+<li>column-reverse    纵向从下到上排列（低对齐）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>justify-content</code>调整主轴对齐</p>
+<ul>
+<li><code>justify-content:    flex-start | flex-end | center | space-between | space-around;</code><ul>
+<li>flex-start(默认值)    横向左对齐(弹性盒子元素将向行起始位置对齐)</li>
+<li>flex-end        横向右对齐(弹性盒子元素将向行结束位置对齐)</li>
+<li>center    居中对齐，距左右边距相等(弹性盒子元素将向行中间位置对齐)</li>
+<li>space-between        两侧盒子分别向两边靠拢，中间元素平局分布在行内<ul>
+<li>(弹性盒子元素会平均地分布在行里,    第一个元素的边界与行的主起始位置的边界对齐，同时最后一个元素的边界与行的主结束位置的边距对齐，而剩余的伸缩盒项目则平均分布，并确保两两之间的空白空间相等)</li>
+</ul>
+</li>
+<li>space-around        平均分布(两端保留子元素与子元素之间间距大小的一半<ul>
+<li>伸缩盒项目则平均分布，并确保两两之间的空白空间相等，同时第一个元素前的空间以及最后一个元素后的空间为其他空白空间的一半)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>align-items</code>    调整侧轴对齐</p>
+</li>
+<li><code>flex-wrap</code>    控制是否换行<ul>
+<li><code>nowrap( 默认不换行)| wrap(换行)| wrap-reverse(反转wrap排列)</code></li>
+</ul>
+</li>
+<li><code>flex-flow</code>是flex-direction、flex-wrap的简写形式</li>
+<li><code>flex</code>        控制子项目的缩放比例</li>
+<li><code>order:;(默认为0)</code>用整数值来定义排列顺序，数值越小的排的越靠前。可以为负值</li>
+</ul>
+<h3 id="WEB字体"><a href="#WEB字体" class="headerlink" title="WEB字体"></a>WEB字体</h3><p><strong>字体格式</strong></p>
+<ul>
+<li>TureTpe(.ttf)格式</li>
+<li>OpenType(.otf)格式</li>
+<li>Web Open Font Format(.woff)格式</li>
+<li>Embedded Open Type(.eot)格式</li>
+<li>SVG(.svg)格式</li>
+</ul>
+<p><strong>字体图标</strong></p>
+<ul>
+<li>当图标字体编码写在伪元素中时，编码前面的&amp;#x要换成\</li>
+<li>(例：【<code>&amp;#xe605;</code>】在一般形式中直接使用，如果用在<code>::after/::before</code>中时，形式为【<code>content:&quot;\e605&quot;</code>】)</li>
+<li>优点：<ul>
+<li>1、将所有图标打包成字体库，减少请求；</li>
+<li>2、具有矢量性，可保证清晰度；</li>
+<li>3、使用灵活，便于维护</li>
+</ul>
+</li>
+</ul>
+<h3 id="拖拽"><a href="#拖拽" class="headerlink" title="拖拽"></a>拖拽</h3><ul>
+<li><code>draggable:true/false;(默认为false)</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;div draggable=<span class="string">"true"</span>&gt;</div><div class="line"></div><div class="line"><span class="comment">/*整个拖拽拖成都会调用，会调用很多次.*/</span></div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">"div"</span>).ondrag = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"整个拖拽过程都会调用"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*在拖拽开始的时候调用*/</span></div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">"div"</span>).ondragstart = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"拖拽开始的时候调用."</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">"div"</span>).ondragleave = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"离开目标元素的时候调用"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">"div"</span>).ondragend = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"拖拽结束的时候调用."</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="历史纪录"><a href="#历史纪录" class="headerlink" title="历史纪录"></a>历史纪录</h3><ul>
+<li><code>window.history.back();</code>        跳转到上一页</li>
+<li><code>window.history.forward();</code>    跳转到下一页</li>
+<li><code>window.history.go(数值);</code>    跳转到第几页(可取负数)<strong>【后退为负，前进为正】</strong></li>
+</ul>
+<h3 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">window.navigator.geolocation</div><div class="line"></div><div class="line">navigator.getCurrentPosition(successCallback, errorCallback, options) 获取当前地理信息</div><div class="line">/*-------------------------------------------------------*/</div><div class="line">if (window.navigator.geolocation) &#123;</div><div class="line">	navigator.geolocation.getCurrentPosition(successCallback, errorCallback);</div><div class="line">&#125; else &#123;</div><div class="line">	alert(&quot;你的设备不支持定位&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function successCallback(position) &#123;//当成功获取地理信息后会调用successCallback并返回一个包含位置信息的对象position</div><div class="line">	console.log(&quot;你的设备支持定位&quot;);</div><div class="line">	var wd = position.coords.latitude;//纬度</div><div class="line">	var jd = position.coords.longitude;//经度</div><div class="line">	console.log(wd);</div><div class="line">	console.log(jd);</div><div class="line">&#125;</div><div class="line">function errorCallback(position) &#123;//当获取地理信息失败后，会调用errorCallback，并返回错误信息error</div><div class="line">	alert(&quot;您的设备不支持地理定位&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="WEB存储"><a href="#WEB存储" class="headerlink" title="WEB存储"></a>WEB存储</h3><p><strong>sessionStorage[会话存储]    </strong></p>
+<ul>
+<li>5M 存在闪存    关闭页面 数据消失</li>
+<li>【<code>window.sessionStorage</code>】</li>
+</ul>
+<p><strong>localStorage    [本地存储]</strong></p>
+<ul>
+<li>20M 存在硬盘    断电不丢失[除非手动删除] 可多页共享</li>
+<li>【<code>window.localStorage</code>】</li>
+</ul>
+<p><strong>存储数据：</strong></p>
+<ul>
+<li><code>setItem(&quot;key&quot;,要存储的内容);</code></li>
+</ul>
+<p><strong>获取数据：</strong></p>
+<ul>
+<li><code>getItem(&quot;key&quot;);</code></li>
+</ul>
+<p><strong>更新数据：</strong></p>
+<ul>
+<li><code>setItem(&quot;key&quot;,要更新的内容);</code></li>
+<li>如果key原来有值了，更新后，原来的值被覆盖</li>
+</ul>
+<p><strong>删除数据：</strong></p>
+<ul>
+<li><code>removeItem(&quot;key&quot;);</code></li>
+<li>一次删除一个数据</li>
+</ul>
+<p><strong>清空数据：</strong></p>
+<ul>
+<li><code>clear();</code></li>
+<li>清空所有数据</li>
+</ul>
+<h3 id="全屏显示"><a href="#全屏显示" class="headerlink" title="全屏显示"></a>全屏显示</h3><p><strong>w3c：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">requestFullscreen();	开启全屏</div><div class="line">cancleFullscreen();		关闭全屏</div></pre></td></tr></table></figure></p>
+<p><strong>webkit:(google)</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">webkitRequestFullScreen	开启全屏</div><div class="line">webkitCancleFullScreen	关闭全屏</div></pre></td></tr></table></figure></p>
+<p><strong>moz:(firefox)</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mozRequestFullScreen	开启全屏</div><div class="line">mozCancleFullScreen		关闭全屏</div></pre></td></tr></table></figure></p>
+<p><strong>判断是否支持全屏</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var docElm = document.documentElement;</div><div class="line">if (docElm.requestFullscreen) &#123;</div><div class="line">	docElm.requestFullscreen();</div><div class="line">&#125;</div><div class="line">else if (docElm.mozRequestFullScreen) &#123;</div><div class="line">	docElm.mozRequestFullScreen();</div><div class="line">&#125;</div><div class="line">else if (docElm.webkitRequestFullScreen) &#123;</div><div class="line">	docElm.webkitRequestFullScreen();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>全屏伪类:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">:full-screen .box &#123;&#125;</div><div class="line">:-webkit-full-screen &#123;&#125;</div><div class="line">:moz-full-screen &#123;&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="网络状态【当网线断开，链接时触发】"><a href="#网络状态【当网线断开，链接时触发】" class="headerlink" title="网络状态【当网线断开，链接时触发】"></a>网络状态【<code>当网线断开，链接时触发</code>】</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">window.addEventListener(&apos;online&apos;,function()&#123;</div><div class="line">	alert(&apos;网络建立链接&apos;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">window.addEventListener(&quot;offline&quot;,function()&#123;</div><div class="line">	alert(&quot;网络断开链接&quot;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="应用缓存"><a href="#应用缓存" class="headerlink" title="应用缓存"></a>应用缓存</h3><blockquote>
+<p>我们创建了一个名为demo.appcache的文件，然后在需要应用缓存在页面的根元素(html标签内)添加属性<code>&lt;html manifest=&quot;demo.appcache&quot;&gt;</code>，路径要保证正确</p>
+</blockquote>
+<p><strong>manifest文件格式</strong></p>
+<ul>
+<li>1、顶行写CACHE  MANIFEST</li>
+<li>2、CACHE: 换下一行写 指定我们需要缓存的静态资源，如.css、image、js等</li>
+<li>3、NETWORK: 换下一行写 指定需要在线访问的资源，可使用通配符</li>
+<li>4、FALLBACK:如果当前页面无法访问时回退到某一个页面(回退;  后退) 换行 当被缓存的文件找不到时的备用资源</li>
+<li><code>#</code>表示注释</li>
+</ul>
+<h3 id="过渡结束事件"><a href="#过渡结束事件" class="headerlink" title="过渡结束事件"></a>过渡结束事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">TransitionEnd</div><div class="line">webkitTransitionEnd</div><div class="line"></div><div class="line">/*--------------------------------------------------------*/</div><div class="line">box.addEventListener(&quot;transitionEnd&quot;, function () &#123;</div><div class="line">        alert(&quot;事件结束&quot;);</div><div class="line">&#125;);</div><div class="line">box.addEventListener(&quot;webkitTransitionEnd&quot;, function () &#123;</div><div class="line">        alert(&quot;事件结束&quot;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="css3滤镜"><a href="#css3滤镜" class="headerlink" title="css3滤镜"></a>css3滤镜</h3><table>
+<thead>
+<tr>
+<th>grayscale</th>
+<th>灰度 （默认值：100％）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sepia</td>
+<td>褐色（默认值：100％）</td>
+</tr>
+<tr>
+<td>saturate</td>
+<td>饱和度（默认值：100％）</td>
+</tr>
+<tr>
+<td>hue-rotate</td>
+<td>色相旋转(默认值：0deg）</td>
+</tr>
+<tr>
+<td>invert</td>
+<td>反色（默认值：100％）</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>透明度（默认值：100％）</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>亮度（默认值：100％）</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>对比度（默认值：100％）</td>
+</tr>
+<tr>
+<td>blur</td>
+<td>模糊（默认值：0）</td>
+</tr>
+<tr>
+<td>drop-shadow</td>
+<td>阴影  -webkit-filter:drop-shadow(5px 5px 5px #ccc);</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">.filter1&#123;</div><div class="line">            -webkit-filter:grayscale(0.8);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">.filter2&#123;</div><div class="line">            -webkit-filter:sepia(0.8);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.filter3&#123;</div><div class="line">            -webkit-filter:saturate(0.4);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.filter4&#123;</div><div class="line">            -webkit-filter:hue-rotate(90deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.filter5&#123;</div><div class="line">            -webkit-filter:invert(0.8);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.filter6&#123;</div><div class="line">            -webkit-filter:opacity(0.4);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.filter7&#123;</div><div class="line">            -webkit-filter:brightness(0.5);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.filter8&#123;</div><div class="line">            -webkit-filter:contrast(30);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.filter9&#123;</div><div class="line">            -webkit-filter:blur(4px);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.filter10&#123;</div><div class="line">              -webkit-filter:drop-shadow(-20px -20px 30px red );</div><div class="line">&#125;</div><div class="line"></div><div class="line">.filter11&#123;</div><div class="line">            -webkit-filter:none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/HTML/">HTML</a>
+  </div>
+
+        
+  <div class="tags">
+    <a href="/tags/HTML5/">HTML5</a>
+  </div>
+
+        <div class = "counter">
+  <span id="busuanzi_container_page_pv" style="display:none">
+      总访问&nbsp<span id="busuanzi_value_page_pv"></span>&nbsp次
+  </span>
+</div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+  
+<section id = "relate">
+	
+                <div id="null"></div>
+	
+</section>
+
+
+  
+    <section id="comment">
+    <!--   <h1 class="title">留言</h1> -->
+    
+    
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="2016/03/29/H5C3/" data-title="HTML5" data-url="http://yoursite.com/2016/03/29/H5C3/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"lupeng-test"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+          </script>
+        <!-- 多说公共JS代码 end -->
+
+      
+    </section>
+
+
+
+
+</div></div>
+      <aside id="sidebar" class="alignright">
+  
+<div class="widget tag">
+  <h3 class="title" id="categories">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">5</span></li></ul> 
+</div>
+ 
+
+
+  <!--
+<div class="widget tag">
+  <h3 class="title">微信公众账号</h3>
+    <ul class="entry">
+      <img src="/img/default/qrcode.jpg" alt="欢迎关注，该账号供个人学习使用，偶尔做一些开发尝试，更新频率较低。" style= "width: 100%">
+    </ul>
+</div>-->
+
+
+  <div class="widget tag">
+  <h3 class="title">日历云</h3>
+  <div id="calendar"></div>
+</div>
+
+
+  
+<div class="widget">
+  <h3 class="title">最新评论</h3>
+  	<!-- 多说最新评论 start -->
+	<div class="ds-recent-comments ds-recent-user" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+	<!-- 多说最新评论 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lupeng-test"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+		</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+  
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a>
+  </div>
+</div>
+
+
+  
+  <div class="widget tag">
+    <h3 class="title">归档</h3>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">9</span></li></ul>
+  </div>
+
+</aside>
+      <div class="clearfix"></div>
+    </div>
+  
+  <footer id="footer"><div class="footer-content inner">
+  <div class="alignleft">
+  
+    &copy; 2017 John Doe
+    
+  </div>
+  <div class="alignright">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme
+    <a href="https://github.com/pengloo53/Hexo-theme-light_cn">light_cn</a>
+  </div>
+  
+  <div class="visit">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </div>
+  
+  <div class="clearfix"></div>
+</div></footer>
+  <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<!-- calendar widget -->
+
+  <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script type="text/javascript">
+    $(function() {
+    
+      $('#calendar').aCalendar('zh-CN',{single:undefined, root:'calendar'});
+    
+    });
+  </script>
+
+
+<!-- 『不蒜子』计数服务 -->
+<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- wumii关联推荐 -->
+<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+
+<!-- 百度推荐 -->
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?9acf0cedd48dc53be256ede5a98c2aaa";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<!-- 返回顶部 -->
+<div id="toTop">
+	<a href="#">▲</a>
+	<a href="#footer">▼</a>
+</div>
+
+<!-- 站内搜索-Swiftype -->
+<!-- <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','sC-iNFrvTTNtiXEVNwo1','2.0.0');
+</script> -->
+
+<!-- fancybox -->
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

@@ -3,21 +3,13 @@
 <head>
   <meta charset="utf-8">
   
-  <title>闭包(函数) | Hexo</title>
+  <title>load | Hexo</title>
   <meta name="author" content="John Doe">
-  
-  <meta name="description" content="[TOC]
-
-1、广义闭包
-可以访问 非自身的变量 的 函数从一种角度说所有函数都是闭包另一种角度说只有使用了非自身变量的函数，才是闭包
-2、狭义闭包
-可以访问**非自身**的**局部变量**的**函数**(*面试说*)一种说法，函数内的函数才是闭包另一种说法，使用了非自身局部变量的函数才是闭包
-特">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="闭包(函数)"/>
+  
   <meta property="og:site_name" content="Hexo"/>
 
   
@@ -83,143 +75,36 @@
 </header>
   
     <div id="content" class="inner">
-      <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-07-10T03:26:37.000Z"><a href="/2016/07/10/闭包(函数)/">2016-07-10</a></time>
-        
-  
-    <h1 class="title">闭包(函数)</h1>
-  
+      <div id="main-col" class="alignleft"><div id="wrapper">
 
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#生命周期"><span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境"><span class="toc-text">环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#闭包应用场景"><span class="toc-text">闭包应用场景</span></a></li></ol>
-    </div>
-
-        <p>[TOC]</p>
-<blockquote>
-<p>1、广义闭包</p>
-<p>可以访问 <strong>非自身的变量</strong> 的 <strong>函数</strong><br>从一种角度说所有函数都是闭包<br>另一种角度说只有使用了非自身变量的函数，才是闭包</p>
-<p>2、狭义闭包</p>
-<p><code>可以访问**非自身**的**局部变量**的**函数**(*面试说*)</code><br>一种说法，<strong>函数内的函数</strong>才是闭包<br>另一种说法，使用了非自身<strong>局部变量</strong>的函数才是闭包</p>
-<p><strong>特点：</strong><br>可以通过闭包<strong>在任何地方</strong>操作<strong>局部变量</strong></p>
-</blockquote>
-<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><blockquote>
-<p>一个生物，生命从开始到结束，中间存活的过程叫生命周期</p>
-</blockquote>
-<ul>
-<li><p><strong>变量的生命周期：</strong></p>
-<blockquote>
-<p>一个变量，从<strong>定义</strong>开始，到<strong>释放</strong>结束，<strong>中间存活的过程</strong>叫变量的生命周期</p>
-</blockquote>
-</li>
-<li><p><strong>全局变量的生命周期：</strong></p>
-<blockquote>
-<p>从<strong>定义</strong>开始，到<strong>页面被卸载结束</strong>，就是全局变量的生命周期</p>
-</blockquote>
-</li>
-<li><p><strong>局部变量的生命周期：</strong></p>
-<blockquote>
-<p> 从<strong>定义</strong>开始，到<strong>函数执行完毕结束</strong>，就是局部变量的生命周期<br> <strong>但是，</strong>可以通过闭包实现影响局部变量的生命周期，使生命周期和闭包一样长</p>
-<p> <strong>问题：</strong><br> 如果一个变量一直存储着一个闭包函数，那么js引擎无法得知将来是否还会调用这个函数，所以就会造成这个函数不会被释放，相应的这个函数占用的局部变量也不会被释放，这就造成了内存浪费<br> 如果确定以后不会再使用这个函数了，最好手动将存储这个函数的变量赋值为 <code>null</code></p>
-</blockquote>
-</li>
-</ul>
-<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><blockquote>
-<p>一个东西所依赖东西，就可以认为是它的环境</p>
-</blockquote>
-<ul>
-<li><strong>执行环境：</strong><blockquote>
-<p>代码执行时所依赖的环境<br><strong>函数被调用一次，就会产生一个执行环境</strong></p>
-</blockquote>
-</li>
-</ul>
-<h3 id="闭包应用场景"><a href="#闭包应用场景" class="headerlink" title="闭包应用场景"></a>闭包应用场景</h3><ul>
-<li>操作私有属性(局部变量)<ul>
-<li>为了防止其他地方对该属性随意修改的隐患</li>
-</ul>
-</li>
-<li>变量的状态：<ul>
-<li>指变量不同时期所存储的值</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-  
-  <div class="categories">
-    <a href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-        
+<h2 class="archive-title fa-tag">load</h2>
+<div class="archive">
+   
+    <article class="post">
+      <div class="post-content">
+        <header>
+          <div class="icon"></div>
+          <time datetime="2016-08-06T03:42:32.000Z"><a href="/2016/08/06/jquery中load的实现原理/">2016-08-06</a></time>
+          
+            <h1 class="title"><a href="/2016/08/06/jquery中load的实现原理/">jquery中load的实现原理</a></h1>
+          
+        </header>
+        <div class='archive-tags'>
+          
   <div class="tags">
-    <a href="/tags/闭包/">闭包</a>
+    <a href="/tags/load/">load</a>
   </div>
 
-        <div class = "counter">
-  <span id="busuanzi_container_page_pv" style="display:none">
-      总访问&nbsp<span id="busuanzi_value_page_pv"></span>&nbsp次
-  </span>
+        </div>
+      </div>
+    </article>
+    
 </div>
-        
-  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
-  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
+<nav id="pagination">
   
-<section id = "relate">
-	
-                <div id="快乐人生ddd"></div>
-	
-</section>
-
-
   
-    <section id="comment">
-    <!--   <h1 class="title">留言</h1> -->
-    
-    
-        <!-- 多说评论框 start -->
-        <div class="ds-thread" data-thread-key="2016/07/10/闭包(函数)/" data-title="闭包(函数)" data-url="http://yoursite.com/2016/07/10/闭包(函数)/"></div>
-        <!-- 多说评论框 end -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:"lupeng-test"};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0] 
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-          </script>
-        <!-- 多说公共JS代码 end -->
-
-      
-    </section>
-
-
-
-
-</div></div>
+  <div class="clearfix"></div>
+</nav></div></div>
       <aside id="sidebar" class="alignright">
   
 <div class="widget tag">

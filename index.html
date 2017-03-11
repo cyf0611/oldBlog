@@ -53,20 +53,20 @@
 	<div class='header-nav-content inner'>
 		<div id="main-nav" class="alignleft">
 		    		
-		    		  <a href="/"><i class="fa fa-home"></i>Home</a>
+		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
 		    		
-		    		  <a href="/archives"><i class="fa fa-archive"></i>Archives</a>
+		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
 		    		
-		    		  <a href=""><i class="fa fa-book"></i>Books</a>
+		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
 		    		
-		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>About</a>
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>我的简历</a>
 		    		
 		</div>
 		<div id="sub-nav" class="alignright">
 		    
-		      <a href=""><i class="fa fa-rss"></i>Rss</a>
+		      <a href=""><i class="fa fa-rss"></i>订阅</a>
 		    
-		      <a href=""><i class="fa fa-question-circle"></i>Customization</a>
+		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
 		    
 		</div>
 	</div>
@@ -1409,10 +1409,10 @@
     <header>
         <div class="icon"></div>
         
-        <time datetime="2016-07-23T02:17:23.000Z"><a href="/2016/07/23/面向对象/">2016-07-23</a></time>
+        <time datetime="2016-08-06T03:42:32.000Z"><a href="/2016/08/06/jquery中load的实现原理/">2016-08-06</a></time>
         
   
-    <h1 class="title"><a href="/2016/07/23/面向对象/">面向对象</a></h1>
+    <h1 class="title"><a href="/2016/08/06/jquery中load的实现原理/">jquery中load的实现原理</a></h1>
   
 
     </header>
@@ -1421,154 +1421,46 @@
       
         
     <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、什么是面向对象"><span class="toc-text">1、什么是面向对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、与面向过程的区别"><span class="toc-text">2、与面向过程的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、为什么要面向对象"><span class="toc-text">3、为什么要面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象的基本模型"><span class="toc-text">面向对象的基本模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在js中，什么是对象？"><span class="toc-text">在js中，什么是对象？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#new-构造函数-创建对象的过程（js自动完成）"><span class="toc-text">new 构造函数 创建对象的过程（js自动完成）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#完整四步【JS自动完成】"><span class="toc-text">完整四步【JS自动完成】</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工厂函数与构造函数的区别"><span class="toc-text">工厂函数与构造函数的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#★由构造函数所创建出的对象的类型的名字-类型-，就是此构造函数的名字"><span class="toc-text">★由构造函数所创建出的对象的类型的名字(类型)，就是此构造函数的名字</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区别"><span class="toc-text">区别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象的概念："><span class="toc-text">面向对象的概念：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#js对面向对象编程思想提供的支持："><span class="toc-text">js对面向对象编程思想提供的支持：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类的概念："><span class="toc-text">类的概念：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例"><span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#实例和对象的关系"><span class="toc-text">实例和对象的关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#原型-解决方案的称呼"><span class="toc-text">原型(解决方案的称呼)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#prototype"><span class="toc-text">prototype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#proto"><span class="toc-text">__proto__</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在js中，有两个属性都会指向原型对象"><span class="toc-text">在js中，有两个属性都会指向原型对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象的属性查找规则"><span class="toc-text">对象的属性查找规则</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构造函数、实例，原型"><span class="toc-text">构造函数、实例，原型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#只有函数才拥有prototype属性"><span class="toc-text">只有函数才拥有prototype属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#任何对象都有-proto-属性"><span class="toc-text">任何对象都有__proto__属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指向"><span class="toc-text">指向</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js面向对象三大特征："><span class="toc-text">js面向对象三大特征：</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#插件"><span class="toc-text">插件</span></a></li></ol>
     </div>
 
-        <h2 id="1、什么是面向对象"><a href="#1、什么是面向对象" class="headerlink" title="1、什么是面向对象"></a>1、什么是面向对象</h2><ul>
-<li><strong>对象：</strong><ul>
-<li><strong>你所想用编程语言来描述的 <code>事物</code></strong></li>
-</ul>
+        <p>jq 中的使用方法</p>
+<p>$( document ).ready( fn ); </p>
+<p>$(function () {</p>
+<p>})</p>
+<p>在 jq 中, 并不是将函数加载到 window.onload 事件上. 因为在 onload 事件中写代码一定要<br>保证页面中所有的元素都加载完毕. 在 jq 中认为这样的体验不好, 因此做了特殊处理. 只要是 dom<br>结构加载完, 就可以触发事件.</p>
+<p>我们接下来将 行为绑定在 window.onload 中</p>
+<p>init: function ( selector ) {<br>    …<br>    …<br>    if ( typeof selector == ‘function’ ) {<br>        window.onload = selector;<br>    }<br>}</p>
+<p>我们需要添加多个事件, 就要调用多次, 就是调用多个函数</p>
+<ol>
+<li><p>函数技巧<br> 首先增加 onload 的时候 判断一下 是否已经 绑定过 load 事件了, 如果没有绑定过直接赋值<br> 如果绑定过, 那么就应该将已经绑定的 函数 与 新的 这个 函数组合在一起, 要求是触发的时候<br> 一起触发, 按照先后顺序执行即可.</p>
+<p> if ( typeof window.onload === ‘function’ ) {</p>
+<pre><code>// 绑定过
+var fn = window.onload;
+window.onload = function () {
+    fn();
+    selecotr();
+};
+</code></pre><p> } else {</p>
+<pre><code>// 未绑定
+window.onload = selector;
+</code></pre><p> }</p>
 </li>
-<li>对面向过程的封装。函数是一个封装，面向对象是比函数封装更高级的封装</li>
-<li>利用对象解决问题</li>
-</ul>
-<h2 id="2、与面向过程的区别"><a href="#2、与面向过程的区别" class="headerlink" title="2、与面向过程的区别"></a>2、与面向过程的区别</h2><ul>
-<li>面向对象封装了面向过程</li>
-</ul>
-<h2 id="3、为什么要面向对象"><a href="#3、为什么要面向对象" class="headerlink" title="3、为什么要面向对象"></a>3、为什么要面向对象</h2><ul>
-<li>1、为了方便编写代码</li>
-<li>2、便于管理代码</li>
-</ul>
-<hr>
-<h3 id="面向对象的基本模型"><a href="#面向对象的基本模型" class="headerlink" title="面向对象的基本模型"></a>面向对象的基本模型</h3><ul>
-<li>将数据与功能封装成函数(方法)</li>
-<li>将相关的功能绑定到一起(对象)</li>
-<li>将功能进行分组(模块)</li>
-</ul>
-<h3 id="在js中，什么是对象？"><a href="#在js中，什么是对象？" class="headerlink" title="在js中，什么是对象？"></a>在js中，什么是对象？</h3><ul>
-<li>在js中所有键值对的集合，都是对象。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'sbc'</span>;</div><div class="line">str.toString();</div><div class="line"><span class="comment">/*</span></div><div class="line">* 上诉代码执行时内部干了如下事情：</div><div class="line">* var strObj = new String( str );</div><div class="line">* strObj.toString();</div><div class="line">* strObj = null;</div><div class="line">* */</div></pre></td></tr></table></figure>
+<li><p>数组技巧</p>
+<p> onload = function () {</p>
+<pre><code>I.each( loads, funciton () {
+    this();
+});
+</code></pre><p> };</p>
 </li>
-</ul>
-<h3 id="new-构造函数-创建对象的过程（js自动完成）"><a href="#new-构造函数-创建对象的过程（js自动完成）" class="headerlink" title="new 构造函数 创建对象的过程（js自动完成）"></a>new 构造函数 创建对象的过程（js自动完成）</h3><ul>
-<li><p>1、new 关键字会自动创建一个空对象</p>
-</li>
-<li><p>2、然后会调用构造函数，在调用时让构造函数的内部的this指向新创建出的新对象</p>
-</li>
-<li><p>3、new 关键字会自动返回新对象的地址</p>
-</li>
-</ul>
-<h4 id="完整四步【JS自动完成】"><a href="#完整四步【JS自动完成】" class="headerlink" title="完整四步【JS自动完成】"></a><code>完整四步【JS自动完成】</code></h4><ul>
-<li>1、new关键字会创建出一个新对象(本质就是在内存中开辟了一块空间)</li>
-<li>2、给新对象添加<code>__proto__</code>属性，即<code>新对象.__proto__</code> = <strong>当前</strong><code>构造函数.prototype</code></li>
-<li>3、执行构造函数，执行时构造函数内的this指向新对象</li>
-<li>4、返回新对象的地址</li>
-</ul>
-<h3 id="工厂函数与构造函数的区别"><a href="#工厂函数与构造函数的区别" class="headerlink" title="工厂函数与构造函数的区别"></a>工厂函数与构造函数的区别</h3><ul>
-<li>工厂模式—&gt;把创建对象封装起来</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDog</span>(<span class="params">name, color</span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> dog = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">            dog.name = name;</div><div class="line">            dog.color = color;</div><div class="line">            dog.say = <span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'旺旺'</span>);</div><div class="line">            &#125;;</div><div class="line">            <span class="keyword">return</span> dog;</div><div class="line">        &#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> aLaSiJia = getDog(<span class="string">'阿拉斯加'</span>, <span class="string">'黑白相间'</span>);</div></pre></td></tr></table></figure>
-<ul>
-<li>构造函数<ul>
-<li><code>构造函数只是函数的另外一个称呼，和普通函数无异；</code></li>
-<li>如果一个普通函数，专门是用来配合new关键字创建对象的，那么这个函数就可以称之为构造函数。</li>
-<li><strong>一般默认函数名首字母大写</strong></li>
-</ul>
-</li>
-</ul>
-<h5 id="★由构造函数所创建出的对象的类型的名字-类型-，就是此构造函数的名字"><a href="#★由构造函数所创建出的对象的类型的名字-类型-，就是此构造函数的名字" class="headerlink" title="★由构造函数所创建出的对象的类型的名字(类型)，就是此构造函数的名字"></a>★由构造函数所创建出的对象的类型的名字(类型)，就是此构造函数的名字</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">name, color</span>) </span>&#123;<span class="comment">//</span></div><div class="line">            <span class="keyword">this</span>.name = name;</div><div class="line">            <span class="keyword">this</span>.color = color;</div><div class="line">            <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'旺旺'</span>);</div><div class="line">            &#125;;</div><div class="line">        &#125;</div><div class="line"><span class="keyword">var</span> jinmao = <span class="keyword">new</span> Dog(<span class="string">'金毛'</span>,<span class="string">'黄色'</span>);</div></pre></td></tr></table></figure>
-<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><pre><code>工厂函数把通过构造函数创建对象的过程，进行了封装，也就是说，工厂函数依赖构造函数
-起始都是普通函数，只不过因为他们的作用不用，从而产生了不用的称呼而已
-</code></pre><h3 id="面向对象的概念："><a href="#面向对象的概念：" class="headerlink" title="面向对象的概念："></a>面向对象的概念：</h3><pre><code>利用对象解决问题，本质上就是对 面向过程 的封装。
-面向对象的好处是代码的重复利用，和函数很相似；
-面向对象可以认为是比函数封装更高一层的封装。
-</code></pre><h4 id="js对面向对象编程思想提供的支持："><a href="#js对面向对象编程思想提供的支持：" class="headerlink" title="js对面向对象编程思想提供的支持："></a>js对面向对象编程思想提供的支持：</h4><ul>
-<li>可以编写构造函数，然后利用构造函数构建出各种对象，利用这些对象帮我们解决问题。</li>
-</ul>
-<h3 id="类的概念："><a href="#类的概念：" class="headerlink" title="类的概念："></a>类的概念：</h3><pre><code>类是对一些具有相同特征与特性的对象的抽象描述。
-类可以认为是一个模子或者是模版，通过它可以创建出具有相同特征的对象
-ES6中可以把构造函数看作类
-</code></pre><h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><ul>
-<li>通过<strong>构造函数</strong>创建出来的对象，就叫实例<em>(实际的例子)</em></li>
-<li><strong>构造函数</strong>创建出来实例之后，他们就没有联系了</li>
-</ul>
-<blockquote>
-<p>口头上说，实例指的是直系后代（编程语言中，实例也指后代子孙）</p>
-</blockquote>
-<ul>
-<li><code>实例的类型就是构造函数的名字</code></li>
-</ul>
-<h4 id="实例和对象的关系"><a href="#实例和对象的关系" class="headerlink" title="实例和对象的关系"></a>实例和对象的关系</h4><ul>
-<li>没有可比行，都是对一个东西的称呼和描述，只不过角度不同罢了。</li>
-<li>实例就是一个对象</li>
-</ul>
-<h4 id="原型-解决方案的称呼"><a href="#原型-解决方案的称呼" class="headerlink" title="原型(解决方案的称呼)"></a>原型<em>(解决方案的称呼)</em></h4><ul>
-<li>什么是原型<ul>
-<li>就是js提供的，能够让实例共享某些数据的解决方案</li>
-</ul>
-</li>
-<li><p>如何使用这个解决方案</p>
-<ul>
-<li>每一个<strong>构造函数</strong>在诞生的时候，都会自带一个叫<code>prototype</code>的属性，这个属性存储着一个对象的地址，而实例可以无条件的访问这个对象里面的内容(原型的对象)</li>
-</ul>
-</li>
-<li><p>原型对象里的<code>constructor</code>指向构造函数</p>
-</li>
-<li><p>原型和构造函数通过<code>prototype</code>和<code>constructor</code>联系到了一起</p>
-</li>
-<li><p><strong>目的</strong></p>
-<ul>
-<li>就是为了让实例共享原型里的属性、方法，得到节省内存的目的，和复用代码的作用</li>
-</ul>
-</li>
-</ul>
-<h4 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h4><ul>
-<li><strong>构造函数</strong>有一个<code>prototype</code>属性，实例可以共享里面的东西，而构造函数自身无法访问里面的东西。</li>
-<li><strong>作用：</strong>通过函数new出来的实例，都会继承这个属性所指向的对象</li>
-<li><strong>本质:：</strong>prototype就是为了引导实例的<code>__proto__</code>属性值</li>
-</ul>
-<h4 id="proto"><a href="#proto" class="headerlink" title="__proto__"></a><code>__proto__</code></h4><ul>
-<li>每一个<strong>对象</strong>都有一个<code>__proto__</code>属性</li>
-<li>通过构造函数创建的实例对象，都会带有一个<code>__proto__</code>属性 这个属性的值与构造函数的<code>prototype</code>的属性一致，都存储着同一个对象的<strong>地址</strong></li>
-<li><code>__proto__</code>相当于一个存放着对象地址的属性，所有对象都有这个属性，当我们访问一个属性和方法时，会从自身去找，找不到就去<code>__proto__</code>中找，下一级没有了，再去下一级，直到终点</li>
-</ul>
-<h4 id="在js中，有两个属性都会指向原型对象"><a href="#在js中，有两个属性都会指向原型对象" class="headerlink" title="在js中，有两个属性都会指向原型对象"></a>在js中，有两个属性都会指向原型对象</h4><ul>
-<li>一个是<code>prototype</code>属性，我们称这个属性为<strong>显示原型</strong>(原型属性)；</li>
-<li>一个是<code>__proto__</code>属性，我们称这个属性为<strong>隐式原型</strong>(原型对象)；</li>
-</ul>
-<h4 id="对象的属性查找规则"><a href="#对象的属性查找规则" class="headerlink" title="对象的属性查找规则"></a>对象的属性查找规则</h4><blockquote>
-<p>当访问一个对象的属性或方法时，首先会在对象自己身上找找不到就去顺着<code>__proto__</code>去上一级找，没有再继续顺着<code>__proto__</code>再去上一级找，直到终点</p>
-</blockquote>
-<h3 id="构造函数、实例，原型"><a href="#构造函数、实例，原型" class="headerlink" title="构造函数、实例，原型"></a>构造函数、实例，原型</h3><ul>
-<li>可以通过构造函数的<code>prototype</code>找到原型对象</li>
-<li>可以通过原型对象的<code>constructor</code>找到构造函数</li>
-<li>可以通过实例的<code>__proto__</code>找到原型对象</li>
-</ul>
-<h4 id="只有函数才拥有prototype属性"><a href="#只有函数才拥有prototype属性" class="headerlink" title="只有函数才拥有prototype属性"></a>只有<em>函数</em>才拥有prototype属性</h4><ul>
-<li>因为<code>prototype</code>属性的作用就是为了让实例共享，而只有函数才可以创造出实例，也就是说<code>prototype</code>只有放在函数上才会凸显出它的作用。</li>
-<li>函数也是对象，所以它既有prototype属性，又有<code>__proto__</code>属性；</li>
-<li>只有这一个特例，其他类型的对象都只有<code>__proto__</code>。</li>
-</ul>
-<h4 id="任何对象都有-proto-属性"><a href="#任何对象都有-proto-属性" class="headerlink" title="任何对象都有__proto__属性"></a>任何对象都有<code>__proto__</code>属性</h4><h4 id="指向"><a href="#指向" class="headerlink" title="指向"></a>指向</h4><ul>
-<li>一个变量保存了一个对象的地址，就说这个变量指向这个对象</li>
-</ul>
-<h3 id="js面向对象三大特征："><a href="#js面向对象三大特征：" class="headerlink" title="js面向对象三大特征："></a>js面向对象三大特征：</h3><ul>
-<li><strong>封装</strong><ul>
-<li>把一堆相关性是变量和函数组织到一起，使复杂的东西，变得简单</li>
-</ul>
-</li>
-<li><strong>继承</strong><ul>
-<li>把别人的东西拿过来，成为自己的东西来使用<ul>
-<li>原型继承</li>
-<li>组合式继承</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>多态</strong><ul>
-<li>对象的动态变化</li>
-</ul>
-</li>
-</ul>
+</ol>
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><p>就是 jq 本身没有这个方法, 获得实现这个功能比较麻烦, 获得根本不能实现某个<br>功能. 那么我们写一个 js 文件, 然后通过增加 jq 的方法, 成员属性等工能,<br>让jq 可以完成前面的任务, 那么这个 js 文件就是 jq 插件.</p>
+<p>自己写插件就是让 jq 有某些以前没有的方法, 或属性等</p>
+<p>jQuery.fn.extend({<br>    …<br>});</p>
+<p>jQuery.extend({<br>    …<br>})</p>
+<div><br>    <div><br>        <div></div><br>    </div><br>    <div></div><br></div>
+
+<p>$( ‘div’ ).children( ‘div’ ).append( ‘</p><p>ppp</p>‘ )<p></p>
 
       
     </div>
@@ -1577,7 +1469,7 @@ ES6中可以把构造函数看作类
         
         
         <div class="alignright">
-          <a href="/2016/07/23/面向对象/#comment" class="comment-link">Comments</a>
+          <a href="/2016/08/06/jquery中load的实现原理/#comment" class="comment-link">Comments</a>
         </div>
         
       
@@ -1595,10 +1487,10 @@ ES6中可以把构造函数看作类
     <header>
         <div class="icon"></div>
         
-        <time datetime="2016-07-17T00:05:05.000Z"><a href="/2016/07/17/静态成员和实例成员/">2016-07-17</a></time>
+        <time datetime="2016-08-01T01:39:08.000Z"><a href="/2016/08/01/代理模式/">2016-08-01</a></time>
         
   
-    <h1 class="title"><a href="/2016/07/17/静态成员和实例成员/">静态成员和实例成员</a></h1>
+    <h1 class="title"><a href="/2016/08/01/代理模式/">代理模式</a></h1>
   
 
     </header>
@@ -1607,35 +1499,20 @@ ES6中可以把构造函数看作类
       
         
     <div id="toc">
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代理模式"><span class="toc-text">代理模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在浏览器中"><span class="toc-text">在浏览器中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQ-中的-delegate"><span class="toc-text">jQ 中的 delegate</span></a></li></ol>
     </div>
 
-        <ul>
-<li><p>实例成员</p>
-<ul>
-<li>添加给实例的属性或方法，就叫实例成员，可由实例访问</li>
-<li>类(构造函数)原型上的属性与方法，本意上是提供给实例使用的，所以这里面的属性与方法也可以认为是实例成员</li>
-</ul>
-</li>
-<li><p>静态成员(类成员)</p>
-<ul>
-<li>添加给构造函数(类)自己的属性或方法，就叫 静态成员(类成员)。可由构造函数(类)自己访问</li>
-<li>特点：<ul>
-<li>不需要创建实例就可以通过类调用</li>
-</ul>
-</li>
-<li>什么时候使用静态成员：<ul>
-<li>如果一些属性和类的关联性比较大，可以考虑作为静态属性</li>
-<li>如果一些方法具有通用性可以考虑作为静态方法</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p><strong>一些问题</strong></p>
-<p>1、实例可以直接访问静态成员吗？  不可以<br>2、构造函数(类)可以直接访问实例成员吗？ 不可以<br>3、原型对象里面的成员，原型对象自己可以访问吗？ 可以<br>4、原型对象里面的成员，构造函数(类)可以访问吗？ 不可以<br>5、原型对象里面的成员，实例可以访问吗？ 可以</p>
-</blockquote>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Itcast.each( [ &apos;obclick&apos;, &apos;onload&apos; ], function ( i, v ) &#123;</div><div class="line">    v = v.slice( 2 );</div><div class="line">    Itcast.fn[ v ] = function ( eventFn ) &#123;</div><div class="line">        return this.on( v, eventFn );</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">css: function ( name, value ) &#123;</div><div class="line">    // name 是一个对象</div><div class="line">    return this.each( function () &#123;</div><div class="line">        var that = this;</div><div class="line">        Itcast.each( name, function ( k, v ) &#123;</div><div class="line">            that.style[ k ] = v;</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><p>英文 delegate, 翻译常常称为 代理, 委托.</p>
+<p>所谓的代理模式, 就是想办法规定一个协议, 然后让别人遵守协议, 让别人可以帮你做事情.</p>
+<p>代码:<br>一个对象要做一件事情, 即 对象调用一个方法. 但是该对象自己不做, 让另一个对象去做.<br>当前对象调用一个方法, 就是触发另一个对象调用一个方法. 在代码中模型可以写成:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">o.doSomething = function () &#123;</div><div class="line">    otherObj.doSomething();</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>但是并非一般的对象. 在让另一个对象执行之前需要对其”授权( 注册代理 )”. 这样的好处就是<br>可以利用 “可装配的方式处理我的这个另一个对象”, 就可以实现较为灵活的处理. 代码模型:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var o = &#123;</div><div class="line">    delegate: null,</div><div class="line">    doSomething: function () &#123;</div><div class="line">        if ( this.delegate &amp;&amp; this.delegate.doSomeThing ) &#123;</div><div class="line">            this.delegate.doSomeThing();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 此时 o.delegate 就是可装配的</div><div class="line">o.delegate = &#123;</div><div class="line">    // delegate 可以随意的赋值, 但是必须保证有 doSomeThing 这个方法</div><div class="line">    doSomeThing: function () &#123;</div><div class="line">        // 随意写</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 在代码中可以实现统一调用</div><div class="line">o.doSomeThing(); // 执行结果是什么?</div></pre></td></tr></table></figure>
+<p>此时对象 o.delegate 就是 o 的代理对象.</p>
+<h2 id="在浏览器中"><a href="#在浏览器中" class="headerlink" title="在浏览器中"></a>在浏览器中</h2><p>以 点击事件为例. 在浏览器内部已经调用好事件处理的整套代码结构, 但是预留了一些方法<br>例如<br>    onclick 其实是 代理方法名<br>    click 是 触发的方法名. 手动的触发点击事件.</p>
+<pre><code>form 对象有一个 submit 方法
+</code></pre><h2 id="jQ-中的-delegate"><a href="#jQ-中的-delegate" class="headerlink" title="jQ 中的 delegate"></a>jQ 中的 delegate</h2><p>其实使用 父元素 添加事件, 但是利用冒泡可以监听到是哪一个标签最先触发, 然后执行代码<br>其优点是可以少绑定同样的事件.</p>
 
       
     </div>
@@ -1644,7 +1521,7 @@ ES6中可以把构造函数看作类
         
         
         <div class="alignright">
-          <a href="/2016/07/17/静态成员和实例成员/#comment" class="comment-link">Comments</a>
+          <a href="/2016/08/01/代理模式/#comment" class="comment-link">Comments</a>
         </div>
         
       
@@ -1659,7 +1536,7 @@ ES6中可以把构造函数看作类
 <nav id="pagination">
   
   
-    <a href="/page/2/" class="alignright next">Next</a>
+    <a href="/page/2/" class="alignright next">下一页</a>
   
   <div class="clearfix"></div>
 </nav>
@@ -1667,8 +1544,8 @@ ES6中可以把构造函数看作类
       <aside id="sidebar" class="alignright">
   
 <div class="widget tag">
-  <h3 class="title" id="categories">Categories</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
+  <h3 class="title" id="categories">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
 </div>
  
 
@@ -1683,7 +1560,7 @@ ES6中可以把构造函数看作类
 
 
   <div class="widget tag">
-  <h3 class="title">Calendar</h3>
+  <h3 class="title">日历云</h3>
   <div id="calendar"></div>
 </div>
 
@@ -1716,9 +1593,9 @@ ES6中可以把构造函数看作类
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Tag Cloud</h3>
+  <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
   </div>
 </div>
 
@@ -1726,7 +1603,7 @@ ES6中可以把构造函数看作类
   
   <div class="widget tag">
     <h3 class="title">归档</h3>
-	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">34</span></li></ul>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">36</span></li></ul>
   </div>
 
 </aside>

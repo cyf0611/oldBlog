@@ -3,21 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>闭包(函数) | Hexo</title>
+  <title>代理模式 | Hexo</title>
   <meta name="author" content="John Doe">
   
-  <meta name="description" content="[TOC]
-
-1、广义闭包
-可以访问 非自身的变量 的 函数从一种角度说所有函数都是闭包另一种角度说只有使用了非自身变量的函数，才是闭包
-2、狭义闭包
-可以访问**非自身**的**局部变量**的**函数**(*面试说*)一种说法，函数内的函数才是闭包另一种说法，使用了非自身局部变量的函数才是闭包
-特">
+  <meta name="description" content="123456Itcast.each( [ &amp;apos;obclick&amp;apos;, &amp;apos;onload&amp;apos; ], function ( i, v ) &amp;#123;    v = v.slice( 2 );    Itcast.fn[ v ] = function ( eventFn )">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="闭包(函数)"/>
+  <meta property="og:title" content="代理模式"/>
   <meta property="og:site_name" content="Hexo"/>
 
   
@@ -89,10 +83,10 @@
     <header>
         <div class="icon"></div>
         
-        <time datetime="2016-07-10T03:26:37.000Z"><a href="/2016/07/10/闭包(函数)/">2016-07-10</a></time>
+        <time datetime="2016-08-01T01:39:08.000Z"><a href="/2016/08/01/代理模式/">2016-08-01</a></time>
         
   
-    <h1 class="title">闭包(函数)</h1>
+    <h1 class="title">代理模式</h1>
   
 
     </header>
@@ -101,57 +95,20 @@
       
         
     <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#生命周期"><span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境"><span class="toc-text">环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#闭包应用场景"><span class="toc-text">闭包应用场景</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代理模式"><span class="toc-text">代理模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在浏览器中"><span class="toc-text">在浏览器中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQ-中的-delegate"><span class="toc-text">jQ 中的 delegate</span></a></li></ol>
     </div>
 
-        <p>[TOC]</p>
-<blockquote>
-<p>1、广义闭包</p>
-<p>可以访问 <strong>非自身的变量</strong> 的 <strong>函数</strong><br>从一种角度说所有函数都是闭包<br>另一种角度说只有使用了非自身变量的函数，才是闭包</p>
-<p>2、狭义闭包</p>
-<p><code>可以访问**非自身**的**局部变量**的**函数**(*面试说*)</code><br>一种说法，<strong>函数内的函数</strong>才是闭包<br>另一种说法，使用了非自身<strong>局部变量</strong>的函数才是闭包</p>
-<p><strong>特点：</strong><br>可以通过闭包<strong>在任何地方</strong>操作<strong>局部变量</strong></p>
-</blockquote>
-<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><blockquote>
-<p>一个生物，生命从开始到结束，中间存活的过程叫生命周期</p>
-</blockquote>
-<ul>
-<li><p><strong>变量的生命周期：</strong></p>
-<blockquote>
-<p>一个变量，从<strong>定义</strong>开始，到<strong>释放</strong>结束，<strong>中间存活的过程</strong>叫变量的生命周期</p>
-</blockquote>
-</li>
-<li><p><strong>全局变量的生命周期：</strong></p>
-<blockquote>
-<p>从<strong>定义</strong>开始，到<strong>页面被卸载结束</strong>，就是全局变量的生命周期</p>
-</blockquote>
-</li>
-<li><p><strong>局部变量的生命周期：</strong></p>
-<blockquote>
-<p> 从<strong>定义</strong>开始，到<strong>函数执行完毕结束</strong>，就是局部变量的生命周期<br> <strong>但是，</strong>可以通过闭包实现影响局部变量的生命周期，使生命周期和闭包一样长</p>
-<p> <strong>问题：</strong><br> 如果一个变量一直存储着一个闭包函数，那么js引擎无法得知将来是否还会调用这个函数，所以就会造成这个函数不会被释放，相应的这个函数占用的局部变量也不会被释放，这就造成了内存浪费<br> 如果确定以后不会再使用这个函数了，最好手动将存储这个函数的变量赋值为 <code>null</code></p>
-</blockquote>
-</li>
-</ul>
-<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><blockquote>
-<p>一个东西所依赖东西，就可以认为是它的环境</p>
-</blockquote>
-<ul>
-<li><strong>执行环境：</strong><blockquote>
-<p>代码执行时所依赖的环境<br><strong>函数被调用一次，就会产生一个执行环境</strong></p>
-</blockquote>
-</li>
-</ul>
-<h3 id="闭包应用场景"><a href="#闭包应用场景" class="headerlink" title="闭包应用场景"></a>闭包应用场景</h3><ul>
-<li>操作私有属性(局部变量)<ul>
-<li>为了防止其他地方对该属性随意修改的隐患</li>
-</ul>
-</li>
-<li>变量的状态：<ul>
-<li>指变量不同时期所存储的值</li>
-</ul>
-</li>
-</ul>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Itcast.each( [ &apos;obclick&apos;, &apos;onload&apos; ], function ( i, v ) &#123;</div><div class="line">    v = v.slice( 2 );</div><div class="line">    Itcast.fn[ v ] = function ( eventFn ) &#123;</div><div class="line">        return this.on( v, eventFn );</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">css: function ( name, value ) &#123;</div><div class="line">    // name 是一个对象</div><div class="line">    return this.each( function () &#123;</div><div class="line">        var that = this;</div><div class="line">        Itcast.each( name, function ( k, v ) &#123;</div><div class="line">            that.style[ k ] = v;</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><p>英文 delegate, 翻译常常称为 代理, 委托.</p>
+<p>所谓的代理模式, 就是想办法规定一个协议, 然后让别人遵守协议, 让别人可以帮你做事情.</p>
+<p>代码:<br>一个对象要做一件事情, 即 对象调用一个方法. 但是该对象自己不做, 让另一个对象去做.<br>当前对象调用一个方法, 就是触发另一个对象调用一个方法. 在代码中模型可以写成:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">o.doSomething = function () &#123;</div><div class="line">    otherObj.doSomething();</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>但是并非一般的对象. 在让另一个对象执行之前需要对其”授权( 注册代理 )”. 这样的好处就是<br>可以利用 “可装配的方式处理我的这个另一个对象”, 就可以实现较为灵活的处理. 代码模型:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var o = &#123;</div><div class="line">    delegate: null,</div><div class="line">    doSomething: function () &#123;</div><div class="line">        if ( this.delegate &amp;&amp; this.delegate.doSomeThing ) &#123;</div><div class="line">            this.delegate.doSomeThing();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 此时 o.delegate 就是可装配的</div><div class="line">o.delegate = &#123;</div><div class="line">    // delegate 可以随意的赋值, 但是必须保证有 doSomeThing 这个方法</div><div class="line">    doSomeThing: function () &#123;</div><div class="line">        // 随意写</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 在代码中可以实现统一调用</div><div class="line">o.doSomeThing(); // 执行结果是什么?</div></pre></td></tr></table></figure>
+<p>此时对象 o.delegate 就是 o 的代理对象.</p>
+<h2 id="在浏览器中"><a href="#在浏览器中" class="headerlink" title="在浏览器中"></a>在浏览器中</h2><p>以 点击事件为例. 在浏览器内部已经调用好事件处理的整套代码结构, 但是预留了一些方法<br>例如<br>    onclick 其实是 代理方法名<br>    click 是 触发的方法名. 手动的触发点击事件.</p>
+<pre><code>form 对象有一个 submit 方法
+</code></pre><h2 id="jQ-中的-delegate"><a href="#jQ-中的-delegate" class="headerlink" title="jQ 中的 delegate"></a>jQ 中的 delegate</h2><p>其实使用 父元素 添加事件, 但是利用冒泡可以监听到是哪一个标签最先触发, 然后执行代码<br>其优点是可以少绑定同样的事件.</p>
 
       
     </div>
@@ -165,7 +122,7 @@
 
         
   <div class="tags">
-    <a href="/tags/闭包/">闭包</a>
+    <a href="/tags/代理模式/">代理模式</a>
   </div>
 
         <div class = "counter">
@@ -197,7 +154,7 @@
     
     
         <!-- 多说评论框 start -->
-        <div class="ds-thread" data-thread-key="2016/07/10/闭包(函数)/" data-title="闭包(函数)" data-url="http://yoursite.com/2016/07/10/闭包(函数)/"></div>
+        <div class="ds-thread" data-thread-key="2016/08/01/代理模式/" data-title="代理模式" data-url="http://yoursite.com/2016/08/01/代理模式/"></div>
         <!-- 多说评论框 end -->
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">

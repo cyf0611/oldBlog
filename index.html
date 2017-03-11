@@ -53,20 +53,20 @@
 	<div class='header-nav-content inner'>
 		<div id="main-nav" class="alignleft">
 		    		
-		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
+		    		  <a href="/"><i class="fa fa-home"></i>Home</a>
 		    		
-		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+		    		  <a href="/archives"><i class="fa fa-archive"></i>Archives</a>
 		    		
-		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
+		    		  <a href=""><i class="fa fa-book"></i>Books</a>
 		    		
-		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>我的简历</a>
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>About</a>
 		    		
 		</div>
 		<div id="sub-nav" class="alignright">
 		    
-		      <a href=""><i class="fa fa-rss"></i>订阅</a>
+		      <a href=""><i class="fa fa-rss"></i>Rss</a>
 		    
-		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
+		      <a href=""><i class="fa fa-question-circle"></i>Customization</a>
 		    
 		</div>
 	</div>
@@ -199,7 +199,7 @@
 <li>E 作为元素名使用</li>
 <li>A 作为属性使用</li>
 <li>C 作为类名使用</li>
-<li>M 作为注释使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&quot;myApp&quot;, []);</div><div class="line">app.directive(&quot;runoobDirective&quot;, function() &#123;</div><div class="line">    return &#123;</div><div class="line">        restrict : &quot;A&quot;,</div><div class="line">        template : &quot;&lt;h1自定义指令!/h1&gt;&quot;</div><div class="line">    &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">- `&#123;&#123;&#125;&#125;`表示一个表达式</div><div class="line">	- 里面不能写对象的形式`&#123;&apos;a&apos;:&apos;123&apos;&#125;`</div><div class="line"></div><div class="line"></div><div class="line">#### Scope(作用域)【模型】	</div><div class="line">- `$scope`</div><div class="line">	- 是一个对象，有可用的方法和属性</div><div class="line">	-  是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带</div><div class="line">	-  可应用在视图和控制器上</div><div class="line">	-  当你在 AngularJS 创建控制器时，你可以将 $scope 对象当作一个参数传递:</div><div class="line">	-  当在控制器中添加 $scope 对象时，视图 (HTML) 可以获取了这些属性。</div><div class="line">	-  视图中，你不需要添加 $scope 前缀, 只需要添加属性名即可，如： &#123;&#123;carname&#125;&#125;。</div></pre></td></tr></table></figure>
+<li>M 作为注释使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&quot;myApp&quot;, []);</div><div class="line">app.directive(&quot;runoobDirective&quot;, function() &#123;</div><div class="line">    return &#123;</div><div class="line">        restrict : &quot;A&quot;,</div><div class="line">        template : &quot;&lt;h1自定义指令!/h1&gt;&quot;</div><div class="line">    &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 通过设置 restrict 属性值为 &quot;A&quot; 来设置指令只能通过 HTML 元素的属性来调用。</div><div class="line"></div><div class="line"></div><div class="line">- `&#123;&#123;&#125;&#125;`表示一个表达式</div><div class="line">	- 里面不能写对象的形式`&#123;&apos;a&apos;:&apos;123&apos;&#125;`</div><div class="line"></div><div class="line"></div><div class="line">#### Scope(作用域)【模型】	</div><div class="line">- `$scope`</div><div class="line">	- 是一个对象，有可用的方法和属性</div><div class="line">	-  是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带</div><div class="line">	-  可应用在视图和控制器上</div><div class="line">	-  当你在 AngularJS 创建控制器时，你可以将 $scope 对象当作一个参数传递:</div><div class="line">	-  当在控制器中添加 $scope 对象时，视图 (HTML) 可以获取了这些属性。</div><div class="line">	-  视图中，你不需要添加 $scope 前缀, 只需要添加属性名即可，如： &#123;&#123;carname&#125;&#125;。</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -2037,7 +2037,7 @@ ES6中可以把构造函数看作类
 <nav id="pagination">
   
   
-    <a href="/page/2/" class="alignright next">下一页</a>
+    <a href="/page/2/" class="alignright next">Next</a>
   
   <div class="clearfix"></div>
 </nav>
@@ -2045,7 +2045,7 @@ ES6中可以把构造函数看作类
       <aside id="sidebar" class="alignright">
   
 <div class="widget tag">
-  <h3 class="title" id="categories">分类</h3>
+  <h3 class="title" id="categories">Categories</h3>
      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
 </div>
  
@@ -2061,7 +2061,7 @@ ES6中可以把构造函数看作类
 
 
   <div class="widget tag">
-  <h3 class="title">日历云</h3>
+  <h3 class="title">Calendar</h3>
   <div id="calendar"></div>
 </div>
 
@@ -2094,7 +2094,7 @@ ES6中可以把构造函数看作类
 
   
 <div class="widget tagcloud">
-  <h3 class="title">标签云</h3>
+  <h3 class="title">Tag Cloud</h3>
   <div class="entry">
     <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
   </div>

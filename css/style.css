@@ -123,14 +123,15 @@ a:hover {
   margin-right: 5px;
 }
 #header .avatar img {
-  border-radius: 50%;
-  height: 5em;
-  float: left;
-  -webkit-transition: height 0.3s, -webkit-transform 1s;
-  -moz-transition: height 0.3s, -moz-transform 1s;
-  -o-transition: height 0.3s, -o-transform 1s;
-  -ms-transition: height 0.3s, -ms-transform 1s;
-  transition: height 0.3s, transform 1s;
+	border-radius: 50%;
+	height: 70px;
+	width: 70px;
+	float: left;
+	-webkit-transition: height 0.3s, -webkit-transform 1s;
+	-moz-transition: height 0.3s, -moz-transform 1s;
+	-o-transition: height 0.3s, -o-transform 1s;
+	-ms-transition: height 0.3s, -ms-transform 1s;
+	transition: height 0.3s, transform 1s;
 }
 @media screen and (max-width: 320px) {
   #header .avatar img {

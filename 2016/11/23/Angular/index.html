@@ -69,20 +69,20 @@
 	<div class='header-nav-content inner'>
 		<div id="main-nav" class="alignleft">
 		    		
-		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
+		    		  <a href="/"><i class="fa fa-home"></i>Home</a>
 		    		
-		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+		    		  <a href="/archives"><i class="fa fa-archive"></i>Archives</a>
 		    		
-		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
+		    		  <a href=""><i class="fa fa-book"></i>Books</a>
 		    		
-		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>我的简历</a>
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>About</a>
 		    		
 		</div>
 		<div id="sub-nav" class="alignright">
 		    
-		      <a href=""><i class="fa fa-rss"></i>订阅</a>
+		      <a href=""><i class="fa fa-rss"></i>Rss</a>
 		    
-		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
+		      <a href=""><i class="fa fa-question-circle"></i>Customization</a>
 		    
 		</div>
 	</div>
@@ -109,7 +109,7 @@
       
         
     <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Angular"><span class="toc-text">安装Angular</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指令"><span class="toc-text">指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Scope-作用域-【模型】"><span class="toc-text">Scope(作用域)【模型】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#根作用域"><span class="toc-text">根作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#过滤器"><span class="toc-text">过滤器|</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务-Service"><span class="toc-text">服务(Service)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC模式"><span class="toc-text">MVC模式</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Angular"><span class="toc-text">安装Angular</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指令"><span class="toc-text">指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义的指令"><span class="toc-text">自定义的指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Scope-作用域-【模型】"><span class="toc-text">Scope(作用域)【模型】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#根作用域"><span class="toc-text">根作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#过滤器"><span class="toc-text">过滤器|</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务-Service"><span class="toc-text">服务(Service)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC模式"><span class="toc-text">MVC模式</span></a></li></ol>
     </div>
 
         <ul>
@@ -190,6 +190,22 @@
 </ul>
 </li>
 <li><p><code>ng-if/ng-switch ng-switch-when</code></p>
+</li>
+</ul>
+<h4 id="自定义的指令"><a href="#自定义的指令" class="headerlink" title="自定义的指令"></a>自定义的指令</h4><ul>
+<li><code>directive</code><ul>
+<li>使用驼峰法来命名一个指令， <code>runoobDirective</code>, </li>
+<li>但在使用它时需要以 - 分割, <code>runoob-directive</code>:</li>
+<li></li>
+<li>可以通过以下方式来调用指令：<ul>
+<li>元素名</li>
+<li>属性</li>
+<li>类名</li>
+<li>注释<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">app.directive(<span class="string">"runoobDirective"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">template</span> : <span class="string">"&lt;h1自定义指令!/h1&gt;"</span></div><div class="line">    &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//元素名</span></div><div class="line">&lt;runoob-directive&gt;&lt;/runoob-directive&gt;</div><div class="line"></div><div class="line">//属性</div><div class="line">&lt;div runoob-directive&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">//类名</div><div class="line">&lt;div class="runoob-directive"&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">//注释</div><div class="line">&lt;!-- directive: runoob-directive --&gt;</div><div class="line">var app = angular.module("myApp", []);</div><div class="line">app.directive("runoobDirective", function() &#123;</div><div class="line">    return &#123;</div><div class="line">        restrict : "M",</div><div class="line">        replace : true,</div><div class="line">        template : "&lt;h1自定义指令!/h1&gt;"</div><div class="line">    &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">//注意： 需要在该实例添加 replace 属性， 否则评论是不可见的。</div><div class="line">//注意： 必须设置 restrict 的值为 "M" 才能通过注释来调用指令。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <h4 id="Scope-作用域-【模型】"><a href="#Scope-作用域-【模型】" class="headerlink" title="Scope(作用域)【模型】"></a>Scope(作用域)【模型】</h4><ul>
@@ -393,7 +409,7 @@
 
   
     <section id="comment">
-    <!--   <h1 class="title">留言</h1> -->
+    <!--   <h1 class="title">Comments</h1> -->
     
     
         <!-- 多说评论框 start -->
@@ -423,7 +439,7 @@
       <aside id="sidebar" class="alignright">
   
 <div class="widget tag">
-  <h3 class="title" id="categories">分类</h3>
+  <h3 class="title" id="categories">Categories</h3>
      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
 </div>
  
@@ -439,7 +455,7 @@
 
 
   <div class="widget tag">
-  <h3 class="title">日历云</h3>
+  <h3 class="title">Calendar</h3>
   <div id="calendar"></div>
 </div>
 
@@ -472,7 +488,7 @@
 
   
 <div class="widget tagcloud">
-  <h3 class="title">标签云</h3>
+  <h3 class="title">Tag Cloud</h3>
   <div class="entry">
     <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
   </div>

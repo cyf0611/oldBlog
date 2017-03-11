@@ -6,13 +6,21 @@
   <title>Angular 基础知识 | Hexo</title>
   <meta name="author" content="John Doe">
   
-  <meta name="description" content="Scope(作用域)【模型】
-$scope
-是一个对象，有可用的方法和属性
-是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带
-可应用在视图和控制器上
-当你在 AngularJS 创建控制器时，你可以将 $scope 对象当作一个参数传递:
-当在控制器中添加 $scope ">
+  <meta name="description" content="前端JS框架
+数据交互
+模块化
+双向数据绑定
+语义化标签
+依赖注入
+可以轻松构建SPA（单页面应用程序）
+模拟CS(客户端、服务器)结构做出的BS(浏览器、服务器)结构的网站
+带有客户端的功能性（页面局部刷新的特点）
+
+
+
+安装Angular
+1、直接从本地复制一个angular.js文件到项目中
+">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -101,10 +109,90 @@ $scope
       
         
     <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Scope-作用域-【模型】"><span class="toc-text">Scope(作用域)【模型】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#根作用域"><span class="toc-text">根作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#过滤器"><span class="toc-text">过滤器|</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务-Service"><span class="toc-text">服务(Service)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC模式"><span class="toc-text">MVC模式</span></a>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Angular"><span class="toc-text">安装Angular</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指令"><span class="toc-text">指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Scope-作用域-【模型】"><span class="toc-text">Scope(作用域)【模型】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#根作用域"><span class="toc-text">根作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#过滤器"><span class="toc-text">过滤器|</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务-Service"><span class="toc-text">服务(Service)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC模式"><span class="toc-text">MVC模式</span></a></li></ol>
     </div>
 
-        <h4 id="Scope-作用域-【模型】"><a href="#Scope-作用域-【模型】" class="headerlink" title="Scope(作用域)【模型】"></a>Scope(作用域)【模型】</h4><ul>
+        <ul>
+<li>前端JS框架</li>
+<li>数据交互</li>
+<li>模块化</li>
+<li>双向数据绑定</li>
+<li>语义化标签</li>
+<li>依赖注入</li>
+<li>可以轻松构建SPA（单页面应用程序）<ul>
+<li>模拟CS(客户端、服务器)结构做出的BS(浏览器、服务器)结构的网站</li>
+<li>带有客户端的功能性（页面局部刷新的特点）</li>
+</ul>
+</li>
+</ul>
+<h3 id="安装Angular"><a href="#安装Angular" class="headerlink" title="安装Angular"></a>安装Angular</h3><ul>
+<li>1、直接从本地复制一个angular.js文件到项目中</li>
+<li>2、通过工具安装<ul>
+<li><code>npm install angular</code></li>
+<li>通过bower安装<ul>
+<li><code>bower install angular</code></li>
+<li>安装bower<ul>
+<li><code>npm install -g bower</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ul>
+<li><p>以ng-开头的属性的扩展形式称之为指令</p>
+</li>
+<li><p><code>ng-app</code>告诉angular从这里开始管理代码，初始化一个 AngularJS 应用程序</p>
+</li>
+<li><p><code>ng-model</code> 把元素值（比如输入域的值）绑定到应用程序</p>
+<ul>
+<li>用于绑定应用程序数据到 HTML 控制器<code>(input, select, textarea)</code>的值</li>
+<li>将输入域的值<code></code>与AngularJS 创建的变量<code>($scope.data)</code>绑定</li>
+<li><strong>双向绑定</strong></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>ng-click</code>添加点击事件</p>
+</li>
+<li><p><code>ng-init</code>初始化一个对象值<em>(不常用)</em></p>
+</li>
+<li><p><code>ng-controller</code>控制器</p>
+<ul>
+<li>控制 <code>AngularJS</code> 应用程序的数据</li>
+<li>是常规的 <code>JavaScript</code> 对象，由标准的 JavaScript 对象的构造函数 创建</li>
+<li><code>ng-controller</code> 指令定义了一个应用程序控制器。</li>
+</ul>
+</li>
+<li><p><code>ng-bind</code>绑定数据模型的值，<strong>只能用于双标签</strong></p>
+</li>
+<li><p><code>ng-bind-html</code>用于安全的渲染html代码，必须和<code>ngSanitize</code>搭配使用</p>
+</li>
+<li><p><code>ng-cloak</code>用测属性的元素会被<code>Angular</code>检测并移除</p>
+</li>
+<li><p><code>ng-repead</code>用来循环数组或对象数据，使其全部展示到页面</p>
+<ul>
+<li><code>ng-repead = &quot;item in data&quot;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;li ng-repeat=&quot;item in data&quot;&gt;</div><div class="line">	&#123;&#123; item.xxx &#125;&#125;</div><div class="line">&lt;/li&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>ng-class</code>操作属性样式</p>
+<ul>
+<li><code>ng-class = {key1 : 样式名1, key2 : 样式名2, key3 : 样式名3}[item.item中包含key的属性]</code></li>
+<li><code>{key1 : 布尔值, key2 : 布尔值, key3 : 布尔值}</code></li>
+</ul>
+</li>
+<li><p><code>ng-hide/ng-show</code>显示隐藏需要一个布尔值</p>
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+<li><p><code>ng-if/ng-switch ng-switch-when</code></p>
+</li>
+</ul>
+<h4 id="Scope-作用域-【模型】"><a href="#Scope-作用域-【模型】" class="headerlink" title="Scope(作用域)【模型】"></a>Scope(作用域)【模型】</h4><ul>
 <li><code>$scope</code><ul>
 <li>是一个对象，有可用的方法和属性</li>
 <li>是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带</li>

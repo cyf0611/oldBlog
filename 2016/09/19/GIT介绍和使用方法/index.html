@@ -1,0 +1,408 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Git介绍和使用方法 | Hexo</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="当使用图形用户界面时，我们需要另一个和 shell 交互的叫做终端仿真器的程序。在 Windows 上，一般使用操作系统自带的 cmd 或者 powershell。在 Linux 上，如果是图形用户界面，那么可以使用 terminal 或者 konsole、gnome-terminal 之类的终端仿">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Git介绍和使用方法"/>
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <!-- wumiiVerification -->
+  <meta name="wumiiVerification" content="fb50a101-84fe-4ca2-91a7-ae8cf792978b" />
+  <meta name="wumiiVerification" content="d73b5866-c390-4156-a4dd-51b526b5335e" />
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <header id="header"><div class= "header-content inner">
+	<div class = "alignleft col-one">
+		
+			<div class='avatar'>
+				<img src = "/img/default/avatar.jpg">
+              </div>
+		
+		<div class="header-div">
+		    <h1><a href="/">Hexo</a></h1>
+		    <h2><a href="/"></a></h2>
+		</div>
+	</div>
+	<div class = "alignright col-two">
+		
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class= "header-nav">
+	<div class='header-nav-content inner'>
+		<div id="main-nav" class="alignleft">
+		    		
+		    		  <a href="/"><i class="fa fa-home"></i>Home</a>
+		    		
+		    		  <a href="/archives"><i class="fa fa-archive"></i>Archives</a>
+		    		
+		    		  <a href=""><i class="fa fa-book"></i>Books</a>
+		    		
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>About</a>
+		    		
+		</div>
+		<div id="sub-nav" class="alignright">
+		    
+		      <a href=""><i class="fa fa-rss"></i>Rss</a>
+		    
+		      <a href=""><i class="fa fa-question-circle"></i>Customization</a>
+		    
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+</header>
+  
+    <div id="content" class="inner">
+      <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-09-18T23:01:27.000Z"><a href="/2016/09/19/GIT介绍和使用方法/">2016-09-19</a></time>
+        
+  
+    <h1 class="title">Git介绍和使用方法</h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-Git-for-Windows-客户端体验-shell"><span class="toc-text">安装 Git for Windows 客户端体验 shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打开和退出终端"><span class="toc-text">打开和退出终端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令提示符"><span class="toc-text">命令提示符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用终端操作文件系统"><span class="toc-text">使用终端操作文件系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-less-命令浏览文件内容"><span class="toc-text">使用 less 命令浏览文件内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式版本控制-Git"><span class="toc-text">分布式版本控制 - Git</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分布式版本管理概念"><span class="toc-text">分布式版本管理概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linus-Benedict-Torvalds"><span class="toc-text">Linus Benedict Torvalds</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-诞生历史"><span class="toc-text">git 诞生历史</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-学习资料"><span class="toc-text">git 学习资料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-git-环境"><span class="toc-text">安装 git 环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始设置"><span class="toc-text">初始设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#推送至远程仓库"><span class="toc-text">推送至远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从远程仓库获取"><span class="toc-text">从远程仓库获取</span></a></li></ol>
+    </div>
+
+        <p>当使用图形用户界面时，我们需要另一个和 shell 交互的叫做终端仿真器的程序。<br>在 Windows 上，一般使用操作系统自带的 <code>cmd</code> 或者 <code>powershell</code>。<br>在 Linux 上，如果是图形用户界面，那么可以使用 <code>terminal</code> 或者 <code>konsole</code>、<code>gnome-terminal</code> 之类<br>的终端仿真器，但基本上，它们都完成同样的事情，让我们能访问 shell，<br>你可能会因为附加的一些花俏功能而喜欢上某个终端。</p>
+<p>关于名字，如果有人提到：控制台、终端、bash、shell、terminal 等，一般都是指上面这些。</p>
+<p>一般在 Linux 上，都会提供一个 bash 或者 terminal 之类的工具，让你来使用 shell</p>
+<h3 id="安装-Git-for-Windows-客户端体验-shell"><a href="#安装-Git-for-Windows-客户端体验-shell" class="headerlink" title="安装 Git for Windows 客户端体验 shell"></a>安装 Git for Windows 客户端体验 shell</h3><p>Git for Windows 客户端自带了一个终端仿真器：<code>git bash</code></p>
+<p>下载地址：<a href="https://git-for-windows.github.io/" target="_blank" rel="external">https://git-for-windows.github.io/</a></p>
+<p><a href="https://github.com/git-for-windows/git" target="_blank" rel="external">git for Windows - github 托管地址</a><br>，然后找到 Realease 模块，找到下载的对应版本即可。</p>
+<p>注意：虽然在 Windows 上可以通过 cmd 或 powershell 体验终端的使用，<br>但是学习终端最正确的方式是学习 Linux 上的命令行，要更纯正，更强大。</p>
+<p>所以，我们这里通过使用 Git for Windows 客户端（自带了一个 bash）可以供我们学习 shell。</p>
+<h3 id="打开和退出终端"><a href="#打开和退出终端" class="headerlink" title="打开和退出终端"></a>打开和退出终端</h3><h3 id="命令提示符"><a href="#命令提示符" class="headerlink" title="命令提示符"></a>命令提示符</h3><p>git bash 中使用 <code>~</code> 来表示用户目录</p>
+<h3 id="使用终端操作文件系统"><a href="#使用终端操作文件系统" class="headerlink" title="使用终端操作文件系统"></a>使用终端操作文件系统</h3><ul>
+<li>绝对路径和相对路径</li>
+<li>pwd（print working directory）</li>
+<li>cd（change directory）<ul>
+<li>切换到指定路径（相对路径或绝对路径）</li>
+</ul>
+</li>
+<li>ls（list files）<ul>
+<li><code>ls</code> 列出当前目录文件</li>
+<li><code>ls 目录路径</code> 列出指定路径文件</li>
+<li><code>ls -a</code> 列出文件并显示隐藏文件或目录</li>
+</ul>
+</li>
+<li>cp（copy）<ul>
+<li><code>cp 源路径 目标路径</code></li>
+<li>cp 在复制目录的时候，不会复制里面的子文件或子目录</li>
+<li>-r （recursive）递归复制</li>
+</ul>
+</li>
+<li>mv（move）：移动文件或者目录，还可以重命名文件或目录</li>
+<li>mkdir（make directory）：创建目录</li>
+<li>rm（remove）：删除文件或目录<ul>
+<li>-rf 递归删除：直接将整个目录包括里面的内容都删掉</li>
+</ul>
+</li>
+<li>rmdir 目录名称<ul>
+<li>只能删除空目录</li>
+</ul>
+</li>
+<li>clear：清屏</li>
+<li>touch 文件名<ul>
+<li>根据文件名创建新的文件</li>
+</ul>
+</li>
+<li>cat 文件名<ul>
+<li>查看指定的文本文件</li>
+</ul>
+</li>
+</ul>
+<p>案例：命令综合练习</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1. 在桌面下创建一个叫做 `itcast` 的目录</div><div class="line">2. 在 itcast 目录下，分别创建 `dir1` 和 `dir2` 两个子目录</div><div class="line">3. 复制 `code/scripts/main.js` 文件到 `itcast` 目录中</div><div class="line">4. 复制 `code` 目录下的 `js` 目录到 `itcast` 目录中</div><div class="line">5. 将 `itcast/main.js` 文件重命名为 `main-main.js`</div><div class="line">6. 将 `main-main.js` 文件移动到 dir1 中</div><div class="line">7. 将 `dir1` 中的 `main-main.js` 文件移动到 dir2 中</div><div class="line">8. 将 `itcast/js` 目录删除</div></pre></td></tr></table></figure>
+<p>以后多使用，就会越用越熟。</p>
+<h3 id="使用-less-命令浏览文件内容"><a href="#使用-less-命令浏览文件内容" class="headerlink" title="使用 less 命令浏览文件内容"></a>使用 less 命令浏览文件内容</h3><p>less 命令是一个用来浏览文本文件的程序。</p>
+<p>less 命令是这样使用的：<code>less 文本文件名</code></p>
+<p>一旦 less 程序运行起来，我们就能浏览文件内容了。<br>如果文件内容多于一页，那么我们可以上下滚动文件。按下 <code>q</code> 键，退出 less 程序。</p>
+<p>下表列出了 less 程序最常使用的键盘命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">命令               行为</div><div class="line">h                  显示帮助屏幕</div><div class="line">Page UP or b       向上翻滚一页</div><div class="line">Page Down or space 向下翻滚一页</div><div class="line">UP Arrow           向上翻滚一行</div><div class="line">Down Arrow         向下翻滚一行</div><div class="line">G                  移动到最后一行</div><div class="line">g                  移动到开头一行</div><div class="line">/charaters         向前查找指定的字符串</div><div class="line">n                  向前查找下一个出现的字符串，这个字符串是之前所指定查找的</div><div class="line">q                  退出 less 程序</div></pre></td></tr></table></figure>
+<h2 id="分布式版本控制-Git"><a href="#分布式版本控制-Git" class="headerlink" title="分布式版本控制 - Git"></a>分布式版本控制 - Git</h2><p><a href="https://zh.wikipedia.org/wiki/Git" target="_blank" rel="external">维基百科 - git</a></p>
+<h3 id="分布式版本管理概念"><a href="#分布式版本管理概念" class="headerlink" title="分布式版本管理概念"></a>分布式版本管理概念</h3><h3 id="Linus-Benedict-Torvalds"><a href="#Linus-Benedict-Torvalds" class="headerlink" title="Linus Benedict Torvalds"></a>Linus Benedict Torvalds</h3><p><a href="https://zh.wikipedia.org/wiki/%E6%9E%97%E7%BA%B3%E6%96%AF%C2%B7%E6%89%98%E7%93%A6%E5%85%B9" target="_blank" rel="external">Linus Benedict Torvalds</a></p>
+<h3 id="git-诞生历史"><a href="#git-诞生历史" class="headerlink" title="git 诞生历史"></a>git 诞生历史</h3><h3 id="git-学习资料"><a href="#git-学习资料" class="headerlink" title="git 学习资料"></a>git 学习资料</h3><ul>
+<li><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="external">git - 简明指南</a></li>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰 - git教程</a></li>
+<li><a href="https://git.oschina.net/progit/" target="_blank" rel="external">Pro Git</a></li>
+<li><a href="http://backlogtool.com/git-guide/cn/" target="_blank" rel="external">猴子都能懂的git入门</a></li>
+<li><a href="http://gitref.org/zh/remotes/" target="_blank" rel="external">git参考手册</a></li>
+<li><a href="http://item.jd.com/11733256.html" target="_blank" rel="external">github入门与实践</a></li>
+<li><a href="http://item.jd.com/11615420.html" target="_blank" rel="external">Git版本控制管理</a></li>
+</ul>
+<h3 id="安装-git-环境"><a href="#安装-git-环境" class="headerlink" title="安装 git 环境"></a>安装 git 环境</h3><h3 id="初始设置"><a href="#初始设置" class="headerlink" title="初始设置"></a>初始设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"yourname"</span></div><div class="line">$ git config --global user.email <span class="string">"your_email@example.com"</span></div></pre></td></tr></table></figure>
+<p>这里设置的姓名和邮箱会用在 git 的提交日志中，<br>执行完上面的命令之后会在当前用户目录下生成一个 <code>.gitconfig</code> 文件，<br>想要更改上面的配置项，可以通过修改该文件完成。 </p>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ul>
+<li><code>git init</code></li>
+<li><code>git status</code></li>
+<li><code>git add</code></li>
+<li><code>git commit</code></li>
+<li><code>git log</code></li>
+</ul>
+<h3 id="推送至远程仓库"><a href="#推送至远程仓库" class="headerlink" title="推送至远程仓库"></a>推送至远程仓库</h3><ul>
+<li><code>git push -u origin master</code><ul>
+<li>推送到名称为 origin 远程仓库地址下的 master 分支下</li>
+</ul>
+</li>
+</ul>
+<h3 id="从远程仓库获取"><a href="#从远程仓库获取" class="headerlink" title="从远程仓库获取"></a>从远程仓库获取</h3><ul>
+<li><code>git clone 仓库地址</code><ul>
+<li>git 会自动将 origin 设置为该远程仓库地址的标识符</li>
+</ul>
+</li>
+<li><code>git pull</code></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/工具/">工具</a>, <a href="/categories/工具/Git/">Git</a>
+  </div>
+
+        
+  <div class="tags">
+    <a href="/tags/Git/">Git</a>
+  </div>
+
+        <div class = "counter">
+  <span id="busuanzi_container_page_pv" style="display:none">
+      总访问&nbsp<span id="busuanzi_value_page_pv"></span>&nbsp次
+  </span>
+</div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+  
+<section id = "relate">
+	
+                <div id="快乐人生ddd"></div>
+	
+</section>
+
+
+  
+    <section id="comment">
+    <!--   <h1 class="title">Comments</h1> -->
+    
+    
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="2016/09/19/GIT介绍和使用方法/" data-title="Git介绍和使用方法" data-url="http://yoursite.com/2016/09/19/GIT介绍和使用方法/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"lupeng-test"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+          </script>
+        <!-- 多说公共JS代码 end -->
+
+      
+    </section>
+
+
+
+
+</div></div>
+      <aside id="sidebar" class="alignright">
+  
+<div class="widget tag">
+  <h3 class="title" id="categories">Categories</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
+</div>
+ 
+
+
+  <!--
+<div class="widget tag">
+  <h3 class="title">微信公众账号</h3>
+    <ul class="entry">
+      <img src="/img/default/qrcode.jpg" alt="欢迎关注，该账号供个人学习使用，偶尔做一些开发尝试，更新频率较低。" style= "width: 100%">
+    </ul>
+</div>-->
+
+
+  <div class="widget tag">
+  <h3 class="title">Calendar</h3>
+  <div id="calendar"></div>
+</div>
+
+
+  
+<div class="widget">
+  <h3 class="title">最新评论</h3>
+  	<!-- 多说最新评论 start -->
+	<div class="ds-recent-comments ds-recent-user" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+	<!-- 多说最新评论 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lupeng-test"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+		</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+  
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">Tag Cloud</h3>
+  <div class="entry">
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+  </div>
+</div>
+
+
+  
+  <div class="widget tag">
+    <h3 class="title">归档</h3>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">34</span></li></ul>
+  </div>
+
+</aside>
+      <div class="clearfix"></div>
+    </div>
+  
+  <footer id="footer"><div class="footer-content inner">
+  <div class="alignleft">
+  
+    &copy; 2017 John Doe
+    
+  </div>
+  <div class="alignright">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme
+    <a href="https://github.com/pengloo53/Hexo-theme-light_cn">light_cn</a>
+  </div>
+  
+  <div class="visit">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </div>
+  
+  <div class="clearfix"></div>
+</div></footer>
+  <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<!-- calendar widget -->
+
+  <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script type="text/javascript">
+    $(function() {
+    
+      $('#calendar').aCalendar('undefined',{single:undefined, root:'calendar'});
+    
+    });
+  </script>
+
+
+<!-- 『不蒜子』计数服务 -->
+<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- wumii关联推荐 -->
+<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+
+<!-- 百度推荐 -->
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?9acf0cedd48dc53be256ede5a98c2aaa";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<!-- 返回顶部 -->
+<div id="toTop">
+	<a href="#">▲</a>
+	<a href="#footer">▼</a>
+</div>
+
+<!-- 站内搜索-Swiftype -->
+<!-- <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','sC-iNFrvTTNtiXEVNwo1','2.0.0');
+</script> -->
+
+<!-- fancybox -->
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

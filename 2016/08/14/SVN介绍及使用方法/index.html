@@ -1,0 +1,428 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SVN介绍及使用方法 | Hexo</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="了解版本管理概念以及集中式和分布式版本管理
+
+在介绍什么是版本控制之前，咱们先来看两个问题：
+问题1：历史记录如果你用Microsoft Word写过长篇大论，那你一定有这样的经历：
+想删除一个段落，又怕将来想恢复找不回来怎么办？
+有办法，先把当前文件“另存为……”一个新的Word文件，再接着改，
+">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="SVN介绍及使用方法"/>
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <!-- wumiiVerification -->
+  <meta name="wumiiVerification" content="fb50a101-84fe-4ca2-91a7-ae8cf792978b" />
+  <meta name="wumiiVerification" content="d73b5866-c390-4156-a4dd-51b526b5335e" />
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <header id="header"><div class= "header-content inner">
+	<div class = "alignleft col-one">
+		
+			<div class='avatar'>
+				<img src = "/img/default/avatar.jpg">
+              </div>
+		
+		<div class="header-div">
+		    <h1><a href="/">Hexo</a></h1>
+		    <h2><a href="/"></a></h2>
+		</div>
+	</div>
+	<div class = "alignright col-two">
+		
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class= "header-nav">
+	<div class='header-nav-content inner'>
+		<div id="main-nav" class="alignleft">
+		    		
+		    		  <a href="/"><i class="fa fa-home"></i>Home</a>
+		    		
+		    		  <a href="/archives"><i class="fa fa-archive"></i>Archives</a>
+		    		
+		    		  <a href=""><i class="fa fa-book"></i>Books</a>
+		    		
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>About</a>
+		    		
+		</div>
+		<div id="sub-nav" class="alignright">
+		    
+		      <a href=""><i class="fa fa-rss"></i>Rss</a>
+		    
+		      <a href=""><i class="fa fa-question-circle"></i>Customization</a>
+		    
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+</header>
+  
+    <div id="content" class="inner">
+      <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-08-14T06:31:40.000Z"><a href="/2016/08/14/SVN介绍及使用方法/">2016-08-14</a></time>
+        
+  
+    <h1 class="title">SVN介绍及使用方法</h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题1：历史记录"><span class="toc-text">问题1：历史记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题2：多人协作"><span class="toc-text">问题2：多人协作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决问题：软件"><span class="toc-text">解决问题：软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#那什么是版本控制呢？"><span class="toc-text">那什么是版本控制呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#版本管理分类"><span class="toc-text">版本管理分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集中式版本控制-SVN"><span class="toc-text">集中式版本控制 - SVN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集中式：SVN"><span class="toc-text">集中式：SVN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些术语"><span class="toc-text">一些术语</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-VisualSVN-搭建-SVN-服务器"><span class="toc-text">使用 VisualSVN 搭建 SVN 服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-TortoiseSVN-作为-SVN-客户端"><span class="toc-text">使用 TortoiseSVN 作为 SVN 客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TortoiseSVN-客户端基本操作流程"><span class="toc-text">TortoiseSVN 客户端基本操作流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于冲突"><span class="toc-text">关于冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#版本管理使用建议"><span class="toc-text">版本管理使用建议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用总结"><span class="toc-text">使用总结</span></a></li></ol>
+    </div>
+
+        <blockquote>
+<p>了解版本管理概念以及集中式和分布式版本管理</p>
+</blockquote>
+<p>在介绍什么是版本控制之前，咱们先来看两个问题：</p>
+<h3 id="问题1：历史记录"><a href="#问题1：历史记录" class="headerlink" title="问题1：历史记录"></a>问题1：历史记录</h3><p>如果你用Microsoft Word写过长篇大论，那你一定有这样的经历：</p>
+<p>想删除一个段落，又怕将来想恢复找不回来怎么办？</p>
+<p>有办法，先把当前文件“另存为……”一个新的Word文件，再接着改，</p>
+<p>改到一定程度，再“另存为……”一个新文件，这样一直改下去，最后你的Word文档变成了这样：</p>
+<p><img src="img/word.jpg" alt="版本管理 - word"></p>
+<p>过了一周，你想找回被删除的文字，但是已经记不清删除前保存在哪个文件里了，只好一个一个文件去找，真麻烦。</p>
+<p>看着一堆乱七八糟的文件，想保留最新的一个，然后把其他的删掉，又怕哪天会用上，还不敢删，真郁闷。</p>
+<h3 id="问题2：多人协作"><a href="#问题2：多人协作" class="headerlink" title="问题2：多人协作"></a>问题2：多人协作</h3><p>更要命的是，有些部分需要你的财务同事帮助填写，<br>于是你把文件Copy到U盘里给她（也可能通过Email发送一份给她），<br>然后，你继续修改Word文件。<br>一天后，同事再把Word文件传给你，此时，你必须想想，<br>发给她之后到你收到她的文件期间，你作了哪些改动，得把你的改动和她的部分合并，真困难。</p>
+<h3 id="解决问题：软件"><a href="#解决问题：软件" class="headerlink" title="解决问题：软件"></a>解决问题：软件</h3><p>于是你想，如果有一个软件，不但能自动帮我记录每次文件的改动，还可以让同事协作编辑，<br>这样就不用自己管理一堆类似的文件了，也不需要把文件传来传去。<br>如果想查看某次改动，只需要在软件里瞄一眼就可以，岂不是很方便？</p>
+<p>这个软件用起来就应该像这个样子，能记录每次文件的改动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">版本  用户  说明                   日期</div><div class="line">1     张三  删除了软件服务条款5    7/12 10:38</div><div class="line">2     张三  增加了License人数限制  7/12 18:09</div><div class="line">3     李四  财务部门调整了合同金额 7/13 9:51</div><div class="line">4     张三  延长了免费升级周期     7/14 15:17</div></pre></td></tr></table></figure>
+<p>这样，你就结束了手动管理多个“版本”的史前时代，进入到版本控制的20世纪。</p>
+<h3 id="那什么是版本控制呢？"><a href="#那什么是版本控制呢？" class="headerlink" title="那什么是版本控制呢？"></a>那什么是版本控制呢？</h3><p>版本管理就是管理更新的历史记录，<br>它给我们提供了一些在软件开发过程中必不可少的功能，例如：</p>
+<ul>
+<li>记录一款软件添加或更改源代码的过程</li>
+<li>回滚到特定阶段，恢复误删除的文件</li>
+<li>合并多人协作的文件等</li>
+</ul>
+<h3 id="版本管理分类"><a href="#版本管理分类" class="headerlink" title="版本管理分类"></a>版本管理分类</h3><p>版本管理分为集中式版本管理和分布式版本管理，这两种方式有什么差异，我们接下来一一介绍。</p>
+<h3 id="集中式版本控制-SVN"><a href="#集中式版本控制-SVN" class="headerlink" title="集中式版本控制 - SVN"></a>集中式版本控制 - SVN</h3><p>SVN 全称 Apache Subversion，是一个开放源代码的集中式版本管理系统。<br>在 2000 年由 CollabNet 开发，现已发展成为 Apache 软件基金会的一个项目。</p>
+<h3 id="集中式：SVN"><a href="#集中式：SVN" class="headerlink" title="集中式：SVN"></a>集中式：SVN</h3><p>早期的版本管理就是以 <code>Apache Subversion</code> 为代表的集中式版本管理，<br>如下图所示将仓库集中存放在服务器之中，所以只有一个仓库。<br>这就是为什么这种版本管理系统会被称作集中式版本管理。</p>
+<p><img src="img/svn.png" alt="集中式版本管理 - SVN"></p>
+<p>集中式版本管理将所有的数据集中存放在服务器中，这是有便于统一管理的优点。</p>
+<p>但是一旦开发者所处的环境不能连接服务器，就无法获取最新源代码，开发也就无法进行。</p>
+<p>服务器宕机时也是同样的道理，而且万一服务器故障导致数据丢失，<br>恐怕开发者就再也见不到最新的源代码了。</p>
+<p>简而言之：</p>
+<ul>
+<li>中央服务器好比是一个图书馆</li>
+<li>你要改一本书，必须先从图书馆借出来（checkout）</li>
+<li>然后回到家自己改，改完了，再放到图书馆（commit）</li>
+</ul>
+<h3 id="一些术语"><a href="#一些术语" class="headerlink" title="一些术语"></a>一些术语</h3><ul>
+<li>源代码库（repository）：源代码统一存放的地方</li>
+<li>检出（checkout）：当你手上没有源代码的时候，就需要从 responsive checkout 一份</li>
+<li>提交（commit）：当你已经修改了代码，就需要 commit 到 repository</li>
+<li>更新（update）：当你已经 checkout 了一份源代码，Update 一下就可以和 repository 上的源代码同步，你手上的代码就会有最新的变更</li>
+</ul>
+<h3 id="使用-VisualSVN-搭建-SVN-服务器"><a href="#使用-VisualSVN-搭建-SVN-服务器" class="headerlink" title="使用 VisualSVN 搭建 SVN 服务器"></a>使用 VisualSVN 搭建 SVN 服务器</h3><p><a href="https://www.visualsvn.com/" target="_blank" rel="external"><img src="img/visualsvn.jpg" alt="VisualSVN"></a></p>
+<p>SVN 服务器：运行 Subversion 服务的计算机。</p>
+<p>SVN服务器分为命令行工具和图形化工具，<br>为了方便，我们这里使用比较流行的图形化工具 <a href="https://www.visualsvn.com/" target="_blank" rel="external">VisualSVN</a></p>
+<p>安装完毕之后，基本使用流程如下：</p>
+<ul>
+<li>创建用户或组</li>
+<li>创建版本仓库</li>
+<li>设定用户权限</li>
+</ul>
+<h3 id="使用-TortoiseSVN-作为-SVN-客户端"><a href="#使用-TortoiseSVN-作为-SVN-客户端" class="headerlink" title="使用 TortoiseSVN 作为 SVN 客户端"></a>使用 TortoiseSVN 作为 SVN 客户端</h3><p><a href="https://tortoisesvn.net/" target="_blank" rel="external"><img src="img/tortoisesvn.png" alt="TortoiseSVN"></a></p>
+<p>SVN 客户端：用户通过SVN客户端同SVN服务器交互</p>
+<p>SVN 客户端也分为命令行工具和图形化工具，这里我们使用最流行的 <a href="https://tortoisesvn.net/" target="_blank" rel="external">TortoiseSVN</a></p>
+<h3 id="TortoiseSVN-客户端基本操作流程"><a href="#TortoiseSVN-客户端基本操作流程" class="headerlink" title="TortoiseSVN 客户端基本操作流程"></a>TortoiseSVN 客户端基本操作流程</h3><ul>
+<li>检出项目：checkout</li>
+<li>增加文件或目录：add（增加），commit（提交）</li>
+<li>修改文件或目录：commit（提交）</li>
+<li>删除文件或目录：commit（提交）</li>
+<li>更新文件或目录：update（更新）</li>
+<li>查看版本日志：log（日志）</li>
+</ul>
+<h3 id="关于冲突"><a href="#关于冲突" class="headerlink" title="关于冲突"></a>关于冲突</h3><p>多人协作时，同个目录或同个文件需要不同成员共同开发，<br>这个时候 commit 和 update 就可能出现冲突。</p>
+<ul>
+<li>两个程序员只要不是修改了同一行程序，SVN 可以通过 update 自动合并修改</li>
+<li>但是如果两个程序员修改了同一行程序， SVN 会提示文件 conflict，需要手动确定</li>
+</ul>
+<p>如何解决？</p>
+<p>第一种解决方法：手动合并冲突的内容</p>
+<p>第二种解决方法：每次修改某个文件的时候对文件上锁，这样你在修改的过程中别人就无法更新这个文件</p>
+<p>建议：</p>
+<ul>
+<li>一个文件最好同一时间只被一个人修改提交</li>
+<li>多跟团队成员沟通</li>
+<li>不要随便去修改别人的文件</li>
+<li>使用 SVN 解决冲突特别恶心，现在用的人也越来越少了</li>
+</ul>
+<h3 id="版本管理使用建议"><a href="#版本管理使用建议" class="headerlink" title="版本管理使用建议"></a>版本管理使用建议</h3><ul>
+<li>不要频繁的提交版本<ul>
+<li>一般有比较成熟的功能模块的时候，再去提交</li>
+<li>修复了功能性 bug 的时候再去提交</li>
+</ul>
+</li>
+<li>每次 commit 之前都要 update<ul>
+<li>因为你在编辑这个文件的时候，可能比人已经编辑并提价了某个版本</li>
+<li>所以先 update，目的是为了检查一下服务器上有没有最新版，如果有，直接更新<ul>
+<li>更新的过程中如果遇到冲突，不要慌，去手动解决</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>每次 commit 的时候都要写提交日志<ul>
+<li>这个提交日志就好比你保存副本的时候加的一个标记</li>
+<li>目的是为了日后做版本的回退查找以及查看记录更新状态</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用总结"><a href="#使用总结" class="headerlink" title="使用总结"></a>使用总结</h3><ul>
+<li>版本控制管理系统</li>
+<li>源代码仓库 repository</li>
+<li>检出代码 checkout</li>
+<li>更新最新源代码 update</li>
+<li>提交修改 commit</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/工具/">工具</a>, <a href="/categories/工具/SVN/">SVN</a>
+  </div>
+
+        
+  <div class="tags">
+    <a href="/tags/SVN/">SVN</a>
+  </div>
+
+        <div class = "counter">
+  <span id="busuanzi_container_page_pv" style="display:none">
+      总访问&nbsp<span id="busuanzi_value_page_pv"></span>&nbsp次
+  </span>
+</div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+  
+<section id = "relate">
+	
+                <div id="快乐人生ddd"></div>
+	
+</section>
+
+
+  
+    <section id="comment">
+    <!--   <h1 class="title">Comments</h1> -->
+    
+    
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="2016/08/14/SVN介绍及使用方法/" data-title="SVN介绍及使用方法" data-url="http://yoursite.com/2016/08/14/SVN介绍及使用方法/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"lupeng-test"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+          </script>
+        <!-- 多说公共JS代码 end -->
+
+      
+    </section>
+
+
+
+
+</div></div>
+      <aside id="sidebar" class="alignright">
+  
+<div class="widget tag">
+  <h3 class="title" id="categories">Categories</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
+</div>
+ 
+
+
+  <!--
+<div class="widget tag">
+  <h3 class="title">微信公众账号</h3>
+    <ul class="entry">
+      <img src="/img/default/qrcode.jpg" alt="欢迎关注，该账号供个人学习使用，偶尔做一些开发尝试，更新频率较低。" style= "width: 100%">
+    </ul>
+</div>-->
+
+
+  <div class="widget tag">
+  <h3 class="title">Calendar</h3>
+  <div id="calendar"></div>
+</div>
+
+
+  
+<div class="widget">
+  <h3 class="title">最新评论</h3>
+  	<!-- 多说最新评论 start -->
+	<div class="ds-recent-comments ds-recent-user" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+	<!-- 多说最新评论 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lupeng-test"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+		</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+  
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">Tag Cloud</h3>
+  <div class="entry">
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+  </div>
+</div>
+
+
+  
+  <div class="widget tag">
+    <h3 class="title">归档</h3>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">34</span></li></ul>
+  </div>
+
+</aside>
+      <div class="clearfix"></div>
+    </div>
+  
+  <footer id="footer"><div class="footer-content inner">
+  <div class="alignleft">
+  
+    &copy; 2017 John Doe
+    
+  </div>
+  <div class="alignright">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme
+    <a href="https://github.com/pengloo53/Hexo-theme-light_cn">light_cn</a>
+  </div>
+  
+  <div class="visit">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </div>
+  
+  <div class="clearfix"></div>
+</div></footer>
+  <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<!-- calendar widget -->
+
+  <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script type="text/javascript">
+    $(function() {
+    
+      $('#calendar').aCalendar('undefined',{single:undefined, root:'calendar'});
+    
+    });
+  </script>
+
+
+<!-- 『不蒜子』计数服务 -->
+<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- wumii关联推荐 -->
+<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+
+<!-- 百度推荐 -->
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?9acf0cedd48dc53be256ede5a98c2aaa";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<!-- 返回顶部 -->
+<div id="toTop">
+	<a href="#">▲</a>
+	<a href="#footer">▼</a>
+</div>
+
+<!-- 站内搜索-Swiftype -->
+<!-- <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','sC-iNFrvTTNtiXEVNwo1','2.0.0');
+</script> -->
+
+<!-- fancybox -->
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

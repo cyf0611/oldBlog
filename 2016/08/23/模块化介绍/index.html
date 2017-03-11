@@ -1,0 +1,468 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>模块化介绍 | Hexo</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="掌握模块化基本概念以及使用模块化带来的好处
+
+当你的网站开发越来越复杂的时候，会经常遇到什么问题？
+
+恼人的命名冲突
+繁琐的文件依赖
+
+Sea.js 可以解决命名空间污染、文件依赖的问题。
+历史上，JavaScript一直没有模块（module）体系，无法将一个大程序拆分成互相依赖的小文件，再用简单">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="模块化介绍"/>
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <!-- wumiiVerification -->
+  <meta name="wumiiVerification" content="fb50a101-84fe-4ca2-91a7-ae8cf792978b" />
+  <meta name="wumiiVerification" content="d73b5866-c390-4156-a4dd-51b526b5335e" />
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <header id="header"><div class= "header-content inner">
+	<div class = "alignleft col-one">
+		
+			<div class='avatar'>
+				<img src = "/img/default/avatar.jpg">
+              </div>
+		
+		<div class="header-div">
+		    <h1><a href="/">Hexo</a></h1>
+		    <h2><a href="/"></a></h2>
+		</div>
+	</div>
+	<div class = "alignright col-two">
+		
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class= "header-nav">
+	<div class='header-nav-content inner'>
+		<div id="main-nav" class="alignleft">
+		    		
+		    		  <a href="/"><i class="fa fa-home"></i>Home</a>
+		    		
+		    		  <a href="/archives"><i class="fa fa-archive"></i>Archives</a>
+		    		
+		    		  <a href=""><i class="fa fa-book"></i>Books</a>
+		    		
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>About</a>
+		    		
+		</div>
+		<div id="sub-nav" class="alignright">
+		    
+		      <a href=""><i class="fa fa-rss"></i>Rss</a>
+		    
+		      <a href=""><i class="fa fa-question-circle"></i>Customization</a>
+		    
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+</header>
+  
+    <div id="content" class="inner">
+      <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-08-23T14:17:45.000Z"><a href="/2016/08/23/模块化介绍/">2016-08-23</a></time>
+        
+  
+    <h1 class="title">模块化介绍</h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-模块化开发演变"><span class="toc-text">2. 模块化开发演变</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-全局函数"><span class="toc-text">2.1 全局函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-命名空间"><span class="toc-text">2.2 命名空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-私有空间"><span class="toc-text">2.3 私有空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-模块的维护和扩展"><span class="toc-text">2.4 模块的维护和扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-模块的第三方依赖"><span class="toc-text">2.5 模块的第三方依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-总结"><span class="toc-text">2.6 总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-模块化规范"><span class="toc-text">3. 模块化规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-模块系统理解"><span class="toc-text">3.1 模块系统理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-常见的-JavaScript-模块化规范"><span class="toc-text">3.2 常见的 JavaScript 模块化规范</span></a></li></ol></li></ol>
+    </div>
+
+        <blockquote>
+<p>掌握模块化基本概念以及使用模块化带来的好处</p>
+</blockquote>
+<p><strong>当你的网站开发越来越复杂的时候，会经常遇到什么问题？</strong></p>
+<ul>
+<li>恼人的命名冲突</li>
+<li>繁琐的文件依赖</li>
+</ul>
+<p>Sea.js 可以解决命名空间污染、文件依赖的问题。</p>
+<p>历史上，JavaScript一直没有模块（module）体系，<br>无法将一个大程序拆分成互相依赖的小文件，再用简单的方法拼装起来。<br>其他语言都有这项功能，比如Ruby的 <code>require</code>、Python的 <code>import</code> ，<br>甚至就连CSS都有 <code>@import</code> ，c 语言中的 <code>include</code>，<br>但是JavaScript任何这方面的支持都没有，这对开发大型的、复杂的项目形成了巨大障碍。</p>
+<p>对于一些其他语言的编程人员，都不知道莫快快这么一回事儿，因为人家的语言天生就支持，<br>它就认为这是一个理所当然的事情。</p>
+<ul>
+<li>模块的作用就是：私有空间</li>
+<li><p>可以加载，可以导出</p>
+</li>
+<li><p>什么是模块化</p>
+<ul>
+<li>模块化是指解决一个复杂问题时自顶向下逐层把系统划分成若干模块的过程，有多种属性，分别反映其内部特性。</li>
+<li>解决复杂问题的一种方式而已</li>
+<li>电脑：CPU、主板、显示器、内存、硬盘、输入与输出设备</li>
+<li>房屋模块化</li>
+</ul>
+</li>
+<li><p>使用模块化开发的方式带来的好处</p>
+<ul>
+<li>生产效率高</li>
+<li>可维护性高</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="2-模块化开发演变"><a href="#2-模块化开发演变" class="headerlink" title="2. 模块化开发演变"></a>2. 模块化开发演变</h2><blockquote>
+<p>体验刀耕火种的模块化解决方式</p>
+</blockquote>
+<h3 id="2-1-全局函数"><a href="#2-1-全局函数" class="headerlink" title="2.1 全局函数"></a>2.1 全局函数</h3><ul>
+<li>污染了全局变量</li>
+<li>模块成员之间看不出直接关系</li>
+</ul>
+<h3 id="2-2-命名空间"><a href="#2-2-命名空间" class="headerlink" title="2.2 命名空间"></a>2.2 命名空间</h3><ul>
+<li>理论意义上减少了变量冲突</li>
+<li>缺点1：暴露了模块中所有的成员，内部状态可以被外部改写，不安全</li>
+<li>缺点2：命名空间会越来越长</li>
+</ul>
+<h3 id="2-3-私有空间"><a href="#2-3-私有空间" class="headerlink" title="2.3 私有空间"></a>2.3 私有空间</h3><ul>
+<li>私有空间的变量和函数不会影响全局作用域</li>
+<li>公开公有方法，隐藏私有属性</li>
+</ul>
+<h3 id="2-4-模块的维护和扩展"><a href="#2-4-模块的维护和扩展" class="headerlink" title="2.4 模块的维护和扩展"></a>2.4 模块的维护和扩展</h3><ul>
+<li>开闭原则</li>
+<li>可维护性好</li>
+</ul>
+<h3 id="2-5-模块的第三方依赖"><a href="#2-5-模块的第三方依赖" class="headerlink" title="2.5 模块的第三方依赖"></a>2.5 模块的第三方依赖</h3><ul>
+<li>保证模块的独立性</li>
+<li>模块之间的依赖关系变得明显</li>
+</ul>
+<h3 id="2-6-总结"><a href="#2-6-总结" class="headerlink" title="2.6 总结"></a>2.6 总结</h3><p>以后如果不使用第三方规范的情况下，如果写模块可以采用下面这种方式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1. 分号是什么意思</span></div><div class="line"><span class="comment">// 2. 为什么要给你的代码加一个匿名自执行函数</span></div><div class="line"><span class="comment">// 3. 为什么要把使用的依赖作为参数传递进来</span></div><div class="line">;(<span class="function"><span class="keyword">function</span> (<span class="params">形参模块名, 依赖项, 依赖项</span>) </span>&#123;</div><div class="line">  <span class="comment">// 通过 形参模块名 修改模块</span></div><div class="line"></div><div class="line">  <span class="comment">// 如果需要，可以通过给 window 对象挂载属性对外暴露内部成员</span></div><div class="line">  <span class="built_in">window</span>.模块名 = 形参模块名</div><div class="line">&#125;)(<span class="built_in">window</span>.模块名 || &#123;&#125;, 依赖项, 依赖项)</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="3-模块化规范"><a href="#3-模块化规范" class="headerlink" title="3. 模块化规范"></a>3. 模块化规范</h2><h3 id="3-1-模块系统理解"><a href="#3-1-模块系统理解" class="headerlink" title="3.1 模块系统理解"></a>3.1 模块系统理解</h3><p>自然界生态系统、计算机操作系统、软件办公系统，还有教育系统、金融系统、网络系统、<br>理论系统等等。究竟什么是系统呢？</p>
+<blockquote>
+<p>维基百科：系统泛指由一群有关连的个体组成，根据预先编排好的规则工作，<br>能完成个别元件不能单独完成的工作的群体。<br>系统分为自然系统与人为系统两大类。</p>
+</blockquote>
+<p>简单来说，系统有两个基本特性：</p>
+<ol>
+<li>系统由个体组成</li>
+<li>个体之间有关联，按照规则协同完成任务</li>
+</ol>
+<p>系统之间的个体可以成为系统成员，要构建一个系统，最基本的层面需要做两件事：</p>
+<ol>
+<li><strong>定义系统成员</strong>：确定成员是什么<ul>
+<li>模块是一个 JavaScript 文件</li>
+<li>每一个模块都使用 <code>define</code> 函数去定义</li>
+</ul>
+</li>
+<li><strong>约定系统通讯</strong>：确定成员之间如何交互，遵循的规则是什么<ul>
+<li>一个 SeaJS 模块默认就是私有作用域</li>
+<li>如果想要被外部文件模块所访问，就必须把要公开的属性挂载给 <code>module.exports</code> 对象接口</li>
+<li>使用 <code>require</code> 函数可以加载一个指定的模块，得到该模块代码中暴露的接口对象</li>
+</ul>
+</li>
+<li>如何启动整个模块系统<ul>
+<li>在 html 页面中使用 <code>seajs.use()</code> 方法，指定一个入口文件模块</li>
+</ul>
+</li>
+</ol>
+<p>Sea.js 是一个适用于 Web 浏览器端的模块加载器。<br>在 Sea.js 里，一切皆是模块，所有模块协同构建成模块系统。<br>Sea.js 首要要解决的是模块系统的基本问题：</p>
+<ol>
+<li>模块是什么？</li>
+<li>模块之间如何交互？</li>
+</ol>
+<p>在前端开发领域，一个模块，可以是JS 模块，也可以是 CSS 模块，或是 Template 等模块。<br>而 Sea.js 则专注于 JS 文件模块：</p>
+<ol>
+<li>模块是一段 JavaScript 代码，具有统一的 <strong>基本书写格式</strong></li>
+<li>模块之间通过基本 <strong>交互规则</strong> ，能彼此引用，协同工作</li>
+</ol>
+<p>把上面两点中提及的基本书写格式和基本交互规则描述清楚，就能构建出一个模块系统。<br>对书写格式和交互规则的详细描述，就是模块定义规范（Module Definition Specification）。</p>
+<p>比如 CommonJS 社区的 <code>Modules 1.1.1</code> 规范，<br>以及 <code>NodeJS 的 Modules</code> 规范，<br>还有 RequireJS 提出的 <code>AMD</code> 规范等等。</p>
+<p>Sea.js 遵循的是 <code>CMD</code> 规范。</p>
+<h3 id="3-2-常见的-JavaScript-模块化规范"><a href="#3-2-常见的-JavaScript-模块化规范" class="headerlink" title="3.2 常见的 JavaScript 模块化规范"></a>3.2 常见的 JavaScript 模块化规范</h3><p>规范其实就是这些库在推广的过程中逐渐形成的一套规则。</p>
+<p>所谓的规范也就是：</p>
+<ul>
+<li>定义了模块的书写格式</li>
+<li><p>以及模块之间的交互规则</p>
+</li>
+<li><p>Node 环境</p>
+<ul>
+<li>CommonJS</li>
+<li>这里先放在这里，Node 还没有学习，学到 Node 的时候，再说这个问题</li>
+</ul>
+</li>
+<li>浏览器环境<ul>
+<li>AMD<ul>
+<li>RequireJS</li>
+</ul>
+</li>
+<li>CMD Common Module Definition<ul>
+<li>CMD 就是 SeaJS 这个模块加载器在推广的过程中定义的一个模块规范</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ECMAScript<ul>
+<li>ECMAScript 6</li>
+</ul>
+</li>
+<li>UMD</li>
+</ul>
+<p>CMD、AMD、CommonJS 都是社区制定出来的模块规范，他们的目的都是为了解决 JavaScript 没有模块化系统的问题。<br>他们都有如何定义模块成员，以及模块成员之间如何进行通信交互的规则。</p>
+<p>2015 年 9 月份，ECMAScript  官方推出了 ECMAScript 6 语言标准。<br>在最新的 ES6 语言规范标准中制定了 JavaScript 模块化规范，通过 <code>export</code> 和 <code>import</code> 两个关键字来作为交互规则。</p>
+<p>ES6 才是未来的趋势，以后的大一统。</p>
+<p>前端发展非常快，不是说出了新技术马上就用，而是这个破玩儿还没发布正式版，<br>都已经怼到生产环境了。</p>
+<p>顶多也就是一个框架使用工程师而已。</p>
+<p>都2016年，谁还在写html、css、JavaScript，全是扯淡。<br>JavaScript 的思想太强大了。</p>
+<p>所有任何功能，都可以使用 js 来实现。</p>
+<ul>
+<li>electron<ul>
+<li>使用 HTML+CSS+JavaScript+Node 构建跨平台桌面应用程序</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/模块化/">模块化</a>, <a href="/categories/模块化/介绍/">介绍</a>
+  </div>
+
+        
+  <div class="tags">
+    <a href="/tags/模块化/">模块化</a>
+  </div>
+
+        <div class = "counter">
+  <span id="busuanzi_container_page_pv" style="display:none">
+      总访问&nbsp<span id="busuanzi_value_page_pv"></span>&nbsp次
+  </span>
+</div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+  
+<section id = "relate">
+	
+                <div id="快乐人生ddd"></div>
+	
+</section>
+
+
+  
+    <section id="comment">
+    <!--   <h1 class="title">Comments</h1> -->
+    
+    
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="2016/08/23/模块化介绍/" data-title="模块化介绍" data-url="http://yoursite.com/2016/08/23/模块化介绍/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"lupeng-test"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+          </script>
+        <!-- 多说公共JS代码 end -->
+
+      
+    </section>
+
+
+
+
+</div></div>
+      <aside id="sidebar" class="alignright">
+  
+<div class="widget tag">
+  <h3 class="title" id="categories">Categories</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
+</div>
+ 
+
+
+  <!--
+<div class="widget tag">
+  <h3 class="title">微信公众账号</h3>
+    <ul class="entry">
+      <img src="/img/default/qrcode.jpg" alt="欢迎关注，该账号供个人学习使用，偶尔做一些开发尝试，更新频率较低。" style= "width: 100%">
+    </ul>
+</div>-->
+
+
+  <div class="widget tag">
+  <h3 class="title">Calendar</h3>
+  <div id="calendar"></div>
+</div>
+
+
+  
+<div class="widget">
+  <h3 class="title">最新评论</h3>
+  	<!-- 多说最新评论 start -->
+	<div class="ds-recent-comments ds-recent-user" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+	<!-- 多说最新评论 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lupeng-test"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+		</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+  
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">Tag Cloud</h3>
+  <div class="entry">
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+  </div>
+</div>
+
+
+  
+  <div class="widget tag">
+    <h3 class="title">归档</h3>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">34</span></li></ul>
+  </div>
+
+</aside>
+      <div class="clearfix"></div>
+    </div>
+  
+  <footer id="footer"><div class="footer-content inner">
+  <div class="alignleft">
+  
+    &copy; 2017 John Doe
+    
+  </div>
+  <div class="alignright">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme
+    <a href="https://github.com/pengloo53/Hexo-theme-light_cn">light_cn</a>
+  </div>
+  
+  <div class="visit">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </div>
+  
+  <div class="clearfix"></div>
+</div></footer>
+  <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<!-- calendar widget -->
+
+  <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script type="text/javascript">
+    $(function() {
+    
+      $('#calendar').aCalendar('undefined',{single:undefined, root:'calendar'});
+    
+    });
+  </script>
+
+
+<!-- 『不蒜子』计数服务 -->
+<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- wumii关联推荐 -->
+<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+
+<!-- 百度推荐 -->
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?9acf0cedd48dc53be256ede5a98c2aaa";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<!-- 返回顶部 -->
+<div id="toTop">
+	<a href="#">▲</a>
+	<a href="#footer">▼</a>
+</div>
+
+<!-- 站内搜索-Swiftype -->
+<!-- <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','sC-iNFrvTTNtiXEVNwo1','2.0.0');
+</script> -->
+
+<!-- fancybox -->
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

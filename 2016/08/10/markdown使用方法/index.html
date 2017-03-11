@@ -1,0 +1,428 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>markdown使用方法 | Hexo</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="专注写作，提高生产力
+
+Markdown 介绍轻量级标记语言（html、xml），2004 年被 John Gruber 创造，它允许人们“使用易读易写的纯文本格式编写文档”，Markdown 最重要的设计就是可读性，Markdown 可以选择性的转换为 HTML 文档格式，很多网站目前都使用了 M">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="markdown使用方法"/>
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <!-- wumiiVerification -->
+  <meta name="wumiiVerification" content="fb50a101-84fe-4ca2-91a7-ae8cf792978b" />
+  <meta name="wumiiVerification" content="d73b5866-c390-4156-a4dd-51b526b5335e" />
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <header id="header"><div class= "header-content inner">
+	<div class = "alignleft col-one">
+		
+			<div class='avatar'>
+				<img src = "/img/default/avatar.jpg">
+              </div>
+		
+		<div class="header-div">
+		    <h1><a href="/">Hexo</a></h1>
+		    <h2><a href="/"></a></h2>
+		</div>
+	</div>
+	<div class = "alignright col-two">
+		
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class= "header-nav">
+	<div class='header-nav-content inner'>
+		<div id="main-nav" class="alignleft">
+		    		
+		    		  <a href="/"><i class="fa fa-home"></i>Home</a>
+		    		
+		    		  <a href="/archives"><i class="fa fa-archive"></i>Archives</a>
+		    		
+		    		  <a href=""><i class="fa fa-book"></i>Books</a>
+		    		
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>About</a>
+		    		
+		</div>
+		<div id="sub-nav" class="alignright">
+		    
+		      <a href=""><i class="fa fa-rss"></i>Rss</a>
+		    
+		      <a href=""><i class="fa fa-question-circle"></i>Customization</a>
+		    
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+</header>
+  
+    <div id="content" class="inner">
+      <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-08-10T01:53:31.000Z"><a href="/2016/08/10/markdown使用方法/">2016-08-10</a></time>
+        
+  
+    <h1 class="title">markdown使用方法</h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-介绍"><span class="toc-text">Markdown 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-的优点"><span class="toc-text">Markdown 的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实时预览编辑器"><span class="toc-text">实时预览编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-基本语法"><span class="toc-text">Markdown 基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-相关插件"><span class="toc-text">Markdown 相关插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-使用场景"><span class="toc-text">Markdown 使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用-Markdown-写一封漂亮的电子邮件"><span class="toc-text">用 Markdown 写一封漂亮的电子邮件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-GitBook-制作电子书"><span class="toc-text">使用 GitBook 制作电子书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何做做一个-Markdown-实时预览编辑器"><span class="toc-text">如何做做一个 Markdown 实时预览编辑器</span></a></li></ol>
+    </div>
+
+        <blockquote>
+<p>专注写作，提高生产力</p>
+</blockquote>
+<h3 id="Markdown-介绍"><a href="#Markdown-介绍" class="headerlink" title="Markdown 介绍"></a>Markdown 介绍</h3><p>轻量级标记语言（html、xml），2004 年被 <code>John Gruber</code> 创造，<br>它允许人们“使用易读易写的纯文本格式编写文档”，<br>Markdown 最重要的设计就是可读性，<br>Markdown 可以选择性的转换为 HTML 文档格式，<br>很多网站目前都使用了 Markdown 或者其变种，例如Github、简书等大型社区。</p>
+<p>下面是一个 demo：</p>
+<p>markdown 源文档：</p>
+<p><img src="img/md.png" alt="markdown"></p>
+<p>转换过后的 HTML：</p>
+<p><img src="img/html.png" alt="markdown - html"></p>
+<h3 id="Markdown-的优点"><a href="#Markdown-的优点" class="headerlink" title="Markdown 的优点"></a>Markdown 的优点</h3><ul>
+<li>纯文本，所以兼容性极强，可以用所有文本编辑器打开</li>
+<li>专注于文字写作而不是排版</li>
+<li>格式转换方便，可以轻松转换为 HTML、PPT、电子书等</li>
+<li>Markdown 标记语法简单好记，可读性强</li>
+</ul>
+<h3 id="实时预览编辑器"><a href="#实时预览编辑器" class="headerlink" title="实时预览编辑器"></a>实时预览编辑器</h3><p><a href="http://www.williamlong.info/archives/4319.html" target="_blank" rel="external">月光博客 - 好用的Markdown编辑器一览</a></p>
+<ul>
+<li>dillinger</li>
+<li>马克飞象</li>
+<li>简书</li>
+<li>MarkdownPad</li>
+<li>Sublime Text<ul>
+<li>配合 <code>Markdown Preview</code> 插件</li>
+</ul>
+</li>
+<li>Webstorm<ul>
+<li>配合插件</li>
+</ul>
+</li>
+<li>gitbook</li>
+</ul>
+<p>编辑实时预览工具只是为了辅助教学而已，<br>我们真正在进行写作的时候，其实是不需要实时预览的，<br>因为 Markdown 标记语言本身已经足够清晰了。</p>
+<h3 id="Markdown-基本语法"><a href="#Markdown-基本语法" class="headerlink" title="Markdown 基本语法"></a>Markdown 基本语法</h3><ul>
+<li>标题</li>
+<li>段落</li>
+<li>粗体</li>
+<li>斜体</li>
+<li>无序列表</li>
+<li>有序列表</li>
+<li>链接</li>
+<li>图片</li>
+<li>文本引用</li>
+<li>行内代码引用</li>
+<li>多行代码引用</li>
+<li>表格</li>
+</ul>
+<p>表格比较特殊，不太好用，下面是规范写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">| ABCD | EFGH | IJKL |</div><div class="line">| -----|:----:| ----:|</div><div class="line">| a    | b    | c    |</div><div class="line">| d    | e    |  f   |</div><div class="line">| g    | h    |   i  |</div></pre></td></tr></table></figure>
+<h3 id="Markdown-相关插件"><a href="#Markdown-相关插件" class="headerlink" title="Markdown 相关插件"></a>Markdown 相关插件</h3><ul>
+<li>Sublime<ul>
+<li>MarkdownEditing</li>
+<li>MarkdownPreview<ul>
+<li>编辑的时候实时预览</li>
+<li>编译生成 html 文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="http://packagecontrol.io" target="_blank" rel="external">http://packagecontrol.io</a></p>
+<h3 id="Markdown-使用场景"><a href="#Markdown-使用场景" class="headerlink" title="Markdown 使用场景"></a>Markdown 使用场景</h3><ul>
+<li>学习笔记<ul>
+<li>手写笔记</li>
+</ul>
+</li>
+<li>演讲稿<ul>
+<li>技术沙龙，party</li>
+<li>中午演讲：以后都做一个 PPT 或者写一个 Markdown 演讲稿</li>
+</ul>
+</li>
+<li>写书（侧重于技术相关的内容非常适合）</li>
+<li>个人笔记</li>
+<li>文章博客</li>
+<li>教学讲义</li>
+<li>说明文档<ul>
+<li>使用比较多，软件的说明文档或者开源项目的说明文档</li>
+</ul>
+</li>
+<li>电子邮件</li>
+</ul>
+<p>只要有写作的地方，都可以使用 Markdown 来书写。</p>
+<h3 id="用-Markdown-写一封漂亮的电子邮件"><a href="#用-Markdown-写一封漂亮的电子邮件" class="headerlink" title="用 Markdown 写一封漂亮的电子邮件"></a>用 Markdown 写一封漂亮的电子邮件</h3><p>为什么要用 Markdown 写电子邮件？ 答案是：<code>装x</code>。</p>
+<p>当然不是了，Markdown 本身语法简单，使用 Markdown 写出来的内容结构也非常清晰，<br>有助于协作沟通，总而言之，使用 Markdown 可以可以让你更加专注写作本身。</p>
+<p>其实就是讲md格式字符串转换成html而已，这里使用一个 Chrome 插件：</p>
+<p><a href="https://chrome.google.com/webstore/detail/markdown-here/elifhakcjgalahccnjkneoccemfahfoa?utm_source=chrome-ntp-icon" target="_blank" rel="external">Markdown Here</a></p>
+<h3 id="使用-GitBook-制作电子书"><a href="#使用-GitBook-制作电子书" class="headerlink" title="使用 GitBook 制作电子书"></a>使用 GitBook 制作电子书</h3><p><a href="https://www.gitbook.com/" target="_blank" rel="external">GitBook</a></p>
+<ul>
+<li>在线 Web 端写</li>
+<li>使用客户端软件写<ul>
+<li>下载地址：<a href="https://www.gitbook.com/editor" target="_blank" rel="external">https://www.gitbook.com/editor</a></li>
+</ul>
+</li>
+<li>终端命令行工具可以辅助生成</li>
+</ul>
+<h3 id="如何做做一个-Markdown-实时预览编辑器"><a href="#如何做做一个-Markdown-实时预览编辑器" class="headerlink" title="如何做做一个 Markdown 实时预览编辑器"></a>如何做做一个 Markdown 实时预览编辑器</h3><p>Markdown 本身就是一个标记语言，可以通过某种方式转换成别的文本格式，本质上转换的过程其实就是做正则解析替换。</p>
+<ul>
+<li>如何将markdown格式字符串转成html<ul>
+<li>使用一个第三方包：<code>marked</code></li>
+<li><code>npm install marked</code></li>
+</ul>
+</li>
+<li>给html设置样式</li>
+<li>给代码块设置颜色高亮<ul>
+<li><a href="https://highlightjs.org/" target="_blank" rel="external">highlightjs</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/工具/">工具</a>, <a href="/categories/工具/markdown/">markdown</a>
+  </div>
+
+        
+  <div class="tags">
+    <a href="/tags/markdown/">markdown</a>
+  </div>
+
+        <div class = "counter">
+  <span id="busuanzi_container_page_pv" style="display:none">
+      总访问&nbsp<span id="busuanzi_value_page_pv"></span>&nbsp次
+  </span>
+</div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+  
+<section id = "relate">
+	
+                <div id="快乐人生ddd"></div>
+	
+</section>
+
+
+  
+    <section id="comment">
+    <!--   <h1 class="title">Comments</h1> -->
+    
+    
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="2016/08/10/markdown使用方法/" data-title="markdown使用方法" data-url="http://yoursite.com/2016/08/10/markdown使用方法/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"lupeng-test"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+          </script>
+        <!-- 多说公共JS代码 end -->
+
+      
+    </section>
+
+
+
+
+</div></div>
+      <aside id="sidebar" class="alignright">
+  
+<div class="widget tag">
+  <h3 class="title" id="categories">Categories</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
+</div>
+ 
+
+
+  <!--
+<div class="widget tag">
+  <h3 class="title">微信公众账号</h3>
+    <ul class="entry">
+      <img src="/img/default/qrcode.jpg" alt="欢迎关注，该账号供个人学习使用，偶尔做一些开发尝试，更新频率较低。" style= "width: 100%">
+    </ul>
+</div>-->
+
+
+  <div class="widget tag">
+  <h3 class="title">Calendar</h3>
+  <div id="calendar"></div>
+</div>
+
+
+  
+<div class="widget">
+  <h3 class="title">最新评论</h3>
+  	<!-- 多说最新评论 start -->
+	<div class="ds-recent-comments ds-recent-user" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+	<!-- 多说最新评论 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lupeng-test"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+		</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+  
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">Tag Cloud</h3>
+  <div class="entry">
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+  </div>
+</div>
+
+
+  
+  <div class="widget tag">
+    <h3 class="title">归档</h3>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">34</span></li></ul>
+  </div>
+
+</aside>
+      <div class="clearfix"></div>
+    </div>
+  
+  <footer id="footer"><div class="footer-content inner">
+  <div class="alignleft">
+  
+    &copy; 2017 John Doe
+    
+  </div>
+  <div class="alignright">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme
+    <a href="https://github.com/pengloo53/Hexo-theme-light_cn">light_cn</a>
+  </div>
+  
+  <div class="visit">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </div>
+  
+  <div class="clearfix"></div>
+</div></footer>
+  <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<!-- calendar widget -->
+
+  <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script type="text/javascript">
+    $(function() {
+    
+      $('#calendar').aCalendar('undefined',{single:undefined, root:'calendar'});
+    
+    });
+  </script>
+
+
+<!-- 『不蒜子』计数服务 -->
+<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- wumii关联推荐 -->
+<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+
+<!-- 百度推荐 -->
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?9acf0cedd48dc53be256ede5a98c2aaa";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<!-- 返回顶部 -->
+<div id="toTop">
+	<a href="#">▲</a>
+	<a href="#footer">▼</a>
+</div>
+
+<!-- 站内搜索-Swiftype -->
+<!-- <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','sC-iNFrvTTNtiXEVNwo1','2.0.0');
+</script> -->
+
+<!-- fancybox -->
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

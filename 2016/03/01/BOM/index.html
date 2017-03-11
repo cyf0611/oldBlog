@@ -1,0 +1,486 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>BOM | Hexo</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="[TOC]
+
+BOM（Browser Object Model）浏览器对象模型，提供了一套操作浏览器功能的工具（接口）。
+
+Window对象：
+
+window对象是一个全局对象，也可以说是JavaScript中的顶级对象，
+所有定义在全局作用域中的变量、函数都会变成window对象的属性和方法
+wi">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="BOM"/>
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <!-- wumiiVerification -->
+  <meta name="wumiiVerification" content="fb50a101-84fe-4ca2-91a7-ae8cf792978b" />
+  <meta name="wumiiVerification" content="d73b5866-c390-4156-a4dd-51b526b5335e" />
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <header id="header"><div class= "header-content inner">
+	<div class = "alignleft col-one">
+		
+			<div class='avatar'>
+				<img src = "/img/default/avatar.png">
+              </div>
+		
+		<div class="header-div">
+		    <h1><a href="/">Hexo</a></h1>
+		    <h2><a href="/"></a></h2>
+		</div>
+	</div>
+	<div class = "alignright col-two">
+		
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class= "header-nav">
+	<div class='header-nav-content inner'>
+		<div id="main-nav" class="alignleft">
+		    		
+		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
+		    		
+		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+		    		
+		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
+		    		
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>我的简历</a>
+		    		
+		</div>
+		<div id="sub-nav" class="alignright">
+		    
+		      <a href=""><i class="fa fa-rss"></i>订阅</a>
+		    
+		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
+		    
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+</header>
+  
+    <div id="content" class="inner">
+      <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-03-01T12:51:46.000Z"><a href="/2016/03/01/BOM/">2016-03-01</a></time>
+        
+  
+    <h1 class="title">BOM</h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#offset系列："><span class="toc-text">offset系列：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#匀速动画封装"><span class="toc-text">匀速动画封装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scroll系列："><span class="toc-text">scroll系列：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#client系列："><span class="toc-text">client系列：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件对象："><span class="toc-text">事件对象：</span></a></li></ol>
+    </div>
+
+        <p>[TOC]</p>
+<blockquote>
+<p>BOM（Browser Object Model）<br>浏览器对象模型，提供了一套操作浏览器功能的工具（接口）。</p>
+</blockquote>
+<p><strong>Window对象：</strong></p>
+<ul>
+<li>window对象是一个全局对象，也可以说是JavaScript中的顶级对象，</li>
+<li>所有定义在全局作用域中的变量、函数都会变成window对象的属性和方法</li>
+<li>window对象下的属性和方法调用的时候可以省略window</li>
+</ul>
+<p><strong>入口函数：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">window.onload() &#123;</div><div class="line">	代码块；</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>写在script标签里面，会在页面和所有的图片和文件加载完之后执行</li>
+<li>如果有图片加载，那么代码一定要写到window.onload里面，否则会出现图片没有加载完成，获取到的宽度和高度不对的情况。</li>
+<li><code>注意：</code>如果同一个页面中有多个window.onload，会出现覆盖现象，后面的会把前面的覆盖。</li>
+</ul>
+<p><strong>定时器：</strong></p>
+<ul>
+<li><strong>延时定时器：</strong><ul>
+<li><code>setTimeOut(callback, time);</code><ul>
+<li>参数1：重复执行的函数</li>
+<li>参数2：每次延迟的毫秒数</li>
+<li>返回值：定时器的id，用于清除</li>
+<li>清除延时定时器：<code>clearTimeOut(timerId)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>间歇定时器：</strong><ul>
+<li><code>setInterval(function, delay);</code><ul>
+<li>参数1：重复执行的函数</li>
+<li>参数2：每次延迟的毫秒数</li>
+<li>返回值：定时器的id，用于清除</li>
+<li>清除延时定时器：<code>clearInterval(intervalID)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="offset系列："><a href="#offset系列：" class="headerlink" title="offset系列："></a>offset系列：</h3><blockquote>
+<p>盒子有多高、多宽，就有多大</p>
+</blockquote>
+<ul>
+<li>一、<code>offsetHeight与offsetWidth</code><ul>
+<li>1.获取的是元素真实的高度和宽度<ul>
+<li><code>【offsetHeight = height + paddnig + border】</code></li>
+<li><code>【offsetWidth = width + padding + border】</code></li>
+</ul>
+</li>
+<li>2.获取到的是数值类型，方便计算</li>
+<li>3.offsetHeight与offsetWidth是只读属性，不能设置</li>
+<li><code>style.height与style.width</code><ul>
+<li>1.只能获取行内样式</li>
+<li>2.获取到的是字符串类型，需要转换</li>
+<li>2.获取到的是字符串类型，需要转换</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>二、<code>offsetParent</code><ul>
+<li>是离当前元素最近的定位元素(absolute、relative)的距离，如果没有，那就找body</li>
+<li>parentNode始终是父元素</li>
+</ul>
+</li>
+<li>三、<code>offsetLeft与offsetTop</code><ul>
+<li><code>offsetLeft:</code>自身左侧到offsetParent左侧的距离：<code>left + margin-left</code></li>
+<li><code>offsetTop:</code>自身顶部到offsetParent顶部的距离 :  <code>top + margin-top</code><ul>
+<li>1.元素自身与offsetParent真实的距离</li>
+<li>2.获取到的是数值类型，方便计算</li>
+<li>3.只读属性，只能获取，不能设置</li>
+</ul>
+</li>
+<li><code>style.left与style.top</code><ul>
+<li>1.只能获取行内样式</li>
+<li>2.获取到的是字符串，需要转换</li>
+<li>3.可以获取，也可以设置</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="匀速动画封装"><a href="#匀速动画封装" class="headerlink" title="匀速动画封装"></a>匀速动画封装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">    *</div><div class="line">    * @param obj</div><div class="line">    * @param target</div><div class="line">    */</div><div class="line">   function animate(obj, target) &#123;</div><div class="line">       if (obj.timer) &#123;//解决越点越快问题</div><div class="line">           clearInterval(obj.timer);</div><div class="line">       &#125;</div><div class="line">       obj.timer = setInterval(function () &#123;//设置定时</div><div class="line">           var leader = obj.offsetLeft;//获取元素距离左侧的距离</div><div class="line">           var step = 10;//设置一部走多远</div><div class="line">           if (leader &gt; target) &#123;//如果实际距离大于设置的目标点时，设置步数为负</div><div class="line">               step = -step;</div><div class="line">           &#125;</div><div class="line">           if (Math.abs(leader - target) &gt; Math.abs(step)) &#123;//当实际距离与目标点之差大于一步时，</div><div class="line">               leader = leader + step;//向目标距离移动一步</div><div class="line">               obj.style.left = leader + &quot;px&quot;;</div><div class="line">           &#125; else &#123;//当实际距离与目标距离之差小于一步时，</div><div class="line">               clearInterval(obj.timer);</div><div class="line">               obj.style.left = target + &quot;px&quot;;//直接移动到目标点</div><div class="line">           &#125;</div><div class="line">       &#125;, 15)</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p><strong>匀速动画公式</strong><br>| leader =|leader +|step|<br>|—|—|—|<br>|[要移动元素下一个要到达的位置]|[要移动元素的当前位置]|[一步要移动的距离]|</p>
+<ul>
+<li><code>leader = 移动元素.offsetLeft;</code>（要移动元素离开始移动前的距离）</li>
+<li><code>step = 一步要移动的距离</code></li>
+</ul>
+<p><strong>缓动动画公式</strong></p>
+<ul>
+<li>缓动动画公式：(首先要获得leader的值)</li>
+<li><code>leader = 移动元素.offsetLeft;</code>（要移动元素离开始移动前的距离）</li>
+<li><code>var step = (target – leader) /10;</code></li>
+<li><code>leader = leader + step;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 缓动动画多个属性</div><div class="line"> * @param obj</div><div class="line"> * @param json</div><div class="line"> * @param fn</div><div class="line"> */</div><div class="line">function animate(obj, json, fn) &#123;</div><div class="line"></div><div class="line">    if (obj.timer) &#123;</div><div class="line">        clearInterval(obj.timer);</div><div class="line">    &#125;</div><div class="line">    obj.timer = setInterval(function () &#123;</div><div class="line"></div><div class="line">        //假设所有的动画都执行完了</div><div class="line">        var flag = true;</div><div class="line"></div><div class="line">        for (var k in json) &#123;</div><div class="line">            var leader = getStyle(obj, k);</div><div class="line">            leader = parseInt(leader) || 0;</div><div class="line">            var step = (json[k] - leader) / 10;</div><div class="line">            step = step &gt; 0 ? Math.ceil(step) : Math.floor(step);</div><div class="line"></div><div class="line">            leader = leader + step;</div><div class="line">            obj.style[k] = leader + &quot;px&quot;;</div><div class="line"></div><div class="line">            if (leader != json[k]) &#123;</div><div class="line">                //还没有到达终点</div><div class="line">                flag = false;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        //如果这个时候，flag还是true，说明真的是都执行完动画</div><div class="line">        if (flag) &#123;</div><div class="line">            clearInterval(obj.timer);</div><div class="line"></div><div class="line">            if (fn) &#123;</div><div class="line">                fn();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;, 15);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//获取任意对象的任意样式</div><div class="line">function getStyle(obj, attr) &#123;</div><div class="line">    //能力检测</div><div class="line">    //如果支持getComputedStyle，就可以直接</div><div class="line">    if (window.getComputedStyle) &#123;</div><div class="line">        return window.getComputedStyle(obj, null)[attr];</div><div class="line">    &#125; else &#123;</div><div class="line">        return obj.currentStyle[attr];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="scroll系列："><a href="#scroll系列：" class="headerlink" title="scroll系列："></a>scroll系列：</h3><blockquote>
+<p>内容有多高，就有多大</p>
+</blockquote>
+<ul>
+<li>一、<code>scrollWidth与scrollHegiht</code><ul>
+<li><code>【scrollHeight = height + padding】</code></li>
+<li><code>【scrollWidth = width + padding】</code></li>
+<li><code>内容的宽度和高度</code></li>
+<li>如果内部内容没有超出父盒子，那么<code>scrollHeigth(scrollWidth)</code>与<code>offsetHeight(offsetWidth)</code>相同</li>
+</ul>
+</li>
+<li>二、<code>scrollTop与scrollLeft</code><ul>
+<li>内部内容被卷去的（头部/左侧）的高度</li>
+</ul>
+</li>
+<li>三、<code>onscroll事件:</code><ul>
+<li>每滚动一像素都会触发该事件</li>
+<li><code>window.onscroll</code></li>
+<li>页面滚动都是给window注册onscroll事件的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">     * scroll函数</div><div class="line">     * @returns &#123;&#123;&#125;&#125;</div><div class="line">*/</div><div class="line">function scroll() &#123;</div><div class="line">       return &#123;</div><div class="line">          top : window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,</div><div class="line">          left : window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0</div><div class="line"></div><div class="line">       &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="client系列："><a href="#client系列：" class="headerlink" title="client系列："></a>client系列：</h3><blockquote>
+<p>盒子内显示内容的区域有多大就有多大</p>
+</blockquote>
+<ul>
+<li>一、<code>clientWidth与clientHeight</code><ul>
+<li><code>【clientHeight = height + padding】</code></li>
+<li><code>【clientWidth = width + padding】</code></li>
+<li>盒子可视区域（窗口）高度和宽度【不包括超出的部分】</li>
+</ul>
+</li>
+<li>二、如果内容没有超出盒子范围：clientWidth与scrollWidth相同</li>
+<li>onresize:会在窗口被调整大小的时候发生    【<code>window.onresize</code>】</li>
+</ul>
+<p><strong>获取可视区域的宽高</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">* 获取可视区域宽高</div><div class="line">* @returns &#123;&#123;width: (Number|number), height: (Number|number)&#125;&#125;</div><div class="line">*/</div><div class="line"><span class="comment">// onresize 当浏览器窗口改变时的事件</span></div><div class="line"><span class="built_in">window</span>.onresize = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(client().width + <span class="string">"-------"</span> +client().height);</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">client</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            <span class="attr">width</span>: <span class="built_in">window</span>.innerWidth || <span class="built_in">document</span>.documentElement.clientWidth || <span class="built_in">document</span>.body.clientWidth || <span class="number">0</span>,</div><div class="line">            <span class="attr">height</span>: <span class="built_in">window</span>.innerHeight || <span class="built_in">document</span>.documentElement.clientHeight || <span class="built_in">document</span>.body.clientHeight || <span class="number">0</span></div><div class="line">        &#125;;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="事件对象："><a href="#事件对象：" class="headerlink" title="事件对象："></a>事件对象：</h3><blockquote>
+<p>在执行事件的时候，需要一些和事件相关的数据<br>[每一个事件都有一个对象]<br>在触发事件的时候，会产生一个事件对象event，这个对象中    包含了与事件相关的信息</p>
+</blockquote>
+<ul>
+<li>常用属性：<ul>
+<li><code>screenX与screenY</code><ul>
+<li>光标相对于屏幕左上角的水平位置与垂直位置</li>
+</ul>
+</li>
+<li><code>clientX与clientY</code><ul>
+<li>光标相对于页面可视区左上角的水平位置和垂直位置</li>
+</ul>
+</li>
+<li><code>pageX与pageY</code><ul>
+<li>光标相对于网页（文档）左上角的水平位置与垂直位置（<code>推荐使用</code>）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>获取事件对象</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function getEvent(event) &#123;</div><div class="line">	return event || window.event;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>获取pageX与pageY</strong></p>
+<ul>
+<li>在IE678中，没有pageX与pageY属性，但是我们可以通过scrollTop + clientY的方式进行计算来获得<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//获取事件对象的pageX</div><div class="line">function getPageX(event) &#123;</div><div class="line">	return event.pageX || event.clientX + document.documentElement.scrollLeft;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//获取事件对象pageY</div><div class="line">function getPageY(event) &#123;</div><div class="line">	return event.pageY || event.clientY + document.documentElement.scrollTop;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>引用类型比较的是地址（console.log([] == [])    返回false）</strong></p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+        
+  <div class="tags">
+    <a href="/tags/JavaScript/">JavaScript</a>
+  </div>
+
+        <div class = "counter">
+  <span id="busuanzi_container_page_pv" style="display:none">
+      总访问&nbsp<span id="busuanzi_value_page_pv"></span>&nbsp次
+  </span>
+</div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+  
+<section id = "relate">
+	
+                <div id="null"></div>
+	
+</section>
+
+
+  
+    <section id="comment">
+    <!--   <h1 class="title">留言</h1> -->
+    
+    
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="2016/03/01/BOM/" data-title="BOM" data-url="http://yoursite.com/2016/03/01/BOM/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"lupeng-test"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+          </script>
+        <!-- 多说公共JS代码 end -->
+
+      
+    </section>
+
+
+
+
+</div></div>
+      <aside id="sidebar" class="alignright">
+  
+<div class="widget tag">
+  <h3 class="title" id="categories">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li></ul> 
+</div>
+ 
+
+
+  <!--
+<div class="widget tag">
+  <h3 class="title">微信公众账号</h3>
+    <ul class="entry">
+      <img src="/img/default/qrcode.jpg" alt="欢迎关注，该账号供个人学习使用，偶尔做一些开发尝试，更新频率较低。" style= "width: 100%">
+    </ul>
+</div>-->
+
+
+  <div class="widget tag">
+  <h3 class="title">日历云</h3>
+  <div id="calendar"></div>
+</div>
+
+
+  
+<div class="widget">
+  <h3 class="title">最新评论</h3>
+  	<!-- 多说最新评论 start -->
+	<div class="ds-recent-comments ds-recent-user" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+	<!-- 多说最新评论 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lupeng-test"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+		</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+  
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a>
+  </div>
+</div>
+
+
+  
+  <div class="widget tag">
+    <h3 class="title">归档</h3>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">5</span></li></ul>
+  </div>
+
+</aside>
+      <div class="clearfix"></div>
+    </div>
+  
+  <footer id="footer"><div class="footer-content inner">
+  <div class="alignleft">
+  
+    &copy; 2017 John Doe
+    
+  </div>
+  <div class="alignright">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme
+    <a href="https://github.com/pengloo53/Hexo-theme-light_cn">light_cn</a>
+  </div>
+  
+  <div class="visit">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </div>
+  
+  <div class="clearfix"></div>
+</div></footer>
+  <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<!-- calendar widget -->
+
+  <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script type="text/javascript">
+    $(function() {
+    
+      $('#calendar').aCalendar('zh-CN',{single:undefined, root:'calendar'});
+    
+    });
+  </script>
+
+
+<!-- 『不蒜子』计数服务 -->
+<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- wumii关联推荐 -->
+<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+
+<!-- 百度推荐 -->
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?9acf0cedd48dc53be256ede5a98c2aaa";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<!-- 返回顶部 -->
+<div id="toTop">
+	<a href="#">▲</a>
+	<a href="#footer">▼</a>
+</div>
+
+<!-- 站内搜索-Swiftype -->
+<!-- <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','sC-iNFrvTTNtiXEVNwo1','2.0.0');
+</script> -->
+
+<!-- fancybox -->
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

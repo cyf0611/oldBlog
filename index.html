@@ -94,10 +94,30 @@
       
         
     <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#过滤器"><span class="toc-text">过滤器|</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务-Service"><span class="toc-text">服务(Service)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC模式"><span class="toc-text">MVC模式</span></a>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Scope-作用域-【模型】"><span class="toc-text">Scope(作用域)【模型】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#根作用域"><span class="toc-text">根作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#过滤器"><span class="toc-text">过滤器|</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务-Service"><span class="toc-text">服务(Service)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC模式"><span class="toc-text">MVC模式</span></a>
     </div>
 
-        <h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器|"></a>过滤器<code>|</code></h4><ul>
+        <h4 id="Scope-作用域-【模型】"><a href="#Scope-作用域-【模型】" class="headerlink" title="Scope(作用域)【模型】"></a>Scope(作用域)【模型】</h4><ul>
+<li><code>$scope</code><ul>
+<li>是一个对象，有可用的方法和属性</li>
+<li>是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带</li>
+<li>可应用在视图和控制器上</li>
+<li>当你在 AngularJS 创建控制器时，你可以将 $scope 对象当作一个参数传递:</li>
+<li>当在控制器中添加 $scope 对象时，视图 (HTML) 可以获取了这些属性。</li>
+<li>视图中，你不需要添加 $scope 前缀, 只需要添加属性名即可，如： 。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;myCtrl&quot;&gt;</div><div class="line">&lt;h1&gt;&#123;&#123;carname&#125;&#125;&lt;/h1&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module(&apos;myApp&apos;, []);</div><div class="line"></div><div class="line">app.controller(&apos;myCtrl&apos;, function($scope) &#123;</div><div class="line">    $scope.carname = &quot;Volvo&quot;;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="根作用域"><a href="#根作用域" class="headerlink" title="根作用域"></a>根作用域</h4><ul>
+<li><code>$rootScope</code><ul>
+<li>所有的应用都有一个 <code>$rootScope</code>，它可以作用在 ng-app 指令包含的所有 HTML 元素中</li>
+<li><code>$rootScope</code> 可作用于整个应用中。是各个 <code>controller</code> 中 <code>scope</code> 的桥梁。用 <code>rootscope</code> 定义的值，可以在各个 <code>controller</code> 中使用</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app="myApp" ng-controller="myCtrl"&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;姓氏为 &#123;&#123;lastname&#125;&#125; 家族成员:&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li ng-repeat="x in names"&gt;&#123;&#123;x&#125;&#125; &#123;&#123;lastname&#125;&#125;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module('myApp', []);</div><div class="line"></div><div class="line">app.controller('myCtrl', function($scope, $rootScope) &#123;</div><div class="line">    $scope.names = ["Emil", "Tobias", "Linus"];</div><div class="line">    $rootScope.lastname = "Refsnes";</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div><div class="line">//  $rootScope 在循环对象内外都可以访问</div></pre></td></tr></table></figure>
+<h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器|"></a>过滤器<code>|</code></h4><ul>
 <li><p>date</p>
 <ul>
 <li>时间过滤器<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;&#123;&#123;time|date:&quot;yyyy年MM月dd日 HH:mm:ss&quot;&#125;&#125;&lt;/p&gt;&lt;!--日期   四位年份--&gt;</div><div class="line">&lt;p&gt;&#123;&#123;time|date:&quot;yy年MM月dd日 HH:mm:ss&quot;&#125;&#125;&lt;/p&gt;&lt;!--日期     两位年份--&gt;</div><div class="line">&lt;p&gt;&#123;&#123;time|date:&quot;YY年MM月dd日 HH:mm:ss&quot;&#125;&#125;&lt;/p&gt;&lt;!--日期     两位年份--&gt;</div></pre></td></tr></table></figure>

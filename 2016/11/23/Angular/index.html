@@ -1,0 +1,462 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Angular 基础知识 | Hexo</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="过滤器|
+date
+
+时间过滤器123&amp;lt;p&amp;gt;&amp;#123;&amp;#123;time|date:&amp;quot;yyyy年MM月dd日 HH:mm:ss&amp;quot;&amp;#125;&amp;#125;&amp;lt;/p&amp;gt;&amp;lt;!--日期   四位年份--&amp;gt;&amp;lt;p&amp;gt;&amp;#123;&amp;#123;tim">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Angular 基础知识"/>
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <!-- wumiiVerification -->
+  <meta name="wumiiVerification" content="fb50a101-84fe-4ca2-91a7-ae8cf792978b" />
+  <meta name="wumiiVerification" content="d73b5866-c390-4156-a4dd-51b526b5335e" />
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <header id="header"><div class= "header-content inner">
+	<div class = "alignleft col-one">
+		
+			<div class='avatar'>
+				<img src = "/img/default/avatar.png">
+              </div>
+		
+		<div class="header-div">
+		    <h1><a href="/">Hexo</a></h1>
+		    <h2><a href="/"></a></h2>
+		</div>
+	</div>
+	<div class = "alignright col-two">
+		
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class= "header-nav">
+	<div class='header-nav-content inner'>
+		<div id="main-nav" class="alignleft">
+		    		
+		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
+		    		
+		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+		    		
+		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
+		    		
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>我的简历</a>
+		    		
+		</div>
+		<div id="sub-nav" class="alignright">
+		    
+		      <a href=""><i class="fa fa-rss"></i>订阅</a>
+		    
+		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
+		    
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+</header>
+  
+    <div id="content" class="inner">
+      <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-11-23T07:43:14.000Z"><a href="/2016/11/23/Angular/">2016-11-23</a></time>
+        
+  
+    <h1 class="title">Angular 基础知识</h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#过滤器"><span class="toc-text">过滤器|</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务-Service"><span class="toc-text">服务(Service)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC模式"><span class="toc-text">MVC模式</span></a>
+    </div>
+
+        <h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器|"></a>过滤器<code>|</code></h4><ul>
+<li><p>date</p>
+<ul>
+<li>时间过滤器<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;&#123;&#123;time|date:&quot;yyyy年MM月dd日 HH:mm:ss&quot;&#125;&#125;&lt;/p&gt;&lt;!--日期   四位年份--&gt;</div><div class="line">&lt;p&gt;&#123;&#123;time|date:&quot;yy年MM月dd日 HH:mm:ss&quot;&#125;&#125;&lt;/p&gt;&lt;!--日期     两位年份--&gt;</div><div class="line">&lt;p&gt;&#123;&#123;time|date:&quot;YY年MM月dd日 HH:mm:ss&quot;&#125;&#125;&lt;/p&gt;&lt;!--日期     两位年份--&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>currency</p>
+<ul>
+<li>货币过滤器<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;&#123;&#123;price|currency&#125;&#125;&lt;/p&gt;&lt;!--价格         默认$符--&gt;</div><div class="line">&lt;p&gt;&#123;&#123;price|currency:&apos;￥&apos;&#125;&#125;&lt;/p&gt;&lt;!--价格     人民币--&gt;</div><div class="line">&lt;p&gt;&#123;&#123;price|currency:&apos;€&apos;&#125;&#125;&lt;/p&gt;&lt;!--价格     欧元--&gt;</div><div class="line">&lt;p&gt;&#123;&#123;price|currency:&apos;￥&apos;:3&#125;&#125;&lt;/p&gt;&lt;!--价格   小数点位数--&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>lowercase</p>
+<ul>
+<li>格式化字符串为小写</li>
+</ul>
+</li>
+<li><p>uppercase</p>
+<ul>
+<li>格式化字符串为大写</li>
+</ul>
+</li>
+<li><p>orderBy</p>
+<ul>
+<li>向指令添加过滤器<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;namesCtrl&quot;&gt;</div><div class="line"></div><div class="line">&lt;ul&gt;</div><div class="line">  &lt;li ng-repeat=&quot;x in names | orderBy:&apos;country&apos;&quot;&gt;</div><div class="line">    &#123;&#123; x.name + &apos;, &apos; + x.country &#125;&#125;</div><div class="line">  &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="服务-Service"><a href="#服务-Service" class="headerlink" title="服务(Service)"></a>服务(Service)</h4><ul>
+<li><p><code>$location</code></p>
+<ul>
+<li>可以创建自己的服务，或使用内建服务</li>
+<li>服务是一个函数或对象</li>
+<li>有个 <code>$location</code> 服务，它可以返回当前页面的 <code>URL</code> 地址<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">app.controller(<span class="string">'customersCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $location</span>) </span>&#123;</div><div class="line">    $scope.myUrl = $location.absUrl();</div><div class="line">&#125;);</div><div class="line"><span class="comment">//  $location 服务是作为一个参数传递到 controller 中。如果要使用它，需要在 controller 中定义</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>$http</code></p>
+<ul>
+<li>服务向web服务器发送请求，应用响应服务器传送过来的数据</li>
+<li><code>$http</code>服务只是简单的封装了浏览器原生的<code>XMLHttpRequest</code>对象</li>
+<li><code>$http</code>服务是只能接受一个参数的函数，这个参数是一个对象</li>
+<li>包含了用来生成HTTP请求的配置内容。这个函数返回一个promise对象，具有success和error两个方法</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>1、链式调用</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$http(&#123;</div><div class="line">	<span class="attr">url</span>:<span class="string">'data.json'</span>,</div><div class="line">	<span class="attr">method</span>:<span class="string">'GET'</span></div><div class="line">&#125;).success(<span class="function"><span class="keyword">function</span>(<span class="params">data,header,config,status</span>)</span>&#123;</div><div class="line">	<span class="comment">//响应成功</span></div><div class="line">&#125;).error(<span class="function"><span class="keyword">function</span>(<span class="params">data,header,config,status</span>)</span>&#123;</div><div class="line">	<span class="comment">//处理响应失败</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>2、返回一个promise对象</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> promise=$http(&#123;</div><div class="line">	<span class="attr">method</span>:<span class="string">'GET'</span>,</div><div class="line">	<span class="attr">url</span>:<span class="string">"data.json"</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 响应返回时用then方法来处理回调</span></div><div class="line">promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">resp</span>)</span>&#123;</div><div class="line"><span class="comment">//resp是一个响应对象</span></div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">resp</span>)</span>&#123;</div><div class="line"><span class="comment">//带有错误信息的resp</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 综合写法</span></div><div class="line">$http(&#123;</div><div class="line">	<span class="attr">method</span>:<span class="string">'GET'</span>,</div><div class="line">	<span class="attr">url</span>:<span class="string">"data.json"</span></div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">resp</span>)</span>&#123;</div><div class="line"><span class="comment">//resp是一个响应对象</span></div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">resp</span>)</span>&#123;</div><div class="line"><span class="comment">//带有错误信息的resp</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>示例：直接用get传入地址，接收数据</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">app.controller(<span class="string">'siteCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $http</span>) </span>&#123;</div><div class="line">  $http.get(<span class="string">"data.json"</span>).success(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">	  $scope.names = response.sites;</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li><p><code>$timeout</code></p>
+<ul>
+<li><code>$timeout</code> 服务对应了 <code>JS window.setTimeout</code> 函数<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">app.controller(<span class="string">'myCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $timeout</span>) </span>&#123;</div><div class="line">  $scope.myHeader = <span class="string">"Hello World!"</span>;</div><div class="line">  $timeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      $scope.myHeader = <span class="string">"How are you today?"</span>;</div><div class="line">  &#125;, <span class="number">2000</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>$interval</code></p>
+<ul>
+<li><code>$interval</code> 服务对应了 <code>JS window.setInterval</code> 函数<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">app.controller(<span class="string">'myCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $interval</span>) </span>&#123;</div><div class="line">  $scope.theTime = <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString();</div><div class="line">  $interval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      $scope.theTime = <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString();</div><div class="line">  &#125;, <span class="number">1000</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>创建自定义服务</p>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建名为hexafy 的访问:</span></div><div class="line">app.service(<span class="string">'hexafy'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.myFunc = <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> x.toString(<span class="number">16</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//使用自定义的的服务 hexafy 将一个数字转换为16进制数:</span></div><div class="line">app.controller(<span class="string">'myCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, hexafy</span>) </span>&#123;</div><div class="line">    $scope.hex = hexafy.myFunc(<span class="number">255</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="MVC模式"><a href="#MVC模式" class="headerlink" title="MVC模式"></a>MVC模式</h3><ul>
+<li>MVC是三个单词的首字母缩写<ul>
+<li><code>View（视图）</code><ul>
+<li>最上一层</li>
+<li>提供给用户的操作界面，是程序的外壳</li>
+</ul>
+</li>
+<li><code>Controller（控制）</code><ul>
+<li>中间的一层</li>
+<li>它负责根据用户从”视图层”输入的指令，选取”数据层”中的数据，然后对其进行相应的操作，产生最终结果</li>
+</ul>
+</li>
+<li><code>Model（模型）</code><ul>
+<li>最底下的一层(核心层)</li>
+<li>程序需要操作的数据或信息<blockquote>
+<p>这三层是紧密联系在一起的，但又是互相独立的，每一层内部的变化不影响其他层。<br>每一层都对外提供接口（Interface），供上面一层调用。<br>这样一来，软件就可以实现模块化，修改外观或者变更数据都不用修改其他层，大大方便了维护和升级</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>ng-app</code>表示了angular管辖的范围</p>
+</li>
+<li><p>双向绑定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 举例双向绑定</div><div class="line">&lt;input type=&quot;text&quot; ng-model=&quot;dir&quot;/&gt;</div><div class="line">&lt;input type=&quot;text&quot; ng-model=&quot;dir&quot;/&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>依赖注入</p>
+<ul>
+<li>参数由定义方决定</li>
+<li>普通函数：由调用方决定参数</li>
+<li>ng-函数：由定义方决定参数</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<p>angular 和javascript不互通</p>
+<ul>
+<li>函数不互通</li>
+<li>变量也不互通</li>
+<li><p>事件也不互通<br>angular的开发模式和传统完全不同–只要盯住数据(数据是核心)</p>
+</li>
+<li><p>angularjs中所有能用的东西都在$scope中，</p>
+</li>
+<li><p>controller 控制器</p>
+<ul>
+<li>放<code>JS</code>代码</li>
+<li>桥梁</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>一个页面里有多个module</li>
+<li>一个module里有多个controller</li>
+</ul>
+<ul>
+<li>filter 过滤器</li>
+<li>语法：<code>|</code></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/Angular/">Angular</a>
+  </div>
+
+        
+  <div class="tags">
+    <a href="/tags/Angular/">Angular</a>
+  </div>
+
+        <div class = "counter">
+  <span id="busuanzi_container_page_pv" style="display:none">
+      总访问&nbsp<span id="busuanzi_value_page_pv"></span>&nbsp次
+  </span>
+</div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+  
+<section id = "relate">
+	
+                <div id="null"></div>
+	
+</section>
+
+
+  
+    <section id="comment">
+    <!--   <h1 class="title">留言</h1> -->
+    
+    
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="2016/11/23/Angular/" data-title="Angular 基础知识" data-url="http://yoursite.com/2016/11/23/Angular/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"lupeng-test"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+          </script>
+        <!-- 多说公共JS代码 end -->
+
+      
+    </section>
+
+
+
+
+</div></div>
+      <aside id="sidebar" class="alignright">
+  
+<div class="widget tag">
+  <h3 class="title" id="categories">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
+</div>
+ 
+
+
+  <!--
+<div class="widget tag">
+  <h3 class="title">微信公众账号</h3>
+    <ul class="entry">
+      <img src="/img/default/qrcode.jpg" alt="欢迎关注，该账号供个人学习使用，偶尔做一些开发尝试，更新频率较低。" style= "width: 100%">
+    </ul>
+</div>-->
+
+
+  <div class="widget tag">
+  <h3 class="title">日历云</h3>
+  <div id="calendar"></div>
+</div>
+
+
+  
+<div class="widget">
+  <h3 class="title">最新评论</h3>
+  	<!-- 多说最新评论 start -->
+	<div class="ds-recent-comments ds-recent-user" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+	<!-- 多说最新评论 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lupeng-test"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+		</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+  
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+  </div>
+</div>
+
+
+  
+  <div class="widget tag">
+    <h3 class="title">归档</h3>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">28</span></li></ul>
+  </div>
+
+</aside>
+      <div class="clearfix"></div>
+    </div>
+  
+  <footer id="footer"><div class="footer-content inner">
+  <div class="alignleft">
+  
+    &copy; 2017 John Doe
+    
+  </div>
+  <div class="alignright">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme
+    <a href="https://github.com/pengloo53/Hexo-theme-light_cn">light_cn</a>
+  </div>
+  
+  <div class="visit">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </div>
+  
+  <div class="clearfix"></div>
+</div></footer>
+  <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<!-- calendar widget -->
+
+  <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script type="text/javascript">
+    $(function() {
+    
+      $('#calendar').aCalendar('zh-CN',{single:undefined, root:'calendar'});
+    
+    });
+  </script>
+
+
+<!-- 『不蒜子』计数服务 -->
+<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- wumii关联推荐 -->
+<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+
+<!-- 百度推荐 -->
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?9acf0cedd48dc53be256ede5a98c2aaa";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<!-- 返回顶部 -->
+<div id="toTop">
+	<a href="#">▲</a>
+	<a href="#footer">▼</a>
+</div>
+
+<!-- 站内搜索-Swiftype -->
+<!-- <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','sC-iNFrvTTNtiXEVNwo1','2.0.0');
+</script> -->
+
+<!-- fancybox -->
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

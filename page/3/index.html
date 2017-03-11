@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Page 3 | Hexo</title>
+  <title>第 3 页 | Hexo</title>
   <meta name="author" content="John Doe">
   
   
@@ -53,20 +53,20 @@
 	<div class='header-nav-content inner'>
 		<div id="main-nav" class="alignleft">
 		    		
-		    		  <a href="/"><i class="fa fa-home"></i>Home</a>
+		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
 		    		
-		    		  <a href="/archives"><i class="fa fa-archive"></i>Archives</a>
+		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
 		    		
-		    		  <a href=""><i class="fa fa-book"></i>Books</a>
+		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
 		    		
-		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>About</a>
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>我的简历</a>
 		    		
 		</div>
 		<div id="sub-nav" class="alignright">
 		    
-		      <a href=""><i class="fa fa-rss"></i>Rss</a>
+		      <a href=""><i class="fa fa-rss"></i>订阅</a>
 		    
-		      <a href=""><i class="fa fa-question-circle"></i>Customization</a>
+		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
 		    
 		</div>
 	</div>
@@ -76,6 +76,214 @@
   
     <div id="content" class="inner">
       <div id="main-col" class="alignleft"><div id="wrapper">
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-03-16T10:17:50.000Z"><a href="/2016/03/16/DOM/">2016-03-16</a></time>
+        
+  
+    <h1 class="title"><a href="/2016/03/16/DOM/">dom操作</a></h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        
+    </div>
+
+        <blockquote>
+<p>DOM:文档对象模型(Document Object Model)，又称为文档树模型。    是一套操作HTML文档的API（工具）。</p>
+<p>文档对象模型：DOM将html文档看成了一个对象，我们把这些称为节点（这个对象就是【document】），html文档中的所有内容都封装成了一个一个的对象        （在DOM眼里页面中所有内容都是对象）</p>
+<p>DOM：用来操作页面元素的一套API【接口】<br>BOM：用来操作浏览器一些行为的一套API【接口】</p>
+</blockquote>
+<p><strong>ECMAScript的基本语法：</strong></p>
+<ul>
+<li>变量</li>
+<li>数据类型</li>
+<li>数据转换</li>
+<li>操作符</li>
+<li>判断</li>
+<li>循环</li>
+<li>数组</li>
+<li>函数</li>
+<li>对象</li>
+</ul>
+<p><strong>节点</strong></p>
+<ul>
+<li>标签节点（通常被称为元素）</li>
+<li>文本节点</li>
+<li>属性节点</li>
+<li>注释节点<ul>
+<li>层级关系</li>
+<li>父节点：parent</li>
+<li>子节点：child</li>
+<li>兄弟节点：sibling</li>
+</ul>
+</li>
+</ul>
+<p><strong>根据<code>id</code>获取页面中元素</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var box(随意命名) = document.getElementById(&quot;box[元素的id名];</div></pre></td></tr></table></figure></p>
+<p><strong>根据<code>标签</code>获取页面中的元素</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var links = documrnt.getElementsByTagNmae(&quot;a[标签元素名]&quot;);</div></pre></td></tr></table></figure></p>
+<ul>
+<li><code>这个方法返回的是多个对象的集合（伪数组）</code></li>
+<li>需要对伪数组进行遍历</li>
+<li>★★★★★【给谁注册事件就先遍历谁，for在外面，注册事件函数function()在里面】<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    for(var i = 0; i &lt; links.length; i++) &#123;</div><div class="line">		links[i].onclick = function()&#123;</div><div class="line">				</div><div class="line">		&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>阻止a标签默认行为 <code>return false;</code></strong></p>
+<p><strong>标签常用到的<code>属性</code>有：src、title、href、className</strong></p>
+<ul>
+<li>其中className对应的就是标签中的class属性，因为class在JavaScript中是关键字，因此变成了className</li>
+</ul>
+<p><strong>innerHTML</strong></p>
+<ul>
+<li>获取和设置标签中的内容，设置的内容会被当做节点对象解析到DOM树上。【不要写到for循环中】</li>
+<li><code>innerHTML</code>    【获取内容时，包括标签        设置内容时，会对标签进行转义，并会把原来的内容覆盖】</li>
+<li>优势：把对象当成字符串来处理，方便</li>
+<li>缺点：如果要对对象进行处理，注册事件，修改某些样式的时候，会比较麻烦。</li>
+</ul>
+<p><strong>innerText以及text Content</strong></p>
+<ul>
+<li>获取和设置标签中的内容，设置的内容会被当成普通的文本<code>（有兼容性问题）</code>封装兼容性</li>
+<li>获取内容时，会丢弃标签        设置内容时，会对标签进行转义，并会把原来的内容覆盖</li>
+</ul>
+<p><strong>disabled</strong></p>
+<ul>
+<li>在标签中，只要指定了disabled属性，无论有值没值，都代表这个input是被禁用的</li>
+<li>在DOM对象中，disabled的属性是一个布尔类型的属性，值只有true或者false</li>
+</ul>
+<p><strong>type</strong></p>
+<ul>
+<li>在标签中，type属性指定了input框的类型，常用的有：text、checkbox、button</li>
+<li>在DOM对象中，也同样有type属性，这个type属性的取值和标签是一样的，是一个字符串</li>
+</ul>
+<p><strong>value</strong></p>
+<ul>
+<li>在标签中，value属性指定了input框的默认值</li>
+<li>在DOM对象中，也同样有value属性，我们可以通过DOM对象中的value属性来指定input框的值</li>
+</ul>
+<p><strong>selected</strong></p>
+<ul>
+<li>在option标签中，只要指定了selected属性，说明这个option被选中</li>
+<li>在DOM对象中，selected的属性是一个布尔类型的属性，值只有true或者false</li>
+</ul>
+<p><strong>checked</strong></p>
+<ul>
+<li>在标签中，只要指定了checked属性，说明这个checkbox被选中</li>
+<li>在DOM对象中，checked的属性是一个布尔类型的属性，值只有true或者false</li>
+</ul>
+<p><strong>标签的自定义属性</strong></p>
+<ul>
+<li><p><code>getAttribute()</code></p>
+<ul>
+<li><code>getAttribute(name)</code> </li>
+<li>name是属性名  </li>
+<li>用来获取DOM对象对应的HTML标签的属性<code>（包括自定义属性和固有属性）</code></li>
+<li>注意，getAttribute获取的是标签中的属性，因此传递的参数就是标签中属性的名字，因此获取class属性传递的是class而不是className</li>
+</ul>
+</li>
+<li><p><code>setAttribute()</code></p>
+<ul>
+<li><code>setAttribute(name, value)</code> <ul>
+<li>name 属性名</li>
+<li>value 属性值</li>
+</ul>
+</li>
+<li>可以给标签设置属性（包括固有属性和自定义属性），并且能在html标签中显示出来</li>
+</ul>
+</li>
+<li><p><code>removeAttribute()</code></p>
+<ul>
+<li><code>removeAttribute(name)</code></li>
+<li>需要移除的属性名</li>
+<li>方法用于移除标签的属性<code>（包括自定义属性和固有属性）</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>获取id简易封装</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function $id(id) &#123;</div><div class="line">	return document.getElementById(id);</div><div class="line">&#125;</div><div class="line"></div><div class="line">$id(&quot;id名&quot;);</div></pre></td></tr></table></figure></p>
+<p><strong><code>javascript:void(0);</code></strong></p>
+<ul>
+<li>是伪协议，表示url的内容通过javascript执行。</li>
+<li><code>void(0)</code>表示不作任何操作，这样会防止链接跳转到其他页面</li>
+<li>想要页面不跳转，<code>href=” javaScript:void(0);”</code>,并且即使浏览器禁用了js功能，也不会任何的影响</li>
+</ul>
+<p><strong>cloneNode()</strong></p>
+<ul>
+<li>克隆元素，默认是浅复制，只会复制标签，不会复制内容</li>
+<li>cloneNode只会在内存里面复制，并没有添加到DOM树上</li>
+<li><code>cloneNode(true)</code>:深度复制，会复制标签和内容<ul>
+<li><code>createElement(&quot;ul&quot;)</code> ：创建元素</li>
+<li><code>appendChild( node )</code>：将节点添加到子元素的最后面</li>
+<li><code>removeChild( node )</code>:移除节点</li>
+<li><code>insertBefore(新元素，目前的第一个元素)</code>：将新元素添加到目前的第一个元素前，使其成为第一个元素</li>
+</ul>
+</li>
+<li><code>document.createElement</code>：    在内存中创建了一个对象，注意：页面中并没有效果</li>
+<li><code>appendChild(node)</code>：    将指定元素追加到调用者的子元素中的最后面</li>
+</ul>
+<p><strong>shift + tab     使定格对齐</strong></p>
+<p><strong>类型判断</strong></p>
+<ul>
+<li>简单（基本）数据类型：<ul>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+<li>Undefined</li>
+<li>Null</li>
+<li><strong>用<code>typeof</code> 判断</strong></li>
+<li><code>console.log(typeof []);//object</code></li>
+<li><code>console.log(typeof 1);// number</code></li>
+</ul>
+</li>
+<li>复杂（引用）数据类型：<ul>
+<li>Object</li>
+<li>Array</li>
+<li>Date</li>
+<li>Math</li>
+<li>RegExp</li>
+<li><strong>用<code>instanceof</code> 判断</strong></li>
+<li><code>console.log([] instanceof Array);//[]是不是Array的一个实例  //true</code></li>
+<li><code>console.log(&quot;&quot; instanceof Array);//[]是不是Array的一个实例  //false</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>onchange:下拉菜单事件</strong></p>
+<ul>
+<li><code>select.onchange = function () {}</code></li>
+</ul>
+<p><strong>基本包装类型：</strong></p>
+<ul>
+<li>简单数据类型是没有方法的</li>
+<li>【基本包装类型：把基本类型包装成复杂类型。】</li>
+<li>为了方便操作基本数据类型，JavaScript还提供了三个特殊的复杂（引用）类型：<code>String/Number/Boolean</code>。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var str = &quot;abc&quot;;</div><div class="line">var result = str.indexOf(&quot;a&quot;);</div><div class="line">发生了三件事：</div><div class="line">1、把简单类型转换成复杂类型：var s = new String(str);</div><div class="line">2、调用包装类型的indexOf方法： var result = s.indexOf(&quot;a&quot;);</div><div class="line">3、销毁刚刚创建的复杂类型（过河拆桥）</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>★★★如果要改变一个元素的className，但这个元素拥有多个class属性时，不要直接用【元素.className = “”;】,这样会清空元素所有的class属性，要用【元素.className.replace(“1、将要被替换的属性”,”2、替换属性”)】[目的是用2，替换1]</strong></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="/2016/03/16/DOM/#comment" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
     <article class="post">
   
   <div class="post-content">
@@ -2092,7 +2300,7 @@
  
 <nav id="pagination">
   
-    <a href="/page/2/" class="alignleft prev">Prev</a>
+    <a href="/page/2/" class="alignleft prev">上一页</a>
   
   
   <div class="clearfix"></div>
@@ -2101,8 +2309,8 @@
       <aside id="sidebar" class="alignright">
   
 <div class="widget tag">
-  <h3 class="title" id="categories">Categories</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
+  <h3 class="title" id="categories">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
 </div>
  
 
@@ -2117,7 +2325,7 @@
 
 
   <div class="widget tag">
-  <h3 class="title">Calendar</h3>
+  <h3 class="title">日历云</h3>
   <div id="calendar"></div>
 </div>
 
@@ -2150,9 +2358,9 @@
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Tag Cloud</h3>
+  <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
   </div>
 </div>
 
@@ -2160,7 +2368,7 @@
   
   <div class="widget tag">
     <h3 class="title">归档</h3>
-	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">27</span></li></ul>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">28</span></li></ul>
   </div>
 
 </aside>

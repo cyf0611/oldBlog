@@ -69,20 +69,20 @@
 	<div class='header-nav-content inner'>
 		<div id="main-nav" class="alignleft">
 		    		
-		    		  <a href="/"><i class="fa fa-home"></i>Home</a>
+		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
 		    		
-		    		  <a href="/archives"><i class="fa fa-archive"></i>Archives</a>
+		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
 		    		
-		    		  <a href=""><i class="fa fa-book"></i>Books</a>
+		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
 		    		
-		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>About</a>
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>我的简历</a>
 		    		
 		</div>
 		<div id="sub-nav" class="alignright">
 		    
-		      <a href=""><i class="fa fa-rss"></i>Rss</a>
+		      <a href=""><i class="fa fa-rss"></i>订阅</a>
 		    
-		      <a href=""><i class="fa fa-question-circle"></i>Customization</a>
+		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
 		    
 		</div>
 	</div>
@@ -109,7 +109,7 @@
       
         
     <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Angular"><span class="toc-text">安装Angular</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指令"><span class="toc-text">指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义的指令"><span class="toc-text">自定义的指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Scope-作用域-【模型】"><span class="toc-text">Scope(作用域)【模型】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#根作用域"><span class="toc-text">根作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#过滤器"><span class="toc-text">过滤器|</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务-Service"><span class="toc-text">服务(Service)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC模式"><span class="toc-text">MVC模式</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Angular"><span class="toc-text">安装Angular</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指令"><span class="toc-text">指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义的指令"><span class="toc-text">自定义的指令</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#过滤器"><span class="toc-text">过滤器|</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务-Service"><span class="toc-text">服务(Service)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC模式"><span class="toc-text">MVC模式</span></a></li></ol>
     </div>
 
         <ul>
@@ -193,7 +193,8 @@
 </li>
 </ul>
 <h4 id="自定义的指令"><a href="#自定义的指令" class="headerlink" title="自定义的指令"></a>自定义的指令</h4><ul>
-<li><code>directive</code><ul>
+<li><p><code>directive</code></p>
+<ul>
 <li>使用驼峰法来命名一个指令， <code>runoobDirective</code>, </li>
 <li>但在使用它时需要以 - 分割, <code>runoob-directive</code>:</li>
 <li></li>
@@ -207,27 +208,21 @@
 </li>
 </ul>
 </li>
-</ul>
-<h4 id="Scope-作用域-【模型】"><a href="#Scope-作用域-【模型】" class="headerlink" title="Scope(作用域)【模型】"></a>Scope(作用域)【模型】</h4><ul>
-<li><code>$scope</code><ul>
-<li>是一个对象，有可用的方法和属性</li>
-<li>是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带</li>
-<li>可应用在视图和控制器上</li>
-<li>当你在 AngularJS 创建控制器时，你可以将 $scope 对象当作一个参数传递:</li>
-<li>当在控制器中添加 $scope 对象时，视图 (HTML) 可以获取了这些属性。</li>
-<li>视图中，你不需要添加 $scope 前缀, 只需要添加属性名即可，如： 。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;myCtrl&quot;&gt;</div><div class="line">&lt;h1&gt;&#123;&#123;carname&#125;&#125;&lt;/h1&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module(&apos;myApp&apos;, []);</div><div class="line"></div><div class="line">app.controller(&apos;myCtrl&apos;, function($scope) &#123;</div><div class="line">    $scope.carname = &quot;Volvo&quot;;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<li><p>限制使用</p>
+</li>
+<li>限制你的指令只能通过特定的方式来调用<ul>
+<li>E 作为元素名使用</li>
+<li>A 作为属性使用</li>
+<li>C 作为类名使用</li>
+<li>M 作为注释使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">#### Scope(作用域)【模型】	</div><div class="line">- `$scope`</div><div class="line">	- 是一个对象，有可用的方法和属性</div><div class="line">	-  是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带</div><div class="line">	-  可应用在视图和控制器上</div><div class="line">	-  当你在 AngularJS 创建控制器时，你可以将 $scope 对象当作一个参数传递:</div><div class="line">	-  当在控制器中添加 $scope 对象时，视图 (HTML) 可以获取了这些属性。</div><div class="line">	-  视图中，你不需要添加 $scope 前缀, 只需要添加属性名即可，如： &#123;&#123;carname&#125;&#125;。</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-<h4 id="根作用域"><a href="#根作用域" class="headerlink" title="根作用域"></a>根作用域</h4><ul>
-<li><code>$rootScope</code><ul>
-<li>所有的应用都有一个 <code>$rootScope</code>，它可以作用在 ng-app 指令包含的所有 HTML 元素中</li>
-<li><code>$rootScope</code> 可作用于整个应用中。是各个 <code>controller</code> 中 <code>scope</code> 的桥梁。用 <code>rootscope</code> 定义的值，可以在各个 <code>controller</code> 中使用</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app="myApp" ng-controller="myCtrl"&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;姓氏为 &#123;&#123;lastname&#125;&#125; 家族成员:&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li ng-repeat="x in names"&gt;&#123;&#123;x&#125;&#125; &#123;&#123;lastname&#125;&#125;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module('myApp', []);</div><div class="line"></div><div class="line">app.controller('myCtrl', function($scope, $rootScope) &#123;</div><div class="line">    $scope.names = ["Emil", "Tobias", "Linus"];</div><div class="line">    $rootScope.lastname = "Refsnes";</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div><div class="line">//  $rootScope 在循环对象内外都可以访问</div></pre></td></tr></table></figure>
+<p><div ng-app="myApp" ng-controller="myCtrl"></div></p>
+<p></p><h1></h1><br><p></p>
+<p><script><br>var app = angular.module(‘myApp’, []);</p>
+<p>app.controller(‘myCtrl’, function($scope) {<br>    $scope.carname = “Volvo”;<br>});<br></script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### 根作用域</div><div class="line">- `$rootScope`</div><div class="line">	- 所有的应用都有一个 `$rootScope`，它可以作用在 ng-app 指令包含的所有 HTML 元素中</div><div class="line">	- `$rootScope` 可作用于整个应用中。是各个 `controller` 中 `scope` 的桥梁。用 `rootscope` 定义的值，可以在各个 `controller` 中使用</div><div class="line"></div><div class="line">```javascript</div><div class="line">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;myCtrl&quot;&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;姓氏为 &#123;&#123;lastname&#125;&#125; 家族成员:&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li ng-repeat=&quot;x in names&quot;&gt;&#123;&#123;x&#125;&#125; &#123;&#123;lastname&#125;&#125;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module(&apos;myApp&apos;, []);</div><div class="line"></div><div class="line">app.controller(&apos;myCtrl&apos;, function($scope, $rootScope) &#123;</div><div class="line">    $scope.names = [&quot;Emil&quot;, &quot;Tobias&quot;, &quot;Linus&quot;];</div><div class="line">    $rootScope.lastname = &quot;Refsnes&quot;;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div><div class="line">//  $rootScope 在循环对象内外都可以访问</div></pre></td></tr></table></figure></p>
 <h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器|"></a>过滤器<code>|</code></h4><ul>
 <li><p>date</p>
 <ul>
@@ -409,7 +404,7 @@
 
   
     <section id="comment">
-    <!--   <h1 class="title">Comments</h1> -->
+    <!--   <h1 class="title">留言</h1> -->
     
     
         <!-- 多说评论框 start -->
@@ -439,7 +434,7 @@
       <aside id="sidebar" class="alignright">
   
 <div class="widget tag">
-  <h3 class="title" id="categories">Categories</h3>
+  <h3 class="title" id="categories">分类</h3>
      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
 </div>
  
@@ -455,7 +450,7 @@
 
 
   <div class="widget tag">
-  <h3 class="title">Calendar</h3>
+  <h3 class="title">日历云</h3>
   <div id="calendar"></div>
 </div>
 
@@ -488,7 +483,7 @@
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Tag Cloud</h3>
+  <h3 class="title">标签云</h3>
   <div class="entry">
     <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
   </div>

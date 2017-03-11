@@ -124,7 +124,7 @@ a:hover {
 }
 #header .avatar img {
   border-radius: 50%;
-  weight: 70px;
+  width: 70px;
   height: 70px;
   float: left;
   -webkit-transition: height 0.3s, -webkit-transform 1s;

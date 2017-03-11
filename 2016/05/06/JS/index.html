@@ -1,0 +1,840 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js基础 | Hexo</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="特点：
+封装
+继承
+多态
+
+
+写法：
+内嵌
+用内嵌式写法，推荐位置放在body标签之外
+
+
+外链
+新建.js文件
+调用     &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="js基础"/>
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <!-- wumiiVerification -->
+  <meta name="wumiiVerification" content="fb50a101-84fe-4ca2-91a7-ae8cf792978b" />
+  <meta name="wumiiVerification" content="d73b5866-c390-4156-a4dd-51b526b5335e" />
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <header id="header"><div class= "header-content inner">
+	<div class = "alignleft col-one">
+		
+			<div class='avatar'>
+				<img src = "/img/default/avatar.png">
+              </div>
+		
+		<div class="header-div">
+		    <h1><a href="/">Hexo</a></h1>
+		    <h2><a href="/"></a></h2>
+		</div>
+	</div>
+	<div class = "alignright col-two">
+		
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class= "header-nav">
+	<div class='header-nav-content inner'>
+		<div id="main-nav" class="alignleft">
+		    		
+		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
+		    		
+		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+		    		
+		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
+		    		
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>我的简历</a>
+		    		
+		</div>
+		<div id="sub-nav" class="alignright">
+		    
+		      <a href=""><i class="fa fa-rss"></i>订阅</a>
+		    
+		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
+		    
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+</header>
+  
+    <div id="content" class="inner">
+      <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-05-06T09:31:17.000Z"><a href="/2016/05/06/JS/">2016-05-06</a></time>
+        
+  
+    <h1 class="title">js基础</h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量"><span class="toc-text">变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Math对象"><span class="toc-text">Math对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类型转换："><span class="toc-text">类型转换：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组"><span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数（方法）："><span class="toc-text">函数（方法）：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件三要素"><span class="toc-text">事件三要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象："><span class="toc-text">对象：</span></a></li></ol>
+    </div>
+
+        <ul>
+<li>特点：<ul>
+<li>封装</li>
+<li>继承</li>
+<li>多态</li>
+</ul>
+</li>
+<li>写法：<ul>
+<li>内嵌<ul>
+<li>用内嵌式写法，推荐位置放在body标签之外</li>
+</ul>
+</li>
+<li>外链<ul>
+<li>新建.js文件</li>
+<li>调用     <code>&lt;script type=&quot;text/javascript&quot; src=&quot;index.js&quot;&gt;&lt;/script&gt;</code></li>
+<li>如果调用了多个js文件，最好能将js文件合并到一个文件中</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">window.onload = function() &#123;		</div><div class="line">	内部放js</div><div class="line">&#125;</div><div class="line">【当页面加载完毕以后，才去执行这里面的js内容，就是说等页面的结构、样式、节点等加载完】</div></pre></td></tr></table></figure>
+<p><strong>js中常见消息提示方式：</strong></p>
+<ul>
+<li><code>alert</code>——(弹窗显示消息)<ul>
+<li><code>alert(&quot;内容&quot;);</code></li>
+<li><strong>注意：</strong>如果页面上出现弹窗以后，页面位置不能关闭，也不能改变。浏览器进程已经被暂停</li>
+</ul>
+</li>
+<li><code>// | /* */</code>——（注释）</li>
+<li><code>document.write</code>——直接在页面输出消息<ul>
+<li><code>document.write(&quot;内容&quot;);</code></li>
+<li>内部可写html标签【<code>document.wtite(&quot;&lt;h1&gt;内容&lt;/h1&gt;&quot;);</code>】</li>
+</ul>
+</li>
+<li><code>prompt</code>——弹出输入框，用来接收用户输入的内容<ul>
+<li><code>prompt(&quot;提示内容&quot;);</code></li>
+<li><strong>接收到的数据类型为string 类型</strong></li>
+</ul>
+</li>
+<li><code>console.log()</code>——在控制台输出内容<ul>
+<li><strong>用来进行代码调试</strong></li>
+</ul>
+</li>
+<li><code>confirm(&quot;&quot;)</code>——显示消息<ul>
+<li>一般与条件判断配合使用</li>
+</ul>
+</li>
+<li><code>console.warn(&quot;&quot;)</code>——控制台警告</li>
+<li><code>console.error(&quot;&quot;)</code>——控制台错误提示</li>
+</ul>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><blockquote>
+<p>会变化的数据<br>用来存储数据的容器</p>
+</blockquote>
+<ul>
+<li><p><strong>定义</strong>：</p>
+<ul>
+<li>使用var关键字定义变量</li>
+<li>【<code>var 变量;</code>】    定义变量</li>
+<li>【<code>变量=&quot;内容&quot;;</code>】    给变量赋值</li>
+<li><code>var 变量=&quot;内容&quot;</code>    定义变量并给变量赋值</li>
+</ul>
+</li>
+<li><p><strong>命名规范：</strong></p>
+<ul>
+<li>字母大小写有区别</li>
+<li>不能用纯数字定义变量，或以数字开头</li>
+<li>可用汉字定义变量（不推荐）</li>
+<li>不能使用特殊字符定义变量，或以特殊字符开头（下横线除外“_”）</li>
+<li>不能使用关键字定义变量</li>
+<li>不能使用保留字定义变量【保留字：备用的关键字】</li>
+<li>一个变量只能保存一个值，如果同一个变量被再次赋值，则保存的值是最后定义的值</li>
+<li>变量名中间不能出现空格</li>
+</ul>
+</li>
+<li><p><strong>分类</strong>[所有数据类型原始类型都是数组]</p>
+<ul>
+<li><strong>一、数字类型（number）</strong>如果一个变量的值是数字（小数，整数，负数），当前变量的类型都是数字类型<ul>
+<li>1、数字类型表示方式<ul>
+<li>最常见是十进制（<code>var n1=123;</code>）</li>
+<li>十六进制    以0x开头，0-9和a(A)-f(F)组成</li>
+<li>八进制        以数字0开头，0-7组成</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>二、字符串类型（string）</strong><ul>
+<li>1、如果一个变量的值是使用“双引号”或‘单引号’包括起来的，那么该变量的类型为字符串类型</li>
+<li>2、字符串中的转义字符<ul>
+<li><code>\&quot;</code>    代表一个双引号</li>
+<li><code>\&#39;</code>代表一个单引号</li>
+<li><code>\r</code>回车</li>
+<li><code>\n</code>换行</li>
+<li><code>\t</code>缩进</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>三、布尔类型（boolean）</strong><ul>
+<li>1、只有两个值    <code>true和false</code></li>
+</ul>
+</li>
+<li><strong>四、变量未初始化（undefined）</strong><ul>
+<li>定义了一个变量但未赋值，则这个变量默认为undefined，</li>
+<li>对应的类型为undefined数据类型</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>比较运算符：</strong></p>
+<blockquote>
+<p>通过比较运算符得出的结果为布尔类型</p>
+</blockquote>
+<p><strong>算术运算符</strong></p>
+<blockquote>
+<p><code>+ | - | * | / | %(取余) | ()优先级</code></p>
+</blockquote>
+<ul>
+<li><strong>一、加</strong><ul>
+<li>1、如果两个数据类型都为数字类型，则结果为两个数字类型的和</li>
+<li>2、如果两个数据为非数据类型的变量相加，则最后结果为一个字符串。<code>+</code>起了链接作用</li>
+</ul>
+</li>
+<li><strong>二、减法</strong><ul>
+<li>1、如果两个数据类型都为数字类型，则结果为两个数字类型的差</li>
+<li>2、如果有一个是数字类型的字符串相减，最后结果仍为数字（减运算作用为数据的隐式类型转换）</li>
+<li>3、如果是非数字类型的变量相减，最后的结果为NaN(not a number)</li>
+</ul>
+</li>
+<li><p><strong>三、除</strong></p>
+<ul>
+<li>1、如果两个数据类型都为数字类型，则结果为两个数字类型的商</li>
+<li>2、如果有一个是数字类型的字符串相除，最后结果为数字（除运算作用为数据的隐式类型转换）</li>
+<li>3、如果一个数字除以0，得到的结果为<code>infinity</code>（无穷大）</li>
+<li>4、如果是非数字类型的变量相除，最后的结果为<code>NaN(not a number)</code></li>
+</ul>
+</li>
+<li><p><strong>数据类型</strong></p>
+<ul>
+<li>用来确定变量在内存中的存在形式</li>
+</ul>
+</li>
+<li><strong>数据类型判断：</strong><ul>
+<li>【<code>typeof(变量/直接量)   或    typeof 变量/直接量</code>】获取当前变量的数据类型</li>
+<li>【<code>NaN(not a number)    数据类型为number</code>】    表示数值的不正常状态，在计算错误是出现</li>
+<li>【<code>infinity</code>（无穷大）    数据类型为number】</li>
+<li>【<code>isNaN()是   不是一个数字</code>】是数字时为false、是非数字时为true</li>
+</ul>
+</li>
+</ul>
+<h3 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h3><ul>
+<li><code>Math.ceil();</code><ul>
+<li>【向上取整】 天花板函数</li>
+<li>返回值为大于当前数字最接近的整数</li>
+</ul>
+</li>
+<li><code>Math.floor();</code><ul>
+<li>【向下取整】 地板函数</li>
+<li>返回值为小于当前数字最接近的整数</li>
+</ul>
+</li>
+<li><code>Math.max(放入需要比较的内容[可有多个数值]);</code><ul>
+<li>获取最大值</li>
+</ul>
+</li>
+<li><code>Math.min(放入需要比较的内容[可有多个数值]);</code><ul>
+<li>获取最小值</li>
+</ul>
+</li>
+<li><code>Math.abs();</code><ul>
+<li>返回一个数字的绝对值</li>
+</ul>
+</li>
+<li><code>Math.pow(数字，指数);</code><ul>
+<li>求一个数字的几次方</li>
+</ul>
+</li>
+<li><code>Math.random();</code><ul>
+<li>返回随机数0-1之间(不包括0和1)</li>
+</ul>
+</li>
+<li><code>Math.round();</code><ul>
+<li>返回四舍五入值</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="类型转换："><a href="#类型转换：" class="headerlink" title="类型转换："></a>类型转换：</h4><ul>
+<li><p><strong>隐式类型转换：</strong></p>
+<ul>
+<li>变量参与到运算过程中，实现的数据类型转化（没有程序员参与）</li>
+<li><strong>隐式转换为Number</strong><ul>
+<li><code>+    -    *    /</code>    都可以</li>
+<li>直接在要转换的内容前加<code>&quot;+&quot;</code>，内容与<code>&quot;+&quot;</code>中间无空格</li>
+</ul>
+</li>
+<li><strong>隐式转换为String</strong><ul>
+<li>在数据后加 <code>&quot;&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>强制类型转换：</strong></p>
+<ul>
+<li>程序员手动设置的数据类型转换</li>
+<li><strong>转换为字符串类型</strong><ul>
+<li><code>String(&quot;要转换的内容&quot;);</code><ul>
+<li>【none、undefined，用string变换】</li>
+</ul>
+</li>
+<li><code>变量.toString(&quot;要转换的内容&quot;);</code>【其他都可用<code>.tostring</code>变换】</li>
+</ul>
+</li>
+<li><strong>转换为数字类型</strong> <ul>
+<li><code>Number(&quot;要转换的内容&quot;);</code><ul>
+<li>可以将数字内容的字符串转换为数字类型，</li>
+<li>如果不能转换则返回NaN;    </li>
+<li>如果有小数位，则保留小数位</li>
+<li>如果内容为空，则返回0</li>
+</ul>
+</li>
+<li><code>parseInt(&quot;要转换的内容&quot;,进制);</code><ul>
+<li>【加进制后，要转换的内容为对应的进制的值    输出值为十进制】</li>
+<li>可以将数字内容的字符串转换为数字类型，</li>
+<li>如果不能转换则返回NaN;</li>
+<li>如果有小数位，则只保留整数位，省略小数位，（不是四舍五入）</li>
+<li>如果第一个字符是数字，则继续解析直至字符串解析完毕或遇到一个非数字符号为止</li>
+<li>如果内容为空，则返回0</li>
+</ul>
+</li>
+<li><code>parseFloat(&quot;要转换的内容&quot;);</code><ul>
+<li>可以将数字内容的字符串转换为数字类型</li>
+<li>可以完全保留原来的内容(保留小数位)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>转换为布尔型<ul>
+<li><code>Boolean(&quot;要转换的内容&quot;);</code><ul>
+<li>true在内存中以1形式存在</li>
+<li>false在内存中以0形式存在</li>
+</ul>
+</li>
+<li>通过数据类型转换后，可以将数字0和false相互转换</li>
+<li>除了<code>0、 &quot;&quot;、NaN、Undefined、null</code>这几个再转换时转换成false之外，其他内容都转换为true（包括字符串的”false”）</li>
+<li><strong>隐式布尔转换：if（）、！！</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>等号运算符：</strong></p>
+<ul>
+<li><code>“=”</code>    赋值运算符</li>
+<li><code>“==”</code>    判断是否相等<ul>
+<li>判断的是<code>数据内容</code>是否相等，不管数据类型</li>
+</ul>
+</li>
+<li><code>“===”</code>    判断是否全相等<ul>
+<li>判断的是<code>数据内容和数据类型</code>是否相等</li>
+</ul>
+</li>
+<li><code>“!=”</code>不等于<ul>
+<li>判断的是<code>数据内容</code>是否不相等，不管数据类型</li>
+<li>如果内容相等返回false，    如果内容不相等返回true</li>
+</ul>
+</li>
+<li><code>“!==”</code>    全不等于<ul>
+<li>判断的是<code>数据内容和数据类型</code>是否不相等</li>
+<li>数据只要内容或类型不一样就返回true，反之为false</li>
+</ul>
+</li>
+</ul>
+<p><strong>运算优先级</strong></p>
+<ul>
+<li><code>（）</code></li>
+<li>一元运算符    <code>++、--、！</code></li>
+<li>算术运算符    <code>先*、/、%，后+、-</code></li>
+<li>关系运算符    <code>&gt;=、&gt;、&lt;=、&lt;</code></li>
+<li>相等运算符    <code>==、！=、===、！==</code></li>
+<li>逻辑运算符    <code>！，&amp;&amp;，||</code></li>
+</ul>
+<p><strong>使用逗号可以集体声明变量（省略的繁复的声明）</strong></p>
+<p><strong>逻辑运算符：</strong></p>
+<ul>
+<li>或—–&gt;    <code>||</code><ul>
+<li>只要有一个条件满足为true，结果就为true</li>
+<li>||碰到true会短路，返回第一个值</li>
+</ul>
+</li>
+<li>且—–&gt;    <code>&amp;&amp;</code><ul>
+<li>条件必须同时满足true，结果才为true</li>
+<li>&amp;&amp;碰到false会短路，返回第一个值</li>
+</ul>
+</li>
+<li>非—–&gt;    <code>!</code>    (取反)<br><strong>优先级：`！&gt; &amp;&amp; &gt; ||</strong></li>
+</ul>
+<p><strong>字符串类型用||运算符，如果有值为true的字符串，则返回第一个值为true的字符串内容，如果都为false，则返回最后一个为false的内容</strong></p>
+<p><strong>三元表达式：</strong></p>
+<ul>
+<li><code>表达式？    代码1 ： 代码2；</code><ul>
+<li>如果表达式为true，执行冒号前代码1，否则冒号后执行代码2</li>
+</ul>
+</li>
+</ul>
+<p><strong>switch case：</strong></p>
+<ul>
+<li>switch后的数据类型，必须和case后的数据类型一致<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var 变量=</div><div class="line">switch()&#123;</div><div class="line">	case1 变量的值1：</div><div class="line">		代码块1；</div><div class="line">		break；</div><div class="line">	case2 变量的值2：</div><div class="line">		代码块2；</div><div class="line">		break；</div><div class="line">	case3 变量的值3：</div><div class="line">		代码块3；</div><div class="line">		break；</div><div class="line">	case4 变量的值4：</div><div class="line">		代码块4；</div><div class="line">		break；</div><div class="line">	...</div><div class="line">	default:</div><div class="line">		默认代码块；</div><div class="line">		break；</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>循环语句    while</strong></p>
+<ul>
+<li><strong>先判断，再循环。适用于不明确循环次数的情况下</strong></li>
+<li><strong>特点：</strong>可以重覆完成同样的事情</li>
+<li>当程序运行到while时，判断条件语句，如果为true，执行下面的代码，如果为false，则跳过while<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">while(条件语句、布尔值)&#123;</div><div class="line">	重复执行的代码块；</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>do while</strong></p>
+<ul>
+<li><strong>先循环，在判断</strong></li>
+<li><strong>特点：</strong>先执行do里面的代码循环，再经过while语句的判断，如果满足条件，继续循环，如果不满足，则终止循环    <strong>【至少执行一次】</strong></li>
+<li>如果条件不成立的情况下，do  while  循环，比  while  循环多执行一次<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">do &#123;</div><div class="line">	重复执行的代码块；</div><div class="line">&#125;while(条件语句、布尔值)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>for</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for (var i = 0; i &lt; length; i++) &#123;</div><div class="line">	循环代码块；</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ul>
+<li><strong>定义：</strong><ul>
+<li>1、通过对象的方式创建数组    <code>var ary[数组名]=new Array(内容为一个数时为长度、    内容为一个带引号的内容时为第一项的值、    内容为用“ ，”隔开的内容时为数组内容);</code></li>
+<li>2、直接创建数组    <code>var ary1=[];</code>【[]数组的字面量】</li>
+</ul>
+</li>
+<li>设置默认值：<ul>
+<li>1、<code>var ary=new Array(值1，值2，值3，...);</code>    【值可以是任何数据】</li>
+<li>2、<code>var ary=[值1，值2，值3，...];</code>        【值可以是任何数据】<code>（推荐使用）</code></li>
+</ul>
+</li>
+<li><p><strong>赋值：</strong></p>
+<ul>
+<li>【数组中下标是从0开始的，0代表第一个值】赋值时需要通过下表设置值<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [];</div><div class="line">arr[0] = 值1;</div><div class="line">arr[1] = 值2;</div><div class="line">arr[2] = 值3;</div><div class="line">...</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>取值：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(arr[0]);</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>遍历：</strong></p>
+<ul>
+<li>前提知道数组有多少值（长度）</li>
+<li>通过<code>length</code>获取或设置元素的个数</li>
+<li><code>arr.length</code>    获取数组的长度</li>
+<li><code>arr[i].length</code>    获取数组中某个字符串的长度<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for (var i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">	concole.log(arr[i]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>数组中的方法：</strong></p>
+<ul>
+<li><code>push()</code><ul>
+<li>向数组<code>末尾</code>添加一个或多个元素，并<code>返回数组的长度</code></li>
+<li><code>ary.push(元素,元素,元素...);</code></li>
+<li>返回值为把元素推入数组后的长度</li>
+</ul>
+</li>
+<li><code>unshift()</code><ul>
+<li>从数组<code>前面</code>放入一个或多个元素，并<code>返回数组的长度</code></li>
+<li>返回值为把元素推入数组后的长度</li>
+</ul>
+</li>
+<li><code>pop([内无参数])</code><ul>
+<li>删除数组<code>最后一个元素</code>，返回值为数组最后一个已经被删除的元素</li>
+</ul>
+</li>
+<li><code>shift([内无参数])</code><ul>
+<li>删除数组第一个元素，返回值为数组第一个已经被删除的元素</li>
+</ul>
+</li>
+<li><code>arr.join(&quot;符号[可省略]&quot;)</code><ul>
+<li>变换数组中元素之间的链接方式，为空时为默认值“，”    <code>【返回一个字符串类型】</code></li>
+</ul>
+</li>
+<li><code>str.split(&quot;符号[可省略]&quot;,&quot;howmany[一般不写]&quot;)</code><ul>
+<li>把字符串转换成数组，为空时为默认值“，”<code>【返回一个数组类型】</code></li>
+<li><strong>split(“符号[可省略]”)中的符号必须和字符串中的连接符保持一致，才能变换符号为<code>逗号(,)</code></strong></li>
+</ul>
+</li>
+<li><code>concat()</code><ul>
+<li>例：<code>arr1.concat(arr2);</code></li>
+<li>将数组合并，不会改变当前数组</li>
+<li>合并产生的是一个<code>【新数组】</code></li>
+</ul>
+</li>
+<li><code>slice()</code><ul>
+<li>例：<code>slice(begin,[end]);</code></li>
+<li>参数1：开始位置    参数2：结束位置，可选</li>
+<li>截取指定数组中的值，存入一个新的数组中,合并产生的是一个<code>【新数组】</code></li>
+<li><strong>注意：</strong><ul>
+<li>1.slice方法截取数组只包含begin，不包含end。</li>
+<li>2.slice方法的参数可以是负数，表示从后面往前数第几个元素，（慎用，容易搞混）</li>
+<li>3.slice方法不会影响到原来的数组</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>splice()</code><ul>
+<li>例：<code>splice(start, deleteCount, [items]);</code></li>
+<li>参数1：开始位置    </li>
+<li>参数2：删除的个数      </li>
+<li>参数3：需要替换的数组【如果参数3没有传，那么只会删除数组对应的元素】</li>
+<li>先删除指定数目元素，再添加入替换的元素</li>
+<li><strong>改变了原来的数组</strong></li>
+</ul>
+</li>
+<li><code>indexOf()</code><ul>
+<li><code>indexOf(searchElement, [fromIndex])</code> </li>
+<li>查找数组中元素出现的位置</li>
+</ul>
+</li>
+</ul>
+<h4 id="函数（方法）："><a href="#函数（方法）：" class="headerlink" title="函数（方法）："></a>函数（方法）：</h4><blockquote>
+<p>函数是有事件驱动的或者当它被调用时执行的<code>可重复使用的代码块</code><br><strong>函数名.length</strong>得到函数形参的个数</p>
+</blockquote>
+<ul>
+<li><strong>三要素：</strong><ul>
+<li>功能</li>
+<li>参数</li>
+<li>返回值</li>
+</ul>
+</li>
+<li><strong>定义：</strong></li>
+<li><p>1、【函数声明】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function 函数名(参数1， 参数2， 参数3...) &#123;</div><div class="line">	函数体；</div><div class="line">&#125;</div><div class="line">函数名(); &lt;————函数的调用（可写在声明前面）</div></pre></td></tr></table></figure>
+</li>
+<li><p>2、【函数表达式（匿名函数）】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var 函数名 = function(参数1， 参数2， 参数3...)&#123;</div><div class="line">	函数体；</div><div class="line">&#125;</div><div class="line">函数名(); &lt;————函数的调用（必须写在后面）</div></pre></td></tr></table></figure>
+</li>
+<li><p>3、【自调用函数（自能执行一次）】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(function()&#123;</div><div class="line">	函数体；</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>arguments（存放函数实参变量）    <code>arguments.length</code>(实参个数)</strong></p>
+<p><strong><code>fn.length</code>【形参个数】</strong></p>
+<p><strong>return:</strong></p>
+<ul>
+<li>一个函数实际上就是一个计算的过程，计算完之后的结果就是返回值    <strong>位置写在计算完成之后</strong></li>
+<li>定义函数的返回值：<ul>
+<li>在函数内部使用return设置返回值，一个函数只有一个返回值</li>
+<li>返回值的同时，结束代码</li>
+<li>所有自定义函数默认没有返回值</li>
+<li>return之后不要加换行</li>
+<li>return之后加了内容，则返回return之后的内容</li>
+<li>return之后不加任何东西，返回值为undefined</li>
+<li>如果函数内部没有写return时返回值为undefined</li>
+</ul>
+</li>
+</ul>
+<p><strong>javascript没有重载概念</strong></p>
+<ul>
+<li>在其他语言中，有<code>重载</code>概念<code>【函数的名字相同，但参数个数不同】</code></li>
+<li>如果定义了两个相同的函数，那么后面的函数会覆盖掉前面的函数【在javascript中不允许出现同名的函数】</li>
+</ul>
+<p><strong>变量作用域：</strong></p>
+<ul>
+<li>当变量超出作用域之后变量将被销毁</li>
+<li><strong>全局变量：</strong><ul>
+<li>1、在最外层声明的变量（有无var 都是全局变量）</li>
+<li>2、在函数体内部，但是没用var声明的也是全局变量【隐式全局变量】</li>
+</ul>
+</li>
+<li><strong>隐式全局变量：</strong><ul>
+<li>在函数体内部，但是没用var声明的也是全局变量</li>
+</ul>
+</li>
+<li><strong>局部变量【函数作用域】</strong><ul>
+<li>【局部变量优先级较高】</li>
+<li>1、在<code>函数体内部</code>使用var声明的变量</li>
+<li>2、超出函数作用范围之后局部变量被销毁</li>
+</ul>
+</li>
+</ul>
+<p><strong>没有块级作用域</strong></p>
+<ul>
+<li>if 和for中使用的var变量都是全局变量</li>
+</ul>
+<h3 id="事件三要素"><a href="#事件三要素" class="headerlink" title="事件三要素"></a>事件三要素</h3><ul>
+<li>事件源 ：被触发者 一般情况下是名词</li>
+<li>事件 ：做了什么  一般情况下是动词    【点击、鼠标经过、按键盘】</li>
+<li>事件处理程序 ： 发生了什么<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">事件源.函数(onclick) = function（）&#123;</div><div class="line">	事件处理函数</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>递归：</strong></p>
+<blockquote>
+<p>方法自身调用，一般还要有结束的条件</p>
+</blockquote>
+<h3 id="对象："><a href="#对象：" class="headerlink" title="对象："></a>对象：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;&#125;;</div></pre></td></tr></table></figure>
+<ul>
+<li>指的是一个具体的东西</li>
+<li>有<code>行为</code>      和    <code>特征</code></li>
+<li><strong>特征：</strong><ul>
+<li>用      <strong>属性</strong>    来表示        <strong>用定义（var）</strong></li>
+</ul>
+</li>
+<li><strong>行为：</strong><ul>
+<li>用<strong>方法</strong>来表示  为匿名函数（function）</li>
+</ul>
+</li>
+<li>用<code>for(var key in obj){}</code>遍历对象，得到对象的属性和e</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+        
+  <div class="tags">
+    <a href="/tags/JavaScript/">JavaScript</a>
+  </div>
+
+        <div class = "counter">
+  <span id="busuanzi_container_page_pv" style="display:none">
+      总访问&nbsp<span id="busuanzi_value_page_pv"></span>&nbsp次
+  </span>
+</div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+  
+<section id = "relate">
+	
+                <div id="null"></div>
+	
+</section>
+
+
+  
+    <section id="comment">
+    <!--   <h1 class="title">留言</h1> -->
+    
+    
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="2016/05/06/JS/" data-title="js基础" data-url="http://yoursite.com/2016/05/06/JS/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"lupeng-test"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+          </script>
+        <!-- 多说公共JS代码 end -->
+
+      
+    </section>
+
+
+
+
+</div></div>
+      <aside id="sidebar" class="alignright">
+  
+<div class="widget tag">
+  <h3 class="title" id="categories">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li></ul> 
+</div>
+ 
+
+
+  <!--
+<div class="widget tag">
+  <h3 class="title">微信公众账号</h3>
+    <ul class="entry">
+      <img src="/img/default/qrcode.jpg" alt="欢迎关注，该账号供个人学习使用，偶尔做一些开发尝试，更新频率较低。" style= "width: 100%">
+    </ul>
+</div>-->
+
+
+  <div class="widget tag">
+  <h3 class="title">日历云</h3>
+  <div id="calendar"></div>
+</div>
+
+
+  
+<div class="widget">
+  <h3 class="title">最新评论</h3>
+  	<!-- 多说最新评论 start -->
+	<div class="ds-recent-comments ds-recent-user" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+	<!-- 多说最新评论 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lupeng-test"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+		</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+  
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a>
+  </div>
+</div>
+
+
+  
+  <div class="widget tag">
+    <h3 class="title">归档</h3>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">18</span></li></ul>
+  </div>
+
+</aside>
+      <div class="clearfix"></div>
+    </div>
+  
+  <footer id="footer"><div class="footer-content inner">
+  <div class="alignleft">
+  
+    &copy; 2017 John Doe
+    
+  </div>
+  <div class="alignright">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme
+    <a href="https://github.com/pengloo53/Hexo-theme-light_cn">light_cn</a>
+  </div>
+  
+  <div class="visit">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </div>
+  
+  <div class="clearfix"></div>
+</div></footer>
+  <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<!-- calendar widget -->
+
+  <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script type="text/javascript">
+    $(function() {
+    
+      $('#calendar').aCalendar('zh-CN',{single:undefined, root:'calendar'});
+    
+    });
+  </script>
+
+
+<!-- 『不蒜子』计数服务 -->
+<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- wumii关联推荐 -->
+<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+
+<!-- 百度推荐 -->
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?9acf0cedd48dc53be256ede5a98c2aaa";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<!-- 返回顶部 -->
+<div id="toTop">
+	<a href="#">▲</a>
+	<a href="#footer">▼</a>
+</div>
+
+<!-- 站内搜索-Swiftype -->
+<!-- <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','sC-iNFrvTTNtiXEVNwo1','2.0.0');
+</script> -->
+
+<!-- fancybox -->
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

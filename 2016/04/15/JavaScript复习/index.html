@@ -1,0 +1,614 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript复习 | Hexo</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="1、基本组成
+ECMAScript
+DOM
+BOM
+
+2、数据类型
+
+
+基本数据类型
+复杂数据类型
+
+
+
+
+number
+object
+
+
+string
+
+
+null
+
+
+undefined
+
+
+boolean
+
+
+
+ECMAjavascript内置对象
+Array
+Math
+String
+Obje">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="JavaScript复习"/>
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <!-- wumiiVerification -->
+  <meta name="wumiiVerification" content="fb50a101-84fe-4ca2-91a7-ae8cf792978b" />
+  <meta name="wumiiVerification" content="d73b5866-c390-4156-a4dd-51b526b5335e" />
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <header id="header"><div class= "header-content inner">
+	<div class = "alignleft col-one">
+		
+			<div class='avatar'>
+				<img src = "/img/default/avatar.png">
+              </div>
+		
+		<div class="header-div">
+		    <h1><a href="/">Hexo</a></h1>
+		    <h2><a href="/"></a></h2>
+		</div>
+	</div>
+	<div class = "alignright col-two">
+		
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class= "header-nav">
+	<div class='header-nav-content inner'>
+		<div id="main-nav" class="alignleft">
+		    		
+		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
+		    		
+		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+		    		
+		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
+		    		
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>我的简历</a>
+		    		
+		</div>
+		<div id="sub-nav" class="alignright">
+		    
+		      <a href=""><i class="fa fa-rss"></i>订阅</a>
+		    
+		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
+		    
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+</header>
+  
+    <div id="content" class="inner">
+      <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-04-15T09:10:04.000Z"><a href="/2016/04/15/JavaScript复习/">2016-04-15</a></time>
+        
+  
+    <h1 class="title">JavaScript复习</h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、基本组成"><span class="toc-text">1、基本组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、数据类型"><span class="toc-text">2、数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ECMAjavascript内置对象"><span class="toc-text">ECMAjavascript内置对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何判断数据类型"><span class="toc-text">如何判断数据类型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、基本类型与引用类型的赋值问题"><span class="toc-text">3、基本类型与引用类型的赋值问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本类型-值类型"><span class="toc-text">基本类型(值类型)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#引用类型-复合类型"><span class="toc-text">引用类型(复合类型)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、运算符"><span class="toc-text">4、运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#算术运算符"><span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#逻辑运算符-amp-amp-–-–-！"><span class="toc-text">逻辑运算符 && – || – ！</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#相等运算符"><span class="toc-text">相等运算符 == === != !==</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三元运算符（-）"><span class="toc-text">三元运算符（ ? :）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#前面的表达式为true，执行-前的表达式；否则执行-后的表达式"><span class="toc-text">? 前面的表达式为true，执行 : 前的表达式；否则执行 : 后的表达式</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、布尔类型转换"><span class="toc-text">5、布尔类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#如何把数据转换为布尔类型"><span class="toc-text">如何把数据转换为布尔类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#哪些数据类型转换为boolean类型时为false"><span class="toc-text">哪些数据类型转换为boolean类型时为false</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、语句"><span class="toc-text">6、语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分支语句"><span class="toc-text">分支语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#循环语句"><span class="toc-text">循环语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#break-和-continue"><span class="toc-text">break 和 continue</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7、函数"><span class="toc-text">7、函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建函数方式"><span class="toc-text">创建函数方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回值"><span class="toc-text">返回值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#arguments"><span class="toc-text">arguments</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#重载"><span class="toc-text">重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#this"><span class="toc-text">this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#错误抛出"><span class="toc-text">错误抛出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#debugger与断点"><span class="toc-text">debugger与断点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#in-运算符"><span class="toc-text">in 运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#delete运算符"><span class="toc-text">delete运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#try-catch"><span class="toc-text">try-catch</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+        <h2 id="1、基本组成"><a href="#1、基本组成" class="headerlink" title="1、基本组成"></a>1、基本组成</h2><ul>
+<li>ECMAScript</li>
+<li>DOM</li>
+<li>BOM</li>
+</ul>
+<h2 id="2、数据类型"><a href="#2、数据类型" class="headerlink" title="2、数据类型"></a>2、数据类型</h2><table>
+<thead>
+<tr>
+<th>基本数据类型</th>
+<th>复杂数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>number</td>
+<td>object</td>
+</tr>
+<tr>
+<td>string</td>
+</tr>
+<tr>
+<td>null</td>
+</tr>
+<tr>
+<td>undefined</td>
+</tr>
+<tr>
+<td>boolean</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ECMAjavascript内置对象"><a href="#ECMAjavascript内置对象" class="headerlink" title="ECMAjavascript内置对象"></a>ECMAjavascript内置对象</h4><ul>
+<li>Array</li>
+<li>Math</li>
+<li>String</li>
+<li>Object</li>
+<li>Date</li>
+<li>Number</li>
+<li>Boolean</li>
+<li>Error</li>
+<li>Function</li>
+<li>RegExp</li>
+</ul>
+<h4 id="如何判断数据类型"><a href="#如何判断数据类型" class="headerlink" title="如何判断数据类型"></a>如何判断数据类型</h4><ul>
+<li><strong><code>typeof</code></strong><ul>
+<li>type of 无法判断null的数据类型，反过来说是typeof 判断object的类型有误</li>
+<li>type of 可以判断function类型的对象</li>
+<li>运算结果的返回值有：<ul>
+<li>‘object’</li>
+<li>‘string’</li>
+<li>‘number’</li>
+<li>‘boolean’</li>
+<li>‘function’</li>
+<li>‘undefined’</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>instanceof<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">//关于instanceof 的一些继承结构的试题</div><div class="line">// new Date ==&gt; Date.prototype ==&gt; Object.prototype ==&gt;null</div><div class="line"></div><div class="line">console.log(new Date instanceof Function);  //f------</div><div class="line">console.log(new Date instanceof Object); //t</div><div class="line">// console.log(new Array instanceof Function); //f</div><div class="line">// console.log(new String instanceof Function); //f</div><div class="line"></div><div class="line">// new Function ==&gt; Function.prototype ==&gt; Object.prototype ==&gt;null</div><div class="line"></div><div class="line">console.log(new Function instanceof Function); //t</div><div class="line">console.log(new Function instanceof Object); //t</div><div class="line"></div><div class="line">// Number ==&gt; Function.prototype ==&gt; Object.prototype ==&gt;null</div><div class="line"></div><div class="line">console.log(Number instanceof Function); //t</div><div class="line">console.log(Number instanceof Object);  //t</div><div class="line"></div><div class="line">// Function ==&gt; Function.prototype ==&gt; Object.prototype ==&gt;null</div><div class="line"></div><div class="line">console.log(Function instanceof Function); //t</div><div class="line">console.log(Function instanceof Object); //t</div><div class="line"></div><div class="line">// Object ==&gt; Function.prototype ==&gt; Object.prototype ==&gt;null</div><div class="line"></div><div class="line">console.log(Object instanceof Function);  //t</div><div class="line">console.log(Object instanceof Object); //t</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="3、基本类型与引用类型的赋值问题"><a href="#3、基本类型与引用类型的赋值问题" class="headerlink" title="3、基本类型与引用类型的赋值问题"></a>3、基本类型与引用类型的赋值问题</h2><h4 id="基本类型-值类型"><a href="#基本类型-值类型" class="headerlink" title="基本类型(值类型)"></a>基本类型(值类型)</h4><ul>
+<li>赋的是copy的具体值<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = 1;</div><div class="line">var b = a;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="引用类型-复合类型"><a href="#引用类型-复合类型" class="headerlink" title="引用类型(复合类型)"></a>引用类型(复合类型)</h4><ul>
+<li>赋的是对象的地址</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">		<span class="attr">value</span> : <span class="number">100</span></div><div class="line">	&#125;;</div><div class="line"><span class="keyword">var</span> obj2 = obj;  <span class="comment">// 把obj的地址赋值给obj2</span></div><div class="line">obj2.value =<span class="number">1</span>;<span class="comment">// obj 和obj2指向同一地址 obj.value = 1 就改变了他们指向的同一个对象的值</span></div><div class="line"><span class="built_in">console</span>.log(obj.value); <span class="comment">//输出value = 1</span></div><div class="line"></div><div class="line"><span class="comment">/*-------------------------------------------------------------*/</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">		<span class="attr">value</span> : <span class="number">100</span></div><div class="line">	&#125;;</div><div class="line"><span class="keyword">var</span> obj2 = obj;  <span class="comment">// 把obj的地址赋值给obj2 现在obj 和 obj2指向同一地址</span></div><div class="line">obj = &#123;&#125;;   <span class="comment">// 赋值以后，把新对象的地址赋值给obj obj指向了新的地址，obj2还是指向以前的地址</span></div><div class="line"><span class="built_in">console</span>.log(obj2);   <span class="comment">// obj2地址没有变化 输出&#123;value ： 100&#125;</span></div></pre></td></tr></table></figure>
+<h2 id="4、运算符"><a href="#4、运算符" class="headerlink" title="4、运算符"></a>4、运算符</h2><h4 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h4><ul>
+<li>+ 算术运算、字符串拼接、转换数据类型为number类型</li>
+<li>% 取余运算 </li>
+</ul>
+<h4 id="逻辑运算符-amp-amp-–-–-！"><a href="#逻辑运算符-amp-amp-–-–-！" class="headerlink" title="逻辑运算符 &amp;&amp; – || – ！"></a>逻辑运算符 &amp;&amp; – || – ！</h4><ul>
+<li>&amp;&amp; 从左往右依次把数据转换伪boolean类型，如果是<code>false</code>，则返回具体的数据；如果一直没有找到，则返回最后一个<strong>数据</strong></li>
+<li>|| 从左往右依次把数据转换伪boolean类型，如果是<code>true</code>，则返回具体的数据；如果一直没有找到，则返回最后一个<strong>数据</strong></li>
+<li>！把数据转换为boolean类型，然后取反</li>
+</ul>
+<h4 id="相等运算符"><a href="#相等运算符" class="headerlink" title="相等运算符 == === != !=="></a>相等运算符 == === != !==</h4><ul>
+<li><p>=== 判断数据和类型必须全部相等</p>
+</li>
+<li><p>== 会先进行数据转换，然后再比较</p>
+</li>
+</ul>
+<blockquote>
+<p>**约定：非空数据类型表示除了<code>null</code>和<code>undefined</code>两种数据类型。</p>
+</blockquote>
+<pre><code>- 任何数据和NaN相比结果都为false
+- null等于undefined
+- null和非空类型相比结果为false
+- undefined和非空类型相比结果为false
+- 数字和非空类型比较，先转换为数字再比较
+- 布尔和非空类型比较，先转换为数字再比较
+- 对象与对象比较内存地址
+- 对象与字符串，对象先转换为字符串再比较
+</code></pre><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>类型</th>
+<th>规律</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NaN</td>
+<td>任意类型</td>
+<td>false</td>
+</tr>
+<tr>
+<td>null</td>
+<td>undefined</td>
+<td>true</td>
+</tr>
+<tr>
+<td>null</td>
+<td>非空类型</td>
+<td>false</td>
+</tr>
+<tr>
+<td>undefined</td>
+<td>非空类型</td>
+<td>false</td>
+</tr>
+<tr>
+<td>数字</td>
+<td>非空类型</td>
+<td>转换为数字再比较</td>
+</tr>
+<tr>
+<td>布尔</td>
+<td>非空类型</td>
+<td>转换为数字再比较</td>
+</tr>
+<tr>
+<td>对象</td>
+<td>对象</td>
+<td>内存地址比较</td>
+</tr>
+<tr>
+<td>对象</td>
+<td>字符串</td>
+<td>转换为字符串再比较</td>
+</tr>
+</tbody>
+</table>
+<h4 id="三元运算符（-）"><a href="#三元运算符（-）" class="headerlink" title="三元运算符（ ? :）"></a>三元运算符（ ? :）</h4><h5 id="前面的表达式为true，执行-前的表达式；否则执行-后的表达式"><a href="#前面的表达式为true，执行-前的表达式；否则执行-后的表达式" class="headerlink" title="? 前面的表达式为true，执行 : 前的表达式；否则执行 : 后的表达式"></a>? 前面的表达式为true，执行 : 前的表达式；否则执行 : 后的表达式</h5><h2 id="5、布尔类型转换"><a href="#5、布尔类型转换" class="headerlink" title="5、布尔类型转换"></a>5、布尔类型转换</h2><h4 id="如何把数据转换为布尔类型"><a href="#如何把数据转换为布尔类型" class="headerlink" title="如何把数据转换为布尔类型"></a>如何把数据转换为布尔类型</h4><ul>
+<li>!!</li>
+<li>Boolean</li>
+</ul>
+<h4 id="哪些数据类型转换为boolean类型时为false"><a href="#哪些数据类型转换为boolean类型时为false" class="headerlink" title="哪些数据类型转换为boolean类型时为false"></a>哪些数据类型转换为boolean类型时为false</h4><ul>
+<li>0</li>
+<li>undefined</li>
+<li>null</li>
+<li>“”</li>
+<li>NaN</li>
+</ul>
+<h2 id="6、语句"><a href="#6、语句" class="headerlink" title="6、语句"></a>6、语句</h2><h4 id="分支语句"><a href="#分支语句" class="headerlink" title="分支语句"></a>分支语句</h4><ul>
+<li>if else</li>
+<li>switch case</li>
+</ul>
+<h4 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h4><ul>
+<li>for</li>
+<li>while</li>
+<li>do while </li>
+<li>for in</li>
+</ul>
+<h4 id="break-和-continue"><a href="#break-和-continue" class="headerlink" title="break 和 continue"></a>break 和 continue</h4><ul>
+<li>break 结束循环</li>
+<li>continue 跳出当前循环，继续下次循环</li>
+</ul>
+<h2 id="7、函数"><a href="#7、函数" class="headerlink" title="7、函数"></a>7、函数</h2><h4 id="创建函数方式"><a href="#创建函数方式" class="headerlink" title="创建函数方式"></a>创建函数方式</h4><ul>
+<li><p>1、函数声明</p>
+<ul>
+<li>全局，最后无分号<code>(;)</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	代码块</div><div class="line">&#125;</div><div class="line">Fn();<span class="comment">//写在前后都可以</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>2、函数表达式(函数字面量)</p>
+<ul>
+<li>凡是将数据和运算符等联系起来，有值的式子就是表达式</li>
+<li>表达式和符号结合起来就是语句</li>
+<li><strong>声明式函数不允许出现在表达式中</strong><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	代码块</div><div class="line">&#125;</div><div class="line">fn();<span class="comment">//必须写后面</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>3、new Function</p>
+</li>
+</ul>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><ul>
+<li>对函数中重复执行代码中的不同部分的抽象提取</li>
+<li>形参是用来接收实参传递过来的值</li>
+</ul>
+<h4 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h4><ul>
+<li>如果没有return语句，则为undefined；</li>
+<li>如果有则为对应的值</li>
+</ul>
+<h4 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h4><ul>
+<li>是一个可以在函数中使用的关键字</li>
+<li>是一个代表实参的对象</li>
+<li>可以通过下标的方式获取实参<code>arguments[n]</code></li>
+<li>可以通过<code>length</code>属性获取实参的个数</li>
+<li>像这种拥有<code>length</code>属性，以下标存储数据的对象，统一称之为伪数组。</li>
+<li>作用：<ul>
+<li>可以判断传入的实参和形参个数是否相等</li>
+</ul>
+</li>
+<li>模拟重载<ul>
+<li>在jQuery中应用广泛<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function fn( ) &#123;</div><div class="line">	var arg = arguments, argLen = arg.length;</div><div class="line"></div><div class="line">	if ( !argLen ) &#123;</div><div class="line">		console.log(&apos;请重新输入！&apos;);</div><div class="line">	&#125;else if ( argLen === 1 ) &#123;</div><div class="line">		console.log( arg[0] );</div><div class="line">	&#125;else if( argLen === 2 ) &#123;</div><div class="line">		console.log( arg[0] + arg[1] );</div><div class="line">    &#125;else &#123;</div><div class="line">        console.log(&apos;最多输入两个数！&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">fn();</div><div class="line">fn(1);</div><div class="line">fn(10,20);</div><div class="line">fn(10,20,30,40);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h4><ul>
+<li>函数或者方法有相同的名称，但是参数列表不相同</li>
+</ul>
+<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><ul>
+<li>函数中的this谁调用就指向谁</li>
+</ul>
+<h4 id="错误抛出"><a href="#错误抛出" class="headerlink" title="错误抛出"></a>错误抛出</h4><ul>
+<li>throw 自定义抛出错误<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function con( par ) &#123;</div><div class="line">    if ( par == null ) &#123;//判断传入参数如果为null或undefined，则输出报错信息</div><div class="line">        throw &apos;参数错误！&apos; + par;</div><div class="line">    &#125;</div><div class="line">    console.log( par );</div><div class="line">&#125;</div><div class="line">con(null);//报错，下面代码不执行</div><div class="line">con(undefined);</div><div class="line">con(111);</div><div class="line">con(&apos;acb&apos;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="debugger与断点"><a href="#debugger与断点" class="headerlink" title="debugger与断点"></a>debugger与断点</h4><ul>
+<li>写入代码块中，当浏览器执行时，从当前位置开始调试</li>
+</ul>
+<h4 id="in-运算符"><a href="#in-运算符" class="headerlink" title="in 运算符"></a>in 运算符</h4><ul>
+<li>判断对象中是否有这个属性<ul>
+<li>语法：<code>&quot;str&quot; in Object</code></li>
+<li>返回值为boolean类型</li>
+</ul>
+</li>
+</ul>
+<h4 id="delete运算符"><a href="#delete运算符" class="headerlink" title="delete运算符"></a>delete运算符</h4><ul>
+<li>返回值为<code>boolean</code>类型</li>
+<li>语法：<code>delete  数据;</code></li>
+<li>在当前作用域上删除数据</li>
+<li>用法：<ul>
+<li>删除数组中的一个元素<ul>
+<li>不改变数组的长度</li>
+<li>删除的数据变成了undefined</li>
+</ul>
+</li>
+<li>删除一个对象的属性或方法</li>
+<li>删除一个<code>没有用的var 声明</code>的变量</li>
+</ul>
+</li>
+</ul>
+<h4 id="try-catch"><a href="#try-catch" class="headerlink" title="try-catch"></a>try-catch</h4><ul>
+<li><p>语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">	<span class="comment">//假如可能出现错误的代码</span></div><div class="line">&#125;<span class="keyword">catch</span>(e)&#123;</div><div class="line">	<span class="comment">//出现错误才会执行的代码,不设置内容也可以</span></div><div class="line">&#125; <span class="keyword">finally</span> &#123; <span class="comment">// 可选</span></div><div class="line">	<span class="comment">//无论是否有异常，最后执行</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用：</p>
+</li>
+<li><p>e(exception  异常)</p>
+<ul>
+<li>浏览器报出错误的信息是什么，e就是什么</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+        
+  <div class="tags">
+    <a href="/tags/JavaScript/">JavaScript</a>
+  </div>
+
+        <div class = "counter">
+  <span id="busuanzi_container_page_pv" style="display:none">
+      总访问&nbsp<span id="busuanzi_value_page_pv"></span>&nbsp次
+  </span>
+</div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+  
+<section id = "relate">
+	
+                <div id="null"></div>
+	
+</section>
+
+
+  
+    <section id="comment">
+    <!--   <h1 class="title">留言</h1> -->
+    
+    
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="2016/04/15/JavaScript复习/" data-title="JavaScript复习" data-url="http://yoursite.com/2016/04/15/JavaScript复习/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"lupeng-test"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+          </script>
+        <!-- 多说公共JS代码 end -->
+
+      
+    </section>
+
+
+
+
+</div></div>
+      <aside id="sidebar" class="alignright">
+  
+<div class="widget tag">
+  <h3 class="title" id="categories">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li></ul> 
+</div>
+ 
+
+
+  <!--
+<div class="widget tag">
+  <h3 class="title">微信公众账号</h3>
+    <ul class="entry">
+      <img src="/img/default/qrcode.jpg" alt="欢迎关注，该账号供个人学习使用，偶尔做一些开发尝试，更新频率较低。" style= "width: 100%">
+    </ul>
+</div>-->
+
+
+  <div class="widget tag">
+  <h3 class="title">日历云</h3>
+  <div id="calendar"></div>
+</div>
+
+
+  
+<div class="widget">
+  <h3 class="title">最新评论</h3>
+  	<!-- 多说最新评论 start -->
+	<div class="ds-recent-comments ds-recent-user" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+	<!-- 多说最新评论 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lupeng-test"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+		</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+  
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a>
+  </div>
+</div>
+
+
+  
+  <div class="widget tag">
+    <h3 class="title">归档</h3>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">18</span></li></ul>
+  </div>
+
+</aside>
+      <div class="clearfix"></div>
+    </div>
+  
+  <footer id="footer"><div class="footer-content inner">
+  <div class="alignleft">
+  
+    &copy; 2017 John Doe
+    
+  </div>
+  <div class="alignright">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme
+    <a href="https://github.com/pengloo53/Hexo-theme-light_cn">light_cn</a>
+  </div>
+  
+  <div class="visit">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </div>
+  
+  <div class="clearfix"></div>
+</div></footer>
+  <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<!-- calendar widget -->
+
+  <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script type="text/javascript">
+    $(function() {
+    
+      $('#calendar').aCalendar('zh-CN',{single:undefined, root:'calendar'});
+    
+    });
+  </script>
+
+
+<!-- 『不蒜子』计数服务 -->
+<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- wumii关联推荐 -->
+<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+
+<!-- 百度推荐 -->
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?9acf0cedd48dc53be256ede5a98c2aaa";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<!-- 返回顶部 -->
+<div id="toTop">
+	<a href="#">▲</a>
+	<a href="#footer">▼</a>
+</div>
+
+<!-- 站内搜索-Swiftype -->
+<!-- <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','sC-iNFrvTTNtiXEVNwo1','2.0.0');
+</script> -->
+
+<!-- fancybox -->
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

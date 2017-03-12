@@ -82,6 +82,58 @@
     <header>
         <div class="icon"></div>
         
+        <time datetime="2016-08-01T01:39:08.000Z"><a href="/2016/08/01/代理模式/">2016-08-01</a></time>
+        
+  
+    <h1 class="title"><a href="/2016/08/01/代理模式/">代理模式</a></h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代理模式"><span class="toc-text">代理模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在浏览器中"><span class="toc-text">在浏览器中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQ-中的-delegate"><span class="toc-text">jQ 中的 delegate</span></a></li></ol>
+    </div>
+
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Itcast.each( [ &apos;obclick&apos;, &apos;onload&apos; ], function ( i, v ) &#123;</div><div class="line">    v = v.slice( 2 );</div><div class="line">    Itcast.fn[ v ] = function ( eventFn ) &#123;</div><div class="line">        return this.on( v, eventFn );</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">css: function ( name, value ) &#123;</div><div class="line">    // name 是一个对象</div><div class="line">    return this.each( function () &#123;</div><div class="line">        var that = this;</div><div class="line">        Itcast.each( name, function ( k, v ) &#123;</div><div class="line">            that.style[ k ] = v;</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><p>英文 delegate, 翻译常常称为 代理, 委托.</p>
+<p>所谓的代理模式, 就是想办法规定一个协议, 然后让别人遵守协议, 让别人可以帮你做事情.</p>
+<p>代码:<br>一个对象要做一件事情, 即 对象调用一个方法. 但是该对象自己不做, 让另一个对象去做.<br>当前对象调用一个方法, 就是触发另一个对象调用一个方法. 在代码中模型可以写成:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">o.doSomething = function () &#123;</div><div class="line">    otherObj.doSomething();</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>但是并非一般的对象. 在让另一个对象执行之前需要对其”授权( 注册代理 )”. 这样的好处就是<br>可以利用 “可装配的方式处理我的这个另一个对象”, 就可以实现较为灵活的处理. 代码模型:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var o = &#123;</div><div class="line">    delegate: null,</div><div class="line">    doSomething: function () &#123;</div><div class="line">        if ( this.delegate &amp;&amp; this.delegate.doSomeThing ) &#123;</div><div class="line">            this.delegate.doSomeThing();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 此时 o.delegate 就是可装配的</div><div class="line">o.delegate = &#123;</div><div class="line">    // delegate 可以随意的赋值, 但是必须保证有 doSomeThing 这个方法</div><div class="line">    doSomeThing: function () &#123;</div><div class="line">        // 随意写</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 在代码中可以实现统一调用</div><div class="line">o.doSomeThing(); // 执行结果是什么?</div></pre></td></tr></table></figure>
+<p>此时对象 o.delegate 就是 o 的代理对象.</p>
+<h2 id="在浏览器中"><a href="#在浏览器中" class="headerlink" title="在浏览器中"></a>在浏览器中</h2><p>以 点击事件为例. 在浏览器内部已经调用好事件处理的整套代码结构, 但是预留了一些方法<br>例如<br>    onclick 其实是 代理方法名<br>    click 是 触发的方法名. 手动的触发点击事件.</p>
+<pre><code>form 对象有一个 submit 方法
+</code></pre><h2 id="jQ-中的-delegate"><a href="#jQ-中的-delegate" class="headerlink" title="jQ 中的 delegate"></a>jQ 中的 delegate</h2><p>其实使用 父元素 添加事件, 但是利用冒泡可以监听到是哪一个标签最先触发, 然后执行代码<br>其优点是可以少绑定同样的事件.</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="/2016/08/01/代理模式/#comment" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
         <time datetime="2016-07-23T02:17:23.000Z"><a href="/2016/07/23/面向对象/">2016-07-23</a></time>
         
   
@@ -1741,223 +1793,6 @@ ES6中可以把构造函数看作类
 
 
 
-
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-05-28T08:33:40.000Z"><a href="/2016/05/28/RegExp/">2016-05-28</a></time>
-        
-  
-    <h1 class="title"><a href="/2016/05/28/RegExp/">正则基础</a></h1>
-  
-
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建正则对象"><span class="toc-text">创建正则对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方括号"><span class="toc-text">方括号[]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#元字符"><span class="toc-text">元字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#量词"><span class="toc-text">量词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符优先级"><span class="toc-text">运算符优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RegExp-对象属性"><span class="toc-text">RegExp 对象属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RegExp-对象方法"><span class="toc-text">RegExp 对象方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#支持正则表达式的-String-对象的方法"><span class="toc-text">支持正则表达式的 String 对象的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#正则表达式中的replace的用法"><span class="toc-text">正则表达式中的replace的用法</span></a></li></ol></li></ol></li></ol>
-    </div>
-
-        <h2 id="创建正则对象"><a href="#创建正则对象" class="headerlink" title="创建正则对象"></a>创建正则对象</h2><p><strong><code>new RegExp(pattern, attributes);</code></strong></p>
-<ul>
-<li><code>pattern</code>是一个字符串，指定了<code>正则表达式的模式</code>或<code>其他正则表达式</code></li>
-<li><code>attributes</code>是一个可选的字符串，包含属性 <code>&quot;g&quot;、&quot;i&quot; 和 &quot;m&quot;</code>，分别用于指定<code>全局匹配</code>、<code>区分大小写的匹配</code>和<code>多行匹配</code><ul>
-<li><strong>如果 pattern 是正则表达式，而不是字符串，则必须省略该参数</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="方括号"><a href="#方括号" class="headerlink" title="方括号[]"></a>方括号<code>[]</code></h3><ul>
-<li><strong>方括号用于查找某个范围内的字符：</strong><br>|表达式|描述|<br>|—|—|<br>|<code>[abc]</code>|查找方括号之间的任何字符。|<br>|<code>[^abc]</code>|查找任何不在方括号之间的字符。|<br>|<code>[0-9]</code>|查找任何从 0 至 9 的数字。|<br>|<code>[a-z]</code>|查找任何从小写 a 到小写 z 的字符。|<br>|<code>[A-Z]</code>|查找任何从大写 A 到大写 Z 的字符。|<br>|<code>[A-z]</code>|查找任何从大写 A 到小写 z 的字符。|<br>|<code>[adgk]</code>|查找给定集合内的任何字符。|<br>|<code>[^adgk]</code>|查找给定集合外的任何字符。|<br>|<code>(red\|blue\|green)</code>|查找任何指定的选项。|</li>
-</ul>
-<h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><ul>
-<li><strong>是拥有特殊含义的字符：</strong><br>|元字符|描述|<br>|—|—|<br>|<code>.</code>|查找单个字符，除了换行和行结束符。|<br>|<code>\w</code>|查找单词字符。|<br>|<code>\W</code>|查找非单词字符。|<br>|<code>\d</code>|查找数字。|<br>|<code>\D</code>|查找非数字字符。|<br>|<code>\s</code>|查找空白字符。|<br>|<code>\S</code>|查找非空白字符。|<br>|<code>\b</code>|匹配单词边界。|<br>|<code>\B</code>|匹配非单词边界。|<br>|<code>\0</code>|查找 NUL 字符。|<br>|<code>\n</code>|查找换行符。|<br>|<code>\f</code>|查找换页符。|<br>|<code>\r</code>|查找回车符。|<br>|<code>\t</code>|查找制表符。|<br>|<code>\v</code>|查找垂直制表符。|<br>|<code>\xxx</code>|查找以八进制数 xxx 规定的字符。|<br>|<code>\xdd</code>|查找以十六进制数 dd 规定的字符。|<br>|<code>\uxxxx</code>|查找以十六进制数 xxxx 规定的 Unicode 字符。|</li>
-</ul>
-<h3 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h3><table>
-<thead>
-<tr>
-<th>量词</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>n+</code></td>
-<td>匹配任何包含<strong>至少一个 n</strong> 的字符串。</td>
-</tr>
-<tr>
-<td><code>n*</code></td>
-<td>匹配任何包含<strong>零个或多个 n</strong> 的字符串。</td>
-</tr>
-<tr>
-<td><code>n?</code></td>
-<td>匹配任何包含<strong>零个或一个 n</strong> 的字符串。</td>
-</tr>
-<tr>
-<td><code>n{X}</code></td>
-<td>匹配包含 <strong>X 个 n</strong> 的序列的字符串。</td>
-</tr>
-<tr>
-<td><code>n{X,Y}</code></td>
-<td>匹配包含 <strong>X 至 Y 个 n</strong> 的序列的字符串。</td>
-</tr>
-<tr>
-<td><code>n{X,}</code></td>
-<td>匹配包含<strong>至少 X 个 n</strong> 的序列的字符串。</td>
-</tr>
-<tr>
-<td><code>n$</code></td>
-<td>匹配任何<strong>结尾为 n</strong> 的字符串。</td>
-</tr>
-<tr>
-<td><code>^n</code></td>
-<td>匹配任何<strong>开头为 n</strong> 的字符串。</td>
-</tr>
-<tr>
-<td><code>?=n</code></td>
-<td>匹配任何<strong>其后紧接指定字符串 n</strong> 的字符串。</td>
-</tr>
-<tr>
-<td><code>?!n</code></td>
-<td>匹配任何<strong>其后没有紧接指定字符串 n</strong> 的字符串。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\</td>
-<td></td>
-<td>转义符</td>
-</tr>
-<tr>
-<td>(), (?:), (?=), []</td>
-<td>圆括号和方括号</td>
-</tr>
-<tr>
-<td>*, +, ?, {n}, {n,}, {n,m}</td>
-<td>限定符</td>
-</tr>
-<tr>
-<td>^, $, \任何元字符、任何字符</td>
-<td>定位点和序列（即：位置和顺序）</td>
-</tr>
-<tr>
-<td>`\</td>
-<td>`</td>
-<td>替换，”或”操作字符具有高于替换运算符的优先级，使得`”m\</td>
-<td>food”<code>匹配</code>“m”或”food”<code>。若要匹配</code>“mood”或”food”<code>，请使用括号创建子表达式，从而产生</code>“(m\</td>
-<td>f)ood”`。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="RegExp-对象属性"><a href="#RegExp-对象属性" class="headerlink" title="RegExp 对象属性"></a>RegExp 对象属性</h3><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>global    RegExp</td>
-<td>对象是否具有标志 g</td>
-</tr>
-<tr>
-<td>ignoreCase    RegExp</td>
-<td>对象是否具有标志 i</td>
-</tr>
-<tr>
-<td>lastIndex</td>
-<td>一个整数，标示开始下一次匹配的字符位置</td>
-</tr>
-<tr>
-<td>multiline    RegExp</td>
-<td>对象是否具有标志 m</td>
-</tr>
-<tr>
-<td>source</td>
-<td>正则表达式的源文本</td>
-</tr>
-</tbody>
-</table>
-<h3 id="RegExp-对象方法"><a href="#RegExp-对象方法" class="headerlink" title="RegExp 对象方法"></a>RegExp 对象方法</h3><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>compile</td>
-<td>编译正则表达式</td>
-</tr>
-<tr>
-<td>exec</td>
-<td>检索字符串中指定的值。返回找到的值，并确定其位置</td>
-</tr>
-<tr>
-<td>test</td>
-<td>检索字符串中指定的值。返回 true 或 false</td>
-</tr>
-</tbody>
-</table>
-<h3 id="支持正则表达式的-String-对象的方法"><a href="#支持正则表达式的-String-对象的方法" class="headerlink" title="支持正则表达式的 String 对象的方法"></a>支持正则表达式的 String 对象的方法</h3><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>search</td>
-<td>检索与正则表达式相匹配的值</td>
-</tr>
-<tr>
-<td>match</td>
-<td>找到一个或多个正则表达式的匹配</td>
-</tr>
-<tr>
-<td>replace</td>
-<td>替换与正则表达式匹配的子串</td>
-</tr>
-<tr>
-<td>split</td>
-<td>把字符串分割为字符串数组</td>
-</tr>
-</tbody>
-</table>
-<h4 id="正则表达式中的replace的用法"><a href="#正则表达式中的replace的用法" class="headerlink" title="正则表达式中的replace的用法"></a>正则表达式中的replace的用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sStr = <span class="string">'讨论一下正则表达式中的replace的正则表达式用法'</span>;</div><div class="line">sStr.replace(<span class="regexp">/(正则).+?(式)/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// ["正则表达式", "正则", "式", 19, "讨论一下正则表达式中的replace的正则表达式用法"]</span></div><div class="line"><span class="comment">// ["正则表达式", "正则", "式", 19, "讨论一下正则表达式中的replace的正则表达式用法"]</span></div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="/2016/05/28/RegExp/#comment" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
  
 <nav id="pagination">
   
@@ -1973,7 +1808,7 @@ ES6中可以把构造函数看作类
   
 <div class="widget tag">
   <h3 class="title" id="categories">分类</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">2</span></li></ul> 
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">2</span></li></ul> 
 </div>
  
 
@@ -2023,7 +1858,7 @@ ES6中可以把构造函数看作类
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/window-document/" style="font-size: 10px;">window document</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/布局方式/" style="font-size: 10px;">布局方式</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/状态码/" style="font-size: 10px;">状态码</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 15px;">继承</a> <a href="/tags/进制/" style="font-size: 10px;">进制</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/预解析/" style="font-size: 10px;">预解析</a>
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/window-document/" style="font-size: 10px;">window document</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/布局方式/" style="font-size: 10px;">布局方式</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/状态码/" style="font-size: 10px;">状态码</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 15px;">继承</a> <a href="/tags/进制/" style="font-size: 10px;">进制</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/预解析/" style="font-size: 10px;">预解析</a>
   </div>
 </div>
 
@@ -2031,7 +1866,7 @@ ES6中可以把构造函数看作类
   
   <div class="widget tag">
     <h3 class="title">归档</h3>
-	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">40</span></li></ul>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">41</span></li></ul>
   </div>
 
 </aside>

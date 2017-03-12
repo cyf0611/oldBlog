@@ -82,6 +82,284 @@
     <header>
         <div class="icon"></div>
         
+        <time datetime="2016-08-10T01:53:31.000Z"><a href="/2016/08/10/markdown使用方法/">2016-08-10</a></time>
+        
+  
+    <h1 class="title"><a href="/2016/08/10/markdown使用方法/">markdown使用方法</a></h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-介绍"><span class="toc-text">Markdown 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-的优点"><span class="toc-text">Markdown 的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实时预览编辑器"><span class="toc-text">实时预览编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-基本语法"><span class="toc-text">Markdown 基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-相关插件"><span class="toc-text">Markdown 相关插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-使用场景"><span class="toc-text">Markdown 使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用-Markdown-写一封漂亮的电子邮件"><span class="toc-text">用 Markdown 写一封漂亮的电子邮件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-GitBook-制作电子书"><span class="toc-text">使用 GitBook 制作电子书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何做做一个-Markdown-实时预览编辑器"><span class="toc-text">如何做做一个 Markdown 实时预览编辑器</span></a></li></ol>
+    </div>
+
+        <blockquote>
+<p>专注写作，提高生产力</p>
+</blockquote>
+<h3 id="Markdown-介绍"><a href="#Markdown-介绍" class="headerlink" title="Markdown 介绍"></a>Markdown 介绍</h3><p>轻量级标记语言（html、xml），2004 年被 <code>John Gruber</code> 创造，<br>它允许人们“使用易读易写的纯文本格式编写文档”，<br>Markdown 最重要的设计就是可读性，<br>Markdown 可以选择性的转换为 HTML 文档格式，<br>很多网站目前都使用了 Markdown 或者其变种，例如Github、简书等大型社区。</p>
+<p>下面是一个 demo：</p>
+<p>markdown 源文档：</p>
+<p><img src="img/md.png" alt="markdown"></p>
+<p>转换过后的 HTML：</p>
+<p><img src="img/html.png" alt="markdown - html"></p>
+<h3 id="Markdown-的优点"><a href="#Markdown-的优点" class="headerlink" title="Markdown 的优点"></a>Markdown 的优点</h3><ul>
+<li>纯文本，所以兼容性极强，可以用所有文本编辑器打开</li>
+<li>专注于文字写作而不是排版</li>
+<li>格式转换方便，可以轻松转换为 HTML、PPT、电子书等</li>
+<li>Markdown 标记语法简单好记，可读性强</li>
+</ul>
+<h3 id="实时预览编辑器"><a href="#实时预览编辑器" class="headerlink" title="实时预览编辑器"></a>实时预览编辑器</h3><p><a href="http://www.williamlong.info/archives/4319.html" target="_blank" rel="external">月光博客 - 好用的Markdown编辑器一览</a></p>
+<ul>
+<li>dillinger</li>
+<li>马克飞象</li>
+<li>简书</li>
+<li>MarkdownPad</li>
+<li>Sublime Text<ul>
+<li>配合 <code>Markdown Preview</code> 插件</li>
+</ul>
+</li>
+<li>Webstorm<ul>
+<li>配合插件</li>
+</ul>
+</li>
+<li>gitbook</li>
+</ul>
+<p>编辑实时预览工具只是为了辅助教学而已，<br>我们真正在进行写作的时候，其实是不需要实时预览的，<br>因为 Markdown 标记语言本身已经足够清晰了。</p>
+<h3 id="Markdown-基本语法"><a href="#Markdown-基本语法" class="headerlink" title="Markdown 基本语法"></a>Markdown 基本语法</h3><ul>
+<li>标题</li>
+<li>段落</li>
+<li>粗体</li>
+<li>斜体</li>
+<li>无序列表</li>
+<li>有序列表</li>
+<li>链接</li>
+<li>图片</li>
+<li>文本引用</li>
+<li>行内代码引用</li>
+<li>多行代码引用</li>
+<li>表格</li>
+</ul>
+<p>表格比较特殊，不太好用，下面是规范写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">| ABCD | EFGH | IJKL |</div><div class="line">| -----|:----:| ----:|</div><div class="line">| a    | b    | c    |</div><div class="line">| d    | e    |  f   |</div><div class="line">| g    | h    |   i  |</div></pre></td></tr></table></figure>
+<h3 id="Markdown-相关插件"><a href="#Markdown-相关插件" class="headerlink" title="Markdown 相关插件"></a>Markdown 相关插件</h3><ul>
+<li>Sublime<ul>
+<li>MarkdownEditing</li>
+<li>MarkdownPreview<ul>
+<li>编辑的时候实时预览</li>
+<li>编译生成 html 文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="http://packagecontrol.io" target="_blank" rel="external">http://packagecontrol.io</a></p>
+<h3 id="Markdown-使用场景"><a href="#Markdown-使用场景" class="headerlink" title="Markdown 使用场景"></a>Markdown 使用场景</h3><ul>
+<li>学习笔记<ul>
+<li>手写笔记</li>
+</ul>
+</li>
+<li>演讲稿<ul>
+<li>技术沙龙，party</li>
+<li>中午演讲：以后都做一个 PPT 或者写一个 Markdown 演讲稿</li>
+</ul>
+</li>
+<li>写书（侧重于技术相关的内容非常适合）</li>
+<li>个人笔记</li>
+<li>文章博客</li>
+<li>教学讲义</li>
+<li>说明文档<ul>
+<li>使用比较多，软件的说明文档或者开源项目的说明文档</li>
+</ul>
+</li>
+<li>电子邮件</li>
+</ul>
+<p>只要有写作的地方，都可以使用 Markdown 来书写。</p>
+<h3 id="用-Markdown-写一封漂亮的电子邮件"><a href="#用-Markdown-写一封漂亮的电子邮件" class="headerlink" title="用 Markdown 写一封漂亮的电子邮件"></a>用 Markdown 写一封漂亮的电子邮件</h3><p>为什么要用 Markdown 写电子邮件？ 答案是：<code>装x</code>。</p>
+<p>当然不是了，Markdown 本身语法简单，使用 Markdown 写出来的内容结构也非常清晰，<br>有助于协作沟通，总而言之，使用 Markdown 可以可以让你更加专注写作本身。</p>
+<p>其实就是讲md格式字符串转换成html而已，这里使用一个 Chrome 插件：</p>
+<p><a href="https://chrome.google.com/webstore/detail/markdown-here/elifhakcjgalahccnjkneoccemfahfoa?utm_source=chrome-ntp-icon" target="_blank" rel="external">Markdown Here</a></p>
+<h3 id="使用-GitBook-制作电子书"><a href="#使用-GitBook-制作电子书" class="headerlink" title="使用 GitBook 制作电子书"></a>使用 GitBook 制作电子书</h3><p><a href="https://www.gitbook.com/" target="_blank" rel="external">GitBook</a></p>
+<ul>
+<li>在线 Web 端写</li>
+<li>使用客户端软件写<ul>
+<li>下载地址：<a href="https://www.gitbook.com/editor" target="_blank" rel="external">https://www.gitbook.com/editor</a></li>
+</ul>
+</li>
+<li>终端命令行工具可以辅助生成</li>
+</ul>
+<h3 id="如何做做一个-Markdown-实时预览编辑器"><a href="#如何做做一个-Markdown-实时预览编辑器" class="headerlink" title="如何做做一个 Markdown 实时预览编辑器"></a>如何做做一个 Markdown 实时预览编辑器</h3><p>Markdown 本身就是一个标记语言，可以通过某种方式转换成别的文本格式，本质上转换的过程其实就是做正则解析替换。</p>
+<ul>
+<li>如何将markdown格式字符串转成html<ul>
+<li>使用一个第三方包：<code>marked</code></li>
+<li><code>npm install marked</code></li>
+</ul>
+</li>
+<li>给html设置样式</li>
+<li>给代码块设置颜色高亮<ul>
+<li><a href="https://highlightjs.org/" target="_blank" rel="external">highlightjs</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="/2016/08/10/markdown使用方法/#comment" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-08-06T03:42:32.000Z"><a href="/2016/08/06/jquery中load的实现原理/">2016-08-06</a></time>
+        
+  
+    <h1 class="title"><a href="/2016/08/06/jquery中load的实现原理/">jquery中load的实现原理</a></h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#插件"><span class="toc-text">插件</span></a></li></ol>
+    </div>
+
+        <p>jq 中的使用方法</p>
+<p>$( document ).ready( fn ); </p>
+<p>$(function () {</p>
+<p>})</p>
+<p>在 jq 中, 并不是将函数加载到 window.onload 事件上. 因为在 onload 事件中写代码一定要<br>保证页面中所有的元素都加载完毕. 在 jq 中认为这样的体验不好, 因此做了特殊处理. 只要是 dom<br>结构加载完, 就可以触发事件.</p>
+<p>我们接下来将 行为绑定在 window.onload 中</p>
+<p>init: function ( selector ) {<br>    …<br>    …<br>    if ( typeof selector == ‘function’ ) {<br>        window.onload = selector;<br>    }<br>}</p>
+<p>我们需要添加多个事件, 就要调用多次, 就是调用多个函数</p>
+<ol>
+<li><p>函数技巧<br> 首先增加 onload 的时候 判断一下 是否已经 绑定过 load 事件了, 如果没有绑定过直接赋值<br> 如果绑定过, 那么就应该将已经绑定的 函数 与 新的 这个 函数组合在一起, 要求是触发的时候<br> 一起触发, 按照先后顺序执行即可.</p>
+<p> if ( typeof window.onload === ‘function’ ) {</p>
+<pre><code>// 绑定过
+var fn = window.onload;
+window.onload = function () {
+    fn();
+    selecotr();
+};
+</code></pre><p> } else {</p>
+<pre><code>// 未绑定
+window.onload = selector;
+</code></pre><p> }</p>
+</li>
+<li><p>数组技巧</p>
+<p> onload = function () {</p>
+<pre><code>I.each( loads, funciton () {
+    this();
+});
+</code></pre><p> };</p>
+</li>
+</ol>
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><p>就是 jq 本身没有这个方法, 获得实现这个功能比较麻烦, 获得根本不能实现某个<br>功能. 那么我们写一个 js 文件, 然后通过增加 jq 的方法, 成员属性等工能,<br>让jq 可以完成前面的任务, 那么这个 js 文件就是 jq 插件.</p>
+<p>自己写插件就是让 jq 有某些以前没有的方法, 或属性等</p>
+<p>jQuery.fn.extend({<br>    …<br>});</p>
+<p>jQuery.extend({<br>    …<br>})</p>
+<div><br>    <div><br>        <div></div><br>    </div><br>    <div></div><br></div>
+
+<p>$( ‘div’ ).children( ‘div’ ).append( ‘</p><p>ppp</p>‘ )<p></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="/2016/08/06/jquery中load的实现原理/#comment" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-08-01T01:39:08.000Z"><a href="/2016/08/01/代理模式/">2016-08-01</a></time>
+        
+  
+    <h1 class="title"><a href="/2016/08/01/代理模式/">代理模式</a></h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代理模式"><span class="toc-text">代理模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在浏览器中"><span class="toc-text">在浏览器中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQ-中的-delegate"><span class="toc-text">jQ 中的 delegate</span></a></li></ol>
+    </div>
+
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Itcast.each( [ &apos;obclick&apos;, &apos;onload&apos; ], function ( i, v ) &#123;</div><div class="line">    v = v.slice( 2 );</div><div class="line">    Itcast.fn[ v ] = function ( eventFn ) &#123;</div><div class="line">        return this.on( v, eventFn );</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">css: function ( name, value ) &#123;</div><div class="line">    // name 是一个对象</div><div class="line">    return this.each( function () &#123;</div><div class="line">        var that = this;</div><div class="line">        Itcast.each( name, function ( k, v ) &#123;</div><div class="line">            that.style[ k ] = v;</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><p>英文 delegate, 翻译常常称为 代理, 委托.</p>
+<p>所谓的代理模式, 就是想办法规定一个协议, 然后让别人遵守协议, 让别人可以帮你做事情.</p>
+<p>代码:<br>一个对象要做一件事情, 即 对象调用一个方法. 但是该对象自己不做, 让另一个对象去做.<br>当前对象调用一个方法, 就是触发另一个对象调用一个方法. 在代码中模型可以写成:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">o.doSomething = function () &#123;</div><div class="line">    otherObj.doSomething();</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>但是并非一般的对象. 在让另一个对象执行之前需要对其”授权( 注册代理 )”. 这样的好处就是<br>可以利用 “可装配的方式处理我的这个另一个对象”, 就可以实现较为灵活的处理. 代码模型:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var o = &#123;</div><div class="line">    delegate: null,</div><div class="line">    doSomething: function () &#123;</div><div class="line">        if ( this.delegate &amp;&amp; this.delegate.doSomeThing ) &#123;</div><div class="line">            this.delegate.doSomeThing();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 此时 o.delegate 就是可装配的</div><div class="line">o.delegate = &#123;</div><div class="line">    // delegate 可以随意的赋值, 但是必须保证有 doSomeThing 这个方法</div><div class="line">    doSomeThing: function () &#123;</div><div class="line">        // 随意写</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 在代码中可以实现统一调用</div><div class="line">o.doSomeThing(); // 执行结果是什么?</div></pre></td></tr></table></figure>
+<p>此时对象 o.delegate 就是 o 的代理对象.</p>
+<h2 id="在浏览器中"><a href="#在浏览器中" class="headerlink" title="在浏览器中"></a>在浏览器中</h2><p>以 点击事件为例. 在浏览器内部已经调用好事件处理的整套代码结构, 但是预留了一些方法<br>例如<br>    onclick 其实是 代理方法名<br>    click 是 触发的方法名. 手动的触发点击事件.</p>
+<pre><code>form 对象有一个 submit 方法
+</code></pre><h2 id="jQ-中的-delegate"><a href="#jQ-中的-delegate" class="headerlink" title="jQ 中的 delegate"></a>jQ 中的 delegate</h2><p>其实使用 父元素 添加事件, 但是利用冒泡可以监听到是哪一个标签最先触发, 然后执行代码<br>其优点是可以少绑定同样的事件.</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="/2016/08/01/代理模式/#comment" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
         <time datetime="2016-07-23T02:17:23.000Z"><a href="/2016/07/23/面向对象/">2016-07-23</a></time>
         
   
@@ -1197,767 +1475,6 @@ ES6中可以把构造函数看作类
 
 
 
-
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-06-08T09:04:34.000Z"><a href="/2016/06/08/移动WEB/">2016-06-08</a></time>
-        
-  
-    <h1 class="title"><a href="/2016/06/08/移动WEB/">移动WEB</a></h1>
-  
-
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#屏幕"><span class="toc-text">屏幕</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#长度单位"><span class="toc-text">长度单位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#像素密度-PPI-DPI"><span class="toc-text">像素密度  PPI/DPI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设备独立像素"><span class="toc-text">设备独立像素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#像素"><span class="toc-text">像素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iPhone常见手机尺寸"><span class="toc-text">iPhone常见手机尺寸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#视口（viewport）"><span class="toc-text">视口（viewport）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#屏幕适配"><span class="toc-text">屏幕适配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#适配方案"><span class="toc-text">适配方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#扩展"><span class="toc-text">扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-预处理器-Less"><span class="toc-text">CSS 预处理器  Less</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#媒体查询"><span class="toc-text">媒体查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rem适配"><span class="toc-text">rem适配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#触屏事件"><span class="toc-text">触屏事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#zepto-js"><span class="toc-text">zepto.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移动端类库"><span class="toc-text">移动端类库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页面布局"><span class="toc-text">页面布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-框架"><span class="toc-text">CSS 框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bootstrap"><span class="toc-text">Bootstrap</span></a></li></ol>
-    </div>
-
-        <h2 id="屏幕"><a href="#屏幕" class="headerlink" title="屏幕"></a>屏幕</h2><p><strong>尺寸</strong></p>
-<ul>
-<li>屏幕对角线的长度（一般用英寸来度量）</li>
-</ul>
-<p><strong>分辨率</strong></p>
-<ul>
-<li>用像素来度量，表示屏幕水平和垂直方向的像素数</li>
-</ul>
-<h2 id="长度单位"><a href="#长度单位" class="headerlink" title="长度单位"></a>长度单位</h2><p><strong><code>px  in  em  cm  pt</code></strong></p>
-<ul>
-<li>相对长度<ul>
-<li><code>px em pt</code></li>
-</ul>
-</li>
-<li>绝对长度<ul>
-<li><code>in cm</code></li>
-</ul>
-</li>
-</ul>
-<p><strong>常用<code>px</code></strong></p>
-<h2 id="像素密度-PPI-DPI"><a href="#像素密度-PPI-DPI" class="headerlink" title="像素密度  PPI/DPI"></a>像素密度  PPI/DPI</h2><blockquote>
-<p>由勾股定理得出<br>Retina即视网膜屏幕，苹果注册的命名方式，意指具有较高PPI（大于320）的屏幕</p>
-<p>屏幕尺寸固定时：<br>当PPI 越大，像素的实际大小就会越小，<br>当PPI越小，像素实际大小就越大</p>
-</blockquote>
-<h2 id="设备独立像素"><a href="#设备独立像素" class="headerlink" title="设备独立像素"></a>设备独立像素</h2><ul>
-<li>IOS<ul>
-<li><code>pt</code></li>
-</ul>
-</li>
-<li>Android<ul>
-<li><code>DP/DIP</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="像素"><a href="#像素" class="headerlink" title="像素"></a>像素</h2><p><strong>物理像素</strong></p>
-<ul>
-<li>获取屏幕的物理像素尺寸：<ul>
-<li><code>window.screen.width;</code>宽度</li>
-<li><code>window.screen.height;</code>高度</li>
-</ul>
-</li>
-</ul>
-<p><strong>CSS像素</strong></p>
-<ul>
-<li>其默认值(PC端)是和物理像素保持一致的<ul>
-<li>1个单位的CSS像素等于1个单位的物理像素</li>
-<li>但是我们可通缩放来改变其大小</li>
-</ul>
-</li>
-</ul>
-<h2 id="iPhone常见手机尺寸"><a href="#iPhone常见手机尺寸" class="headerlink" title="iPhone常见手机尺寸"></a>iPhone常见手机尺寸</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">型号</th>
-<th style="text-align:right">尺寸</th>
-<th style="text-align:center">物理像素</th>
-<th>ideal viewport</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">3G</td>
-<td style="text-align:right">3.5寸</td>
-<td style="text-align:center">480<code>*</code>320</td>
-<td>480<code>*</code>320</td>
-</tr>
-<tr>
-<td style="text-align:left">4</td>
-<td style="text-align:right">3.5寸</td>
-<td style="text-align:center">960<code>*</code>640</td>
-<td>480<code>*</code>320</td>
-</tr>
-<tr>
-<td style="text-align:left">5</td>
-<td style="text-align:right">4.0寸</td>
-<td style="text-align:center">1136<code>*</code>640</td>
-<td>568<code>*</code>320</td>
-</tr>
-<tr>
-<td style="text-align:left">6</td>
-<td style="text-align:right">4.7寸</td>
-<td style="text-align:center">1334<code>*</code>750</td>
-<td>667<code>*</code>375</td>
-</tr>
-<tr>
-<td style="text-align:left">6pius</td>
-<td style="text-align:right">5.0寸</td>
-<td style="text-align:center">1920<code>*</code>1080</td>
-<td>736<code>*</code>414</td>
-</tr>
-</tbody>
-</table>
-<h2 id="视口（viewport）"><a href="#视口（viewport）" class="headerlink" title="视口（viewport）"></a>视口（viewport）</h2><ul>
-<li><p>用来约束你网站中最顶级块元素<code>&lt;html&gt;</code>的，即它决定了<code>&lt;html&gt;</code>的大小</p>
-</li>
-<li><p>viewport的大小取决于浏览器窗口的大小，以CSS像素做为度量单位</p>
-<ul>
-<li>获取viewport的大小：<ul>
-<li><code>document.documentElement.clientWidth;</code>宽</li>
-<li><code>document.documentElement.clientHeight;</code>高</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>在PC端，我们通过调整浏览器窗口可以改变viewport的大小，为了保证网页布局不发生错乱，需要给元素设定较大固定宽度</p>
-</li>
-<li><p>在移动设备上viewport不再受限于浏览器的窗口，而是允许开发人员自由设置viewport的大小，通常浏览器会设置一个默认大小的viewport，为了能够正常显示那些专为PC设计的网页，一般这个值的大小会大于屏幕的尺寸<code>（一般为980px）</code></p>
-</li>
-<li><p><strong>移动设备的viewport</strong></p>
-<ul>
-<li><code>layout viewport</code>布局视口<ul>
-<li>指的是我们<code>可以进行网页布局区域的大小</code>，同样是以CSS像素做为计量单位</li>
-<li><strong>获取layout viewport</strong><ul>
-<li><code>document.documentElement.clientWidth;</code>宽</li>
-<li><code>document.documentElement.clientHeight;</code>高</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>ideal viewport</code>理想视口<ul>
-<li><code>设备屏幕区域</code>（以设备独立像素PT、DP做为单位）以CSS像素做为计量单位，其大小是  不可能被改变</li>
-<li><strong>获取ideal viewport有两种情形</strong><ul>
-<li><code>window.screen.width;</code></li>
-<li><code>window.screen.height;</code></li>
-<li></li>
-<li><code>window.screen.width / window.devicePixelRatio;</code></li>
-<li><code>window.screen.height / window.devicePixelRatio;</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>移动端浏览器</p>
-<ul>
-<li>系统浏览器</li>
-<li>应用内置浏览器(WebView)</li>
-<li>第三方浏览器（FireFox、Chrome、360）</li>
-</ul>
-</li>
-</ul>
-<h2 id="屏幕适配"><a href="#屏幕适配" class="headerlink" title="屏幕适配"></a>屏幕适配</h2><p><strong>viewport</strong></p>
-<ul>
-<li><code>&lt;meta name=&quot;viewport&quot; content=&quot;&quot;&gt;</code>通过设置属性content=””实现，中间以逗号分隔<ul>
-<li><code>width/height</code><ul>
-<li>设置layout viewport 宽度，其取值可为数值或者device-width/device-height</li>
-<li>device-width 和 device-height就是ideal viewport的宽高</li>
-</ul>
-</li>
-<li><code>initital-scale</code><ul>
-<li>设置页面的初始缩放值，为一个数字，可以带小数</li>
-</ul>
-</li>
-<li><code>maximum-scale/minimum-scale</code><ul>
-<li>允许用户的最大/最小缩放值，为一个数字，可以带小数</li>
-</ul>
-</li>
-<li><code>user-scalable</code><ul>
-<li>是否允许用户进行缩放，值为”no”或”yes”</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable &quot;&gt;</code></strong></p>
-<ul>
-<li>当我们设置<code>width=device-width</code>，也达到了<code>initial-scale=1</code>的效果，得知其实 <code>initial-scale = ideal viewport / layout viewport</code><ul>
-<li>两种方式都可以控制缩放，开发中一般同时设置    <code>width=device-width和initial-scale=1.0</code>（为了解决一些兼容问题）</li>
-</ul>
-</li>
-</ul>
-<p><strong>避免滚动</strong></p>
-<ul>
-<li>滚动条是 <code>layout viewport</code> 相对于 <code>ideal viewport</code> 的，所以只要设置 <code>layout viewport</code> 小于或等于 <code>ideal viewport</code>，即<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;</code></li>
-<li>经测试发现我们并没有完全的解决滚动条的问题，原因在于我们示例里的<code>.box {width: 490px;}</code>设置了一个绝对的宽度造成的，要解决这个问题我们可以<code>设置一个百分比（100%）</code>的宽度</li>
-</ul>
-<h3 id="适配方案"><a href="#适配方案" class="headerlink" title="适配方案"></a>适配方案</h3><p><strong>rem单位</strong></p>
-<ul>
-<li>1、设置<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code></li>
-<li>2、设置页面元素宽度单位为rem 或 em</li>
-<li><code>em</code> <ul>
-<li>是相对长度单位，其<code>参照当前元素字号大小</code>，如果当前元素未设置字号则会继承其祖先元素字号大小</li>
-<li>例：<code>.box {font-size: 16px;}则 1em = 16px</code></li>
-<li><code>.box {font-size: 32px;} 则 1em = 32px，0.5em = 16px</code></li>
-</ul>
-</li>
-<li><code>rem</code><ul>
-<li>相对长度单位，其<code>参照根元素(html)字号大小</code></li>
-<li>例：<code>html {font-size: 16px;} 则 1rem = 16px</code></li>
-<li><code>html {font-size: 32px;} 则 1rem = 32px，0.5rem = 16px</code></li>
-</ul>
-</li>
-</ul>
-<p><strong>百分比</strong></p>
-<ul>
-<li>1、设置<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code></li>
-<li>2、设置页面宽度为百分比<br>|width|参照父元素的宽度|<br>|:—|:—|<br>|height|参照父元素高度|<br>|padding|参照父元素宽度|<br>|border|不支持百分比设置|<br>|margin|参照父元素的宽度|</li>
-</ul>
-<p><strong>固定宽度(很少用)</strong></p>
-<ul>
-<li>1、设置<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code></li>
-<li>2、设置内容区域大小为320px</li>
-<li>3、设置内容区域水平居中显示</li>
-</ul>
-<p><strong>100%像素</strong></p>
-<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><ul>
-<li><p><code>line-height</code></p>
-<ul>
-<li>父盒子设置的值为<code>百分比</code>时，子盒子的行高继承的是以<code>父盒子字号</code>为标准的</li>
-<li>父盒子设置的值为<code>具体数字</code>时，子盒子的行高继承的是以<code>自身的字号</code>为标准的</li>
-</ul>
-</li>
-<li><p><strong>避免全局变量污染</strong></p>
-<ul>
-<li>设置一个命名空间</li>
-</ul>
-</li>
-<li><p><strong>设置全屏：<code>width:100%;    height:100%;</code></strong></p>
-</li>
-<li><p><strong>设置遮罩</strong></p>
-<ul>
-<li>用<code>position：fixed;</code></li>
-</ul>
-</li>
-<li><p><strong>有浮动的元素，谁受到影响，给谁清 clear:both;</strong></p>
-</li>
-<li><p><code>overflow-scrolling:touch;</code>设置平滑滚动    </p>
-<ul>
-<li>不设置时移动端在滑屏时会迟钝</li>
-</ul>
-</li>
-<li><p><code>-webkit-tap-highlight-color: transparent;</code></p>
-<ul>
-<li>设置清除点击有背景反应        (a、…)</li>
-</ul>
-</li>
-<li><p><strong>★设置多余的字以  <code>...</code>   显示</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">display: -webkit-box;</div><div class="line">overflow: hidden;</div><div class="line">text-overflow: ellipsis;</div><div class="line">-webkit-line-clamp: 2;</div><div class="line">-webkit-box-orient: vertical;</div><div class="line">word-break: break-all;</div><div class="line"></div><div class="line">/*--------------------------------------------------------*/</div><div class="line">1.单行文本溢出需要满足三个条件：</div><div class="line"></div><div class="line">　　overflow:hidden;     white-space:nowrap;  text-overflow:ellipsis;</div><div class="line"></div><div class="line">2.多行文本溢出需要满足下面几个条件：</div><div class="line"></div><div class="line">　　display:-webkit-box; overflow:hidden;</div><div class="line"></div><div class="line">　　text-overflow:ellipsis; word-break:break-all;</div><div class="line"></div><div class="line">　　-webkit-box-orient:vertical; //子元素应该被水平或垂直排列</div><div class="line"></div><div class="line">　　-webkit-line-clamp:3;  //3行后显示省略号</div><div class="line"></div><div class="line"></div><div class="line">word-wrap是控制换行的。</div><div class="line">使用break-word时，是将强制换行。中文没有任何问题，英文语句也没问题。但是对于长串的英文，就不起作用。break-word是控制是否断词的。</div><div class="line">normal是默认情况，英文单词不被拆开。</div><div class="line">break-all，是断开单词。在单词到边界时，下个字母自动到下一行。主要解决了长串英文的问题。</div><div class="line">keep-all，是指Chinese, Japanese, and Korean不断词。即只用此时，不用word-wrap，中文就不会换行了。（英文语句正常。）</div><div class="line"></div><div class="line">语法： word-wrap : normal | break-word 参数： normal : 允许内容顶开指定的容器边界 break-word : 内容将在边界内换行。如果需要，词内换行（word-break）</div><div class="line"></div><div class="line"></div><div class="line">-webkit-line-clamp 用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。 常见结合属性：</div><div class="line"></div><div class="line">1，display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。</div><div class="line"></div><div class="line">2，-webkit-box-orient 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。</div><div class="line"></div><div class="line">3，text-overflow: ellipsis; ，可以用来多行文本的情况下，用省略号“…”隐藏超出范围的文本</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="CSS-预处理器-Less"><a href="#CSS-预处理器-Less" class="headerlink" title="CSS 预处理器  Less"></a>CSS 预处理器  <code>Less</code></h2><p><strong>常见的CSS预处理器有：<code>LESS</code>、<code>SASS</code>、<code>Stylus</code></strong></p>
-<p><strong>安装</strong></p>
-<ul>
-<li>1、安装Nodejs环境 Node Package Manager <code>(验证 node -v  npm -v)</code></li>
-<li>2、打开控制台（cmd），执行npm install -g less (验证 lessc -v)</li>
-<li>3、命令行编译 lessc path/xxx.less path/xxx.css</li>
-</ul>
-<p><strong>语法</strong></p>
-<ul>
-<li>变量<ul>
-<li><code>@变量名：值；</code>（可以重复使用）</li>
-</ul>
-</li>
-<li><p>混合</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">定义一个函数，	</div><div class="line">.box-sizing (默认参数[@box-sizing: border-box;]) &#123;</div><div class="line">	box-sizing: border-box;</div><div class="line">&#125;</div><div class="line"></div><div class="line">调用函数，		</div><div class="line">.box &#123; .box-sizing(参数);&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>嵌套</p>
-<ul>
-<li>可以非常方便的管理我们的CSS层级关系</li>
-</ul>
-</li>
-</ul>
-<p><strong>使用</strong></p>
-<ul>
-<li>1、下载然后引入less.js</li>
-<li>2、引入xx.less文件，如：<ul>
-<li><code>&lt;link rel=&quot;stylesheet/less&quot; type=&quot;text/css&quot; href=&quot;xx.less&quot; /&gt;</code></li>
-</ul>
-</li>
-<li><strong>注意：</strong><ul>
-<li><strong>rel属性必须指定成stylesheet/less，并且styles.less要<code>先于less.js引入</code>。</strong></li>
-<li><strong>必须以服务器方式访问</strong></li>
-<li>因为js不能访问本地文件，只有在服务器环境下js才能，访问本地文件</li>
-</ul>
-</li>
-</ul>
-<h2 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h2><p><strong>关键字</strong></p>
-<ul>
-<li>1、and 可以将多个媒体特性连接到一起，相当于“且”的意思。</li>
-<li>2、not 排除某个媒体类型，相当于“非”的意思，可以省略。</li>
-<li>3、only指定某个特定的媒体类型，可以省略</li>
-</ul>
-<p><strong>引入方式</strong></p>
-<ul>
-<li>link方式<ul>
-<li><code>&lt;link href=&quot;./xxx.css&quot; media=&quot;only screen and (max-width: 320px)&quot;&gt;</code></li>
-</ul>
-</li>
-<li>@media方法（写在CSS里）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@media only screen and (max-width: 980px) &#123;</div><div class="line">	body &#123;</div><div class="line">		font-size: 16px;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>常用特性</strong></p>
-<ul>
-<li>1、width / height完全等于layout viewport，</li>
-<li>2、max-width / max-height 小于等于layout viewport，</li>
-<li>3、min-width / min-height 大于等于layout viewport，</li>
-<li>4、device-width / device-height 完全等于ideal viewport，</li>
-<li>5、orientation: portrait | landscape肖像/全景模式</li>
-</ul>
-<h2 id="rem适配"><a href="#rem适配" class="headerlink" title="rem适配"></a>rem适配</h2><h2 id="触屏事件"><a href="#触屏事件" class="headerlink" title="触屏事件"></a>触屏事件</h2><p><strong>类型</strong></p>
-<ul>
-<li><code>touchstart:</code> 手指触摸屏幕时触发</li>
-<li><code>touchmove:</code> 手指在屏幕上移动时触发</li>
-<li><code>touchend:</code> 手指离开屏幕时触发</li>
-</ul>
-<p><strong>TouchEvent对象</strong></p>
-<ul>
-<li><code>touches:</code>位于屏幕上的所有手指的列表</li>
-<li><code>targetTouches:</code>位于该元素上的所有手指列表<code>（建议使用）</code></li>
-<li><code>changedTouches:``touchstart</code>时包含刚与触摸屏接触的触点，<code>touchend</code>时包含离开触摸屏的触点    <ul>
-<li>用此事件获取触发<code>touchend</code>时的信息</li>
-</ul>
-</li>
-</ul>
-<p><strong>Touch对象</strong></p>
-<ul>
-<li><code>clientX/Y</code><ul>
-<li>手指相对于layout viewport的水平/垂直像素距离<code>【推荐使用】</code></li>
-</ul>
-</li>
-<li><code>pageX/Y</code><ul>
-<li>手指相对于layout viewport的水平/垂直像素距离（含滚动）</li>
-</ul>
-</li>
-<li><code>screenX/Y</code><ul>
-<li>手指相对于layout viewport的水平/垂直像素距离（含滚动）</li>
-</ul>
-</li>
-</ul>
-<p><strong>click延时：<code>【面试】</code></strong></p>
-<ul>
-<li>早期移动设备浏览器网页时内容非常小，</li>
-<li>为了增强用户体验，苹果公司专门为移动设备设计了双击放大的功能，</li>
-<li>确保用户可以非常方便的放大网页内容，</li>
-<li>但是当用户单击一个按钮时，移动设备会<code>延时（约300ms）</code>执行，判断用户是否要双击</li>
-<li><code>用触屏事件可以解决这个问题</code></li>
-</ul>
-<h2 id="zepto-js"><a href="#zepto-js" class="headerlink" title="zepto.js"></a>zepto.js</h2><p><strong>压缩版的js库，可定制功能，更轻更小</strong></p>
-<p><strong>使用步骤</strong></p>
-<ul>
-<li>1、安装Nodejs环境</li>
-<li>2、下载zepto.js</li>
-<li>3、解压缩</li>
-<li>4、cmd命令进行解压缩后的目录</li>
-<li>5、执行<code>npm install</code>命令</li>
-<li>6、编辑make文件，添加自定义模块，并保存<ul>
-<li><code>41/42行修改自定义模块</code></li>
-</ul>
-</li>
-<li>7、然后执行<code>npm run-script dist</code> 生成的目标文件在一个dist文件夹中</li>
-<li>8、查看目录dist中构建好的zepto.js</li>
-</ul>
-<h2 id="移动端类库"><a href="#移动端类库" class="headerlink" title="移动端类库"></a>移动端类库</h2><p><strong><code>iScroll.js</code></strong>（可实现客户端原生滚动效果）</p>
-<ul>
-<li>1、下载iScroll</li>
-<li>2、build目录下提供了不同版本的iScroll，可根据情况使用</li>
-<li>3、html要求有3层结构</li>
-<li>4、获取wrapper这个最外层结构，然后实例化<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;js/iscroll&quot;&gt; &lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	var wrapper = document.querySelector(&quot;.wrapper&quot;);</div><div class="line">	IScroll (wrapper,&#123;</div><div class="line">		//配置参数</div><div class="line">	&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong><code>swipe.js、swiper.js、fastclick</code></strong></p>
-<h2 id="页面布局"><a href="#页面布局" class="headerlink" title="页面布局"></a>页面布局</h2><p><strong>布局方式</strong></p>
-<ul>
-<li>固定宽度<ul>
-<li>为网页设置一个固定的宽度，通常以px做为长度单位，常见于PC端网页</li>
-</ul>
-</li>
-<li>流式布局<ul>
-<li>网页设置一个相对的宽度，通常以百分比做为长度单位</li>
-</ul>
-</li>
-<li>栅格化布局<ul>
-<li>将网页宽度人为的划分成均等的长度，然后排版布局时则以这些均等的长度做为度量单位，通常利用百分比做为长度单位来划分成均等的长度</li>
-</ul>
-</li>
-<li><strong><code>响应式布局</code></strong><ul>
-<li>通过检测设备信息，决定网页布局方式，即用户如果采用不同的设备访问同一个网页，有可能会看到不一样的内容，一般情况下是检测设备屏幕的宽度来实现</li>
-</ul>
-</li>
-</ul>
-<p><strong>响应式布局</strong><br><strong>主要用到媒体查询</strong></p>
-<ul>
-<li>我们利用媒体查询可以检测到屏幕的尺寸（主要检测宽度），并设置不同的CSS样式，就可以实现响应式的布局</li>
-<li>布局方式<ul>
-<li>类型——布局宽度</li>
-<li>大屏—— (&gt;=1200px) <code>min-width:1200px</code></li>
-<li>默认——（&gt;=980px）<code>min-width:980px</code></li>
-<li>平板——（&gt;=768px）<code>min-width:768px</code></li>
-<li>手机到平板——（&lt;=767px）<code>min-width:480px max-width:767px</code></li>
-<li>手机——（&lt;480px）<code>max-width:480px</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="CSS-框架"><a href="#CSS-框架" class="headerlink" title="CSS 框架"></a>CSS 框架</h2><ul>
-<li>Amaze UI</li>
-<li>Framework7</li>
-<li>Bootstrap</li>
-</ul>
-<h2 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h2>
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="/2016/06/08/移动WEB/#comment" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-06-01T05:59:04.000Z"><a href="/2016/06/01/原型&原型链/">2016-06-01</a></time>
-        
-  
-    <h1 class="title"><a href="/2016/06/01/原型&原型链/">原型&amp;原型链</a></h1>
-  
-
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#实例"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原型"><span class="toc-text">原型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#原型链"><span class="toc-text">原型链</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数的原型链"><span class="toc-text">函数的原型链</span></a></li></ol>
-    </div>
-
-        <ul>
-<li>js 提供的能够解决实例共享的方案</li>
-<li>构造函数<code>prototype</code></li>
-</ul>
-<p><strong>★每一个构造函数都有一个prototype属性</strong></p>
-<ul>
-<li>通过构造函数创建的实例对象，都会带有一个<code>__proto__</code>属性 这个属性的值与构造函数的<code>prototype</code>的属性一致，都存储着同一个对象的<strong>地址</strong><br>-<code>__proto__</code>相当于一个存放着对象地址的属性，<code>所有对象都有这个属性</code>，当我们访问一个属性和方法时，会从自身去找，找不到就去<code>__proto__</code>中找，下一级没有了，再去下一级，直到终点</li>
-</ul>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><ul>
-<li>通过构造函数创建的对象，就叫<strong>实例</strong>，就是对象</li>
-<li>实例和对象没有可比性，同一个东西的不同叫法</li>
-</ul>
-<h3 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h3><ul>
-<li>js提供的，解决实例共享某些数据的方案</li>
-<li><p>如何解决</p>
-<ul>
-<li>每一个构造函数在诞生的时候，都会自带一个叫<code>prototype</code>的属性，储着一个对象的地址，而实例可以无条件的访问这个对象里面的内容</li>
-</ul>
-</li>
-<li><p>每一个对象都有一个<code>__proto__</code>属性</p>
-</li>
-</ul>
-<blockquote>
-<p>构造函数创建完实例对象以后，与实例没有关系了，<br>实例对象与原型对象有关，<br>构造函数与原型对象有关系</p>
-</blockquote>
-<h1 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h1><p>[TOC]</p>
-<ul>
-<li>一个对象继承的对象，称之为这个对象的原型对象</li>
-<li>一个对象继承的所有对象，就组成了这个函数的原型链</li>
-</ul>
-<h3 id="函数的原型链"><a href="#函数的原型链" class="headerlink" title="函数的原型链"></a>函数的原型链</h3><ul>
-<li>所有函数.prototype 都继承自Object.prototype</li>
-<li>Object.prototype除外</li>
-</ul>
-<p><strong>对象包含很多种类型，函数只是其中一种</strong></p>
-<p><strong>在js中，函数比较特殊，他们都是Function类型的对象，但是这些函数可以派生出属于自己的类型</strong></p>
-<p><strong>ECMAScript 内置的—–函数类型的对象：</strong></p>
-<ul>
-<li>String</li>
-<li>Number</li>
-<li>Boolean</li>
-<li>RegExp</li>
-<li>Function</li>
-<li>Object</li>
-<li>Array</li>
-<li>Error</li>
-<li><p>Date</p>
-</li>
-<li><p>原型链结构：</p>
-<ul>
-<li>构造函数 ==&gt; <code>Function.prototype</code> ==&gt; <code>Object.prototype</code> ==&gt; <code>null</code></li>
-</ul>
-</li>
-</ul>
-<p><strong>ECMAScript 内置的—–非函数类型的对象：</strong></p>
-<ul>
-<li>Math<ul>
-<li>Math的原型链结构：<ul>
-<li><code>Math</code> ==&gt;  <code>Object.prototype</code> ==&gt; <code>null</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="/2016/06/01/原型&原型链/#comment" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-05-28T08:33:40.000Z"><a href="/2016/05/28/RegExp/">2016-05-28</a></time>
-        
-  
-    <h1 class="title"><a href="/2016/05/28/RegExp/">正则基础</a></h1>
-  
-
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建正则对象"><span class="toc-text">创建正则对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方括号"><span class="toc-text">方括号[]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#元字符"><span class="toc-text">元字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#量词"><span class="toc-text">量词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符优先级"><span class="toc-text">运算符优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RegExp-对象属性"><span class="toc-text">RegExp 对象属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RegExp-对象方法"><span class="toc-text">RegExp 对象方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#支持正则表达式的-String-对象的方法"><span class="toc-text">支持正则表达式的 String 对象的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#正则表达式中的replace的用法"><span class="toc-text">正则表达式中的replace的用法</span></a></li></ol></li></ol></li></ol>
-    </div>
-
-        <h2 id="创建正则对象"><a href="#创建正则对象" class="headerlink" title="创建正则对象"></a>创建正则对象</h2><p><strong><code>new RegExp(pattern, attributes);</code></strong></p>
-<ul>
-<li><code>pattern</code>是一个字符串，指定了<code>正则表达式的模式</code>或<code>其他正则表达式</code></li>
-<li><code>attributes</code>是一个可选的字符串，包含属性 <code>&quot;g&quot;、&quot;i&quot; 和 &quot;m&quot;</code>，分别用于指定<code>全局匹配</code>、<code>区分大小写的匹配</code>和<code>多行匹配</code><ul>
-<li><strong>如果 pattern 是正则表达式，而不是字符串，则必须省略该参数</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="方括号"><a href="#方括号" class="headerlink" title="方括号[]"></a>方括号<code>[]</code></h3><ul>
-<li><strong>方括号用于查找某个范围内的字符：</strong><br>|表达式|描述|<br>|—|—|<br>|<code>[abc]</code>|查找方括号之间的任何字符。|<br>|<code>[^abc]</code>|查找任何不在方括号之间的字符。|<br>|<code>[0-9]</code>|查找任何从 0 至 9 的数字。|<br>|<code>[a-z]</code>|查找任何从小写 a 到小写 z 的字符。|<br>|<code>[A-Z]</code>|查找任何从大写 A 到大写 Z 的字符。|<br>|<code>[A-z]</code>|查找任何从大写 A 到小写 z 的字符。|<br>|<code>[adgk]</code>|查找给定集合内的任何字符。|<br>|<code>[^adgk]</code>|查找给定集合外的任何字符。|<br>|<code>(red\|blue\|green)</code>|查找任何指定的选项。|</li>
-</ul>
-<h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><ul>
-<li><strong>是拥有特殊含义的字符：</strong><br>|元字符|描述|<br>|—|—|<br>|<code>.</code>|查找单个字符，除了换行和行结束符。|<br>|<code>\w</code>|查找单词字符。|<br>|<code>\W</code>|查找非单词字符。|<br>|<code>\d</code>|查找数字。|<br>|<code>\D</code>|查找非数字字符。|<br>|<code>\s</code>|查找空白字符。|<br>|<code>\S</code>|查找非空白字符。|<br>|<code>\b</code>|匹配单词边界。|<br>|<code>\B</code>|匹配非单词边界。|<br>|<code>\0</code>|查找 NUL 字符。|<br>|<code>\n</code>|查找换行符。|<br>|<code>\f</code>|查找换页符。|<br>|<code>\r</code>|查找回车符。|<br>|<code>\t</code>|查找制表符。|<br>|<code>\v</code>|查找垂直制表符。|<br>|<code>\xxx</code>|查找以八进制数 xxx 规定的字符。|<br>|<code>\xdd</code>|查找以十六进制数 dd 规定的字符。|<br>|<code>\uxxxx</code>|查找以十六进制数 xxxx 规定的 Unicode 字符。|</li>
-</ul>
-<h3 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h3><table>
-<thead>
-<tr>
-<th>量词</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>n+</code></td>
-<td>匹配任何包含<strong>至少一个 n</strong> 的字符串。</td>
-</tr>
-<tr>
-<td><code>n*</code></td>
-<td>匹配任何包含<strong>零个或多个 n</strong> 的字符串。</td>
-</tr>
-<tr>
-<td><code>n?</code></td>
-<td>匹配任何包含<strong>零个或一个 n</strong> 的字符串。</td>
-</tr>
-<tr>
-<td><code>n{X}</code></td>
-<td>匹配包含 <strong>X 个 n</strong> 的序列的字符串。</td>
-</tr>
-<tr>
-<td><code>n{X,Y}</code></td>
-<td>匹配包含 <strong>X 至 Y 个 n</strong> 的序列的字符串。</td>
-</tr>
-<tr>
-<td><code>n{X,}</code></td>
-<td>匹配包含<strong>至少 X 个 n</strong> 的序列的字符串。</td>
-</tr>
-<tr>
-<td><code>n$</code></td>
-<td>匹配任何<strong>结尾为 n</strong> 的字符串。</td>
-</tr>
-<tr>
-<td><code>^n</code></td>
-<td>匹配任何<strong>开头为 n</strong> 的字符串。</td>
-</tr>
-<tr>
-<td><code>?=n</code></td>
-<td>匹配任何<strong>其后紧接指定字符串 n</strong> 的字符串。</td>
-</tr>
-<tr>
-<td><code>?!n</code></td>
-<td>匹配任何<strong>其后没有紧接指定字符串 n</strong> 的字符串。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\</td>
-<td></td>
-<td>转义符</td>
-</tr>
-<tr>
-<td>(), (?:), (?=), []</td>
-<td>圆括号和方括号</td>
-</tr>
-<tr>
-<td>*, +, ?, {n}, {n,}, {n,m}</td>
-<td>限定符</td>
-</tr>
-<tr>
-<td>^, $, \任何元字符、任何字符</td>
-<td>定位点和序列（即：位置和顺序）</td>
-</tr>
-<tr>
-<td>`\</td>
-<td>`</td>
-<td>替换，”或”操作字符具有高于替换运算符的优先级，使得`”m\</td>
-<td>food”<code>匹配</code>“m”或”food”<code>。若要匹配</code>“mood”或”food”<code>，请使用括号创建子表达式，从而产生</code>“(m\</td>
-<td>f)ood”`。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="RegExp-对象属性"><a href="#RegExp-对象属性" class="headerlink" title="RegExp 对象属性"></a>RegExp 对象属性</h3><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>global    RegExp</td>
-<td>对象是否具有标志 g</td>
-</tr>
-<tr>
-<td>ignoreCase    RegExp</td>
-<td>对象是否具有标志 i</td>
-</tr>
-<tr>
-<td>lastIndex</td>
-<td>一个整数，标示开始下一次匹配的字符位置</td>
-</tr>
-<tr>
-<td>multiline    RegExp</td>
-<td>对象是否具有标志 m</td>
-</tr>
-<tr>
-<td>source</td>
-<td>正则表达式的源文本</td>
-</tr>
-</tbody>
-</table>
-<h3 id="RegExp-对象方法"><a href="#RegExp-对象方法" class="headerlink" title="RegExp 对象方法"></a>RegExp 对象方法</h3><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>compile</td>
-<td>编译正则表达式</td>
-</tr>
-<tr>
-<td>exec</td>
-<td>检索字符串中指定的值。返回找到的值，并确定其位置</td>
-</tr>
-<tr>
-<td>test</td>
-<td>检索字符串中指定的值。返回 true 或 false</td>
-</tr>
-</tbody>
-</table>
-<h3 id="支持正则表达式的-String-对象的方法"><a href="#支持正则表达式的-String-对象的方法" class="headerlink" title="支持正则表达式的 String 对象的方法"></a>支持正则表达式的 String 对象的方法</h3><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>search</td>
-<td>检索与正则表达式相匹配的值</td>
-</tr>
-<tr>
-<td>match</td>
-<td>找到一个或多个正则表达式的匹配</td>
-</tr>
-<tr>
-<td>replace</td>
-<td>替换与正则表达式匹配的子串</td>
-</tr>
-<tr>
-<td>split</td>
-<td>把字符串分割为字符串数组</td>
-</tr>
-</tbody>
-</table>
-<h4 id="正则表达式中的replace的用法"><a href="#正则表达式中的replace的用法" class="headerlink" title="正则表达式中的replace的用法"></a>正则表达式中的replace的用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sStr = <span class="string">'讨论一下正则表达式中的replace的正则表达式用法'</span>;</div><div class="line">sStr.replace(<span class="regexp">/(正则).+?(式)/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// ["正则表达式", "正则", "式", 19, "讨论一下正则表达式中的replace的正则表达式用法"]</span></div><div class="line"><span class="comment">// ["正则表达式", "正则", "式", 19, "讨论一下正则表达式中的replace的正则表达式用法"]</span></div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="/2016/05/28/RegExp/#comment" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
  
 <nav id="pagination">
   
@@ -1973,7 +1490,7 @@ ES6中可以把构造函数看作类
   
 <div class="widget tag">
   <h3 class="title" id="categories">分类</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li></ul> 
 </div>
  
 
@@ -2023,7 +1540,7 @@ ES6中可以把构造函数看作类
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/window-document/" style="font-size: 10px;">window document</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 15px;">继承</a> <a href="/tags/进制/" style="font-size: 10px;">进制</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
   </div>
 </div>
 
@@ -2031,7 +1548,7 @@ ES6中可以把构造函数看作类
   
   <div class="widget tag">
     <h3 class="title">归档</h3>
-	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">36</span></li></ul>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">39</span></li></ul>
   </div>
 
 </aside>

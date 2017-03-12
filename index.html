@@ -421,6 +421,13 @@ console.log(foo);
 <li><strong>500</strong>，Internal Service Error 最常见的服务器端错误。</li>
 <li><strong>503</strong>，Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）。</li>
 </ul>
+<hr>
+<p>####近期遇到过的：</p>
+<ul>
+<li>404 请求服务器获取不到相应资源，通常是url写错了</li>
+<li>304 Not Modified 一般应用于加载过一次图片，再次刷新的时候，由于缓存，浏览器并未发送请求</li>
+<li>416 Requested Range not satisfiable 官方解释是<strong>所请求的范围无法满足Web服务器，意思就是请求的数据超出了服务器相应的范围</strong>，实例：请求一个mp3文件，在服务器端虽然有mp3这个文件，但是这个文件里面没有数据，相当于无效</li>
+</ul>
 
       
     </div>

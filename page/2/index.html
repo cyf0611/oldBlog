@@ -82,6 +82,345 @@
     <header>
         <div class="icon"></div>
         
+        <time datetime="2016-11-23T07:43:14.000Z"><a href="/2016/11/23/Angular/">2016-11-23</a></time>
+        
+  
+    <h1 class="title"><a href="/2016/11/23/Angular/">Angular 基础知识</a></h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Angular"><span class="toc-text">安装Angular</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指令"><span class="toc-text">指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义的指令"><span class="toc-text">自定义的指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#根作用域"><span class="toc-text">根作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#过滤器"><span class="toc-text">过滤器|</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务-Service"><span class="toc-text">服务(Service)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC模式"><span class="toc-text">MVC模式</span></a></li></ol>
+    </div>
+
+        <ul>
+<li>前端JS框架</li>
+<li>数据交互</li>
+<li>模块化</li>
+<li>双向数据绑定</li>
+<li>语义化标签</li>
+<li>依赖注入</li>
+<li>可以轻松构建SPA（单页面应用程序）<ul>
+<li>模拟CS(客户端、服务器)结构做出的BS(浏览器、服务器)结构的网站</li>
+<li>带有客户端的功能性（页面局部刷新的特点）</li>
+</ul>
+</li>
+</ul>
+<h3 id="安装Angular"><a href="#安装Angular" class="headerlink" title="安装Angular"></a>安装Angular</h3><ul>
+<li>1、直接从本地复制一个angular.js文件到项目中</li>
+<li>2、通过工具安装<ul>
+<li><code>npm install angular</code></li>
+<li>通过bower安装<ul>
+<li><code>bower install angular</code></li>
+<li>安装bower<ul>
+<li><code>npm install -g bower</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ul>
+<li><p>以ng-开头的属性的扩展形式称之为指令</p>
+</li>
+<li><p><code>ng-app</code>告诉angular从这里开始管理代码，初始化一个 AngularJS 应用程序</p>
+</li>
+<li><p><code>ng-model</code> 把元素值（比如输入域的值）绑定到应用程序</p>
+<ul>
+<li>用于绑定应用程序数据到 HTML 控制器<code>(input, select, textarea)</code>的值</li>
+<li>将输入域的值<code></code>与AngularJS 创建的变量<code>($scope.data)</code>绑定</li>
+<li><strong>双向绑定</strong></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>ng-click</code>添加点击事件</p>
+</li>
+<li><p><code>ng-init</code>初始化一个对象值<em>(不常用)</em></p>
+</li>
+<li><p><code>ng-controller</code>控制器</p>
+<ul>
+<li>控制 <code>AngularJS</code> 应用程序的数据</li>
+<li>是常规的 <code>JavaScript</code> 对象，由标准的 JavaScript 对象的构造函数 创建</li>
+<li><code>ng-controller</code> 指令定义了一个应用程序控制器。</li>
+</ul>
+</li>
+<li><p><code>ng-bind</code>绑定数据模型的值，<strong>只能用于双标签</strong></p>
+</li>
+<li><p><code>ng-bind-html</code>用于安全的渲染html代码，必须和<code>ngSanitize</code>搭配使用</p>
+</li>
+<li><p><code>ng-cloak</code>用测属性的元素会被<code>Angular</code>检测并移除</p>
+</li>
+<li><p><code>ng-repead</code>用来循环数组或对象数据，使其全部展示到页面</p>
+<ul>
+<li><code>ng-repead = &quot;item in data&quot;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;li ng-repeat=&quot;item in data&quot;&gt;</div><div class="line">	&#123;&#123; item.xxx &#125;&#125;</div><div class="line">&lt;/li&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>ng-class</code>操作属性样式</p>
+<ul>
+<li><code>ng-class = {key1 : 样式名1, key2 : 样式名2, key3 : 样式名3}[item.item中包含key的属性]</code></li>
+<li><code>{key1 : 布尔值, key2 : 布尔值, key3 : 布尔值}</code></li>
+</ul>
+</li>
+<li><p><code>ng-hide/ng-show</code>显示隐藏需要一个布尔值</p>
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+<li><p><code>ng-if/ng-switch ng-switch-when</code></p>
+</li>
+</ul>
+<h4 id="自定义的指令"><a href="#自定义的指令" class="headerlink" title="自定义的指令"></a>自定义的指令</h4><ul>
+<li><p><code>directive</code></p>
+<ul>
+<li>使用驼峰法来命名一个指令， <code>runoobDirective</code>, </li>
+<li>但在使用它时需要以 - 分割, <code>runoob-directive</code>:</li>
+<li></li>
+<li>可以通过以下方式来调用指令：<ul>
+<li>元素名</li>
+<li>属性</li>
+<li>类名</li>
+<li>注释<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">app.directive(<span class="string">"runoobDirective"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">template</span> : <span class="string">"&lt;h1自定义指令!/h1&gt;"</span></div><div class="line">    &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//元素名</span></div><div class="line">&lt;runoob-directive&gt;&lt;/runoob-directive&gt;</div><div class="line"></div><div class="line">//属性</div><div class="line">&lt;div runoob-directive&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">//类名</div><div class="line">&lt;div class="runoob-directive"&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">//注释</div><div class="line">&lt;!-- directive: runoob-directive --&gt;</div><div class="line">var app = angular.module("myApp", []);</div><div class="line">app.directive("runoobDirective", function() &#123;</div><div class="line">    return &#123;</div><div class="line">        restrict : "M",</div><div class="line">        replace : true,</div><div class="line">        template : "&lt;h1自定义指令!/h1&gt;"</div><div class="line">    &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">//注意： 需要在该实例添加 replace 属性， 否则评论是不可见的。</div><div class="line">//注意： 必须设置 restrict 的值为 "M" 才能通过注释来调用指令。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>限制使用</p>
+</li>
+<li>限制你的指令只能通过特定的方式来调用<ul>
+<li>E 作为元素名使用</li>
+<li>A 作为属性使用</li>
+<li>C 作为类名使用</li>
+<li>M 作为注释使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&quot;myApp&quot;, []);</div><div class="line">app.directive(&quot;runoobDirective&quot;, function() &#123;</div><div class="line">    return &#123;</div><div class="line">        restrict : &quot;A&quot;,</div><div class="line">        template : &quot;&lt;h1自定义指令!/h1&gt;&quot;</div><div class="line">    &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 通过设置 restrict 属性值为 &quot;A&quot; 来设置指令只能通过 HTML 元素的属性来调用。</div><div class="line">// 可以设置一个也可以设置多个&quot;EACM&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">- `&#123;&#123;&#125;&#125;`表示一个表达式</div><div class="line">	- 里面不能写对象的形式`&#123;&apos;a&apos;:&apos;123&apos;&#125;`</div><div class="line"></div><div class="line"></div><div class="line">#### Scope(作用域)【模型】	</div><div class="line">- `$scope`</div><div class="line">	- 是一个对象，有可用的方法和属性</div><div class="line">	-  是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带</div><div class="line">	-  可应用在视图和控制器上</div><div class="line">	-  当你在 AngularJS 创建控制器时，你可以将 $scope 对象当作一个参数传递:</div><div class="line">	-  当在控制器中添加 $scope 对象时，视图 (HTML) 可以获取了这些属性。</div><div class="line">	-  视图中，你不需要添加 $scope 前缀, 只需要添加属性名即可，如： &#123;&#123;carname&#125;&#125;。</div><div class="line"></div><div class="line">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;myCtrl&quot;&gt;</div><div class="line">&lt;h1&gt;&#123;&#123;carname&#125;&#125;&lt;/h1&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module(&apos;myApp&apos;, []);</div><div class="line"></div><div class="line">app.controller(&apos;myCtrl&apos;, function($scope) &#123;</div><div class="line">    $scope.carname = &quot;Volvo&quot;;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h4 id="根作用域"><a href="#根作用域" class="headerlink" title="根作用域"></a>根作用域</h4><ul>
+<li><code>$rootScope</code><ul>
+<li>所有的应用都有一个 <code>$rootScope</code>，它可以作用在 ng-app 指令包含的所有 HTML 元素中</li>
+<li><code>$rootScope</code> 可作用于整个应用中。是各个 <code>controller</code> 中 <code>scope</code> 的桥梁。用 <code>rootscope</code> 定义的值，可以在各个 <code>controller</code> 中使用</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app="myApp" ng-controller="myCtrl"&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;姓氏为 &#123;&#123;lastname&#125;&#125; 家族成员:&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li ng-repeat="x in names"&gt;&#123;&#123;x&#125;&#125; &#123;&#123;lastname&#125;&#125;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module('myApp', []);</div><div class="line"></div><div class="line">app.controller('myCtrl', function($scope, $rootScope) &#123;</div><div class="line">    $scope.names = ["Emil", "Tobias", "Linus"];</div><div class="line">    $rootScope.lastname = "Refsnes";</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div><div class="line">//  $rootScope 在循环对象内外都可以访问</div></pre></td></tr></table></figure>
+<h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器|"></a>过滤器<code>|</code></h4><ul>
+<li><p>date</p>
+<ul>
+<li>时间过滤器<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;&#123;&#123;time|date:&quot;yyyy年MM月dd日 HH:mm:ss&quot;&#125;&#125;&lt;/p&gt;&lt;!--日期   四位年份--&gt;</div><div class="line">&lt;p&gt;&#123;&#123;time|date:&quot;yy年MM月dd日 HH:mm:ss&quot;&#125;&#125;&lt;/p&gt;&lt;!--日期     两位年份--&gt;</div><div class="line">&lt;p&gt;&#123;&#123;time|date:&quot;YY年MM月dd日 HH:mm:ss&quot;&#125;&#125;&lt;/p&gt;&lt;!--日期     两位年份--&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>currency</p>
+<ul>
+<li>货币过滤器<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;&#123;&#123;price|currency&#125;&#125;&lt;/p&gt;&lt;!--价格         默认$符--&gt;</div><div class="line">&lt;p&gt;&#123;&#123;price|currency:&apos;￥&apos;&#125;&#125;&lt;/p&gt;&lt;!--价格     人民币--&gt;</div><div class="line">&lt;p&gt;&#123;&#123;price|currency:&apos;€&apos;&#125;&#125;&lt;/p&gt;&lt;!--价格     欧元--&gt;</div><div class="line">&lt;p&gt;&#123;&#123;price|currency:&apos;￥&apos;:3&#125;&#125;&lt;/p&gt;&lt;!--价格   小数点位数--&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>lowercase</p>
+<ul>
+<li>格式化字符串为小写</li>
+</ul>
+</li>
+<li><p>uppercase</p>
+<ul>
+<li>格式化字符串为大写</li>
+</ul>
+</li>
+<li><p>orderBy</p>
+<ul>
+<li>向指令添加过滤器<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;namesCtrl&quot;&gt;</div><div class="line"></div><div class="line">&lt;ul&gt;</div><div class="line">  &lt;li ng-repeat=&quot;x in names | orderBy:&apos;country&apos;&quot;&gt;</div><div class="line">    &#123;&#123; x.name + &apos;, &apos; + x.country &#125;&#125;</div><div class="line">  &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="服务-Service"><a href="#服务-Service" class="headerlink" title="服务(Service)"></a>服务(Service)</h4><ul>
+<li><p><code>$location</code></p>
+<ul>
+<li>可以创建自己的服务，或使用内建服务</li>
+<li>服务是一个函数或对象</li>
+<li>有个 <code>$location</code> 服务，它可以返回当前页面的 <code>URL</code> 地址<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">app.controller(<span class="string">'customersCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $location</span>) </span>&#123;</div><div class="line">    $scope.myUrl = $location.absUrl();</div><div class="line">&#125;);</div><div class="line"><span class="comment">//  $location 服务是作为一个参数传递到 controller 中。如果要使用它，需要在 controller 中定义</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>$http</code></p>
+<ul>
+<li>服务向web服务器发送请求，应用响应服务器传送过来的数据</li>
+<li><code>$http</code>服务只是简单的封装了浏览器原生的<code>XMLHttpRequest</code>对象</li>
+<li><code>$http</code>服务是只能接受一个参数的函数，这个参数是一个对象</li>
+<li>包含了用来生成HTTP请求的配置内容。这个函数返回一个promise对象，具有success和error两个方法</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>1、链式调用</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$http(&#123;</div><div class="line">	<span class="attr">url</span>:<span class="string">'data.json'</span>,</div><div class="line">	<span class="attr">method</span>:<span class="string">'GET'</span></div><div class="line">&#125;).success(<span class="function"><span class="keyword">function</span>(<span class="params">data,header,config,status</span>)</span>&#123;</div><div class="line">	<span class="comment">//响应成功</span></div><div class="line">&#125;).error(<span class="function"><span class="keyword">function</span>(<span class="params">data,header,config,status</span>)</span>&#123;</div><div class="line">	<span class="comment">//处理响应失败</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>2、返回一个promise对象</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> promise=$http(&#123;</div><div class="line">	<span class="attr">method</span>:<span class="string">'GET'</span>,</div><div class="line">	<span class="attr">url</span>:<span class="string">"data.json"</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 响应返回时用then方法来处理回调</span></div><div class="line">promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">resp</span>)</span>&#123;</div><div class="line"><span class="comment">//resp是一个响应对象</span></div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">resp</span>)</span>&#123;</div><div class="line"><span class="comment">//带有错误信息的resp</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 综合写法</span></div><div class="line">$http(&#123;</div><div class="line">	<span class="attr">method</span>:<span class="string">'GET'</span>,</div><div class="line">	<span class="attr">url</span>:<span class="string">"data.json"</span></div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">resp</span>)</span>&#123;</div><div class="line"><span class="comment">//resp是一个响应对象</span></div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">resp</span>)</span>&#123;</div><div class="line"><span class="comment">//带有错误信息的resp</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>示例：直接用get传入地址，接收数据</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">app.controller(<span class="string">'siteCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $http</span>) </span>&#123;</div><div class="line">  $http.get(<span class="string">"data.json"</span>).success(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">	  $scope.names = response.sites;</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li><p><code>$timeout</code></p>
+<ul>
+<li><code>$timeout</code> 服务对应了 <code>JS window.setTimeout</code> 函数<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">app.controller(<span class="string">'myCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $timeout</span>) </span>&#123;</div><div class="line">  $scope.myHeader = <span class="string">"Hello World!"</span>;</div><div class="line">  $timeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      $scope.myHeader = <span class="string">"How are you today?"</span>;</div><div class="line">  &#125;, <span class="number">2000</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>$interval</code></p>
+<ul>
+<li><code>$interval</code> 服务对应了 <code>JS window.setInterval</code> 函数<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">app.controller(<span class="string">'myCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $interval</span>) </span>&#123;</div><div class="line">  $scope.theTime = <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString();</div><div class="line">  $interval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      $scope.theTime = <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString();</div><div class="line">  &#125;, <span class="number">1000</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>创建自定义服务</p>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建名为hexafy 的访问:</span></div><div class="line">app.service(<span class="string">'hexafy'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.myFunc = <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> x.toString(<span class="number">16</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//使用自定义的的服务 hexafy 将一个数字转换为16进制数:</span></div><div class="line">app.controller(<span class="string">'myCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, hexafy</span>) </span>&#123;</div><div class="line">    $scope.hex = hexafy.myFunc(<span class="number">255</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="MVC模式"><a href="#MVC模式" class="headerlink" title="MVC模式"></a>MVC模式</h3><ul>
+<li>MVC是三个单词的首字母缩写<ul>
+<li><code>View（视图）</code><ul>
+<li>最上一层</li>
+<li>提供给用户的操作界面，是程序的外壳</li>
+</ul>
+</li>
+<li><code>Controller（控制）</code><ul>
+<li>中间的一层</li>
+<li>它负责根据用户从”视图层”输入的指令，选取”数据层”中的数据，然后对其进行相应的操作，产生最终结果</li>
+</ul>
+</li>
+<li><code>Model（模型）</code><ul>
+<li>最底下的一层(核心层)</li>
+<li>程序需要操作的数据或信息<blockquote>
+<p>这三层是紧密联系在一起的，但又是互相独立的，每一层内部的变化不影响其他层。<br>每一层都对外提供接口（Interface），供上面一层调用。<br>这样一来，软件就可以实现模块化，修改外观或者变更数据都不用修改其他层，大大方便了维护和升级</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>ng-app</code>表示了angular管辖的范围</p>
+</li>
+<li><p>双向绑定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 举例双向绑定</div><div class="line">&lt;input type=&quot;text&quot; ng-model=&quot;dir&quot;/&gt;</div><div class="line">&lt;input type=&quot;text&quot; ng-model=&quot;dir&quot;/&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>依赖注入</p>
+<ul>
+<li>参数由定义方决定</li>
+<li>普通函数：由调用方决定参数</li>
+<li>ng-函数：由定义方决定参数</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<p>angular 和javascript不互通</p>
+<ul>
+<li>函数不互通</li>
+<li>变量也不互通</li>
+<li><p>事件也不互通<br>angular的开发模式和传统完全不同–只要盯住数据(数据是核心)</p>
+</li>
+<li><p>angularjs中所有能用的东西都在$scope中，</p>
+</li>
+<li><p>controller 控制器</p>
+<ul>
+<li>放<code>JS</code>代码</li>
+<li>桥梁</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>一个页面里有多个module</li>
+<li>一个module里有多个controller</li>
+</ul>
+<ul>
+<li>filter 过滤器</li>
+<li>语法：<code>|</code></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="/2016/11/23/Angular/#comment" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-11-14T13:25:56.000Z"><a href="/2016/11/14/内容超过长度后以省略号显示/">2016-11-14</a></time>
+        
+  
+    <h1 class="title"><a href="/2016/11/14/内容超过长度后以省略号显示/">内容超过长度后以省略号显示</a></h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        
+    </div>
+
+        <p>####此技巧适用与IE、Opera、safari、chrom浏览器，FF暂不支持。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">li &#123; </div><div class="line">width:200px; </div><div class="line">white-space:nowrap; </div><div class="line">text-overflow:ellipsis; </div><div class="line">-o-text-overflow:ellipsis; </div><div class="line">overflow: hidden; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="/2016/11/14/内容超过长度后以省略号显示/#comment" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
         <time datetime="2016-11-09T00:59:03.000Z"><a href="/2016/11/09/parseInt、toString与进制的关系/">2016-11-09</a></time>
         
   
@@ -1290,232 +1629,6 @@ Excel                       MongoDB
 
 
 
-
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-08-10T01:53:31.000Z"><a href="/2016/08/10/markdown使用方法/">2016-08-10</a></time>
-        
-  
-    <h1 class="title"><a href="/2016/08/10/markdown使用方法/">markdown使用方法</a></h1>
-  
-
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-介绍"><span class="toc-text">Markdown 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-的优点"><span class="toc-text">Markdown 的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实时预览编辑器"><span class="toc-text">实时预览编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-基本语法"><span class="toc-text">Markdown 基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-相关插件"><span class="toc-text">Markdown 相关插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-使用场景"><span class="toc-text">Markdown 使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用-Markdown-写一封漂亮的电子邮件"><span class="toc-text">用 Markdown 写一封漂亮的电子邮件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-GitBook-制作电子书"><span class="toc-text">使用 GitBook 制作电子书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何做做一个-Markdown-实时预览编辑器"><span class="toc-text">如何做做一个 Markdown 实时预览编辑器</span></a></li></ol>
-    </div>
-
-        <blockquote>
-<p>专注写作，提高生产力</p>
-</blockquote>
-<h3 id="Markdown-介绍"><a href="#Markdown-介绍" class="headerlink" title="Markdown 介绍"></a>Markdown 介绍</h3><p>轻量级标记语言（html、xml），2004 年被 <code>John Gruber</code> 创造，<br>它允许人们“使用易读易写的纯文本格式编写文档”，<br>Markdown 最重要的设计就是可读性，<br>Markdown 可以选择性的转换为 HTML 文档格式，<br>很多网站目前都使用了 Markdown 或者其变种，例如Github、简书等大型社区。</p>
-<p>下面是一个 demo：</p>
-<p>markdown 源文档：</p>
-<p><img src="img/md.png" alt="markdown"></p>
-<p>转换过后的 HTML：</p>
-<p><img src="img/html.png" alt="markdown - html"></p>
-<h3 id="Markdown-的优点"><a href="#Markdown-的优点" class="headerlink" title="Markdown 的优点"></a>Markdown 的优点</h3><ul>
-<li>纯文本，所以兼容性极强，可以用所有文本编辑器打开</li>
-<li>专注于文字写作而不是排版</li>
-<li>格式转换方便，可以轻松转换为 HTML、PPT、电子书等</li>
-<li>Markdown 标记语法简单好记，可读性强</li>
-</ul>
-<h3 id="实时预览编辑器"><a href="#实时预览编辑器" class="headerlink" title="实时预览编辑器"></a>实时预览编辑器</h3><p><a href="http://www.williamlong.info/archives/4319.html" target="_blank" rel="external">月光博客 - 好用的Markdown编辑器一览</a></p>
-<ul>
-<li>dillinger</li>
-<li>马克飞象</li>
-<li>简书</li>
-<li>MarkdownPad</li>
-<li>Sublime Text<ul>
-<li>配合 <code>Markdown Preview</code> 插件</li>
-</ul>
-</li>
-<li>Webstorm<ul>
-<li>配合插件</li>
-</ul>
-</li>
-<li>gitbook</li>
-</ul>
-<p>编辑实时预览工具只是为了辅助教学而已，<br>我们真正在进行写作的时候，其实是不需要实时预览的，<br>因为 Markdown 标记语言本身已经足够清晰了。</p>
-<h3 id="Markdown-基本语法"><a href="#Markdown-基本语法" class="headerlink" title="Markdown 基本语法"></a>Markdown 基本语法</h3><ul>
-<li>标题</li>
-<li>段落</li>
-<li>粗体</li>
-<li>斜体</li>
-<li>无序列表</li>
-<li>有序列表</li>
-<li>链接</li>
-<li>图片</li>
-<li>文本引用</li>
-<li>行内代码引用</li>
-<li>多行代码引用</li>
-<li>表格</li>
-</ul>
-<p>表格比较特殊，不太好用，下面是规范写法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">| ABCD | EFGH | IJKL |</div><div class="line">| -----|:----:| ----:|</div><div class="line">| a    | b    | c    |</div><div class="line">| d    | e    |  f   |</div><div class="line">| g    | h    |   i  |</div></pre></td></tr></table></figure>
-<h3 id="Markdown-相关插件"><a href="#Markdown-相关插件" class="headerlink" title="Markdown 相关插件"></a>Markdown 相关插件</h3><ul>
-<li>Sublime<ul>
-<li>MarkdownEditing</li>
-<li>MarkdownPreview<ul>
-<li>编辑的时候实时预览</li>
-<li>编译生成 html 文件</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><a href="http://packagecontrol.io" target="_blank" rel="external">http://packagecontrol.io</a></p>
-<h3 id="Markdown-使用场景"><a href="#Markdown-使用场景" class="headerlink" title="Markdown 使用场景"></a>Markdown 使用场景</h3><ul>
-<li>学习笔记<ul>
-<li>手写笔记</li>
-</ul>
-</li>
-<li>演讲稿<ul>
-<li>技术沙龙，party</li>
-<li>中午演讲：以后都做一个 PPT 或者写一个 Markdown 演讲稿</li>
-</ul>
-</li>
-<li>写书（侧重于技术相关的内容非常适合）</li>
-<li>个人笔记</li>
-<li>文章博客</li>
-<li>教学讲义</li>
-<li>说明文档<ul>
-<li>使用比较多，软件的说明文档或者开源项目的说明文档</li>
-</ul>
-</li>
-<li>电子邮件</li>
-</ul>
-<p>只要有写作的地方，都可以使用 Markdown 来书写。</p>
-<h3 id="用-Markdown-写一封漂亮的电子邮件"><a href="#用-Markdown-写一封漂亮的电子邮件" class="headerlink" title="用 Markdown 写一封漂亮的电子邮件"></a>用 Markdown 写一封漂亮的电子邮件</h3><p>为什么要用 Markdown 写电子邮件？ 答案是：<code>装x</code>。</p>
-<p>当然不是了，Markdown 本身语法简单，使用 Markdown 写出来的内容结构也非常清晰，<br>有助于协作沟通，总而言之，使用 Markdown 可以可以让你更加专注写作本身。</p>
-<p>其实就是讲md格式字符串转换成html而已，这里使用一个 Chrome 插件：</p>
-<p><a href="https://chrome.google.com/webstore/detail/markdown-here/elifhakcjgalahccnjkneoccemfahfoa?utm_source=chrome-ntp-icon" target="_blank" rel="external">Markdown Here</a></p>
-<h3 id="使用-GitBook-制作电子书"><a href="#使用-GitBook-制作电子书" class="headerlink" title="使用 GitBook 制作电子书"></a>使用 GitBook 制作电子书</h3><p><a href="https://www.gitbook.com/" target="_blank" rel="external">GitBook</a></p>
-<ul>
-<li>在线 Web 端写</li>
-<li>使用客户端软件写<ul>
-<li>下载地址：<a href="https://www.gitbook.com/editor" target="_blank" rel="external">https://www.gitbook.com/editor</a></li>
-</ul>
-</li>
-<li>终端命令行工具可以辅助生成</li>
-</ul>
-<h3 id="如何做做一个-Markdown-实时预览编辑器"><a href="#如何做做一个-Markdown-实时预览编辑器" class="headerlink" title="如何做做一个 Markdown 实时预览编辑器"></a>如何做做一个 Markdown 实时预览编辑器</h3><p>Markdown 本身就是一个标记语言，可以通过某种方式转换成别的文本格式，本质上转换的过程其实就是做正则解析替换。</p>
-<ul>
-<li>如何将markdown格式字符串转成html<ul>
-<li>使用一个第三方包：<code>marked</code></li>
-<li><code>npm install marked</code></li>
-</ul>
-</li>
-<li>给html设置样式</li>
-<li>给代码块设置颜色高亮<ul>
-<li><a href="https://highlightjs.org/" target="_blank" rel="external">highlightjs</a></li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="/2016/08/10/markdown使用方法/#comment" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-08-06T03:42:32.000Z"><a href="/2016/08/06/jquery中load的实现原理/">2016-08-06</a></time>
-        
-  
-    <h1 class="title"><a href="/2016/08/06/jquery中load的实现原理/">jquery中load的实现原理</a></h1>
-  
-
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#插件"><span class="toc-text">插件</span></a></li></ol>
-    </div>
-
-        <p>jq 中的使用方法</p>
-<p>$( document ).ready( fn ); </p>
-<p>$(function () {</p>
-<p>})</p>
-<p>在 jq 中, 并不是将函数加载到 window.onload 事件上. 因为在 onload 事件中写代码一定要<br>保证页面中所有的元素都加载完毕. 在 jq 中认为这样的体验不好, 因此做了特殊处理. 只要是 dom<br>结构加载完, 就可以触发事件.</p>
-<p>我们接下来将 行为绑定在 window.onload 中</p>
-<p>init: function ( selector ) {<br>    …<br>    …<br>    if ( typeof selector == ‘function’ ) {<br>        window.onload = selector;<br>    }<br>}</p>
-<p>我们需要添加多个事件, 就要调用多次, 就是调用多个函数</p>
-<ol>
-<li><p>函数技巧<br> 首先增加 onload 的时候 判断一下 是否已经 绑定过 load 事件了, 如果没有绑定过直接赋值<br> 如果绑定过, 那么就应该将已经绑定的 函数 与 新的 这个 函数组合在一起, 要求是触发的时候<br> 一起触发, 按照先后顺序执行即可.</p>
-<p> if ( typeof window.onload === ‘function’ ) {</p>
-<pre><code>// 绑定过
-var fn = window.onload;
-window.onload = function () {
-    fn();
-    selecotr();
-};
-</code></pre><p> } else {</p>
-<pre><code>// 未绑定
-window.onload = selector;
-</code></pre><p> }</p>
-</li>
-<li><p>数组技巧</p>
-<p> onload = function () {</p>
-<pre><code>I.each( loads, funciton () {
-    this();
-});
-</code></pre><p> };</p>
-</li>
-</ol>
-<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><p>就是 jq 本身没有这个方法, 获得实现这个功能比较麻烦, 获得根本不能实现某个<br>功能. 那么我们写一个 js 文件, 然后通过增加 jq 的方法, 成员属性等工能,<br>让jq 可以完成前面的任务, 那么这个 js 文件就是 jq 插件.</p>
-<p>自己写插件就是让 jq 有某些以前没有的方法, 或属性等</p>
-<p>jQuery.fn.extend({<br>    …<br>});</p>
-<p>jQuery.extend({<br>    …<br>})</p>
-<div><br>    <div><br>        <div></div><br>    </div><br>    <div></div><br></div>
-
-<p>$( ‘div’ ).children( ‘div’ ).append( ‘</p><p>ppp</p>‘ )<p></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="/2016/08/06/jquery中load的实现原理/#comment" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
  
 <nav id="pagination">
   
@@ -1531,7 +1644,7 @@ window.onload = selector;
   
 <div class="widget tag">
   <h3 class="title" id="categories">分类</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">2</span></li></ul> 
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MV/">MV*</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">2</span></li></ul> 
 </div>
  
 
@@ -1589,7 +1702,7 @@ window.onload = selector;
   
   <div class="widget tag">
     <h3 class="title">归档</h3>
-	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">41</span></li></ul>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">42</span></li></ul>
   </div>
 
 </aside>

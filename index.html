@@ -53,20 +53,20 @@
 	<div class='header-nav-content inner'>
 		<div id="main-nav" class="alignleft">
 		    		
-		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
+		    		  <a href="/"><i class="fa fa-home"></i>Home</a>
 		    		
-		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+		    		  <a href="/archives"><i class="fa fa-archive"></i>Archives</a>
 		    		
-		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
+		    		  <a href=""><i class="fa fa-book"></i>Books</a>
 		    		
-		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>我的简历</a>
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>About</a>
 		    		
 		</div>
 		<div id="sub-nav" class="alignright">
 		    
-		      <a href=""><i class="fa fa-rss"></i>订阅</a>
+		      <a href=""><i class="fa fa-rss"></i>Rss</a>
 		    
-		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
+		      <a href=""><i class="fa fa-question-circle"></i>Customization</a>
 		    
 		</div>
 	</div>
@@ -94,11 +94,11 @@
       
         
     <div id="toc">
-        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么会出现-MVVM-呢？"><span class="toc-text">为什么会出现 MVVM 呢？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么前端要工程化，要使用MVC？"><span class="toc-text">为什么前端要工程化，要使用MVC？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVVM-的出现，完美解决了以上三个问题"><span class="toc-text">MVVM 的出现，完美解决了以上三个问题</span></a>
     </div>
 
         <p>MVVM 是Model-View-ViewModel 的缩写，它是一种基于前端开发的架构模式，其核心是提供对View 和 ViewModel 的双向数据绑定，这使得ViewModel 的状态改变可以自动传递给 View，即所谓的<strong>数据双向绑定</strong>。</p>
-<p>###为什么会出现 MVVM 呢？<br>我接触MVVM 是在2015年，可以说2015年是MVVM 最火热的一年，而在这之前，我所知道的就是MVC,  MVC 大约是在5年前，也就是2011年的时候接触的，那时候刚学编程语言，学的Java，而Java 中经典的 SSH 框架就用来构建一个标准的MVC 框架。说实话，MVC 用了这么多年，但始终没有很深刻的理解，只停留在用的层面， 一直到接触 Vue.js 之后，研究了MVVM 架构思想，然后再回头看 MVC ，才有一种豁然开朗的感觉~</p>
+<h4 id="为什么会出现-MVVM-呢？"><a href="#为什么会出现-MVVM-呢？" class="headerlink" title="为什么会出现 MVVM 呢？"></a>为什么会出现 MVVM 呢？</h4><p>我接触MVVM 是在2015年，可以说2015年是MVVM 最火热的一年，而在这之前，我所知道的就是MVC,  MVC 大约是在5年前，也就是2011年的时候接触的，那时候刚学编程语言，学的Java，而Java 中经典的 SSH 框架就用来构建一个标准的MVC 框架。说实话，MVC 用了这么多年，但始终没有很深刻的理解，只停留在用的层面， 一直到接触 Vue.js 之后，研究了MVVM 架构思想，然后再回头看 MVC ，才有一种豁然开朗的感觉~</p>
 <p>MVC 即 Model-View-Controller 的缩写，就是 <strong>模型-视图-控制器</strong> , 也就是说一个标准的Web 应用程式是由这三部分组成的： </p>
 <blockquote>
 <p><strong>View</strong> 用来把数据以某种方式呈现给用户。</p>
@@ -107,8 +107,7 @@
 </blockquote>
 <p> 在HTML5 还未火起来的那些年，MVC 作为Web 应用的最佳实践是OK 的，这是因为 Web 应用的View 层相对来说比较简单，前端所需要的数据在后端基本上都可以处理好，View 层主要是做一下展示，那时候提倡的是 Controller 来处理复杂的业务逻辑，所以View 层相对来说比较轻量，就是所谓的瘦客户端思想。</p>
 <p> 2010年到2011年，HTML5概念被热炒，受到追捧，2012年，W3C 正式宣布HTML5规范已经正式定稿。2013年我刚进公司就接触了第一个 HTML5 框架 Sench touch, 它是一款用来构建移动应用的HTML5 框架，它将前后端彻底分离，前端采用MVC 架构，作为一个独立的项目工程来维护。</p>
-<p> ###为什么前端要工程化，要使用MVC？ </p>
-<p> 相对 HTML4 , HTML5 最大的亮点是它为移动设备提供了一些非常有用的功能，使得 HTML5 具备了开发App的能力, HTML5开发App 最大的好处就是跨平台、快速迭代和上线，节省人力成本和提高效率，因此很多企业开始对传统的App进行改造，逐渐用H5代替Native，到2015年的时候，市面上大多数App 或多或少嵌入都了H5 的页面。</p>
+<h4 id="为什么前端要工程化，要使用MVC？"><a href="#为什么前端要工程化，要使用MVC？" class="headerlink" title="为什么前端要工程化，要使用MVC？"></a>为什么前端要工程化，要使用MVC？</h4><p> 相对 HTML4 , HTML5 最大的亮点是它为移动设备提供了一些非常有用的功能，使得 HTML5 具备了开发App的能力, HTML5开发App 最大的好处就是跨平台、快速迭代和上线，节省人力成本和提高效率，因此很多企业开始对传统的App进行改造，逐渐用H5代替Native，到2015年的时候，市面上大多数App 或多或少嵌入都了H5 的页面。</p>
 <p> 既然要用H5 来构建 App, 那View 层所做的事，就不仅仅是简单的数据展示了，它不仅要管理复杂的数据状态，还要处理移动设备上各种操作行为等等。因此，前端也需要工程化，也需要一个类似于MVC 的框架来管理这些复杂的逻辑，使开发更加高效。 但这里的 MVC 又稍微发了点变化：</p>
 <blockquote>
 <p><strong>View</strong> UI布局，展示数据。</p>
@@ -123,7 +122,7 @@
 <p>其实，早期jquery 的出现就是为了前端能更简洁的操作DOM 而设计的，但它只解决了第一个问题，另外两个问题始终伴随着前端一直存在。</p>
 </li>
 </ul>
-<p> ##MVVM 的出现，完美解决了以上三个问题<br> MVVM 由 Model,View,ViewModel 三部分构成，Model 层代表数据模型，也可以在Model中定义数据修改和操作的业务逻辑；View 代表UI 组件，它负责将数据模型转化成UI 展现出来，ViewModel 是一个同步View 和 Model的对象。</p>
+<h3 id="MVVM-的出现，完美解决了以上三个问题"><a href="#MVVM-的出现，完美解决了以上三个问题" class="headerlink" title="MVVM 的出现，完美解决了以上三个问题"></a>MVVM 的出现，完美解决了以上三个问题</h3><p> MVVM 由 Model,View,ViewModel 三部分构成，Model 层代表数据模型，也可以在Model中定义数据修改和操作的业务逻辑；View 代表UI 组件，它负责将数据模型转化成UI 展现出来，ViewModel 是一个同步View 和 Model的对象。</p>
 <p> 在MVVM架构下，View 和 Model 之间并没有直接的联系，而是通过ViewModel进行交互，Model 和 ViewModel 之间的交互是双向的， 因此View 数据的变化会同步到Model中，而Model 数据的变化也会立即反应到View 上。</p>
 <p> ViewModel 通过双向数据绑定把 View 层和 Model 层连接了起来，而View 和 Model 之间的同步工作完全是自动的，无需人为干涉，因此开发者只需关注业务逻辑，不需要手动操作DOM, 不需要关注数据状态的同步问题，复杂的数据状态维护完全由 MVVM 来统一管理。</p>
 
@@ -698,7 +697,7 @@ console.log(foo);
 <nav id="pagination">
   
   
-    <a href="/page/2/" class="alignright next">下一页</a>
+    <a href="/page/2/" class="alignright next">Next</a>
   
   <div class="clearfix"></div>
 </nav>
@@ -706,7 +705,7 @@ console.log(foo);
       <aside id="sidebar" class="alignright">
   
 <div class="widget tag">
-  <h3 class="title" id="categories">分类</h3>
+  <h3 class="title" id="categories">Categories</h3>
      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MV/">MV*</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">2</span></li></ul> 
 </div>
  
@@ -722,7 +721,7 @@ console.log(foo);
 
 
   <div class="widget tag">
-  <h3 class="title">日历云</h3>
+  <h3 class="title">Calendar</h3>
   <div id="calendar"></div>
 </div>
 
@@ -755,7 +754,7 @@ console.log(foo);
 
   
 <div class="widget tagcloud">
-  <h3 class="title">标签云</h3>
+  <h3 class="title">Tag Cloud</h3>
   <div class="entry">
     <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/window-document/" style="font-size: 10px;">window document</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/布局方式/" style="font-size: 10px;">布局方式</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/状态码/" style="font-size: 10px;">状态码</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 15px;">继承</a> <a href="/tags/进制/" style="font-size: 10px;">进制</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/预解析/" style="font-size: 10px;">预解析</a>
   </div>

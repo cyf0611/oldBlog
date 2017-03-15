@@ -103,7 +103,7 @@
 <h3 id="2-解释下什么是-rootScrope以及和-scope的区别？"><a href="#2-解释下什么是-rootScrope以及和-scope的区别？" class="headerlink" title="2.解释下什么是$rootScrope以及和$scope的区别？"></a>2.解释下什么是$rootScrope以及和$scope的区别？</h3><p>通俗的说$rootScrope 页面是所有$scope的父亲。</p>
 <p>我们来看下如何产生$rootScope和$scope吧。</p>
 <p>step1:Angular解析ng-app然后在内存中创建$rootScope。</p>
-<p>step2:angular回继续解析，找到表达式，并解析成变量。</p>
+<p>step2:angular回继续解析，找到{…}表达式，并解析成变量。</p>
 <p>step3:接着会解析带有ng-controller的div然后指向到某个controller函数。这个时候在这个controller函数变成一个$scope对象实例。</p>
 <h3 id="3-angular-的数据绑定采用什么机制？详述原理-重点"><a href="#3-angular-的数据绑定采用什么机制？详述原理-重点" class="headerlink" title="3.angular 的数据绑定采用什么机制？详述原理?(重点)"></a>3.angular 的数据绑定采用什么机制？详述原理?(重点)</h3><p><strong>脏检查机制。</strong></p>
 <p>双向数据绑定是 AngularJS 的核心机制之一。当 view 中有任何数据变化时，会更新到 model ，当 model 中数据有变化时，view 也会同步更新，显然，这需要一个监控。</p>

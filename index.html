@@ -82,6 +82,57 @@
     <header>
         <div class="icon"></div>
         
+        <time datetime="2017-03-15T14:41:40.000Z"><a href="/2017/03/15/AngularJS疑惑解答/">2017-03-15</a></time>
+        
+  
+    <h1 class="title"><a href="/2017/03/15/AngularJS疑惑解答/">Angular疑惑解答</a></h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-ng-show-ng-hide-与-ng-if的区别？"><span class="toc-text">1.ng-show/ng-hide 与 ng-if的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-解释下什么是-rootScrope以及和-scope的区别？"><span class="toc-text">2.解释下什么是$rootScrope以及和$scope的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-angular-的数据绑定采用什么机制？详述原理-重点"><span class="toc-text">3.angular 的数据绑定采用什么机制？详述原理?(重点)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？"><span class="toc-text">4.ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？</span></a></li></ol>
+    </div>
+
+        <h3 id="1-ng-show-ng-hide-与-ng-if的区别？"><a href="#1-ng-show-ng-hide-与-ng-if的区别？" class="headerlink" title="1.ng-show/ng-hide 与 ng-if的区别？"></a>1.ng-show/ng-hide 与 ng-if的区别？</h3><p>我们都知道ng-show/ng-hide实际上是通过display来进行隐藏和显示的。而ng-if实际上控制dom节点的增删除来实现的。因此如果我们是根据不同的条件来进行dom节点的加载的话，那么ng-if的性能好过ng-show.</p>
+<h3 id="2-解释下什么是-rootScrope以及和-scope的区别？"><a href="#2-解释下什么是-rootScrope以及和-scope的区别？" class="headerlink" title="2.解释下什么是$rootScrope以及和$scope的区别？"></a>2.解释下什么是$rootScrope以及和$scope的区别？</h3><p>通俗的说$rootScrope 页面是所有$scope的父亲。</p>
+<p>我们来看下如何产生$rootScope和$scope吧。</p>
+<p>step1:Angular解析ng-app然后在内存中创建$rootScope。</p>
+<p>step2:angular回继续解析，找到表达式，并解析成变量。</p>
+<p>step3:接着会解析带有ng-controller的div然后指向到某个controller函数。这个时候在这个controller函数变成一个$scope对象实例。</p>
+<h3 id="3-angular-的数据绑定采用什么机制？详述原理-重点"><a href="#3-angular-的数据绑定采用什么机制？详述原理-重点" class="headerlink" title="3.angular 的数据绑定采用什么机制？详述原理?(重点)"></a>3.angular 的数据绑定采用什么机制？详述原理?(重点)</h3><p><strong>脏检查机制。</strong></p>
+<p>双向数据绑定是 AngularJS 的核心机制之一。当 view 中有任何数据变化时，会更新到 model ，当 model 中数据有变化时，view 也会同步更新，显然，这需要一个监控。</p>
+<p>原理就是，Angular 在 scope 模型上设置了一个 监听队列，用来监听数据变化并更新 view 。每次绑定一个东西到 view 上时 AngularJS 就会往 $watch 队列里插入一条 $watch ，用来检测它监视的 model 里是否有变化的东西。当浏览器接收到可以被 angular context 处理的事件时， $digest 循环就会触发，遍历所有的 $watch ，最后更新 dom。</p>
+<h3 id="4-ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？"><a href="#4-ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？" class="headerlink" title="4.ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？"></a>4.ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？</h3><p>会提示 Duplicates in a repeater are not allowed. 加 <strong>track by $index</strong> 可解决。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="/2017/03/15/AngularJS疑惑解答/#comment" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
         <time datetime="2017-03-14T13:55:46.000Z"><a href="/2017/03/14/MVC与MVVM总结/">2017-03-14</a></time>
         
   
@@ -617,82 +668,6 @@ console.log(foo);
 
 
 
-
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-12-01T02:08:09.000Z"><a href="/2016/12/01/几种常见的继承方法/">2016-12-01</a></time>
-        
-  
-    <h1 class="title"><a href="/2016/12/01/几种常见的继承方法/">几种常见的继承方法</a></h1>
-  
-
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        
-    </div>
-
-        <p>常见的继承有<strong>扩展原型对象实现继承、替换原型对象实现继承、混入继承、混入+原型继承、经典继承、借用构造函数实现继承</strong>这六种。每个人的叫法可能不同，但是原理都一样。</p>
-<p>###<strong>扩展原型对象实现继承</strong></p>
-<blockquote>
-<p><strong>实现原理：</strong>函数有一个prototype的属性（原型对象），通过给这个原型对象添加一个属性、方法，从而可以让构造函数的实例可以访问到</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;&#125;</div><div class="line">Person.prototype.name=&quot;Jim&quot;;</div><div class="line">Person.prototype.sayHello=function () &#123;</div><div class="line">    console.log(&quot;Hello&quot;);  </div><div class="line">&#125;</div><div class="line"></div><div class="line">var p1=new Person();</div><div class="line">console.log(p1.name) //输出&quot;Jim&quot;</div></pre></td></tr></table></figure>
-<p>###<strong>替换原型对象实现继承</strong></p>
-<blockquote>
-<p>上面这种方式是最简单的也是最好理解的，但是有缺点，设置少数的属性或者方法还可以，但是要是设置多个呢？这种继承方法就不行了，太麻烦了，于是有了这种继承方式：替换原型对象实现继承。<strong>用于多个属性、方法的实现。</strong></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function Person () &#123;&#125;</div><div class="line">Person.prototype=&#123;</div><div class="line">   constructor:Person,</div><div class="line">   a1:function () &#123;&#125;,</div><div class="line">   a2:function () &#123;&#125;,</div><div class="line">   a3:function () &#123;&#125;,</div><div class="line">   a4:function () &#123;&#125;,</div><div class="line">   a5:function () &#123;&#125;,</div><div class="line">   .......</div><div class="line">&#125;</div><div class="line">var p1=new Person();</div><div class="line">p1.a1();</div><div class="line">p1.a2();</div><div class="line">.......</div></pre></td></tr></table></figure>
-<p>注意：使用这种方式继承，必须要加上<strong>constructor:Person:Person</strong>这个属性，因为Person.prototype会将原型对象的这个属性替换掉，如果不加上，值将不指向构造函数。</p>
-<p>###<strong>混入继承</strong></p>
-<blockquote>
-<p>使用场景：已知对象o1,o3，需要将o1中的属性、方法拷贝到o3里面。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var o1=&#123;name:&quot;张三&quot;,age:18,height:180&#125;;</div><div class="line">var o2=function () &#123;&#125;;</div><div class="line">o2.prototype.a=&quot;a&quot;;</div><div class="line">var o3=new o2();</div><div class="line">//功能封装</div><div class="line">function mixin(target,source) &#123;</div><div class="line">   for(var key in source) &#123;</div><div class="line">      target[key]=source[key];</div><div class="line">   &#125;</div><div class="line">   return target;</div><div class="line">&#125;</div><div class="line"></div><div class="line">mixin(o3,o1)//这样o3里面就有了o1的属性和方法了。</div></pre></td></tr></table></figure>
-<p><strong>注意：jQuery里面的extend方法就是这个原理实现的。</strong></p>
-<p>###<strong>混入+原型继承</strong></p>
-<blockquote>
-<p>利用混入继承向原型对象中添加属性和方法，其本质还是用了混入继承封装的方法</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function Person () &#123;&#125;;</div><div class="line">Person.prototype.extend=function (source) &#123;</div><div class="line">   mixin(Person.prototype,source);</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype.extend(&#123;a:20,b:25,c:30&#125;);</div><div class="line">//其实就相当于Person.prototype.a=20;Person.prototype.b=25......</div><div class="line"></div><div class="line">var p1=new Person();</div><div class="line">//p1就可以直接访问p1.a;p1.b了。</div></pre></td></tr></table></figure>
-<p><strong>注意：在jQ中，如果你想要在jQ上面添加方法，用的是$.fn.extend()，其实它就相当于jQuery.prototype.extend()</strong></p>
-<p>###<strong>经典继承</strong></p>
-<blockquote>
-<p>由道格拉斯提出。使用场景：已知一个对象o，需要创建一个新的对象，这个新的对象继承自对象o。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//功能封装</div><div class="line">function create(o) &#123;</div><div class="line">	function F()&#123;&#125;</div><div class="line">	F.prototype=o;</div><div class="line">	return new F();	</div><div class="line">&#125;</div><div class="line"></div><div class="line">var o=&#123;name:&quot;张三&quot;,age:18&#125;；</div><div class="line">var o2=create(o);//这样o2就继承自o了</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>###<strong>借用构造函数实现继承</strong></p>
-<blockquote>
-<p>使用场景：子类构造函数借用父类构造函数来完成，给子类的实例添加属性。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function f1(name,age)&#123;</div><div class="line">   this.name=name;</div><div class="line">   this.age=age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function f2(name,age,length) &#123;</div><div class="line">	f1.call(this,name,age)</div><div class="line">	this.length=length;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var ff2=new f2(&quot;张三&quot;,23,180);</div></pre></td></tr></table></figure>
-<hr>
-<p>####<strong>总结：这几种方法原理虽然不难，但是难的是如何灵活运用，这个也没办法，只能自己实践。</strong></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="/2016/12/01/几种常见的继承方法/#comment" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
  
 <nav id="pagination">
   
@@ -706,7 +681,7 @@ console.log(foo);
   
 <div class="widget tag">
   <h3 class="title" id="categories">Categories</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MV/">MV*</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">2</span></li></ul> 
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MV/">MV*</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">2</span></li></ul> 
 </div>
  
 
@@ -756,7 +731,7 @@ console.log(foo);
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/window-document/" style="font-size: 10px;">window document</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/布局方式/" style="font-size: 10px;">布局方式</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/状态码/" style="font-size: 10px;">状态码</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 15px;">继承</a> <a href="/tags/进制/" style="font-size: 10px;">进制</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/预解析/" style="font-size: 10px;">预解析</a>
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 15px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/window-document/" style="font-size: 10px;">window document</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/布局方式/" style="font-size: 10px;">布局方式</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/状态码/" style="font-size: 10px;">状态码</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 15px;">继承</a> <a href="/tags/进制/" style="font-size: 10px;">进制</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/预解析/" style="font-size: 10px;">预解析</a>
   </div>
 </div>
 
@@ -764,7 +739,7 @@ console.log(foo);
   
   <div class="widget tag">
     <h3 class="title">归档</h3>
-	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">42</span></li></ul>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">42</span></li></ul>
   </div>
 
 </aside>

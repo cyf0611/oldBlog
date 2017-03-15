@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016/9 | Hexo</title>
+  <title>Angular疑惑解答 | Hexo</title>
   <meta name="author" content="John Doe">
+  
+  <meta name="description" content="1.ng-show/ng-hide 与 ng-if的区别？我们都知道ng-show/ng-hide实际上是通过display来进行隐藏和显示的。而ng-if实际上控制dom节点的增删除来实现的。因此如果我们是根据不同的条件来进行dom节点的加载的话，那么ng-if的性能好过ng-show.
+2.解释">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Angular疑惑解答"/>
   <meta property="og:site_name" content="Hexo"/>
 
   
@@ -75,93 +78,105 @@
 </header>
   
     <div id="content" class="inner">
-      <div id="main-col" class="alignleft"><div id="wrapper">
+      <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2017-03-15T14:41:40.000Z"><a href="/2017/03/15/AngularJS疑惑解答/">2017-03-15</a></time>
+        
+  
+    <h1 class="title">Angular疑惑解答</h1>
+  
 
-<h2 class="archive-title fa-calendar">2016/9</h2>
-<div class="archive">
-   
-    <article class="post">
-      <div class="post-content">
-        <header>
-          <div class="icon"></div>
-          <time datetime="2016-09-27T01:01:05.000Z"><a href="/2016/09/27/Node基础/">2016-09-27</a></time>
-          
-            <h1 class="title"><a href="/2016/09/27/Node基础/">Node基础</a></h1>
-          
-        </header>
-        <div class='archive-tags'>
-          
-  <div class="tags">
-    <a href="/tags/Node/">Node</a>
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-ng-show-ng-hide-与-ng-if的区别？"><span class="toc-text">1.ng-show/ng-hide 与 ng-if的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-解释下什么是-rootScrope以及和-scope的区别？"><span class="toc-text">2.解释下什么是$rootScrope以及和$scope的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-angular-的数据绑定采用什么机制？详述原理-重点"><span class="toc-text">3.angular 的数据绑定采用什么机制？详述原理?(重点)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？"><span class="toc-text">4.ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？</span></a></li></ol>
+    </div>
+
+        <h3 id="1-ng-show-ng-hide-与-ng-if的区别？"><a href="#1-ng-show-ng-hide-与-ng-if的区别？" class="headerlink" title="1.ng-show/ng-hide 与 ng-if的区别？"></a>1.ng-show/ng-hide 与 ng-if的区别？</h3><p>我们都知道ng-show/ng-hide实际上是通过display来进行隐藏和显示的。而ng-if实际上控制dom节点的增删除来实现的。因此如果我们是根据不同的条件来进行dom节点的加载的话，那么ng-if的性能好过ng-show.</p>
+<h3 id="2-解释下什么是-rootScrope以及和-scope的区别？"><a href="#2-解释下什么是-rootScrope以及和-scope的区别？" class="headerlink" title="2.解释下什么是$rootScrope以及和$scope的区别？"></a>2.解释下什么是$rootScrope以及和$scope的区别？</h3><p>通俗的说$rootScrope 页面是所有$scope的父亲。</p>
+<p>我们来看下如何产生$rootScope和$scope吧。</p>
+<p>step1:Angular解析ng-app然后在内存中创建$rootScope。</p>
+<p>step2:angular回继续解析，找到表达式，并解析成变量。</p>
+<p>step3:接着会解析带有ng-controller的div然后指向到某个controller函数。这个时候在这个controller函数变成一个$scope对象实例。</p>
+<h3 id="3-angular-的数据绑定采用什么机制？详述原理-重点"><a href="#3-angular-的数据绑定采用什么机制？详述原理-重点" class="headerlink" title="3.angular 的数据绑定采用什么机制？详述原理?(重点)"></a>3.angular 的数据绑定采用什么机制？详述原理?(重点)</h3><p><strong>脏检查机制。</strong></p>
+<p>双向数据绑定是 AngularJS 的核心机制之一。当 view 中有任何数据变化时，会更新到 model ，当 model 中数据有变化时，view 也会同步更新，显然，这需要一个监控。</p>
+<p>原理就是，Angular 在 scope 模型上设置了一个 监听队列，用来监听数据变化并更新 view 。每次绑定一个东西到 view 上时 AngularJS 就会往 $watch 队列里插入一条 $watch ，用来检测它监视的 model 里是否有变化的东西。当浏览器接收到可以被 angular context 处理的事件时， $digest 循环就会触发，遍历所有的 $watch ，最后更新 dom。</p>
+<h3 id="4-ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？"><a href="#4-ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？" class="headerlink" title="4.ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？"></a>4.ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？</h3><p>会提示 Duplicates in a repeater are not allowed. 加 <strong>track by $index</strong> 可解决。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/Angular/">Angular</a>
   </div>
 
-        </div>
-      </div>
-    </article>
-   
-    <article class="post">
-      <div class="post-content">
-        <header>
-          <div class="icon"></div>
-          <time datetime="2016-09-18T23:01:27.000Z"><a href="/2016/09/19/GIT介绍和使用方法/">2016-09-19</a></time>
-          
-            <h1 class="title"><a href="/2016/09/19/GIT介绍和使用方法/">Git介绍和使用方法</a></h1>
-          
-        </header>
-        <div class='archive-tags'>
-          
+        
   <div class="tags">
-    <a href="/tags/Git/">Git</a>
+    <a href="/tags/Angular/">Angular</a>
   </div>
 
-        </div>
-      </div>
-    </article>
-   
-    <article class="post">
-      <div class="post-content">
-        <header>
-          <div class="icon"></div>
-          <time datetime="2016-09-05T10:43:02.000Z"><a href="/2016/09/05/Mongodb基础知识/">2016-09-05</a></time>
-          
-            <h1 class="title"><a href="/2016/09/05/Mongodb基础知识/">Mongodb基础知识</a></h1>
-          
-        </header>
-        <div class='archive-tags'>
-          
-  <div class="tags">
-    <a href="/tags/数据库/">数据库</a>
-  </div>
-
-        </div>
-      </div>
-    </article>
-   
-    <article class="post">
-      <div class="post-content">
-        <header>
-          <div class="icon"></div>
-          <time datetime="2016-09-01T08:54:44.000Z"><a href="/2016/09/01/SeaJS/">2016-09-01</a></time>
-          
-            <h1 class="title"><a href="/2016/09/01/SeaJS/">SeaJS</a></h1>
-          
-        </header>
-        <div class='archive-tags'>
-          
-  <div class="tags">
-    <a href="/tags/SeaJS-模块化/">SeaJS 模块化</a>
-  </div>
-
-        </div>
-      </div>
-    </article>
-    
+        <div class = "counter">
+  <span id="busuanzi_container_page_pv" style="display:none">
+      总访问&nbsp<span id="busuanzi_value_page_pv"></span>&nbsp次
+  </span>
 </div>
-<nav id="pagination">
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
   
+<section id = "relate">
+	
+                <div id="快乐人生ddd"></div>
+	
+</section>
+
+
   
-  <div class="clearfix"></div>
-</nav></div></div>
+    <section id="comment">
+    <!--   <h1 class="title">Comments</h1> -->
+    
+    
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="2017/03/15/AngularJS疑惑解答/" data-title="Angular疑惑解答" data-url="http://yoursite.com/2017/03/15/AngularJS疑惑解答/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"lupeng-test"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+          </script>
+        <!-- 多说公共JS代码 end -->
+
+      
+    </section>
+
+
+
+
+</div></div>
       <aside id="sidebar" class="alignright">
   
 <div class="widget tag">

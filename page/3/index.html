@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>第 3 页 | Hexo</title>
+  <title>Page 3 | Hexo</title>
   <meta name="author" content="John Doe">
   
   
@@ -53,20 +53,20 @@
 	<div class='header-nav-content inner'>
 		<div id="main-nav" class="alignleft">
 		    		
-		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
+		    		  <a href="/"><i class="fa fa-home"></i>Home</a>
 		    		
-		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+		    		  <a href="/archives"><i class="fa fa-archive"></i>Archives</a>
 		    		
-		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
+		    		  <a href=""><i class="fa fa-book"></i>Books</a>
 		    		
-		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>关于我</a>
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>About</a>
 		    		
 		</div>
 		<div id="sub-nav" class="alignright">
 		    
-		      <a href=""><i class="fa fa-rss"></i>订阅</a>
+		      <a href=""><i class="fa fa-rss"></i>Rss</a>
 		    
-		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
+		      <a href=""><i class="fa fa-question-circle"></i>Customization</a>
 		    
 		</div>
 	</div>
@@ -76,6 +76,360 @@
   
     <div id="content" class="inner">
       <div id="main-col" class="alignleft"><div id="wrapper">
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-09-18T23:01:27.000Z"><a href="/2016/09/19/GIT介绍和使用方法/">2016-09-19</a></time>
+        
+  
+    <h1 class="title"><a href="/2016/09/19/GIT介绍和使用方法/">Git介绍和使用方法</a></h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-Git-for-Windows-客户端体验-shell"><span class="toc-text">安装 Git for Windows 客户端体验 shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打开和退出终端"><span class="toc-text">打开和退出终端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令提示符"><span class="toc-text">命令提示符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用终端操作文件系统"><span class="toc-text">使用终端操作文件系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-less-命令浏览文件内容"><span class="toc-text">使用 less 命令浏览文件内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式版本控制-Git"><span class="toc-text">分布式版本控制 - Git</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分布式版本管理概念"><span class="toc-text">分布式版本管理概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linus-Benedict-Torvalds"><span class="toc-text">Linus Benedict Torvalds</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-诞生历史"><span class="toc-text">git 诞生历史</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-学习资料"><span class="toc-text">git 学习资料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-git-环境"><span class="toc-text">安装 git 环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始设置"><span class="toc-text">初始设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#推送至远程仓库"><span class="toc-text">推送至远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从远程仓库获取"><span class="toc-text">从远程仓库获取</span></a></li></ol>
+    </div>
+
+        <p>当使用图形用户界面时，我们需要另一个和 shell 交互的叫做终端仿真器的程序。<br>在 Windows 上，一般使用操作系统自带的 <code>cmd</code> 或者 <code>powershell</code>。<br>在 Linux 上，如果是图形用户界面，那么可以使用 <code>terminal</code> 或者 <code>konsole</code>、<code>gnome-terminal</code> 之类<br>的终端仿真器，但基本上，它们都完成同样的事情，让我们能访问 shell，<br>你可能会因为附加的一些花俏功能而喜欢上某个终端。</p>
+<p>关于名字，如果有人提到：控制台、终端、bash、shell、terminal 等，一般都是指上面这些。</p>
+<p>一般在 Linux 上，都会提供一个 bash 或者 terminal 之类的工具，让你来使用 shell</p>
+<h3 id="安装-Git-for-Windows-客户端体验-shell"><a href="#安装-Git-for-Windows-客户端体验-shell" class="headerlink" title="安装 Git for Windows 客户端体验 shell"></a>安装 Git for Windows 客户端体验 shell</h3><p>Git for Windows 客户端自带了一个终端仿真器：<code>git bash</code></p>
+<p>下载地址：<a href="https://git-for-windows.github.io/" target="_blank" rel="external">https://git-for-windows.github.io/</a></p>
+<p><a href="https://github.com/git-for-windows/git" target="_blank" rel="external">git for Windows - github 托管地址</a><br>，然后找到 Realease 模块，找到下载的对应版本即可。</p>
+<p>注意：虽然在 Windows 上可以通过 cmd 或 powershell 体验终端的使用，<br>但是学习终端最正确的方式是学习 Linux 上的命令行，要更纯正，更强大。</p>
+<p>所以，我们这里通过使用 Git for Windows 客户端（自带了一个 bash）可以供我们学习 shell。</p>
+<h3 id="打开和退出终端"><a href="#打开和退出终端" class="headerlink" title="打开和退出终端"></a>打开和退出终端</h3><h3 id="命令提示符"><a href="#命令提示符" class="headerlink" title="命令提示符"></a>命令提示符</h3><p>git bash 中使用 <code>~</code> 来表示用户目录</p>
+<h3 id="使用终端操作文件系统"><a href="#使用终端操作文件系统" class="headerlink" title="使用终端操作文件系统"></a>使用终端操作文件系统</h3><ul>
+<li>绝对路径和相对路径</li>
+<li>pwd（print working directory）</li>
+<li>cd（change directory）<ul>
+<li>切换到指定路径（相对路径或绝对路径）</li>
+</ul>
+</li>
+<li>ls（list files）<ul>
+<li><code>ls</code> 列出当前目录文件</li>
+<li><code>ls 目录路径</code> 列出指定路径文件</li>
+<li><code>ls -a</code> 列出文件并显示隐藏文件或目录</li>
+</ul>
+</li>
+<li>cp（copy）<ul>
+<li><code>cp 源路径 目标路径</code></li>
+<li>cp 在复制目录的时候，不会复制里面的子文件或子目录</li>
+<li>-r （recursive）递归复制</li>
+</ul>
+</li>
+<li>mv（move）：移动文件或者目录，还可以重命名文件或目录</li>
+<li>mkdir（make directory）：创建目录</li>
+<li>rm（remove）：删除文件或目录<ul>
+<li>-rf 递归删除：直接将整个目录包括里面的内容都删掉</li>
+</ul>
+</li>
+<li>rmdir 目录名称<ul>
+<li>只能删除空目录</li>
+</ul>
+</li>
+<li>clear：清屏</li>
+<li>touch 文件名<ul>
+<li>根据文件名创建新的文件</li>
+</ul>
+</li>
+<li>cat 文件名<ul>
+<li>查看指定的文本文件</li>
+</ul>
+</li>
+</ul>
+<p>案例：命令综合练习</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1. 在桌面下创建一个叫做 `itcast` 的目录</div><div class="line">2. 在 itcast 目录下，分别创建 `dir1` 和 `dir2` 两个子目录</div><div class="line">3. 复制 `code/scripts/main.js` 文件到 `itcast` 目录中</div><div class="line">4. 复制 `code` 目录下的 `js` 目录到 `itcast` 目录中</div><div class="line">5. 将 `itcast/main.js` 文件重命名为 `main-main.js`</div><div class="line">6. 将 `main-main.js` 文件移动到 dir1 中</div><div class="line">7. 将 `dir1` 中的 `main-main.js` 文件移动到 dir2 中</div><div class="line">8. 将 `itcast/js` 目录删除</div></pre></td></tr></table></figure>
+<p>以后多使用，就会越用越熟。</p>
+<h3 id="使用-less-命令浏览文件内容"><a href="#使用-less-命令浏览文件内容" class="headerlink" title="使用 less 命令浏览文件内容"></a>使用 less 命令浏览文件内容</h3><p>less 命令是一个用来浏览文本文件的程序。</p>
+<p>less 命令是这样使用的：<code>less 文本文件名</code></p>
+<p>一旦 less 程序运行起来，我们就能浏览文件内容了。<br>如果文件内容多于一页，那么我们可以上下滚动文件。按下 <code>q</code> 键，退出 less 程序。</p>
+<p>下表列出了 less 程序最常使用的键盘命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">命令               行为</div><div class="line">h                  显示帮助屏幕</div><div class="line">Page UP or b       向上翻滚一页</div><div class="line">Page Down or space 向下翻滚一页</div><div class="line">UP Arrow           向上翻滚一行</div><div class="line">Down Arrow         向下翻滚一行</div><div class="line">G                  移动到最后一行</div><div class="line">g                  移动到开头一行</div><div class="line">/charaters         向前查找指定的字符串</div><div class="line">n                  向前查找下一个出现的字符串，这个字符串是之前所指定查找的</div><div class="line">q                  退出 less 程序</div></pre></td></tr></table></figure>
+<h2 id="分布式版本控制-Git"><a href="#分布式版本控制-Git" class="headerlink" title="分布式版本控制 - Git"></a>分布式版本控制 - Git</h2><p><a href="https://zh.wikipedia.org/wiki/Git" target="_blank" rel="external">维基百科 - git</a></p>
+<h3 id="分布式版本管理概念"><a href="#分布式版本管理概念" class="headerlink" title="分布式版本管理概念"></a>分布式版本管理概念</h3><h3 id="Linus-Benedict-Torvalds"><a href="#Linus-Benedict-Torvalds" class="headerlink" title="Linus Benedict Torvalds"></a>Linus Benedict Torvalds</h3><p><a href="https://zh.wikipedia.org/wiki/%E6%9E%97%E7%BA%B3%E6%96%AF%C2%B7%E6%89%98%E7%93%A6%E5%85%B9" target="_blank" rel="external">Linus Benedict Torvalds</a></p>
+<h3 id="git-诞生历史"><a href="#git-诞生历史" class="headerlink" title="git 诞生历史"></a>git 诞生历史</h3><h3 id="git-学习资料"><a href="#git-学习资料" class="headerlink" title="git 学习资料"></a>git 学习资料</h3><ul>
+<li><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="external">git - 简明指南</a></li>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰 - git教程</a></li>
+<li><a href="https://git.oschina.net/progit/" target="_blank" rel="external">Pro Git</a></li>
+<li><a href="http://backlogtool.com/git-guide/cn/" target="_blank" rel="external">猴子都能懂的git入门</a></li>
+<li><a href="http://gitref.org/zh/remotes/" target="_blank" rel="external">git参考手册</a></li>
+<li><a href="http://item.jd.com/11733256.html" target="_blank" rel="external">github入门与实践</a></li>
+<li><a href="http://item.jd.com/11615420.html" target="_blank" rel="external">Git版本控制管理</a></li>
+</ul>
+<h3 id="安装-git-环境"><a href="#安装-git-环境" class="headerlink" title="安装 git 环境"></a>安装 git 环境</h3><h3 id="初始设置"><a href="#初始设置" class="headerlink" title="初始设置"></a>初始设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"yourname"</span></div><div class="line">$ git config --global user.email <span class="string">"your_email@example.com"</span></div></pre></td></tr></table></figure>
+<p>这里设置的姓名和邮箱会用在 git 的提交日志中，<br>执行完上面的命令之后会在当前用户目录下生成一个 <code>.gitconfig</code> 文件，<br>想要更改上面的配置项，可以通过修改该文件完成。 </p>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ul>
+<li><code>git init</code></li>
+<li><code>git status</code></li>
+<li><code>git add</code></li>
+<li><code>git commit</code></li>
+<li><code>git log</code></li>
+</ul>
+<h3 id="推送至远程仓库"><a href="#推送至远程仓库" class="headerlink" title="推送至远程仓库"></a>推送至远程仓库</h3><ul>
+<li><code>git push -u origin master</code><ul>
+<li>推送到名称为 origin 远程仓库地址下的 master 分支下</li>
+</ul>
+</li>
+</ul>
+<h3 id="从远程仓库获取"><a href="#从远程仓库获取" class="headerlink" title="从远程仓库获取"></a>从远程仓库获取</h3><ul>
+<li><code>git clone 仓库地址</code><ul>
+<li>git 会自动将 origin 设置为该远程仓库地址的标识符</li>
+</ul>
+</li>
+<li><code>git pull</code></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="/2016/09/19/GIT介绍和使用方法/#comment" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-09-05T10:43:02.000Z"><a href="/2016/09/05/Mongodb基础知识/">2016-09-05</a></time>
+        
+  
+    <h1 class="title"><a href="/2016/09/05/Mongodb基础知识/">Mongodb基础知识</a></h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库概念"><span class="toc-text">数据库概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库分类"><span class="toc-text">数据库分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MongoDB-数据库"><span class="toc-text">MongoDB 数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么选择MongoDB"><span class="toc-text">为什么选择MongoDB?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装与配置-MongoDB-数据库环境"><span class="toc-text">安装与配置 MongoDB 数据库环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window7安装MongoDB存在的问题"><span class="toc-text">window7安装MongoDB存在的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MongoDB-数据库存储结构"><span class="toc-text">MongoDB 数据库存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作MongoDB的步骤"><span class="toc-text">操作MongoDB的步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MongoDB使用之前必做步骤1–创建数据目录-必须"><span class="toc-text">MongoDB使用之前必做步骤1–创建数据目录(必须)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MongoDB使用之前必做步骤2–启动服务器-必须"><span class="toc-text">MongoDB使用之前必做步骤2–启动服务器(必须)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何连接到MongoDB服务器并且操作它？"><span class="toc-text">如何连接到MongoDB服务器并且操作它？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作命令"><span class="toc-text">基本操作命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-Node-操作-MongoDB"><span class="toc-text">使用 Node 操作 MongoDB</span></a>
+    </div>
+
+        <h3 id="数据库概念"><a href="#数据库概念" class="headerlink" title="数据库概念"></a>数据库概念</h3><blockquote>
+<p>数据库：数据存储的仓库</p>
+</blockquote>
+<p>数据库就是为我们方便的管理数据的一个平台，例如对数据的存储、修改、查询等都非常的方便。</p>
+<h3 id="数据库分类"><a href="#数据库分类" class="headerlink" title="数据库分类"></a>数据库分类</h3><p>数据库产品有很多，以下是一些常见的数据库产品：</p>
+<ul>
+<li>MySQL</li>
+<li>Oracle</li>
+<li>DB2</li>
+<li>SqlServer</li>
+<li>MongoDB</li>
+<li>etc.</li>
+</ul>
+<p>数据库没有排名之分，各有各的应用场景，我们这里学习的是 MongoDB 数据库。</p>
+<h3 id="MongoDB-数据库"><a href="#MongoDB-数据库" class="headerlink" title="MongoDB 数据库"></a>MongoDB 数据库</h3><pre><code>为了更好的学习 MongoDB 数据库，大家可以参考菜鸟教程上的 MongoDB 数据库教程文档，
+链接地址：http://www.runoob.com/mongodb/mongodb-tutorial.html
+
+mongodb数据库官网:https://www.mongodb.com/
+
+下载地址:https://www.mongodb.com/download-center?jmp=nav
+选择好对应的版本下载即可
+</code></pre><h3 id="为什么选择MongoDB"><a href="#为什么选择MongoDB" class="headerlink" title="为什么选择MongoDB?"></a>为什么选择MongoDB?</h3><pre><code>理由:
+
+    1.只要会js/json就会mongodb(学习成本低)
+    2.mongodb对js的兼容性最好
+    3.mongodb存数据就是存JSON
+</code></pre><h3 id="安装与配置-MongoDB-数据库环境"><a href="#安装与配置-MongoDB-数据库环境" class="headerlink" title="安装与配置 MongoDB 数据库环境"></a>安装与配置 MongoDB 数据库环境</h3><pre><code>怎么验证安装成功:
+    在cmd终端中输入： mongo --version 或是 mongod --version ,能看到版本好,说明安装成功
+
+如果终端中输入 mongo --version 提示找不到命令,一定要看看是不是没有配置mongodb的环境变量,并且配置环境变量之后一定要记得重启cmd
+</code></pre><h3 id="window7安装MongoDB存在的问题"><a href="#window7安装MongoDB存在的问题" class="headerlink" title="window7安装MongoDB存在的问题"></a>window7安装MongoDB存在的问题</h3><pre><code>建议:升级到window10
+
+解决步骤:
+    1.将你的操作系统升级到window7最新版
+    2.安装 vc_redist.x64.exe 
+    3.如果你的电脑是32位的,再安装32位的mongodb软件 mongodb-win32-i386-3.2.11-signed.msi
+</code></pre><h3 id="MongoDB-数据库存储结构"><a href="#MongoDB-数据库存储结构" class="headerlink" title="MongoDB 数据库存储结构"></a>MongoDB 数据库存储结构</h3><pre><code>和Excel对比一下即可明白:
+
+Excel                       MongoDB
+</code></pre><p>   创建工作簿                    创建数据库<br>   创建一个sheet(工作表单)        创建集合<br>   确立表头,插入数据                插入文档(确立表头)</p>
+<pre><code>核心思想:
+    1.分门别类的存储数据
+    2.mongodb是以`集合`的概念来区分不同数据的,比如用户集合,商品集合,订单集合等等,不同的数据要放在不同的集合中去统一管理
+    3.集合里面存储的可以认为是一个数组
+    4.数组中的每一个对象,可以认为就是JSON对象,在mongodb中我们称之为 `文档`
+    5.文档的结构可以随意,但是必须统一,也就是说,同一个集合中,所有的文档一定要遵守相同的数据结构
+
+其他:
+    `集合`的作用就是用来隔离数据,分门别类的存储数据
+</code></pre><h3 id="操作MongoDB的步骤"><a href="#操作MongoDB的步骤" class="headerlink" title="操作MongoDB的步骤"></a>操作MongoDB的步骤</h3><pre><code>1.创建数据库中数据的存储目录
+2.启动MongoDB的服务实例
+3.创建数据库
+4.创建集合
+5.创建文档
+</code></pre><hr>
+<h3 id="MongoDB使用之前必做步骤1–创建数据目录-必须"><a href="#MongoDB使用之前必做步骤1–创建数据目录-必须" class="headerlink" title="MongoDB使用之前必做步骤1–创建数据目录(必须)"></a>MongoDB使用之前必做步骤1–创建数据目录(必须)</h3><pre><code>我们在安装完成MongoDB后需要创建一个存放数据的目录。请注意，数据目录应该放在根目录下（(如： C:\ 或者 D:\ 等 ),数据目录的命名随意,比如我就命名 mongodb_datas
+</code></pre><hr>
+<h4 id="MongoDB使用之前必做步骤2–启动服务器-必须"><a href="#MongoDB使用之前必做步骤2–启动服务器-必须" class="headerlink" title="MongoDB使用之前必做步骤2–启动服务器(必须)"></a>MongoDB使用之前必做步骤2–启动服务器(必须)</h4><pre><code>启动MongoDB服务器的方式一：通过终端指令去启动
+
+    1.首先在终端切换到你的MongoDB的安装目录的bin目录下(当然如果配置了环境变量在哪个目录下都可以了)
+
+    2.在终端执行: mongod.exe --dbpath c:/mongodb_datas ,如果成功启动就表示一切都OK了
+
+    注意点:
+        1.32 位版本使用下面的命令启动数据服务：
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --dbpath 数据存储路径 --journal --storageEngine=mmapv1</div></pre></td></tr></table></figure>
+
+
+        2.执行完上面的命令并成功开启 MongoDB 数据服务实例之后，就把该控制台最小化到一边就可以了，
+        千万不要关闭，否则无法连接，如果对数据库的操作结束，可以打开该控制台通过 `Ctrl + C` 关闭。
+
+启动MongoDB服务器的方式二:方式一的延续,把上面的指令做成一个批处理文件.bat
+
+
+启动MongoDB服务器的方式三:将MongoDB服务器作为Windows服务运行
+
+    请注意，你必须有管理权限才能运行下面的命令。执行以下命令将MongoDB服务器作为Windows服务运行：
+
+    例子:
+        mongod.exe --bind_ip 127.0.0.1 --logpath &quot;C:/mongodb_datas/server_log/mongodb.log&quot; --logappend --dbpath &quot;c:/mongodb_datas&quot; --port 27017 --serviceName &quot;MongoDBServer&quot; --serviceDisplayName &quot;MongoDBServerDisplayName&quot; --install
+
+
+    补充:从Windows服务中卸载 MongoDB服务
+        1.先停止要删除的服务(比如MongoDBServer)
+        2.以管理员身份运行cmd,在cmd中输入: sc delete 服务名称(比如MongoDBServer)
+
+    注意点:
+        1.mongodb.log 这个日志文件一定要先创建好,才能执行指令
+        2.必须要以管理员的身份打开cmd窗口,并运行
+</code></pre><hr>
+<h3 id="如何连接到MongoDB服务器并且操作它？"><a href="#如何连接到MongoDB服务器并且操作它？" class="headerlink" title="如何连接到MongoDB服务器并且操作它？"></a>如何连接到MongoDB服务器并且操作它？</h3><p><strong>注意：在进行连接之前请确保你的服务实例是开启状态的（不要关闭刚才开启的数据服务实例）。</strong></p>
+<pre><code>可以使用两种方式来连接到MongoDB服务器并且操作它
+
+连接方式1:使用MongoDB自带的MongoDB后台管理 Shell
+    在终端中输入 mongo 或是 mongo --host 127.0.0.1 --port 27017
+
+    mongo 命令默认去连接本机上的 MongoDB 服务实例：`127.0.0.1:27017`，可以通过下面的命令
+    指定连接的主机名和端口号：
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongo --host 127.0.0.1 --port 27017</div></pre></td></tr></table></figure>
+
+
+    如果看到类似于如下的字样说明连接成功：
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">MongoDB shell version v3.4.2</div><div class="line">connecting to: mongodb://127.0.0.1:27017</div><div class="line">MongoDB server version: 3.4.2</div><div class="line">Server has startup warnings:</div><div class="line">2017-01-18T18:49:53.865+0800 I CONTROL  [initandlisten]</div><div class="line">2017-01-18T18:49:53.865+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.</div><div class="line">2017-01-18T18:49:53.866+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.</div><div class="line">2017-01-18T18:49:53.866+0800 I CONTROL  [initandlisten]</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+
+    如果提示 “无法连接主机”，请检查你的 MongoDB 数据服务实例是否开启。
+
+操作方式1:在终端中使用mongodb的指令进行操作
+
+        常见指令:
+             见下一个知识点
+
+
+连接及操作方式2:使用图形化客户端工具:
+    robomongo(跨平台) : https://robomongo.org/download
+</code></pre><hr>
+<h3 id="基本操作命令"><a href="#基本操作命令" class="headerlink" title="基本操作命令"></a>基本操作命令</h3><pre><code>可以参考:
+    http://www.yiibai.com/mongodb/mongodb_create_collection.html
+
+    http://www.runoob.com/mongodb/mongodb-tutorial.html
+</code></pre><ul>
+<li><code>show dbs</code><ul>
+<li>查看当前服务实例上所有的数据库</li>
+</ul>
+</li>
+<li><code>use 数据库名称</code><ul>
+<li>如果数据库不存在，则创建数据库，否则切换到指定数据库。</li>
+</ul>
+</li>
+<li><code>db.dropDatabase()</code><ul>
+<li>删除数据库,注意,要在切换的数据库中删除</li>
+</ul>
+</li>
+<li><code>db</code><ul>
+<li>查看当前所处的数据库</li>
+</ul>
+</li>
+<li><code>show collections</code><ul>
+<li>查看当前数据库中所有的集合</li>
+</ul>
+</li>
+<li><code>db.createCollection(&quot;集合名称&quot;)</code><ul>
+<li>创建集合</li>
+</ul>
+</li>
+<li><code>db.集合名称.drop()</code><ul>
+<li>删除集合</li>
+</ul>
+</li>
+<li><code>db.集合名称.insert({数据文档})</code><ul>
+<li>插入的每一条文档会自动帮我们生成一个<code>_id</code>字段,它是mongodb自动维护的,不需要我们关心</li>
+</ul>
+</li>
+<li><code>db.集合名称.find()</code><ul>
+<li>查询指定集合中所有的数据</li>
+<li>可以通过 <code>db.集合名称.find().pretty()</code> 美化输出格式</li>
+<li>默认是查询所有，可以通过：<code>db.集合名称.find({查询条件})</code> 按条件查询集合中的数据</li>
+<li>模糊查询的条件 {要查询的字段:{$regex: ‘关键字’}}</li>
+</ul>
+</li>
+<li><code>db.集合名称.update({更新条件}, {要更新的字段})</code><ul>
+<li>更新指定集合数据,注意点,要更新的字段一定要这样写 {$set:{字段的名称:字段的值}},</li>
+</ul>
+</li>
+<li><code>db.集合名称.update({更新条件}, {要更新的字段},{multi:true})</code><ul>
+<li>更新多条文档,{multi:true}默认是false</li>
+</ul>
+</li>
+<li><code>db.集合名称.remove({删除条件})</code><ul>
+<li>删除指定集合中的数据</li>
+</ul>
+</li>
+<li><code>db.集合名称.remove({删除条件},{multi:true})</code><ul>
+<li>删除多条文档,{multi:true}默认是false</li>
+</ul>
+</li>
+<li><code>exit</code> 退出当前操作</li>
+<li><p><code>cls</code> 清屏</p>
+<p>  注意点:更新和删除时一般都需要带条件,除非是全部更新与全部删除,不过全部更新与全部删除这样很危险,实际操作过程中很少</p>
+</li>
+</ul>
+<h2 id="使用-Node-操作-MongoDB"><a href="#使用-Node-操作-MongoDB" class="headerlink" title="使用 Node 操作 MongoDB"></a>使用 Node 操作 MongoDB</h2><p>安装 MongoDB 官方提供的驱动包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save mongodb</div></pre></td></tr></table></figure>
+<p>具体操作方式请参考官方文档：<a href="https://www.npmjs.com/package/mongodb" target="_blank" rel="external">https://www.npmjs.com/package/mongodb</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="/2016/09/05/Mongodb基础知识/#comment" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
     <article class="post">
   
   <div class="post-content">
@@ -1159,177 +1513,13 @@ ES6中可以把构造函数看作类
 
 
 
-
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-07-10T03:26:37.000Z"><a href="/2016/07/10/闭包(函数)/">2016-07-10</a></time>
-        
-  
-    <h1 class="title"><a href="/2016/07/10/闭包(函数)/">闭包(函数)</a></h1>
-  
-
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#生命周期"><span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境"><span class="toc-text">环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#闭包应用场景"><span class="toc-text">闭包应用场景</span></a></li></ol>
-    </div>
-
-        <p>[TOC]</p>
-<blockquote>
-<p>1、广义闭包</p>
-<p>可以访问 <strong>非自身的变量</strong> 的 <strong>函数</strong><br>从一种角度说所有函数都是闭包<br>另一种角度说只有使用了非自身变量的函数，才是闭包</p>
-<p>2、狭义闭包</p>
-<p><code>可以访问**非自身**的**局部变量**的**函数**(*面试说*)</code><br>一种说法，<strong>函数内的函数</strong>才是闭包<br>另一种说法，使用了非自身<strong>局部变量</strong>的函数才是闭包</p>
-<p><strong>特点：</strong><br>可以通过闭包<strong>在任何地方</strong>操作<strong>局部变量</strong></p>
-</blockquote>
-<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><blockquote>
-<p>一个生物，生命从开始到结束，中间存活的过程叫生命周期</p>
-</blockquote>
-<ul>
-<li><p><strong>变量的生命周期：</strong></p>
-<blockquote>
-<p>一个变量，从<strong>定义</strong>开始，到<strong>释放</strong>结束，<strong>中间存活的过程</strong>叫变量的生命周期</p>
-</blockquote>
-</li>
-<li><p><strong>全局变量的生命周期：</strong></p>
-<blockquote>
-<p>从<strong>定义</strong>开始，到<strong>页面被卸载结束</strong>，就是全局变量的生命周期</p>
-</blockquote>
-</li>
-<li><p><strong>局部变量的生命周期：</strong></p>
-<blockquote>
-<p> 从<strong>定义</strong>开始，到<strong>函数执行完毕结束</strong>，就是局部变量的生命周期<br> <strong>但是，</strong>可以通过闭包实现影响局部变量的生命周期，使生命周期和闭包一样长</p>
-<p> <strong>问题：</strong><br> 如果一个变量一直存储着一个闭包函数，那么js引擎无法得知将来是否还会调用这个函数，所以就会造成这个函数不会被释放，相应的这个函数占用的局部变量也不会被释放，这就造成了内存浪费<br> 如果确定以后不会再使用这个函数了，最好手动将存储这个函数的变量赋值为 <code>null</code></p>
-</blockquote>
-</li>
-</ul>
-<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><blockquote>
-<p>一个东西所依赖东西，就可以认为是它的环境</p>
-</blockquote>
-<ul>
-<li><strong>执行环境：</strong><blockquote>
-<p>代码执行时所依赖的环境<br><strong>函数被调用一次，就会产生一个执行环境</strong></p>
-</blockquote>
-</li>
-</ul>
-<h3 id="闭包应用场景"><a href="#闭包应用场景" class="headerlink" title="闭包应用场景"></a>闭包应用场景</h3><ul>
-<li>操作私有属性(局部变量)<ul>
-<li>为了防止其他地方对该属性随意修改的隐患</li>
-</ul>
-</li>
-<li>变量的状态：<ul>
-<li>指变量不同时期所存储的值</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="/2016/07/10/闭包(函数)/#comment" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-07-01T05:00:10.000Z"><a href="/2016/07/01/补充/">2016-07-01</a></time>
-        
-  
-    <h1 class="title"><a href="/2016/07/01/补充/">ES5的一些方法</a></h1>
-  
-
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-keys"><span class="toc-text">Object.keys</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取和设置属性值有两种方式："><span class="toc-text">获取和设置属性值有两种方式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决正序删除数组中数据时，因数组长度实时变化，而出现数据遗漏，无法正确删除的问题"><span class="toc-text">解决正序删除数组中数据时，因数组长度实时变化，而出现数据遗漏，无法正确删除的问题</span></a></li></ol>
-    </div>
-
-        <h3 id="Object-keys"><a href="#Object-keys" class="headerlink" title="Object.keys"></a><code>Object.keys</code></h3><ul>
-<li>语法：<ul>
-<li><code>Object.keys（object）</code></li>
-</ul>
-</li>
-<li><p>ES5新增的方法，用来获取对象自己的，并且可枚举的所有属性，不会去继承的对象中找，返回<strong>一个属性的数组</strong></p>
-</li>
-<li><p>声明函数内的变量时，最好再函数开始提前声明</p>
-</li>
-</ul>
-<h3 id="获取和设置属性值有两种方式："><a href="#获取和设置属性值有两种方式：" class="headerlink" title="获取和设置属性值有两种方式："></a>获取和设置属性值有两种方式：</h3><ul>
-<li>方式：<ul>
-<li>通过<code>getAttribute</code>(获取)和<code>setAttribute</code>(设置)方法</li>
-<li>通过<code>DOM.属性名</code>(获取) 和 <code>DOM.属性名=属性值</code>(设置)方式</li>
-</ul>
-</li>
-<li>区别：<ul>
-<li>1、通过<code>setAttribute</code>设置的自定义属性，必须要通过<code>getAttribute</code>获取， <code>.</code>的方式获取不到</li>
-<li>2、通过<code>.</code>方式设置的自定义属性，必须通过<code>.</code>来获取，  <code>getAttribute</code>获取不到</li>
-<li>3、对于DOM原生的哪些属性，有些两种方式都可以获取值，有些只能通过<code>.</code> 方式来获取<strong>最新的值</strong>，而<code>getAttribute</code>只能获取默认值</li>
-</ul>
-</li>
-<li>补充：<ul>
-<li>对于IE6、7、8来说，两种方式可以混用，没有区别</li>
-</ul>
-</li>
-</ul>
-<h3 id="解决正序删除数组中数据时，因数组长度实时变化，而出现数据遗漏，无法正确删除的问题"><a href="#解决正序删除数组中数据时，因数组长度实时变化，而出现数据遗漏，无法正确删除的问题" class="headerlink" title="解决正序删除数组中数据时，因数组长度实时变化，而出现数据遗漏，无法正确删除的问题"></a>解决正序删除数组中数据时，因数组长度实时变化，而出现数据遗漏，无法正确删除的问题</h3><ul>
-<li>正序删除时，数组长度会随删除数据而动态变化，而使删除数据有遗漏</li>
-<li>可以考虑倒叙删除，这样删除数据时，已遍历的数据不会影响没有遍历过的数据，这样变化的数组的长度，就不会影响程序正常执行<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var arr = [11,11,11,11,11,11,11,22,11,33,44,55,44];</div><div class="line"></div><div class="line">for ( var i = arr.length - 1; i &gt;= 0; i-- ) &#123;</div><div class="line">    if ( arr[i] == 11 ) &#123;</div><div class="line">        arr.splice( i, 1 );</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>encodeURI编码</strong><br>    encodeURIComponent</p>
-<p><strong>decodeURI解码</strong></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="/2016/07/01/补充/#comment" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
  
 <nav id="pagination">
   
-    <a href="/page/2/" class="alignleft prev">上一页</a>
+    <a href="/page/2/" class="alignleft prev">Prev</a>
   
   
-    <a href="/page/4/" class="alignright next">下一页</a>
+    <a href="/page/4/" class="alignright next">Next</a>
   
   <div class="clearfix"></div>
 </nav>
@@ -1337,8 +1527,8 @@ ES6中可以把构造函数看作类
       <aside id="sidebar" class="alignright">
   
 <div class="widget tag">
-  <h3 class="title" id="categories">分类</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MV/">MV*</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">3</span></li></ul> 
+  <h3 class="title" id="categories">Categories</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MV/">MV*</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">3</span></li></ul> 
 </div>
  
 
@@ -1353,7 +1543,7 @@ ES6中可以把构造函数看作类
 
 
   <div class="widget tag">
-  <h3 class="title">日历云</h3>
+  <h3 class="title">Calendar</h3>
   <div id="calendar"></div>
 </div>
 
@@ -1386,9 +1576,9 @@ ES6中可以把构造函数看作类
 
   
 <div class="widget tagcloud">
-  <h3 class="title">标签云</h3>
+  <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 15px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/window-document/" style="font-size: 10px;">window document</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/布局方式/" style="font-size: 10px;">布局方式</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/状态码/" style="font-size: 10px;">状态码</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 15px;">继承</a> <a href="/tags/进制/" style="font-size: 10px;">进制</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/预解析/" style="font-size: 10px;">预解析</a>
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 15px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/window-document/" style="font-size: 10px;">window document</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/布局方式/" style="font-size: 10px;">布局方式</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/模块化/" style="font-size: 15px;">模块化</a> <a href="/tags/状态码/" style="font-size: 10px;">状态码</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 15px;">继承</a> <a href="/tags/进制/" style="font-size: 10px;">进制</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/预解析/" style="font-size: 10px;">预解析</a>
   </div>
 </div>
 
@@ -1396,7 +1586,7 @@ ES6中可以把构造函数看作类
   
   <div class="widget tag">
     <h3 class="title">归档</h3>
-	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">43</span></li></ul>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">45</span></li></ul>
   </div>
 
 </aside>

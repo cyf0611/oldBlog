@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>第 5 页 | Hexo</title>
+  <title>Page 5 | Hexo</title>
   <meta name="author" content="John Doe">
   
   
@@ -53,20 +53,20 @@
 	<div class='header-nav-content inner'>
 		<div id="main-nav" class="alignleft">
 		    		
-		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
+		    		  <a href="/"><i class="fa fa-home"></i>Home</a>
 		    		
-		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+		    		  <a href="/archives"><i class="fa fa-archive"></i>Archives</a>
 		    		
-		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
+		    		  <a href=""><i class="fa fa-book"></i>Books</a>
 		    		
-		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>关于我</a>
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>About</a>
 		    		
 		</div>
 		<div id="sub-nav" class="alignright">
 		    
-		      <a href=""><i class="fa fa-rss"></i>订阅</a>
+		      <a href=""><i class="fa fa-rss"></i>Rss</a>
 		    
-		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
+		      <a href=""><i class="fa fa-question-circle"></i>Customization</a>
 		    
 		</div>
 	</div>
@@ -76,6 +76,615 @@
   
     <div id="content" class="inner">
       <div id="main-col" class="alignleft"><div id="wrapper">
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-05-06T09:31:17.000Z"><a href="/2016/05/06/JS/">2016-05-06</a></time>
+        
+  
+    <h1 class="title"><a href="/2016/05/06/JS/">js基础</a></h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量"><span class="toc-text">变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Math对象"><span class="toc-text">Math对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类型转换："><span class="toc-text">类型转换：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组"><span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数（方法）："><span class="toc-text">函数（方法）：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件三要素"><span class="toc-text">事件三要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象："><span class="toc-text">对象：</span></a></li></ol>
+    </div>
+
+        <ul>
+<li>特点：<ul>
+<li>封装</li>
+<li>继承</li>
+<li>多态</li>
+</ul>
+</li>
+<li>写法：<ul>
+<li>内嵌<ul>
+<li>用内嵌式写法，推荐位置放在body标签之外</li>
+</ul>
+</li>
+<li>外链<ul>
+<li>新建.js文件</li>
+<li>调用     <code>&lt;script type=&quot;text/javascript&quot; src=&quot;index.js&quot;&gt;&lt;/script&gt;</code></li>
+<li>如果调用了多个js文件，最好能将js文件合并到一个文件中</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">window.onload = function() &#123;		</div><div class="line">	内部放js</div><div class="line">&#125;</div><div class="line">【当页面加载完毕以后，才去执行这里面的js内容，就是说等页面的结构、样式、节点等加载完】</div></pre></td></tr></table></figure>
+<p><strong>js中常见消息提示方式：</strong></p>
+<ul>
+<li><code>alert</code>——(弹窗显示消息)<ul>
+<li><code>alert(&quot;内容&quot;);</code></li>
+<li><strong>注意：</strong>如果页面上出现弹窗以后，页面位置不能关闭，也不能改变。浏览器进程已经被暂停</li>
+</ul>
+</li>
+<li><code>// | /* */</code>——（注释）</li>
+<li><code>document.write</code>——直接在页面输出消息<ul>
+<li><code>document.write(&quot;内容&quot;);</code></li>
+<li>内部可写html标签【<code>document.wtite(&quot;&lt;h1&gt;内容&lt;/h1&gt;&quot;);</code>】</li>
+</ul>
+</li>
+<li><code>prompt</code>——弹出输入框，用来接收用户输入的内容<ul>
+<li><code>prompt(&quot;提示内容&quot;);</code></li>
+<li><strong>接收到的数据类型为string 类型</strong></li>
+</ul>
+</li>
+<li><code>console.log()</code>——在控制台输出内容<ul>
+<li><strong>用来进行代码调试</strong></li>
+</ul>
+</li>
+<li><code>confirm(&quot;&quot;)</code>——显示消息<ul>
+<li>一般与条件判断配合使用</li>
+</ul>
+</li>
+<li><code>console.warn(&quot;&quot;)</code>——控制台警告</li>
+<li><code>console.error(&quot;&quot;)</code>——控制台错误提示</li>
+</ul>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><blockquote>
+<p>会变化的数据<br>用来存储数据的容器</p>
+</blockquote>
+<ul>
+<li><p><strong>定义</strong>：</p>
+<ul>
+<li>使用var关键字定义变量</li>
+<li>【<code>var 变量;</code>】    定义变量</li>
+<li>【<code>变量=&quot;内容&quot;;</code>】    给变量赋值</li>
+<li><code>var 变量=&quot;内容&quot;</code>    定义变量并给变量赋值</li>
+</ul>
+</li>
+<li><p><strong>命名规范：</strong></p>
+<ul>
+<li>字母大小写有区别</li>
+<li>不能用纯数字定义变量，或以数字开头</li>
+<li>可用汉字定义变量（不推荐）</li>
+<li>不能使用特殊字符定义变量，或以特殊字符开头（下横线除外“_”）</li>
+<li>不能使用关键字定义变量</li>
+<li>不能使用保留字定义变量【保留字：备用的关键字】</li>
+<li>一个变量只能保存一个值，如果同一个变量被再次赋值，则保存的值是最后定义的值</li>
+<li>变量名中间不能出现空格</li>
+</ul>
+</li>
+<li><p><strong>分类</strong>[所有数据类型原始类型都是数组]</p>
+<ul>
+<li><strong>一、数字类型（number）</strong>如果一个变量的值是数字（小数，整数，负数），当前变量的类型都是数字类型<ul>
+<li>1、数字类型表示方式<ul>
+<li>最常见是十进制（<code>var n1=123;</code>）</li>
+<li>十六进制    以0x开头，0-9和a(A)-f(F)组成</li>
+<li>八进制        以数字0开头，0-7组成</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>二、字符串类型（string）</strong><ul>
+<li>1、如果一个变量的值是使用“双引号”或‘单引号’包括起来的，那么该变量的类型为字符串类型</li>
+<li>2、字符串中的转义字符<ul>
+<li><code>\&quot;</code>    代表一个双引号</li>
+<li><code>\&#39;</code>代表一个单引号</li>
+<li><code>\r</code>回车</li>
+<li><code>\n</code>换行</li>
+<li><code>\t</code>缩进</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>三、布尔类型（boolean）</strong><ul>
+<li>1、只有两个值    <code>true和false</code></li>
+</ul>
+</li>
+<li><strong>四、变量未初始化（undefined）</strong><ul>
+<li>定义了一个变量但未赋值，则这个变量默认为undefined，</li>
+<li>对应的类型为undefined数据类型</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>比较运算符：</strong></p>
+<blockquote>
+<p>通过比较运算符得出的结果为布尔类型</p>
+</blockquote>
+<p><strong>算术运算符</strong></p>
+<blockquote>
+<p><code>+ | - | * | / | %(取余) | ()优先级</code></p>
+</blockquote>
+<ul>
+<li><strong>一、加</strong><ul>
+<li>1、如果两个数据类型都为数字类型，则结果为两个数字类型的和</li>
+<li>2、如果两个数据为非数据类型的变量相加，则最后结果为一个字符串。<code>+</code>起了链接作用</li>
+</ul>
+</li>
+<li><strong>二、减法</strong><ul>
+<li>1、如果两个数据类型都为数字类型，则结果为两个数字类型的差</li>
+<li>2、如果有一个是数字类型的字符串相减，最后结果仍为数字（减运算作用为数据的隐式类型转换）</li>
+<li>3、如果是非数字类型的变量相减，最后的结果为NaN(not a number)</li>
+</ul>
+</li>
+<li><p><strong>三、除</strong></p>
+<ul>
+<li>1、如果两个数据类型都为数字类型，则结果为两个数字类型的商</li>
+<li>2、如果有一个是数字类型的字符串相除，最后结果为数字（除运算作用为数据的隐式类型转换）</li>
+<li>3、如果一个数字除以0，得到的结果为<code>infinity</code>（无穷大）</li>
+<li>4、如果是非数字类型的变量相除，最后的结果为<code>NaN(not a number)</code></li>
+</ul>
+</li>
+<li><p><strong>数据类型</strong></p>
+<ul>
+<li>用来确定变量在内存中的存在形式</li>
+</ul>
+</li>
+<li><strong>数据类型判断：</strong><ul>
+<li>【<code>typeof(变量/直接量)   或    typeof 变量/直接量</code>】获取当前变量的数据类型</li>
+<li>【<code>NaN(not a number)    数据类型为number</code>】    表示数值的不正常状态，在计算错误是出现</li>
+<li>【<code>infinity</code>（无穷大）    数据类型为number】</li>
+<li>【<code>isNaN()是   不是一个数字</code>】是数字时为false、是非数字时为true</li>
+</ul>
+</li>
+</ul>
+<h3 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h3><ul>
+<li><code>Math.ceil();</code><ul>
+<li>【向上取整】 天花板函数</li>
+<li>返回值为大于当前数字最接近的整数</li>
+</ul>
+</li>
+<li><code>Math.floor();</code><ul>
+<li>【向下取整】 地板函数</li>
+<li>返回值为小于当前数字最接近的整数</li>
+</ul>
+</li>
+<li><code>Math.max(放入需要比较的内容[可有多个数值]);</code><ul>
+<li>获取最大值</li>
+</ul>
+</li>
+<li><code>Math.min(放入需要比较的内容[可有多个数值]);</code><ul>
+<li>获取最小值</li>
+</ul>
+</li>
+<li><code>Math.abs();</code><ul>
+<li>返回一个数字的绝对值</li>
+</ul>
+</li>
+<li><code>Math.pow(数字，指数);</code><ul>
+<li>求一个数字的几次方</li>
+</ul>
+</li>
+<li><code>Math.random();</code><ul>
+<li>返回随机数0-1之间(不包括0和1)</li>
+</ul>
+</li>
+<li><code>Math.round();</code><ul>
+<li>返回四舍五入值</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="类型转换："><a href="#类型转换：" class="headerlink" title="类型转换："></a>类型转换：</h4><ul>
+<li><p><strong>隐式类型转换：</strong></p>
+<ul>
+<li>变量参与到运算过程中，实现的数据类型转化（没有程序员参与）</li>
+<li><strong>隐式转换为Number</strong><ul>
+<li><code>+    -    *    /</code>    都可以</li>
+<li>直接在要转换的内容前加<code>&quot;+&quot;</code>，内容与<code>&quot;+&quot;</code>中间无空格</li>
+</ul>
+</li>
+<li><strong>隐式转换为String</strong><ul>
+<li>在数据后加 <code>&quot;&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>强制类型转换：</strong></p>
+<ul>
+<li>程序员手动设置的数据类型转换</li>
+<li><strong>转换为字符串类型</strong><ul>
+<li><code>String(&quot;要转换的内容&quot;);</code><ul>
+<li>【none、undefined，用string变换】</li>
+</ul>
+</li>
+<li><code>变量.toString(&quot;要转换的内容&quot;);</code>【其他都可用<code>.tostring</code>变换】</li>
+</ul>
+</li>
+<li><strong>转换为数字类型</strong> <ul>
+<li><code>Number(&quot;要转换的内容&quot;);</code><ul>
+<li>可以将数字内容的字符串转换为数字类型，</li>
+<li>如果不能转换则返回NaN;    </li>
+<li>如果有小数位，则保留小数位</li>
+<li>如果内容为空，则返回0</li>
+</ul>
+</li>
+<li><code>parseInt(&quot;要转换的内容&quot;,进制);</code><ul>
+<li>【加进制后，要转换的内容为对应的进制的值    输出值为十进制】</li>
+<li>可以将数字内容的字符串转换为数字类型，</li>
+<li>如果不能转换则返回NaN;</li>
+<li>如果有小数位，则只保留整数位，省略小数位，（不是四舍五入）</li>
+<li>如果第一个字符是数字，则继续解析直至字符串解析完毕或遇到一个非数字符号为止</li>
+<li>如果内容为空，则返回0</li>
+</ul>
+</li>
+<li><code>parseFloat(&quot;要转换的内容&quot;);</code><ul>
+<li>可以将数字内容的字符串转换为数字类型</li>
+<li>可以完全保留原来的内容(保留小数位)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>转换为布尔型<ul>
+<li><code>Boolean(&quot;要转换的内容&quot;);</code><ul>
+<li>true在内存中以1形式存在</li>
+<li>false在内存中以0形式存在</li>
+</ul>
+</li>
+<li>通过数据类型转换后，可以将数字0和false相互转换</li>
+<li>除了<code>0、 &quot;&quot;、NaN、Undefined、null</code>这几个再转换时转换成false之外，其他内容都转换为true（包括字符串的”false”）</li>
+<li><strong>隐式布尔转换：if（）、！！</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>等号运算符：</strong></p>
+<ul>
+<li><code>“=”</code>    赋值运算符</li>
+<li><code>“==”</code>    判断是否相等<ul>
+<li>判断的是<code>数据内容</code>是否相等，不管数据类型</li>
+</ul>
+</li>
+<li><code>“===”</code>    判断是否全相等<ul>
+<li>判断的是<code>数据内容和数据类型</code>是否相等</li>
+</ul>
+</li>
+<li><code>“!=”</code>不等于<ul>
+<li>判断的是<code>数据内容</code>是否不相等，不管数据类型</li>
+<li>如果内容相等返回false，    如果内容不相等返回true</li>
+</ul>
+</li>
+<li><code>“!==”</code>    全不等于<ul>
+<li>判断的是<code>数据内容和数据类型</code>是否不相等</li>
+<li>数据只要内容或类型不一样就返回true，反之为false</li>
+</ul>
+</li>
+</ul>
+<p><strong>运算优先级</strong></p>
+<ul>
+<li><code>（）</code></li>
+<li>一元运算符    <code>++、--、！</code></li>
+<li>算术运算符    <code>先*、/、%，后+、-</code></li>
+<li>关系运算符    <code>&gt;=、&gt;、&lt;=、&lt;</code></li>
+<li>相等运算符    <code>==、！=、===、！==</code></li>
+<li>逻辑运算符    <code>！，&amp;&amp;，||</code></li>
+</ul>
+<p><strong>使用逗号可以集体声明变量（省略的繁复的声明）</strong></p>
+<p><strong>逻辑运算符：</strong></p>
+<ul>
+<li>或—–&gt;    <code>||</code><ul>
+<li>只要有一个条件满足为true，结果就为true</li>
+<li>||碰到true会短路，返回第一个值</li>
+</ul>
+</li>
+<li>且—–&gt;    <code>&amp;&amp;</code><ul>
+<li>条件必须同时满足true，结果才为true</li>
+<li>&amp;&amp;碰到false会短路，返回第一个值</li>
+</ul>
+</li>
+<li>非—–&gt;    <code>!</code>    (取反)<br><strong>优先级：`！&gt; &amp;&amp; &gt; ||</strong></li>
+</ul>
+<p><strong>字符串类型用||运算符，如果有值为true的字符串，则返回第一个值为true的字符串内容，如果都为false，则返回最后一个为false的内容</strong></p>
+<p><strong>三元表达式：</strong></p>
+<ul>
+<li><code>表达式？    代码1 ： 代码2；</code><ul>
+<li>如果表达式为true，执行冒号前代码1，否则冒号后执行代码2</li>
+</ul>
+</li>
+</ul>
+<p><strong>switch case：</strong></p>
+<ul>
+<li>switch后的数据类型，必须和case后的数据类型一致<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var 变量=</div><div class="line">switch()&#123;</div><div class="line">	case1 变量的值1：</div><div class="line">		代码块1；</div><div class="line">		break；</div><div class="line">	case2 变量的值2：</div><div class="line">		代码块2；</div><div class="line">		break；</div><div class="line">	case3 变量的值3：</div><div class="line">		代码块3；</div><div class="line">		break；</div><div class="line">	case4 变量的值4：</div><div class="line">		代码块4；</div><div class="line">		break；</div><div class="line">	...</div><div class="line">	default:</div><div class="line">		默认代码块；</div><div class="line">		break；</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>循环语句    while</strong></p>
+<ul>
+<li><strong>先判断，再循环。适用于不明确循环次数的情况下</strong></li>
+<li><strong>特点：</strong>可以重覆完成同样的事情</li>
+<li>当程序运行到while时，判断条件语句，如果为true，执行下面的代码，如果为false，则跳过while<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">while(条件语句、布尔值)&#123;</div><div class="line">	重复执行的代码块；</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>do while</strong></p>
+<ul>
+<li><strong>先循环，在判断</strong></li>
+<li><strong>特点：</strong>先执行do里面的代码循环，再经过while语句的判断，如果满足条件，继续循环，如果不满足，则终止循环    <strong>【至少执行一次】</strong></li>
+<li>如果条件不成立的情况下，do  while  循环，比  while  循环多执行一次<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">do &#123;</div><div class="line">	重复执行的代码块；</div><div class="line">&#125;while(条件语句、布尔值)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>for</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for (var i = 0; i &lt; length; i++) &#123;</div><div class="line">	循环代码块；</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ul>
+<li><strong>定义：</strong><ul>
+<li>1、通过对象的方式创建数组    <code>var ary[数组名]=new Array(内容为一个数时为长度、    内容为一个带引号的内容时为第一项的值、    内容为用“ ，”隔开的内容时为数组内容);</code></li>
+<li>2、直接创建数组    <code>var ary1=[];</code>【[]数组的字面量】</li>
+</ul>
+</li>
+<li>设置默认值：<ul>
+<li>1、<code>var ary=new Array(值1，值2，值3，...);</code>    【值可以是任何数据】</li>
+<li>2、<code>var ary=[值1，值2，值3，...];</code>        【值可以是任何数据】<code>（推荐使用）</code></li>
+</ul>
+</li>
+<li><p><strong>赋值：</strong></p>
+<ul>
+<li>【数组中下标是从0开始的，0代表第一个值】赋值时需要通过下表设置值<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [];</div><div class="line">arr[0] = 值1;</div><div class="line">arr[1] = 值2;</div><div class="line">arr[2] = 值3;</div><div class="line">...</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>取值：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(arr[0]);</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>遍历：</strong></p>
+<ul>
+<li>前提知道数组有多少值（长度）</li>
+<li>通过<code>length</code>获取或设置元素的个数</li>
+<li><code>arr.length</code>    获取数组的长度</li>
+<li><code>arr[i].length</code>    获取数组中某个字符串的长度<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for (var i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">	concole.log(arr[i]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>数组中的方法：</strong></p>
+<ul>
+<li><code>push()</code><ul>
+<li>向数组<code>末尾</code>添加一个或多个元素，并<code>返回数组的长度</code></li>
+<li><code>ary.push(元素,元素,元素...);</code></li>
+<li>返回值为把元素推入数组后的长度</li>
+</ul>
+</li>
+<li><code>unshift()</code><ul>
+<li>从数组<code>前面</code>放入一个或多个元素，并<code>返回数组的长度</code></li>
+<li>返回值为把元素推入数组后的长度</li>
+</ul>
+</li>
+<li><code>pop([内无参数])</code><ul>
+<li>删除数组<code>最后一个元素</code>，返回值为数组最后一个已经被删除的元素</li>
+</ul>
+</li>
+<li><code>shift([内无参数])</code><ul>
+<li>删除数组第一个元素，返回值为数组第一个已经被删除的元素</li>
+</ul>
+</li>
+<li><code>arr.join(&quot;符号[可省略]&quot;)</code><ul>
+<li>变换数组中元素之间的链接方式，为空时为默认值“，”    <code>【返回一个字符串类型】</code></li>
+</ul>
+</li>
+<li><code>str.split(&quot;符号[可省略]&quot;,&quot;howmany[一般不写]&quot;)</code><ul>
+<li>把字符串转换成数组，为空时为默认值“，”<code>【返回一个数组类型】</code></li>
+<li><strong>split(“符号[可省略]”)中的符号必须和字符串中的连接符保持一致，才能变换符号为<code>逗号(,)</code></strong></li>
+</ul>
+</li>
+<li><code>concat()</code><ul>
+<li>例：<code>arr1.concat(arr2);</code></li>
+<li>将数组合并，不会改变当前数组</li>
+<li>合并产生的是一个<code>【新数组】</code></li>
+</ul>
+</li>
+<li><code>slice()</code><ul>
+<li>例：<code>slice(begin,[end]);</code></li>
+<li>参数1：开始位置    参数2：结束位置，可选</li>
+<li>截取指定数组中的值，存入一个新的数组中,合并产生的是一个<code>【新数组】</code></li>
+<li><strong>注意：</strong><ul>
+<li>1.slice方法截取数组只包含begin，不包含end。</li>
+<li>2.slice方法的参数可以是负数，表示从后面往前数第几个元素，（慎用，容易搞混）</li>
+<li>3.slice方法不会影响到原来的数组</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>splice()</code><ul>
+<li>例：<code>splice(start, deleteCount, [items]);</code></li>
+<li>参数1：开始位置    </li>
+<li>参数2：删除的个数      </li>
+<li>参数3：需要替换的数组【如果参数3没有传，那么只会删除数组对应的元素】</li>
+<li>先删除指定数目元素，再添加入替换的元素</li>
+<li><strong>改变了原来的数组</strong></li>
+</ul>
+</li>
+<li><code>indexOf()</code><ul>
+<li><code>indexOf(searchElement, [fromIndex])</code> </li>
+<li>查找数组中元素出现的位置</li>
+</ul>
+</li>
+</ul>
+<h4 id="函数（方法）："><a href="#函数（方法）：" class="headerlink" title="函数（方法）："></a>函数（方法）：</h4><blockquote>
+<p>函数是有事件驱动的或者当它被调用时执行的<code>可重复使用的代码块</code><br><strong>函数名.length</strong>得到函数形参的个数</p>
+</blockquote>
+<ul>
+<li><strong>三要素：</strong><ul>
+<li>功能</li>
+<li>参数</li>
+<li>返回值</li>
+</ul>
+</li>
+<li><strong>定义：</strong></li>
+<li><p>1、【函数声明】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function 函数名(参数1， 参数2， 参数3...) &#123;</div><div class="line">	函数体；</div><div class="line">&#125;</div><div class="line">函数名(); &lt;————函数的调用（可写在声明前面）</div></pre></td></tr></table></figure>
+</li>
+<li><p>2、【函数表达式（匿名函数）】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var 函数名 = function(参数1， 参数2， 参数3...)&#123;</div><div class="line">	函数体；</div><div class="line">&#125;</div><div class="line">函数名(); &lt;————函数的调用（必须写在后面）</div></pre></td></tr></table></figure>
+</li>
+<li><p>3、【自调用函数（自能执行一次）】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(function()&#123;</div><div class="line">	函数体；</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>arguments（存放函数实参变量）    <code>arguments.length</code>(实参个数)</strong></p>
+<p><strong><code>fn.length</code>【形参个数】</strong></p>
+<p><strong>return:</strong></p>
+<ul>
+<li>一个函数实际上就是一个计算的过程，计算完之后的结果就是返回值    <strong>位置写在计算完成之后</strong></li>
+<li>定义函数的返回值：<ul>
+<li>在函数内部使用return设置返回值，一个函数只有一个返回值</li>
+<li>返回值的同时，结束代码</li>
+<li>所有自定义函数默认没有返回值</li>
+<li>return之后不要加换行</li>
+<li>return之后加了内容，则返回return之后的内容</li>
+<li>return之后不加任何东西，返回值为undefined</li>
+<li>如果函数内部没有写return时返回值为undefined</li>
+</ul>
+</li>
+</ul>
+<p><strong>javascript没有重载概念</strong></p>
+<ul>
+<li>在其他语言中，有<code>重载</code>概念<code>【函数的名字相同，但参数个数不同】</code></li>
+<li>如果定义了两个相同的函数，那么后面的函数会覆盖掉前面的函数【在javascript中不允许出现同名的函数】</li>
+</ul>
+<p><strong>变量作用域：</strong></p>
+<ul>
+<li>当变量超出作用域之后变量将被销毁</li>
+<li><strong>全局变量：</strong><ul>
+<li>1、在最外层声明的变量（有无var 都是全局变量）</li>
+<li>2、在函数体内部，但是没用var声明的也是全局变量【隐式全局变量】</li>
+</ul>
+</li>
+<li><strong>隐式全局变量：</strong><ul>
+<li>在函数体内部，但是没用var声明的也是全局变量</li>
+</ul>
+</li>
+<li><strong>局部变量【函数作用域】</strong><ul>
+<li>【局部变量优先级较高】</li>
+<li>1、在<code>函数体内部</code>使用var声明的变量</li>
+<li>2、超出函数作用范围之后局部变量被销毁</li>
+</ul>
+</li>
+</ul>
+<p><strong>没有块级作用域</strong></p>
+<ul>
+<li>if 和for中使用的var变量都是全局变量</li>
+</ul>
+<h3 id="事件三要素"><a href="#事件三要素" class="headerlink" title="事件三要素"></a>事件三要素</h3><ul>
+<li>事件源 ：被触发者 一般情况下是名词</li>
+<li>事件 ：做了什么  一般情况下是动词    【点击、鼠标经过、按键盘】</li>
+<li>事件处理程序 ： 发生了什么<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">事件源.函数(onclick) = function（）&#123;</div><div class="line">	事件处理函数</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>递归：</strong></p>
+<blockquote>
+<p>方法自身调用，一般还要有结束的条件</p>
+</blockquote>
+<h3 id="对象："><a href="#对象：" class="headerlink" title="对象："></a>对象：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;&#125;;</div></pre></td></tr></table></figure>
+<ul>
+<li>指的是一个具体的东西</li>
+<li>有<code>行为</code>      和    <code>特征</code></li>
+<li><strong>特征：</strong><ul>
+<li>用      <strong>属性</strong>    来表示        <strong>用定义（var）</strong></li>
+</ul>
+</li>
+<li><strong>行为：</strong><ul>
+<li>用<strong>方法</strong>来表示  为匿名函数（function）</li>
+</ul>
+</li>
+<li>用<code>for(var key in obj){}</code>遍历对象，得到对象的属性和e</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="/2016/05/06/JS/#comment" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-04-30T23:37:19.000Z"><a href="/2016/05/01/jQuery基本结构/">2016-05-01</a></time>
+        
+  
+    <h1 class="title"><a href="/2016/05/01/jQuery基本结构/">jQuery基本结构</a></h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#extend"><span class="toc-text">extend</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jQuery返回的实例是一个伪数组"><span class="toc-text">jQuery返回的实例是一个伪数组</span></a></li></ol>
+    </div>
+
+        <blockquote>
+<p>jQuery代码全写在一个自调函数中</p>
+<p>平常使用的\$和jQuery是jQuery对外暴露的一个工厂函数(入口函数)<br>构造函数在jQuery内部为init，且被添加到了jQuery原型中，是可以通过$.init访问到</p>
+<p>为了能让第三方扩展功能，把工厂函数的原型和构造函数的原型保持了一致</p>
+</blockquote>
+<p>[TOC]<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">window</span>) </span>&#123;</div><div class="line">    <span class="comment">//工厂函数</span></div><div class="line">    <span class="keyword">var</span> jQuery = <span class="function"><span class="keyword">function</span> (<span class="params"> selector, context </span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> jQuery.prototype.init( selector, context );</div><div class="line">    &#125;;</div><div class="line">    <span class="comment">//工厂函数原型重命名</span></div><div class="line">    jQuery.fn = jQuery.prototype = &#123;</div><div class="line">        <span class="attr">constructor</span> : jQuery</div><div class="line">    &#125;;</div><div class="line">    <span class="comment">//便于jQuery的扩展</span></div><div class="line">    jQuery.extend = jQuery.prototype.extend = <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</div><div class="line">            <span class="keyword">this</span>[key] = obj[key];</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    <span class="comment">//构造函数</span></div><div class="line">    <span class="keyword">var</span> init =jQuery.prototype.init = <span class="function"><span class="keyword">function</span> (<span class="params"> selector, context </span>) </span>&#123;</div><div class="line">    &#125;;</div><div class="line">    <span class="comment">//构造函数原型指向工厂函数原型，可以通过向工厂函数添加方法，使构造函数能够使用</span></div><div class="line">    init.prototype = jQuery.prototype;</div><div class="line">    <span class="built_in">window</span>.jQuery = <span class="built_in">window</span>.$ = jQuery;</div><div class="line">&#125;(<span class="built_in">window</span>));</div></pre></td></tr></table></figure></p>
+<h4 id="extend"><a href="#extend" class="headerlink" title="extend"></a>extend</h4><ul>
+<li>方便给<code>jQuery</code>和<code>jQuery.prototype</code>添加方法和属性</li>
+</ul>
+<h4 id="jQuery返回的实例是一个伪数组"><a href="#jQuery返回的实例是一个伪数组" class="headerlink" title="jQuery返回的实例是一个伪数组"></a>jQuery返回的实例是一个伪数组</h4><ul>
+<li>如果给$传入html结构</li>
+</ul>
+<blockquote>
+<p>添加<code>DOMContentLoaded</code>事件是为了能让页面加载完成之后，再执行相应的代码，来防止对页面元素操作失败<br><code>load</code>也可以监听事件，但比较慢，所以一般用<code>DOMContentLoaded</code><br><code>DOMContentLoaded</code>在页面只执行一次，所以会有一些问题<br>通过给先触发的<code>DOMContentLoaded</code>事件添加</p>
+</blockquote>
+<p><strong>为什么要监听DOMContentLoaded事件</strong></p>
+<blockquote>
+<p>jQuery就是来操作DOM的，只有当DOM树加载完成后在可以进行操作，所以要监听这个事件<br>DOMContentLoaded事件是浏览器默认的触发事件，在此事件触发之前绑定的事件，会在该事件结束后执行，此DOMContentLoaded事件结束后如果再再绑定事件，则后面的事件会继续等待DOMContentLoaded事件的触发，但在DOMContentLoaded事件只执行一次，以后就不再触发，所以，后绑定的事件就不会再触发</p>
+</blockquote>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="/2016/05/01/jQuery基本结构/#comment" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
     <article class="post">
   
   <div class="post-content">
@@ -2291,642 +2900,13 @@
 
 
 
-
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-02-27T11:29:10.000Z"><a href="/2016/02/27/Array 构造函数/">2016-02-27</a></time>
-        
-  
-    <h1 class="title"><a href="/2016/02/27/Array 构造函数/">Array 构造函数</a></h1>
-  
-
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        
-    </div>
-
-        <blockquote>
-<p>由于 <code>Array</code> 的构造函数在如何处理参数时有点模棱两可，因此总是推荐使用数组的字面语法 - <code>[]</code> - 来创建数组。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; <span class="comment">// 结果: [1, 2, 3]</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">// 结果: [1, 2, 3]</span></div><div class="line"></div><div class="line">[<span class="number">3</span>]; <span class="comment">// 结果: [3]</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>); <span class="comment">// 结果: [] </span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'3'</span>) <span class="comment">// 结果: ['3']</span></div><div class="line"></div><div class="line"><span class="comment">// 因此下面的代码将会使人很迷惑</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>); <span class="comment">// 结果: [3, 4, 5] </span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>) <span class="comment">// 结果: []，此数组长度为 3</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>由于只有一个参数传递到构造函数中（指的是 <code>new Array(3);</code>这种调用方式），并且这个参数是<code>数字</code>，构造函数会返回一个<code>length</code>属性被设置为此参数的空数组。 需要特别注意的是，此时只有<code>length</code> 属性被设置，真正的数组并没有生成。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>);</div><div class="line">arr[<span class="number">1</span>]; <span class="comment">// undefined</span></div><div class="line"><span class="number">1</span> <span class="keyword">in</span> arr; <span class="comment">// false, 数组还没有生成</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>这种优先于设置数组长度属性的做法只在少数几种情况下有用，<br>比如需要循环字符串，可以避免<code>for</code>循环的麻烦。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new Array(count + 1).join(stringToRepeat);</div></pre></td></tr></table></figure></p>
-</blockquote>
-<ul>
-<li><strong>结论</strong><br><strong>应该尽量避免使用数组构造函数创建新数组。推荐使用数组的字面语法。它们更加短小和简洁，因此增加了代码的可读性。</strong></li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="/2016/02/27/Array 构造函数/#comment" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-02-21T13:56:02.000Z"><a href="/2016/02/21/Ajax/">2016-02-21</a></time>
-        
-  
-    <h1 class="title"><a href="/2016/02/21/Ajax/">Ajax</a></h1>
-  
-
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#软件的基本架构"><span class="toc-text">软件的基本架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端"><span class="toc-text">客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务端"><span class="toc-text">服务端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络基础"><span class="toc-text">网络基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#资源的分类"><span class="toc-text">资源的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP"><span class="toc-text">PHP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端跟服务端交互交互的目的就是为了进行数据传递"><span class="toc-text">客户端跟服务端交互交互的目的就是为了进行数据传递</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传文件（客户端向服务器端传递数据）"><span class="toc-text">上传文件（客户端向服务器端传递数据）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP协议"><span class="toc-text">HTTP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#客户端发送给服务器的数据-请求的数据格式"><span class="toc-text">客户端发送给服务器的数据    (请求的数据格式)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务器给客户端响应的数据-响应的数据格式"><span class="toc-text">服务器给客户端响应的数据    (响应的数据格式)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax"><span class="toc-text">Ajax</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XML-可扩展标记语言——一种数据格式"><span class="toc-text">XML(可扩展标记语言——一种数据格式)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-一种数据格式"><span class="toc-text">JSON(一种数据格式)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax函数封装"><span class="toc-text">ajax函数封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery操作ajax"><span class="toc-text">jQuery操作ajax</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#序列化"><span class="toc-text">序列化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-text">模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域"><span class="toc-text">跨域</span></a>
-    </div>
-
-        <h3 id="软件的基本架构"><a href="#软件的基本架构" class="headerlink" title="软件的基本架构"></a>软件的基本架构</h3><p><strong>CS架构</strong></p>
-<ul>
-<li>Client(客户端)</li>
-<li>Server(服务器)</li>
-</ul>
-<p><strong>BS架构</strong><code>软件都是基于浏览器的</code></p>
-<ul>
-<li>Browser(浏览器)</li>
-<li>Server(服务器)</li>
-</ul>
-<p><strong>区别</strong></p>
-<ul>
-<li>BS:基于浏览器的  （升级方便，所有的页面都是从服务端去获取，性能比较低）</li>
-<li>CS: (都必须有一个安装包，升级不方便,性能比较高)</li>
-<li><strong>1．硬件环境不同:</strong> <ul>
-<li>C/S 一般建立在专用的网络上, 小范围里的网络环境, 局域网之间再通过专门服务器提供连 接和数据交换服务.</li>
-<li>B/S 建立在广域网之上的, 不必是专门的网络硬件环境,例与电话上网, 租用设备. 信息自己管理. 有比C/S更强的适应范围, 一般只要有操作系统和浏览器就行 </li>
-</ul>
-</li>
-<li><strong>2．对安全要求不同</strong> <ul>
-<li>C/S 一般面向相对固定的用户群, 对信息安全的控制能力很强. 一般高度机密的信息系统采用C/S 结构适宜. 可以通过B/S发布部分可公开信息.</li>
-<li>B/S 建立在广域网之上, 对安全的控制能力相对弱, 可能面向不可知的用户。</li>
-</ul>
-</li>
-<li><strong>3．软件重用不同</strong> <ul>
-<li>C/S 程序可以不可避免的整体性考虑, 构件的重用性不如在B/S要求下的构件的重用性好.</li>
-<li>B/S 对的多重结构,要求构件相对独立的功能. 能够相对较好的重用.就入买来的餐桌可以再 利用,而不是做在墙上的石头桌子 </li>
-</ul>
-</li>
-<li><strong>4．系统维护不同</strong> <ul>
-<li>C/S 程序由于整体性, 必须整体考察, 处理出现的问题以及系统升级. 升级难. 可能是再做一个全新的系统</li>
-<li>B/S 构件组成,方面构件个别的更换,实现系统的无缝升级. 系统维护开销减到最小.用户从网上自己下载安装就可以实现升级. </li>
-</ul>
-</li>
-</ul>
-<p><strong>不管什么样的架构：所有的软件都需要有一个客户端，一个服务端</strong></p>
-<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p><strong>具有向服务器索取服务能力的终端</strong></p>
-<ul>
-<li>常见的客户端软件：浏览器、QQ、迅雷、Foxmail等。</li>
-<li>以浏览器为宿主环境，结合 HTML、CSS、Javascript等技术，而进行的一系列开发，通常称之为前端开发。</li>
-</ul>
-<h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><p><strong>首先必须明确，服务器是一个软件，装在一台计算的系统里面</strong></p>
-<ul>
-<li>1：接收用户请求</li>
-<li>2：对请求进行处理</li>
-<li>3：给用户一个响应</li>
-</ul>
-<p><strong>能对外提供服务的一台超级计算机（计算机，配置要高一些）</strong></p>
-<blockquote>
-<p>假设我的这台超级计算机安装了一个操作系统，能对外提供服务，必须安装对应的 服务器应用软件才能对外提供服务<br>我安装了web 服务器对应的软件，我就可以对外提供web 服务</p>
-</blockquote>
-<p><strong>分类：</strong></p>
-<ul>
-<li><p><strong>按照操作系统来分</strong></p>
-<ul>
-<li>Linux服务器系统</li>
-<li>Windows服务器系统等</li>
-</ul>
-</li>
-<li><p><strong>按服务类型可分为</strong></p>
-<ul>
-<li>文件服务器，</li>
-<li>数据库服务器，</li>
-<li>邮件服务器,</li>
-<li>Web 服务器 （对外提供web 服务）<ul>
-<li>1：接收客户端的请求</li>
-<li>2：对客户端的请求的进行处理</li>
-<li>3: 还需要给客户端一个响应，响应一个html 页面。</li>
-<li><strong>常见的web 服务器软件</strong><ul>
-<li>Apache服务器 它是一个软件，提供web 服务的软件</li>
-<li>Nginx 服务器、IIS服务器、Tomcat服务器、Node服务器等</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>按应用软件可分为</strong></p>
-<ul>
-<li>Apache服务器</li>
-<li>Nginx 服务器</li>
-<li>IIS服务器</li>
-<li>Tomcat服务器</li>
-<li>Node服务器等</li>
-</ul>
-</li>
-</ul>
-<h3 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h3><blockquote>
-<p>客户端与服务端之间要进行数据交互，进行数据交互的，数据交互走网络</p>
-</blockquote>
-<ul>
-<li><p><strong>ip 地址</strong></p>
-<ul>
-<li>在网络里面的计算的一个唯一标识，我们可以通过ip定位到一台计算机.</li>
-<li>查看本机IP地址 ping、ipconfig、ifconfig</li>
-<li>局域网ip<ul>
-<li>局域网（Local Area Network，LAN）是指在某一区域内由多台计算机互联成的计算机组</li>
-<li>这个ip是32位地址 计算机里面都是二进制</li>
-<li>例：192.168.38.79</li>
-</ul>
-</li>
-<li>公网ip<ul>
-<li>如果是公网ip 的话，我现在只要我可以上网，我就可以访问到公网ip 对应的计算机</li>
-<li>以后我们的计算假设需要有一个公网ip，我是需要从电信申请的，需要备案的</li>
-</ul>
-</li>
-<li><strong>重点: 通过ip 地址可以找到对应的计算机</strong></li>
-</ul>
-</li>
-<li><p><strong>域名</strong></p>
-<ul>
-<li>由于IP地址基于数字，不方便记忆，于是便用域名来代替IP地址，域名是一个IP地址的“面具”</li>
-<li>通过域名访问，方便记忆</li>
-<li>我们可以通过ip 访问，ping 可以找到域名的对应ip 地址（在CMD里）</li>
-<li>例：ping www.baidu.com</li>
-</ul>
-</li>
-<li><p><strong>DNS（domain Name  System） 域名解析系统</strong></p>
-<ul>
-<li>它记录了域名与ip 的映射关系.例：www.baidu.com  ——&gt; 119.75.217.109</li>
-<li>查找优先级：<ul>
-<li>本机hosts文件、然后是DNS服务器</li>
-</ul>
-</li>
-<li>在浏览器输入一个地址后，浏览器它帮我们发送一个请求给dns 服务器，dns 服务器去里面找一个映射关系<ul>
-<li>找到了映射关系：找到映射关系，肯定就会有对应的ip，然后去访问这个ip 对应的计算机。</li>
-<li>没有找到映射关系：直接无法访问.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>端口</strong></p>
-<ul>
-<li>端口号是计算机与外界通讯交流的出口，每个端口对应不同的服务</li>
-<li>常见端口号 80、8080、3306、21、22<blockquote>
-<p> 假设我是一台计算机，我要对外提供服务器，我就需要安装对应的 应用软件。<br> 这个应用软件要对外提供服务器，必须是占用一个端口对外提供服务。<br> 我可以在一台计算机上面安装多个应用软件，只要端口不一样就可以。<br> wamp 的软件，这个软件要对外提供服务器，web 服务器，到时候肯定是默认占用80端口。<br> 假设有其它的软件，占用了80 端口，启动这个软件就失败.</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="资源的分类"><a href="#资源的分类" class="headerlink" title="资源的分类"></a>资源的分类</h3><p><strong>静态资源</strong></p>
-<ul>
-<li>可以直接通过浏览器打开的</li>
-<li>html,js,css,2.jpg 我们把这些资源叫做静态资源</li>
-</ul>
-<p><strong>动态资源</strong></p>
-<ul>
-<li>我们去访问一个服务器上面的动态资源php，服务器需要把动态资源转换成静态资源然后响应给客户端浏览器</li>
-<li>.php , jsp  ,asp</li>
-</ul>
-<p><strong>防止乱码：<code>header(&quot;Content-Type:text/html;charset=utf-8[或gbk]&quot;);</code></strong></p>
-<h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><p><strong>避免使用中文目录和中文文件名</strong></p>
-<ul>
-<li><p><strong>php 是在服务器端就运行的语言，js，html，css 是在客户端运行的语言</strong></p>
-</li>
-<li><p>php 适合于做一些小型的web 网站，论坛，博客</p>
-</li>
-<li>jsp 适合应用于做一些大型的系统：银行，企业办公系统，证劵系统</li>
-<li><strong>php 比 jsp 要快一些</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">文件以.php后缀结尾所有程序包含在</div><div class="line">&lt;?php </div><div class="line">		/** 这里是代码 **/ </div><div class="line">?&gt;</div><div class="line"></div><div class="line">&lt;?php</div><div class="line">	上面定义的变量，这里可以使用，可以在一个php文件里定义多个&lt;?php?&gt;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-<p><strong>输出语句</strong></p>
-<ul>
-<li><code>echo &#39;&#39;;</code>输出简单数据类型，如字符串、数值</li>
-<li><code>print_r()</code>输出复杂数据类型，如数组</li>
-<li><code>var_dump()</code>输出详细信息，如对象、数组（了解）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$array1=array(&quot;weidandan&quot;,&quot;luowanghua&quot;,&quot;zhangjie&quot;);</div><div class="line"></div><div class="line">print_r($array1);</div><div class="line">Array ( [0] =&gt; weidandan [1] =&gt; luowanghua [2] =&gt; zhangjie )</div><div class="line"></div><div class="line">var_dump($array1);</div><div class="line">array</div><div class="line">  0 =&gt; string &apos;weidandan&apos; (length=9)</div><div class="line">  1 =&gt; string &apos;luowanghua&apos; (length=10)</div><div class="line">  2 =&gt; string &apos;zhangjie&apos; (length=8)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>变量</strong></p>
-<ul>
-<li>1、变量以<code>$开头</code> 字母/数字/下划线 <code>不能以数字开头</code></li>
-<li>2、大小写敏感（区分大小写）</li>
-</ul>
-<p><strong>数据类型</strong></p>
-<ul>
-<li>字符串</li>
-<li>整型</li>
-<li>布尔型<ul>
-<li><code>$flag=false;    echo $flag;</code></li>
-<li>//输出1，1代表true ，false 没有任何输出</li>
-</ul>
-</li>
-<li>浮点型</li>
-<li><p>数组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">1、普通数组(索引数组)</div><div class="line">`$array=array(&quot;zhangsan&quot;,&quot;lisi&quot;,&quot;wangwu&quot;);`</div><div class="line"></div><div class="line">遍历数组 用	for</div><div class="line">for($i=0;$i&lt;$count($array);$i++)&#123;</div><div class="line">       echo $array[$i];</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*--------------------------------------*/</div><div class="line">关联数组</div><div class="line">$array=array(&quot;username&quot;=&gt;&quot;zhangsan&quot;,&quot;age&quot;=&gt;11);</div><div class="line"></div><div class="line">2、遍历数组 	foreach</div><div class="line"></div><div class="line">foreach($array as $key=&gt;$val)&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>对象</p>
-</li>
-<li>NULL</li>
-</ul>
-<p><strong>函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function sayHello($username=&quot;zhangsan&quot;)&#123;</div><div class="line">     echo &quot;123&quot;.$username;</div><div class="line">&#125;</div><div class="line">sayHello();</div><div class="line">// 输出：123zhuangsan</div></pre></td></tr></table></figure></p>
-<ul>
-<li>常见函数<ul>
-<li><code>count()</code>     统计数组的长度</li>
-<li><code>in_array()</code>     判断数组当中是否存在某个元素，返回true/false</li>
-<li><code>array_key_exists</code>  判断数组当中是否存在某个key</li>
-<li><code>file_get_contents</code> 读取文件的内容，文件的内容转换成字符串</li>
-</ul>
-</li>
-</ul>
-<p><strong>连字符<code>.</code>Javascript中为<code>+</code>号</strong></p>
-<h3 id="客户端跟服务端交互交互的目的就是为了进行数据传递"><a href="#客户端跟服务端交互交互的目的就是为了进行数据传递" class="headerlink" title="客户端跟服务端交互交互的目的就是为了进行数据传递"></a>客户端跟服务端交互交互的目的就是为了进行数据传递</h3><p><strong>客户端</strong></p>
-<ul>
-<li>客户端给服务器发送请求，我们可以通过三种方式进行发送<ul>
-<li>1:我们是直接在浏览器地址输入一个地址，回车就发送请求了</li>
-<li>2：在页面上面点击一个超链接也是发送请求。</li>
-<li>3：通过表单进行提交</li>
-<li><strong>常见提交方式</strong><ul>
-<li><code>get</code><ul>
-<li>1:我们是直接在浏览器地址输入一个地址，回车就发送请求了 默认就是get 方式提交，不可以更改</li>
-<li>2:在页面上面点击一个超链接，默认也是get 方式提交，不能修改</li>
-<li>例：<code>12get.php?username=zhangsan&amp;age=11</code></li>
-</ul>
-</li>
-<li><code>post</code><ul>
-<li>可以是表单提交</li>
-<li>表单提交我们可以进行设置，可以是get ，也可以是post</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>服务端</strong></p>
-<ul>
-<li>1：接收客户端的请求<ul>
-<li><code>$_GET</code></li>
-<li><code>$_POST</code></li>
-</ul>
-</li>
-<li>2：对客户端的请求进行处理 （对数据进行处理）<ul>
-<li>获取到 数据，对请求进行处理</li>
-<li>一般我们在这里写逻辑，if， else ，for</li>
-</ul>
-</li>
-<li>3：给客户端一个响应<ul>
-<li>响应就是要向客户端浏览器输出</li>
-<li>动态输出:  <code>echo</code></li>
-</ul>
-</li>
-</ul>
-<p><strong>获得时间</strong></p>
-<ul>
-<li><code>echo time();</code></li>
-<li><strong>格式化事件</strong><ul>
-<li><code>date(&quot;Y-m-d h:i:s&quot;, time())</code><ul>
-<li><code>Y</code> 四位年份</li>
-<li><code>y</code>两位年份</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>将一个字符串转换成时间戳</strong><ul>
-<li><code>echo strtoitme(&quot;&quot;)</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="上传文件（客户端向服务器端传递数据）"><a href="#上传文件（客户端向服务器端传递数据）" class="headerlink" title="上传文件（客户端向服务器端传递数据）"></a>上传文件（客户端向服务器端传递数据）</h2><p><strong>文件上传对客户端的要求</strong></p>
-<ul>
-<li>1: 必须是表单提交</li>
-<li>2：我必须有一个input 选项  它的类型是<code>file</code></li>
-<li>3：我必须是post 方式提交</li>
-<li>4：必须设置在表单上面的<code>&lt;form&gt;</code>标签里设置一个属性 <code>&lt; form   enctype=&quot;multipart/form-data&quot;;&gt;</code></li>
-</ul>
-<p><strong>文件上传在服务端怎么去获取数据</strong></p>
-<ul>
-<li>服务器去获取客户端的数据，</li>
-<li>假设客户端是以get 方式提交的数据 我就是用<code>$_GET</code></li>
-<li>假设客户端是以post 方式提交的数据，我就是用<code>$_POST</code></li>
-<li>假设客户端的数据是文件上传上传，我就是用  <code>$_FILES</code></li>
-</ul>
-<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><blockquote>
-<p>w3c的规定，要求，按照要求去做<br>规定的客户端与服务器进行通讯的数据格式</p>
-</blockquote>
-<h4 id="客户端发送给服务器的数据-请求的数据格式"><a href="#客户端发送给服务器的数据-请求的数据格式" class="headerlink" title="客户端发送给服务器的数据    (请求的数据格式)"></a>客户端发送给服务器的数据    (请求的数据格式)</h4><ul>
-<li>我假设在客户端浏览器发送一个http 请求，客户端浏览器会自动帮我封装数据格式，然后发送给服务器</li>
-<li><strong>请求的数据格式分为四部分</strong>【方式get、post】<ul>
-<li>1、请求首行</li>
-<li>2、请求头</li>
-<li>3、请求空行</li>
-<li>4、请求体<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">GET方式提交：</div><div class="line">	1：请求首行</div><div class="line">	GET /day08/mycode/02array.html HTTP/1.1</div><div class="line">	2：请求头 (请求头的名称，请求头的值)</div><div class="line">	3：请求空行 (请求空行没有什么作用)</div><div class="line">	4：请求体  （get 方式提交没有请求体）</div><div class="line"></div><div class="line">get 方式提交.</div><div class="line">GET /day08/mycode/02array.html HTTP/1.1</div><div class="line">Host	127.0.0.1</div><div class="line">Cache-Control	max-age=0</div><div class="line">Upgrade-Insecure-Requests	1</div><div class="line">User-Agent	Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36</div><div class="line"> 告诉服务器客户端浏览器接收的数据格式。</div><div class="line">Accept text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div><div class="line">//接受的编码，</div><div class="line">Accept-Encoding	gzip, deflate, sdch</div><div class="line">//接收的语言.</div><div class="line">Accept-Language	zh-CN,zh;q=0.8</div><div class="line">If-None-Match	&quot;1900000000036e-af-53c595c55c0ef&quot;</div><div class="line">If-Modified-Since	Tue, 13 Sep 2016 01:16:22 GMT</div><div class="line"></div><div class="line">/*--------------------------------------------------------*/</div><div class="line">POST方式提交：</div><div class="line">1、请求首行</div><div class="line">/day07/mycode/12poPOSTst.php HTTP/1.1</div><div class="line">Host: 127.0.0.1</div><div class="line">Content-Length: 35</div><div class="line">Cache-Control: max-age=0</div><div class="line">Origin: http://127.0.0.1</div><div class="line">Upgrade-Insecure-Requests: 1</div><div class="line">User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36</div><div class="line">★★★//如果是post 提交，一定会有这个请求头，</div><div class="line">Content-Type: application/x-www-form-urlencoded</div><div class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div><div class="line"></div><div class="line">//请求来自于那个页面.</div><div class="line">Referer: http://127.0.0.1/day07/mycode/12post.html</div><div class="line">1:作用，做广告流量统计</div><div class="line">2：防盗链</div><div class="line"></div><div class="line">Accept-Encoding: gzip, deflate</div><div class="line">Accept-Language: zh-CN,zh;q=0.8</div><div class="line"></div><div class="line">//请求体，这个请求体是发送到服务器的参数数据</div><div class="line">username=zhangsan&amp;password=zhangsan</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>get  提交与post 提交的区别  （重点掌握）</strong></p>
-<ul>
-<li><strong>get提交</strong><ul>
-<li>1：get 提交请求的参数都在地址栏当中。不安全</li>
-<li>2：get 提交没有请求体</li>
-<li>3：get 提交因为请求都在地址栏当中，所以发送给服务器的数据的大小会有限制 1kb 左右</li>
-<li>4、发送给服务器的请求头比较少，性能高，如果我不需要给服务器端发送参数数据，我就是用get</li>
-</ul>
-</li>
-<li><strong>post提交</strong><ul>
-<li>1：post 提交请求参数都在请求体当中，数据大小没有限制</li>
-<li>2：安全</li>
-<li>3：它必须有一个特殊的请求头<br><code>Content-Type:&quot;application/x-www-form-urlencoded&quot;;</code></li>
-<li>4、如果我需要给服务器发送数据，并且发送到服务器的数据还带有中文，提交的数据量大，就是用post</li>
-</ul>
-</li>
-</ul>
-<h4 id="服务器给客户端响应的数据-响应的数据格式"><a href="#服务器给客户端响应的数据-响应的数据格式" class="headerlink" title="服务器给客户端响应的数据    (响应的数据格式)"></a>服务器给客户端响应的数据    (响应的数据格式)</h4><p><strong>数据格式也分为四部分</strong></p>
-<ul>
-<li>1、响应首行</li>
-<li>2、响应头</li>
-<li>3、响应空行</li>
-<li><p>4、响应体</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"> 响应的协议版本</div><div class="line">200 响应的状态吗 代表成功</div><div class="line">404 请求的资源没有找到</div><div class="line">500 服务器内部错误</div><div class="line">HTTP/1.1 200 OK</div><div class="line"></div><div class="line">//告诉客户端浏览器服务器的时候</div><div class="line">Date: Tue, 13 Sep 2016 02:33:55 GMT</div><div class="line">//告诉客户端浏览器我服务器时候的版本</div><div class="line">Server: Apache/2.2.21 (Win32) PHP/5.3.10</div><div class="line">//最后修改时间.</div><div class="line">Last-Modified: Tue, 13 Sep 2016 01:16:22 GMT</div><div class="line">ETag: &quot;1900000000036e-af-53c595c55c0ef&quot;</div><div class="line">Accept-Ranges: bytes</div><div class="line">//响应内容长度</div><div class="line">Content-Length: 175</div><div class="line">//Content-Type：服务器给客户端浏览器的，告诉客户端浏览器，我的内容类型.</div><div class="line">Content-Type: text/html;</div></pre></td></tr></table></figure>
-</li>
-<li><p>客户端浏览器接受到这个响应头，5秒钟之后会自动跳转到百度</p>
-<ul>
-<li><code>Refresh:5;url=http://www.baidu.com</code></li>
-</ul>
-</li>
-<li><p>php 有一个函数可以先个客户端输出响应头</p>
-<ul>
-<li><code>header(&quot; Refresh:5;url=http://www.baidu.com;&quot;);</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p><strong>同步交互</strong></p>
-<ul>
-<li>我发送一个请求，服务器接受到请求，</li>
-<li>服务器要对请求进行处理，然后给客户端浏览器进行响应。</li>
-<li>在处理的过程当中，我的客户端不能做其它的操作，</li>
-<li>响应回来的页面会把之前的界面给覆盖掉.</li>
-</ul>
-<p><strong>异步交互</strong></p>
-<ul>
-<li>我发送一个请求给服务器，</li>
-<li>服务器接受到请求，服务器对请求进行处理，然后给客户端浏览器响应数据，</li>
-<li>在处理的过程当中，客户端还可以做其它的事情</li>
-<li>响应回来的数据不会覆盖原来的界面</li>
-</ul>
-<p><strong>怎么完成异步交互</strong></p>
-<ul>
-<li>我们通过js 给我们提供的一个对象叫做 <code>XMLHttpRequest</code> 对象来完成异步交互的。</li>
-<li>就是通过<code>XMLHttpRequest</code> 发送请求，通过这个对象 <code>XMLHttpRequest</code> 接受数据。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">1:创建对象</div><div class="line">	var xhr=new XMLHttpRequest();</div><div class="line">2:打开连接</div><div class="line">	xhr.open(&quot;GET/POST&quot;,&quot;URL&quot;);</div><div class="line"></div><div class="line">★post提交要在这里加一个特殊的请求头	Content-Type:application/x-www-form-urlencoded</div><div class="line"></div><div class="line">3:发送数据</div><div class="line">	xhr.send(null); get 提交数据放在路径的后面.	post提交，直接放这里面</div><div class="line">4:接收数据</div><div class="line"></div><div class="line">在xhr 对象上面绑定一个函数</div><div class="line"></div><div class="line">//服务端在响应的过程当中都会调用这个函数.</div><div class="line">xhr.onreadystatechange=function()&#123;</div><div class="line"></div><div class="line">//我们通过这个属性可以获取到三个值	2,3,4</div><div class="line">//这个2,3,4 其中这个4 代表 服务器端响应的数据已经完成.</div><div class="line">//获取服务器端状态，如果服务器返回的 状态等于4，代表服务器的数据已经响应完毕.</div><div class="line">//xhr.readyState</div><div class="line"></div><div class="line">//服务器返回的状态码，如果200 代表的是成功，如果是404 代表的响应失败</div><div class="line">//xhr.status</div><div class="line"></div><div class="line">	if(xhr.readyState==4 &amp;&amp; xhr.status==200)&#123;</div><div class="line"></div><div class="line">//我在这里开始接收数据.怎么去接受服务器端返回的数据</div><div class="line">//肯定也是通过xhr，使用这个属性来接受服务器返回的数据.</div><div class="line">		xhr.responseText;</div><div class="line">//向页面输出数据</div><div class="line">	document.querySelector(&quot;div&quot;).innerHTML=data;</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="XML-可扩展标记语言——一种数据格式"><a href="#XML-可扩展标记语言——一种数据格式" class="headerlink" title="XML(可扩展标记语言——一种数据格式)"></a>XML(可扩展标记语言——一种数据格式)</h2><p><strong>与html相比</strong></p>
-<ul>
-<li><code>html</code><ul>
-<li>html 里面的标记都是固定  （按照w3c 固定的）</li>
-<li>html 是用来做界面显示的</li>
-</ul>
-</li>
-<li><code>xml</code><ul>
-<li>xml 它是自定义的，也就是这个里面的标签不固定，我们自己去定义</li>
-<li>只要按照xml 的语法去写就行。 xml 的语法跟html 的语法类似</li>
-</ul>
-</li>
-</ul>
-<p><strong>语法</strong></p>
-<ul>
-<li>1：xml 的文档声明 声明这个是一个xml格式的文档<ul>
-<li><code>&lt;?xml version=&quot;1.0&quot;  encoding=&quot;UTF-8&quot; ?&gt;</code></li>
-</ul>
-</li>
-<li>2:有且仅有有个根元素</li>
-<li>3:可以嵌套，不可交叉（可以自定义）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;users&gt;</div><div class="line">	&lt;user&gt;</div><div class="line">		&lt;username&gt;&lt;/username&gt;</div><div class="line">		&lt;age&gt;&lt;/age&gt;</div><div class="line">	&lt;/user&gt;</div><div class="line">	&lt;user&gt;</div><div class="line">		&lt;username&gt;&lt;/username&gt;</div><div class="line">		&lt;age&gt;&lt;/age&gt;</div><div class="line">	&lt;/user&gt;</div><div class="line">&lt;/users&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>js解析xml</strong></p>
-<ul>
-<li>js 怎么去解析xml 格式的数据 （把xml 格式的数据转换成【<code>dom 对象</code>】）</li>
-<li>1：服务端(给客户端一个响应头)<ul>
-<li><code>header(&quot;Content-Type:text/xml;charset=utf-8&quot;);</code></li>
-</ul>
-</li>
-<li>2：客户端<ul>
-<li><code>var obj=xhr.responseXML;</code> 得到的是一个<code>dom 对象</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="JSON-一种数据格式"><a href="#JSON-一种数据格式" class="headerlink" title="JSON(一种数据格式)"></a>JSON(一种数据格式)</h2><blockquote>
-<p>一种比较轻量级的数据格式<br>可以使用更少的字符串代表更多的数据</p>
-<p>从性能的角度来说，交互的次数越少越好，交互的时候传递的数据越少越好</p>
-</blockquote>
-<p><strong>格式</strong></p>
-<ul>
-<li><strong>以键值对的方式来表示</strong></li>
-<li>键值对，我们都是根据key 去获取到value<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">一条记录: </div><div class="line">&#123;&quot;username&quot;:&quot;张三&quot;,&quot;age&quot;:11&#125;</div><div class="line"></div><div class="line">多条记录:</div><div class="line">[ </div><div class="line">	&#123;&quot;username&quot;:&quot;张三&quot;,&quot;age&quot;:11&#125;,</div><div class="line">	&#123;&quot;username&quot;:&quot;李四&quot;,&quot;age&quot;:11&#125;</div><div class="line">]</div><div class="line"> json 格式</div><div class="line">&#123;&quot;key&quot;:[&#123;&quot;username&quot;:&quot;张三&quot;,&quot;age&quot;:11&#125;,&#123;&quot;username&quot;:&quot;李四&quot;,&quot;age&quot;:11&#125;]&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>js解析json</strong></p>
-<ul>
-<li><p>服务端：</p>
-<ul>
-<li>返回json 格式的数据<code>{&quot;username&quot;:&quot;zhangsan&quot;,&quot;age&quot;:11}</code><ul>
-<li>(通过json数据文件，经后台处理得到json格式文件)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>客户端：</p>
-<ul>
-<li>接收数据  <code>xhr.responseText;</code>(接收到的是字符串格式)<ul>
-<li>（我们是把符合json 格式的数据转换成【javascript 的对象】，然后通过<code>对象.key</code>    获取值）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>转换的两种格式</strong></p>
-<ul>
-<li>1：通过我们的js 提供的一个函数  <code>eval</code><ul>
-<li><code>var data=&#39;{&quot;username&quot;:&quot;zhangsan&quot;,&quot;age&quot;:11}&#39;;</code></li>
-<li><code>var obj=eval(&quot;(&quot;+data+&quot;)&quot;)</code></li>
-</ul>
-</li>
-<li>2：提供JSON.parse 解析<ul>
-<li><code>var obj=JSON.parse(data);</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="ajax函数封装"><a href="#ajax函数封装" class="headerlink" title="ajax函数封装"></a>ajax函数封装</h2><p><strong>为什么封装</strong></p>
-<ul>
-<li>代码冗余</li>
-<li>多个页面进行交互</li>
-<li>1：假设在一个页面里面可以共用，我就封装成一个函数。</li>
-<li>2：假设封装的这个函数有多个参数，我就是用一个对象给它包装起来</li>
-<li>3：因为我的一个页面到时候有多个方法，我就是用对象把方法包装起来</li>
-<li>4：假设多个页面共用这个方法，我就提到一个文件里面去.</li>
-</ul>
-<p><strong>创建ajax步骤</strong></p>
-<ul>
-<li>1、创建对象</li>
-<li>2、打开链接</li>
-<li>3、发送数据</li>
-<li>4、接收数据</li>
-</ul>
-<p><strong>封装结果</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">var $ = &#123;</div><div class="line">    ajax: function (obj) &#123;</div><div class="line">        //执行前判断，返回true继续执行，false，结束执行</div><div class="line"></div><div class="line">        var flag = obj.beforeSend();</div><div class="line">        if (flag == false) &#123;</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        var xhr = new XMLHttpRequest();</div><div class="line">        if (obj.type.toLocaleLowerCase() == &quot;get&quot;) &#123;//get提交方式,不分大小写</div><div class="line">            obj.url = obj.url + &quot;?&quot; + obj.data;</div><div class="line">            obj.data = null;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        xhr.open(obj.type, obj.url);</div><div class="line"></div><div class="line">        if (obj.type.toLocaleLowerCase() == &quot;post&quot;) &#123;//post提交方式,不分大小写</div><div class="line">            xhr.setRequestHeader(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;)；</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        xhr.send(obj.data);</div><div class="line"></div><div class="line">        xhr.onreadystatechange = function () &#123;</div><div class="line">            if (xhr.readyState == 4) &#123;</div><div class="line">                if (xhr.status == 200) &#123;</div><div class="line">                    var data = xhr.responseText;</div><div class="line">                    //代码执行成功执行函数</div><div class="line">                    obj.success(data);</div><div class="line">                &#125; else &#123;</div><div class="line">                    //代码执行失败执行函数</div><div class="line">                    obj.error();</div><div class="line">                &#125;</div><div class="line">                //代码执行结束执行函数</div><div class="line">                obj.complete();</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">$.ajax(&#123;</div><div class="line">    url: &apos;url&apos;,</div><div class="line">    type: &apos;type&apos;,</div><div class="line">    data: &apos;data&apos;,</div><div class="line">    success: function (mes) &#123;</div><div class="line">        console.log(&quot;代码执行成功执行函数&quot;);</div><div class="line">    &#125;,</div><div class="line">    error: function () &#123;</div><div class="line">        console.log(&quot;代码执行失败执行函数&quot;);</div><div class="line">    &#125;,</div><div class="line">    beforeSend: function () &#123;</div><div class="line">        if (true) &#123;</div><div class="line">            return true;</div><div class="line">        &#125; else &#123;</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    complete: function () &#123;</div><div class="line">        console.log(&quot;代码执行结束执行函数&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h2 id="jQuery操作ajax"><a href="#jQuery操作ajax" class="headerlink" title="jQuery操作ajax"></a>jQuery操作ajax</h2><p><strong><code>$.ajax({})</code></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">       url:&quot;&quot;,</div><div class="line">       type:&quot;&quot;,</div><div class="line">       data:&quot;&quot;,</div><div class="line">       data:&#123;</div><div class="line">       &#125;,</div><div class="line">       timeout:,//超时时间</div><div class="line">       beforeSend:function()&#123;//请求发送之前调用，如果返回的是false，就不发送请求了，对数据进行一些校验</div><div class="line">       &#125;,</div><div class="line">       success: function()&#123;//请求成功的时候调用，我们一般在这里获取数据，解析数据，把数据放到页面上面</div><div class="line">       &#125;,</div><div class="line">       error:function()&#123;//请求失败的时候调用，我们一般是给一些用户友好的提示</div><div class="line">       &#125;,</div><div class="line">       complete：function()&#123;//请求结束的时候调用，一般我们在这里重置一些.</div><div class="line">       &#125;</div><div class="line"> &#125;);</div></pre></td></tr></table></figure></p>
-<p><strong><code>$.get()</code></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$.get(&quot;url&quot;,&#123;&#125;,function(data)&#123;</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p><strong><code>$.post()</code></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$.post(&quot;url&quot;,&#123;&#125;,function()&#123;</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p><strong><code>$(&#39;div&#39;).load()</code></strong></p>
-<ul>
-<li><code>$(&quot;div&quot;).load(&quot;url&quot;,{});</code><ul>
-<li>这个一个局部方法</li>
-<li>把得到的服务端的内容放在当前元素里面</li>
-<li>默认是get 方式提交，如果给服务器端发送参数，就是post 方式提交.</li>
-</ul>
-</li>
-</ul>
-<p><strong><code>$.getScript()</code></strong></p>
-<ul>
-<li><code>$.getScript(&quot;js/script.js&quot;);</code><ul>
-<li>远程去载入一段脚本</li>
-<li>当我的一个页面非常庞大，我们不会一次性把所有的脚本文件都加载出来。</li>
-<li>为了提供浏览器的渲染速度，需要的时候我再去获取这段脚本文件.</li>
-</ul>
-</li>
-</ul>
-<p><strong><code>$.getJSON()</code></strong></p>
-<ul>
-<li><code>$.getJSON(&quot;url&quot;,function(data){});</code><ul>
-<li>假设返回了json 格式的数据。</li>
-<li>jQuery 底层会把这个json 格式的数据转换成对象。</li>
-<li>然后我们通过getJSON 就是一个对象.</li>
-<li><strong>要求服务端返回的数据必须是json 格式的数据</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h2><p><strong>serialize()</strong></p>
-<ul>
-<li>将当前表单的输入项的内容序列化成一个可以发送到服务器端的数据格式的字符串</li>
-</ul>
-<p><strong>serializeArrar()</strong></p>
-<ul>
-<li>序列化表单输入项的内容称为 一个数组</li>
-<li>这个数组的数据也可以直接通过jQuery 发送到服务器</li>
-</ul>
-<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p><strong>1、我需要在页面引入这个库 <code>tempalte-native.js</code>（模板库）</strong><br><strong>2、创建模板</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/template&quot;&gt;&lt;/script&gt;</div><div class="line"></div><div class="line">在模板里面解析绑定的这个数据</div><div class="line"></div><div class="line">使用模板的语法</div><div class="line"></div><div class="line">&lt;%%&gt; 用来写逻辑表达式</div><div class="line">&lt;%=%&gt; 向模板里面输出字符串</div><div class="line"></div><div class="line">&lt;%for(var i=0;i&lt;array.length;i++)&#123;%&gt;</div><div class="line">    &lt;%=i%&gt;</div><div class="line">&lt;%&#125;%&gt;</div></pre></td></tr></table></figure></p>
-<p><strong>3、将数据与模板进行绑定</strong></p>
-<ul>
-<li><strong>传递的数据必须是一个对象</strong></li>
-<li><code>template(&quot;模板的id&quot;,数据对象);</code></li>
-<li>可用   JSON.parse(data)    解析后台数据</li>
-</ul>
-<p><strong>返回数据，将数据写到页面</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;code/template/js/template-native.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script type=&quot;text/template&quot; id=&quot;tempId&quot;&gt;</div><div class="line">    &lt;% for (i = 0; i &lt; rows.length; i++) &#123;%&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;&lt;%=rows[i].username%&gt;&lt;/td&gt;</div><div class="line">            &lt;td&gt;&lt;%=rows[i].age%&gt;&lt;/td&gt;</div><div class="line">            &lt;td&gt;&lt;%=rows[i].sex%&gt;&lt;/td&gt;</div><div class="line">            &lt;td&gt;&lt;%=rows[i].desc%&gt;&lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">    &lt;% &#125; %&gt;</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">var mydata = JSON.parse(data);</div><div class="line">var html = template(&quot;tempId&quot;,mydata);</div><div class="line">$(&quot;table&quot;).append(html);</div></pre></td></tr></table></figure></p>
-<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p><strong>什么情况下跨域</strong></p>
-<ul>
-<li><p>1、a 站点的html 的js 是想去访问b 站点的里面的元素</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a 站点的 html</div><div class="line">iframe src=&quot;b 站点的资源&quot;;（iframe可以调用其他页面的地址，显示在当前页面）</div></pre></td></tr></table></figure>
-</li>
-<li><p>2、跨站点</p>
-<ul>
-<li><code>http://www.baidu.com 下面的一个网页js 去访问  http://www.sohu.com 下面的一个资源</code></li>
-</ul>
-</li>
-<li>3、二级域名<ul>
-<li><code>http://www.baidu.com</code> 去访问  <code>http://music.baidu.com</code> 下面的 一个资源，也会跨域</li>
-</ul>
-</li>
-</ul>
-<p><strong>跨域是浏览器一种行为</strong></p>
-<ul>
-<li>因为现在域名不相同，所有浏览器会有一种安全行为，它禁止去访问跨域了的页面的元素.</li>
-<li>但是因为现在主域名相同，我们是可以解决这种跨域的</li>
-</ul>
-<p><strong>解决主域名相同时的跨域问题</strong></p>
-<ul>
-<li>在两个站点的js 里面加<code>document.domian=&quot;主域名.cn&quot;;</code>声明主域名</li>
-</ul>
-<p><strong>Ajax跨域</strong></p>
-<ul>
-<li>通过<code>xmlHttpRequest</code>这个对象去发送请求，就会存在跨域问题</li>
-<li>域名都不相同，浏览器会觉得会有安全问题</li>
-<li><strong>解决跨域</strong><ul>
-<li>使用jQuery 提供的<code>dataType:&quot;jsonp&quot;;</code>    属性</li>
-</ul>
-</li>
-</ul>
-<p><strong>jsonp工作原理</strong></p>
-<ul>
-<li>我通过script 标签去发送请求，发送请求跟这个地址没有任何关系跟服务器返回的 这个内容有关系</li>
-<li>script 调用<code>.php</code>的地址，php要给客户端一个响应头<ul>
-<li><code>header(&quot;Content-Type:text/javascript;charset=utf-8&quot;);</code></li>
-</ul>
-</li>
-<li>在js里使用script 标签去发送请求，因为这个标签没有跨域限制。<ul>
-<li>使用script 标签去发送请求。然后通过callback这样的一个回调函数把服务器端的数据获取到</li>
-<li>通过script 标签把一个callback函数名传递到服务器，服务器得到这个函数名</li>
-<li>把服务器要传递的数据跟这个callback函数名进行组拼，组拼成方法调用的形式。</li>
-<li>发这个数据发送到客户端浏览器，客户端浏览器得到这个内容</li>
-<li>就以javascript 的方式去解析服务器端返回的数据</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="/2016/02/21/Ajax/#comment" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
  
 <nav id="pagination">
   
-    <a href="/page/4/" class="alignleft prev">上一页</a>
+    <a href="/page/4/" class="alignleft prev">Prev</a>
   
   
-    <a href="/page/6/" class="alignright next">下一页</a>
+    <a href="/page/6/" class="alignright next">Next</a>
   
   <div class="clearfix"></div>
 </nav>
@@ -2934,8 +2914,8 @@
       <aside id="sidebar" class="alignright">
   
 <div class="widget tag">
-  <h3 class="title" id="categories">分类</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MV/">MV*</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">3</span></li></ul> 
+  <h3 class="title" id="categories">Categories</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MV/">MV*</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">3</span></li></ul> 
 </div>
  
 
@@ -2950,7 +2930,7 @@
 
 
   <div class="widget tag">
-  <h3 class="title">日历云</h3>
+  <h3 class="title">Calendar</h3>
   <div id="calendar"></div>
 </div>
 
@@ -2983,9 +2963,9 @@
 
   
 <div class="widget tagcloud">
-  <h3 class="title">标签云</h3>
+  <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 15px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/window-document/" style="font-size: 10px;">window document</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/布局方式/" style="font-size: 10px;">布局方式</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/状态码/" style="font-size: 10px;">状态码</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 15px;">继承</a> <a href="/tags/进制/" style="font-size: 10px;">进制</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/预解析/" style="font-size: 10px;">预解析</a>
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 15px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/window-document/" style="font-size: 10px;">window document</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/布局方式/" style="font-size: 10px;">布局方式</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/模块化/" style="font-size: 15px;">模块化</a> <a href="/tags/状态码/" style="font-size: 10px;">状态码</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 15px;">继承</a> <a href="/tags/进制/" style="font-size: 10px;">进制</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/预解析/" style="font-size: 10px;">预解析</a>
   </div>
 </div>
 
@@ -2993,7 +2973,7 @@
   
   <div class="widget tag">
     <h3 class="title">归档</h3>
-	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">43</span></li></ul>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">45</span></li></ul>
   </div>
 
 </aside>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Page 4 | Hexo</title>
+  <title>第 4 页 | Hexo</title>
   <meta name="author" content="John Doe">
   
   
@@ -53,20 +53,20 @@
 	<div class='header-nav-content inner'>
 		<div id="main-nav" class="alignleft">
 		    		
-		    		  <a href="/"><i class="fa fa-home"></i>Home</a>
+		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
 		    		
-		    		  <a href="/archives"><i class="fa fa-archive"></i>Archives</a>
+		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
 		    		
-		    		  <a href=""><i class="fa fa-book"></i>Books</a>
+		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
 		    		
-		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>About</a>
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>我的简历</a>
 		    		
 		</div>
 		<div id="sub-nav" class="alignright">
 		    
-		      <a href=""><i class="fa fa-rss"></i>Rss</a>
+		      <a href=""><i class="fa fa-rss"></i>订阅</a>
 		    
-		      <a href=""><i class="fa fa-question-circle"></i>Customization</a>
+		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
 		    
 		</div>
 	</div>
@@ -76,6 +76,73 @@
   
     <div id="content" class="inner">
       <div id="main-col" class="alignleft"><div id="wrapper">
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-07-17T00:05:05.000Z"><a href="/2016/07/17/静态成员和实例成员/">2016-07-17</a></time>
+        
+  
+    <h1 class="title"><a href="/2016/07/17/静态成员和实例成员/">静态成员和实例成员</a></h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        
+    </div>
+
+        <ul>
+<li><p>实例成员</p>
+<ul>
+<li>添加给实例的属性或方法，就叫实例成员，可由实例访问</li>
+<li>类(构造函数)原型上的属性与方法，本意上是提供给实例使用的，所以这里面的属性与方法也可以认为是实例成员</li>
+</ul>
+</li>
+<li><p>静态成员(类成员)</p>
+<ul>
+<li>添加给构造函数(类)自己的属性或方法，就叫 静态成员(类成员)。可由构造函数(类)自己访问</li>
+<li>特点：<ul>
+<li>不需要创建实例就可以通过类调用</li>
+</ul>
+</li>
+<li>什么时候使用静态成员：<ul>
+<li>如果一些属性和类的关联性比较大，可以考虑作为静态属性</li>
+<li>如果一些方法具有通用性可以考虑作为静态方法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>一些问题</strong></p>
+<p>1、实例可以直接访问静态成员吗？  不可以<br>2、构造函数(类)可以直接访问实例成员吗？ 不可以<br>3、原型对象里面的成员，原型对象自己可以访问吗？ 可以<br>4、原型对象里面的成员，构造函数(类)可以访问吗？ 不可以<br>5、原型对象里面的成员，实例可以访问吗？ 可以</p>
+</blockquote>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="/2016/07/17/静态成员和实例成员/#comment" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
     <article class="post">
   
   <div class="post-content">
@@ -1812,195 +1879,13 @@
 
 
 
-
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-05-13T13:58:43.000Z"><a href="/2016/05/13/Nodejs/">2016-05-13</a></time>
-        
-  
-    <h1 class="title"><a href="/2016/05/13/Nodejs/">Node.js基础</a></h1>
-  
-
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前后端都干什么？"><span class="toc-text">前后端都干什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模块系统"><span class="toc-text">模块系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#i5ting-toc把makedown在浏览器显示"><span class="toc-text">i5ting_toc把makedown在浏览器显示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BrowserSync代码编写在浏览器同步显示"><span class="toc-text">BrowserSync代码编写在浏览器同步显示</span></a></li></ol>
-    </div>
-
-        <blockquote>
-<p>Node.js是一种服务器端框架，所以它的一个主要工作就是处理浏览器请求</p>
-</blockquote>
-<p>[TOC]</p>
-<ul>
-<li>1、非阻塞或异步I/O<blockquote>
-<p><strong>阻塞I / O</strong></p>
-<p>传统的I/O系统中，当前请求只有当先前请求的响应（HTML页面）已到达才会发出。<br>服务器阻塞其他请求是为了处理当前的请求，而这会导致浏览器的等待</p>
-<p><strong>非阻塞I/O</strong></p>
-<p>如果一个请求需要花费较长时间，那么Node.js会发送请求到事件循环（event loop）中，并继续在调用栈（call stack）中处理下一个请求。<br>一旦未决请求完成处理，它就会告诉Node.js，并将响应渲染在浏览器上</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li>2、原型</li>
-<li>3、模块<ul>
-<li>核心模块<ul>
-<li>这些模块是用Node.js库预编译过的。</li>
-<li>核心模块的目的是提供开发者经常发生和重复的代码段，</li>
-<li>这些代码段如果不可用的话，会导致开发者陷入不得不一次又一次地写相同代码的处境。</li>
-<li>一些常见的核心模块是HTTP，URL，EVENTS，FILE SYSTEM，等等</li>
-</ul>
-</li>
-<li>用户定义模块<ul>
-<li>用户定义模块是开发人员在应用程序内创建用于特定目的的模块。</li>
-<li>当核心模块不能满足期望功能的时候就需要用户定义模块</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>4、回调函数</p>
-<ul>
-<li></li>
-</ul>
-</li>
-<li><p>单线程</p>
-</li>
-<li>跨平台</li>
-<li>适合高并发场景</li>
-<li>不适合CPU密集型场景</li>
-<li>轻量</li>
-</ul>
-<h4 id="前后端都干什么？"><a href="#前后端都干什么？" class="headerlink" title="前后端都干什么？"></a>前后端都干什么？</h4><ul>
-<li>前端：<ul>
-<li>写静态页面  html、css、js</li>
-</ul>
-</li>
-<li>后端：<ul>
-<li>操作服务器端</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><code>__dirname</code><ul>
-<li>当前文件所在的文件夹的路径</li>
-</ul>
-</li>
-<li><code>__filename</code><ul>
-<li>当前文件所在的文件夹的路径+文件名</li>
-</ul>
-</li>
-<li><p>console</p>
-<ul>
-<li><p><code>assert(判断语句，&quot;断言语句&quot;)</code></p>
-<ul>
-<li>断言，用来测试</li>
-</ul>
-</li>
-<li><p><code>time(&#39;timer&#39;)</code></p>
-</li>
-<li><code>timeEnd(&#39;timer&#39;)</code><ul>
-<li>测试代码执行时间</li>
-<li>成对出现</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>一个js就成为nodejs的一个模块</p>
-<ul>
-<li><code>require(&quot;依赖的文件路径&quot;);</code></li>
-<li><code>module.exports = xxx</code></li>
-<li><code>module.exports.xx = xxx</code></li>
-<li><code>exports.xx = xxx</code></li>
-</ul>
-</li>
-<li><p>模块作用域</p>
-<ul>
-<li>一个模块内的变量、函数、对象都属于这个模块，对外是封闭的</li>
-</ul>
-</li>
-</ul>
-<h4 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h4><ul>
-<li><p>模块种类</p>
-<ul>
-<li><p>核心模块</p>
-<ul>
-<li>fs file system</li>
-<li>http</li>
-<li>os</li>
-<li>path</li>
-<li>querystring</li>
-<li>url</li>
-</ul>
-</li>
-<li><p>文件模块</p>
-</li>
-</ul>
-</li>
-<li><p><code>require(&#39;路径&#39;)</code></p>
-<ul>
-<li>可以不写后缀</li>
-<li>可以解析<code>js、node、json</code><ul>
-<li>优先补全<code>.js</code></li>
-<li>后补全<code>.json</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="i5ting-toc把makedown在浏览器显示"><a href="#i5ting-toc把makedown在浏览器显示" class="headerlink" title="i5ting_toc把makedown在浏览器显示"></a>i5ting_toc把makedown在浏览器显示</h4><ul>
-<li><code>Instell</code><ul>
-<li><code>npm install -g i5ting_toc</code></li>
-</ul>
-</li>
-<li><strong>执行</strong>（在当前文件夹下）<ul>
-<li><code>i5ting_toc -f xxxxxx.md -o</code></li>
-</ul>
-</li>
-</ul>
-<h4 id="BrowserSync代码编写在浏览器同步显示"><a href="#BrowserSync代码编写在浏览器同步显示" class="headerlink" title="BrowserSync代码编写在浏览器同步显示"></a>BrowserSync代码编写在浏览器同步显示</h4><ul>
-<li><code>Instell</code><ul>
-<li><code>npm install -g browser-sync</code></li>
-</ul>
-</li>
-<li><strong>执行</strong>（在当前文件夹下）<ul>
-<li><code>browser-sync start --server --files &quot;**/*.css, **/*.html&quot;</code></li>
-</ul>
-</li>
-</ul>
-<hr>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="/2016/05/13/Nodejs/#comment" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
  
 <nav id="pagination">
   
-    <a href="/page/3/" class="alignleft prev">Prev</a>
+    <a href="/page/3/" class="alignleft prev">上一页</a>
   
   
-    <a href="/page/5/" class="alignright next">Next</a>
+    <a href="/page/5/" class="alignright next">下一页</a>
   
   <div class="clearfix"></div>
 </nav>
@@ -2008,8 +1893,8 @@
       <aside id="sidebar" class="alignright">
   
 <div class="widget tag">
-  <h3 class="title" id="categories">Categories</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MV/">MV*</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">3</span></li></ul> 
+  <h3 class="title" id="categories">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MV/">MV*</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">3</span></li></ul> 
 </div>
  
 
@@ -2024,7 +1909,7 @@
 
 
   <div class="widget tag">
-  <h3 class="title">Calendar</h3>
+  <h3 class="title">日历云</h3>
   <div id="calendar"></div>
 </div>
 
@@ -2057,7 +1942,7 @@
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Tag Cloud</h3>
+  <h3 class="title">标签云</h3>
   <div class="entry">
     <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 15px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/window-document/" style="font-size: 10px;">window document</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/布局方式/" style="font-size: 10px;">布局方式</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/模块化/" style="font-size: 15px;">模块化</a> <a href="/tags/状态码/" style="font-size: 10px;">状态码</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 15px;">继承</a> <a href="/tags/进制/" style="font-size: 10px;">进制</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/预解析/" style="font-size: 10px;">预解析</a>
   </div>
@@ -2067,7 +1952,7 @@
   
   <div class="widget tag">
     <h3 class="title">归档</h3>
-	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">45</span></li></ul>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">45</span></li></ul>
   </div>
 
 </aside>

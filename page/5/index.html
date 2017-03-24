@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Page 5 | Hexo</title>
+  <title>第 5 页 | Hexo</title>
   <meta name="author" content="John Doe">
   
   
@@ -53,20 +53,20 @@
 	<div class='header-nav-content inner'>
 		<div id="main-nav" class="alignleft">
 		    		
-		    		  <a href="/"><i class="fa fa-home"></i>Home</a>
+		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
 		    		
-		    		  <a href="/archives"><i class="fa fa-archive"></i>Archives</a>
+		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
 		    		
-		    		  <a href=""><i class="fa fa-book"></i>Books</a>
+		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
 		    		
-		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>About</a>
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>我的简历</a>
 		    		
 		</div>
 		<div id="sub-nav" class="alignright">
 		    
-		      <a href=""><i class="fa fa-rss"></i>Rss</a>
+		      <a href=""><i class="fa fa-rss"></i>订阅</a>
 		    
-		      <a href=""><i class="fa fa-question-circle"></i>Customization</a>
+		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
 		    
 		</div>
 	</div>
@@ -76,6 +76,188 @@
   
     <div id="content" class="inner">
       <div id="main-col" class="alignleft"><div id="wrapper">
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-05-13T13:58:43.000Z"><a href="/2016/05/13/Nodejs/">2016-05-13</a></time>
+        
+  
+    <h1 class="title"><a href="/2016/05/13/Nodejs/">Node.js基础</a></h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前后端都干什么？"><span class="toc-text">前后端都干什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模块系统"><span class="toc-text">模块系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#i5ting-toc把makedown在浏览器显示"><span class="toc-text">i5ting_toc把makedown在浏览器显示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BrowserSync代码编写在浏览器同步显示"><span class="toc-text">BrowserSync代码编写在浏览器同步显示</span></a></li></ol>
+    </div>
+
+        <blockquote>
+<p>Node.js是一种服务器端框架，所以它的一个主要工作就是处理浏览器请求</p>
+</blockquote>
+<p>[TOC]</p>
+<ul>
+<li>1、非阻塞或异步I/O<blockquote>
+<p><strong>阻塞I / O</strong></p>
+<p>传统的I/O系统中，当前请求只有当先前请求的响应（HTML页面）已到达才会发出。<br>服务器阻塞其他请求是为了处理当前的请求，而这会导致浏览器的等待</p>
+<p><strong>非阻塞I/O</strong></p>
+<p>如果一个请求需要花费较长时间，那么Node.js会发送请求到事件循环（event loop）中，并继续在调用栈（call stack）中处理下一个请求。<br>一旦未决请求完成处理，它就会告诉Node.js，并将响应渲染在浏览器上</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>2、原型</li>
+<li>3、模块<ul>
+<li>核心模块<ul>
+<li>这些模块是用Node.js库预编译过的。</li>
+<li>核心模块的目的是提供开发者经常发生和重复的代码段，</li>
+<li>这些代码段如果不可用的话，会导致开发者陷入不得不一次又一次地写相同代码的处境。</li>
+<li>一些常见的核心模块是HTTP，URL，EVENTS，FILE SYSTEM，等等</li>
+</ul>
+</li>
+<li>用户定义模块<ul>
+<li>用户定义模块是开发人员在应用程序内创建用于特定目的的模块。</li>
+<li>当核心模块不能满足期望功能的时候就需要用户定义模块</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>4、回调函数</p>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><p>单线程</p>
+</li>
+<li>跨平台</li>
+<li>适合高并发场景</li>
+<li>不适合CPU密集型场景</li>
+<li>轻量</li>
+</ul>
+<h4 id="前后端都干什么？"><a href="#前后端都干什么？" class="headerlink" title="前后端都干什么？"></a>前后端都干什么？</h4><ul>
+<li>前端：<ul>
+<li>写静态页面  html、css、js</li>
+</ul>
+</li>
+<li>后端：<ul>
+<li>操作服务器端</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><code>__dirname</code><ul>
+<li>当前文件所在的文件夹的路径</li>
+</ul>
+</li>
+<li><code>__filename</code><ul>
+<li>当前文件所在的文件夹的路径+文件名</li>
+</ul>
+</li>
+<li><p>console</p>
+<ul>
+<li><p><code>assert(判断语句，&quot;断言语句&quot;)</code></p>
+<ul>
+<li>断言，用来测试</li>
+</ul>
+</li>
+<li><p><code>time(&#39;timer&#39;)</code></p>
+</li>
+<li><code>timeEnd(&#39;timer&#39;)</code><ul>
+<li>测试代码执行时间</li>
+<li>成对出现</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>一个js就成为nodejs的一个模块</p>
+<ul>
+<li><code>require(&quot;依赖的文件路径&quot;);</code></li>
+<li><code>module.exports = xxx</code></li>
+<li><code>module.exports.xx = xxx</code></li>
+<li><code>exports.xx = xxx</code></li>
+</ul>
+</li>
+<li><p>模块作用域</p>
+<ul>
+<li>一个模块内的变量、函数、对象都属于这个模块，对外是封闭的</li>
+</ul>
+</li>
+</ul>
+<h4 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h4><ul>
+<li><p>模块种类</p>
+<ul>
+<li><p>核心模块</p>
+<ul>
+<li>fs file system</li>
+<li>http</li>
+<li>os</li>
+<li>path</li>
+<li>querystring</li>
+<li>url</li>
+</ul>
+</li>
+<li><p>文件模块</p>
+</li>
+</ul>
+</li>
+<li><p><code>require(&#39;路径&#39;)</code></p>
+<ul>
+<li>可以不写后缀</li>
+<li>可以解析<code>js、node、json</code><ul>
+<li>优先补全<code>.js</code></li>
+<li>后补全<code>.json</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="i5ting-toc把makedown在浏览器显示"><a href="#i5ting-toc把makedown在浏览器显示" class="headerlink" title="i5ting_toc把makedown在浏览器显示"></a>i5ting_toc把makedown在浏览器显示</h4><ul>
+<li><code>Instell</code><ul>
+<li><code>npm install -g i5ting_toc</code></li>
+</ul>
+</li>
+<li><strong>执行</strong>（在当前文件夹下）<ul>
+<li><code>i5ting_toc -f xxxxxx.md -o</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="BrowserSync代码编写在浏览器同步显示"><a href="#BrowserSync代码编写在浏览器同步显示" class="headerlink" title="BrowserSync代码编写在浏览器同步显示"></a>BrowserSync代码编写在浏览器同步显示</h4><ul>
+<li><code>Instell</code><ul>
+<li><code>npm install -g browser-sync</code></li>
+</ul>
+</li>
+<li><strong>执行</strong>（在当前文件夹下）<ul>
+<li><code>browser-sync start --server --files &quot;**/*.css, **/*.html&quot;</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="/2016/05/13/Nodejs/#comment" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
     <article class="post">
   
   <div class="post-content">
@@ -2700,213 +2882,13 @@
 
 
 
-
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-03-01T12:51:46.000Z"><a href="/2016/03/01/BOM/">2016-03-01</a></time>
-        
-  
-    <h1 class="title"><a href="/2016/03/01/BOM/">BOM</a></h1>
-  
-
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#offset系列："><span class="toc-text">offset系列：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#匀速动画封装"><span class="toc-text">匀速动画封装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scroll系列："><span class="toc-text">scroll系列：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#client系列："><span class="toc-text">client系列：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件对象："><span class="toc-text">事件对象：</span></a></li></ol>
-    </div>
-
-        <p>[TOC]</p>
-<blockquote>
-<p>BOM（Browser Object Model）<br>浏览器对象模型，提供了一套操作浏览器功能的工具（接口）。</p>
-</blockquote>
-<p><strong>Window对象：</strong></p>
-<ul>
-<li>window对象是一个全局对象，也可以说是JavaScript中的顶级对象，</li>
-<li>所有定义在全局作用域中的变量、函数都会变成window对象的属性和方法</li>
-<li>window对象下的属性和方法调用的时候可以省略window</li>
-</ul>
-<p><strong>入口函数：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">window.onload() &#123;</div><div class="line">	代码块；</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<ul>
-<li>写在script标签里面，会在页面和所有的图片和文件加载完之后执行</li>
-<li>如果有图片加载，那么代码一定要写到window.onload里面，否则会出现图片没有加载完成，获取到的宽度和高度不对的情况。</li>
-<li><code>注意：</code>如果同一个页面中有多个window.onload，会出现覆盖现象，后面的会把前面的覆盖。</li>
-</ul>
-<p><strong>定时器：</strong></p>
-<ul>
-<li><strong>延时定时器：</strong><ul>
-<li><code>setTimeOut(callback, time);</code><ul>
-<li>参数1：重复执行的函数</li>
-<li>参数2：每次延迟的毫秒数</li>
-<li>返回值：定时器的id，用于清除</li>
-<li>清除延时定时器：<code>clearTimeOut(timerId)</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>间歇定时器：</strong><ul>
-<li><code>setInterval(function, delay);</code><ul>
-<li>参数1：重复执行的函数</li>
-<li>参数2：每次延迟的毫秒数</li>
-<li>返回值：定时器的id，用于清除</li>
-<li>清除延时定时器：<code>clearInterval(intervalID)</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="offset系列："><a href="#offset系列：" class="headerlink" title="offset系列："></a>offset系列：</h3><blockquote>
-<p>盒子有多高、多宽，就有多大</p>
-</blockquote>
-<ul>
-<li>一、<code>offsetHeight与offsetWidth</code><ul>
-<li>1.获取的是元素真实的高度和宽度<ul>
-<li><code>【offsetHeight = height + paddnig + border】</code></li>
-<li><code>【offsetWidth = width + padding + border】</code></li>
-</ul>
-</li>
-<li>2.获取到的是数值类型，方便计算</li>
-<li>3.offsetHeight与offsetWidth是只读属性，不能设置</li>
-<li><code>style.height与style.width</code><ul>
-<li>1.只能获取行内样式</li>
-<li>2.获取到的是字符串类型，需要转换</li>
-<li>2.获取到的是字符串类型，需要转换</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>二、<code>offsetParent</code><ul>
-<li>是离当前元素最近的定位元素(absolute、relative)的距离，如果没有，那就找body</li>
-<li>parentNode始终是父元素</li>
-</ul>
-</li>
-<li>三、<code>offsetLeft与offsetTop</code><ul>
-<li><code>offsetLeft:</code>自身左侧到offsetParent左侧的距离：<code>left + margin-left</code></li>
-<li><code>offsetTop:</code>自身顶部到offsetParent顶部的距离 :  <code>top + margin-top</code><ul>
-<li>1.元素自身与offsetParent真实的距离</li>
-<li>2.获取到的是数值类型，方便计算</li>
-<li>3.只读属性，只能获取，不能设置</li>
-</ul>
-</li>
-<li><code>style.left与style.top</code><ul>
-<li>1.只能获取行内样式</li>
-<li>2.获取到的是字符串，需要转换</li>
-<li>3.可以获取，也可以设置</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="匀速动画封装"><a href="#匀速动画封装" class="headerlink" title="匀速动画封装"></a>匀速动画封装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">    *</div><div class="line">    * @param obj</div><div class="line">    * @param target</div><div class="line">    */</div><div class="line">   function animate(obj, target) &#123;</div><div class="line">       if (obj.timer) &#123;//解决越点越快问题</div><div class="line">           clearInterval(obj.timer);</div><div class="line">       &#125;</div><div class="line">       obj.timer = setInterval(function () &#123;//设置定时</div><div class="line">           var leader = obj.offsetLeft;//获取元素距离左侧的距离</div><div class="line">           var step = 10;//设置一部走多远</div><div class="line">           if (leader &gt; target) &#123;//如果实际距离大于设置的目标点时，设置步数为负</div><div class="line">               step = -step;</div><div class="line">           &#125;</div><div class="line">           if (Math.abs(leader - target) &gt; Math.abs(step)) &#123;//当实际距离与目标点之差大于一步时，</div><div class="line">               leader = leader + step;//向目标距离移动一步</div><div class="line">               obj.style.left = leader + &quot;px&quot;;</div><div class="line">           &#125; else &#123;//当实际距离与目标距离之差小于一步时，</div><div class="line">               clearInterval(obj.timer);</div><div class="line">               obj.style.left = target + &quot;px&quot;;//直接移动到目标点</div><div class="line">           &#125;</div><div class="line">       &#125;, 15)</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
-<p><strong>匀速动画公式</strong><br>| leader =|leader +|step|<br>|—|—|—|<br>|[要移动元素下一个要到达的位置]|[要移动元素的当前位置]|[一步要移动的距离]|</p>
-<ul>
-<li><code>leader = 移动元素.offsetLeft;</code>（要移动元素离开始移动前的距离）</li>
-<li><code>step = 一步要移动的距离</code></li>
-</ul>
-<p><strong>缓动动画公式</strong></p>
-<ul>
-<li>缓动动画公式：(首先要获得leader的值)</li>
-<li><code>leader = 移动元素.offsetLeft;</code>（要移动元素离开始移动前的距离）</li>
-<li><code>var step = (target – leader) /10;</code></li>
-<li><code>leader = leader + step;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 缓动动画多个属性</div><div class="line"> * @param obj</div><div class="line"> * @param json</div><div class="line"> * @param fn</div><div class="line"> */</div><div class="line">function animate(obj, json, fn) &#123;</div><div class="line"></div><div class="line">    if (obj.timer) &#123;</div><div class="line">        clearInterval(obj.timer);</div><div class="line">    &#125;</div><div class="line">    obj.timer = setInterval(function () &#123;</div><div class="line"></div><div class="line">        //假设所有的动画都执行完了</div><div class="line">        var flag = true;</div><div class="line"></div><div class="line">        for (var k in json) &#123;</div><div class="line">            var leader = getStyle(obj, k);</div><div class="line">            leader = parseInt(leader) || 0;</div><div class="line">            var step = (json[k] - leader) / 10;</div><div class="line">            step = step &gt; 0 ? Math.ceil(step) : Math.floor(step);</div><div class="line"></div><div class="line">            leader = leader + step;</div><div class="line">            obj.style[k] = leader + &quot;px&quot;;</div><div class="line"></div><div class="line">            if (leader != json[k]) &#123;</div><div class="line">                //还没有到达终点</div><div class="line">                flag = false;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        //如果这个时候，flag还是true，说明真的是都执行完动画</div><div class="line">        if (flag) &#123;</div><div class="line">            clearInterval(obj.timer);</div><div class="line"></div><div class="line">            if (fn) &#123;</div><div class="line">                fn();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;, 15);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//获取任意对象的任意样式</div><div class="line">function getStyle(obj, attr) &#123;</div><div class="line">    //能力检测</div><div class="line">    //如果支持getComputedStyle，就可以直接</div><div class="line">    if (window.getComputedStyle) &#123;</div><div class="line">        return window.getComputedStyle(obj, null)[attr];</div><div class="line">    &#125; else &#123;</div><div class="line">        return obj.currentStyle[attr];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="scroll系列："><a href="#scroll系列：" class="headerlink" title="scroll系列："></a>scroll系列：</h3><blockquote>
-<p>内容有多高，就有多大</p>
-</blockquote>
-<ul>
-<li>一、<code>scrollWidth与scrollHegiht</code><ul>
-<li><code>【scrollHeight = height + padding】</code></li>
-<li><code>【scrollWidth = width + padding】</code></li>
-<li><code>内容的宽度和高度</code></li>
-<li>如果内部内容没有超出父盒子，那么<code>scrollHeigth(scrollWidth)</code>与<code>offsetHeight(offsetWidth)</code>相同</li>
-</ul>
-</li>
-<li>二、<code>scrollTop与scrollLeft</code><ul>
-<li>内部内容被卷去的（头部/左侧）的高度</li>
-</ul>
-</li>
-<li>三、<code>onscroll事件:</code><ul>
-<li>每滚动一像素都会触发该事件</li>
-<li><code>window.onscroll</code></li>
-<li>页面滚动都是给window注册onscroll事件的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">     * scroll函数</div><div class="line">     * @returns &#123;&#123;&#125;&#125;</div><div class="line">*/</div><div class="line">function scroll() &#123;</div><div class="line">       return &#123;</div><div class="line">          top : window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,</div><div class="line">          left : window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0</div><div class="line"></div><div class="line">       &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="client系列："><a href="#client系列：" class="headerlink" title="client系列："></a>client系列：</h3><blockquote>
-<p>盒子内显示内容的区域有多大就有多大</p>
-</blockquote>
-<ul>
-<li>一、<code>clientWidth与clientHeight</code><ul>
-<li><code>【clientHeight = height + padding】</code></li>
-<li><code>【clientWidth = width + padding】</code></li>
-<li>盒子可视区域（窗口）高度和宽度【不包括超出的部分】</li>
-</ul>
-</li>
-<li>二、如果内容没有超出盒子范围：clientWidth与scrollWidth相同</li>
-<li>onresize:会在窗口被调整大小的时候发生    【<code>window.onresize</code>】</li>
-</ul>
-<p><strong>获取可视区域的宽高</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">* 获取可视区域宽高</div><div class="line">* @returns &#123;&#123;width: (Number|number), height: (Number|number)&#125;&#125;</div><div class="line">*/</div><div class="line"><span class="comment">// onresize 当浏览器窗口改变时的事件</span></div><div class="line"><span class="built_in">window</span>.onresize = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(client().width + <span class="string">"-------"</span> +client().height);</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">client</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            <span class="attr">width</span>: <span class="built_in">window</span>.innerWidth || <span class="built_in">document</span>.documentElement.clientWidth || <span class="built_in">document</span>.body.clientWidth || <span class="number">0</span>,</div><div class="line">            <span class="attr">height</span>: <span class="built_in">window</span>.innerHeight || <span class="built_in">document</span>.documentElement.clientHeight || <span class="built_in">document</span>.body.clientHeight || <span class="number">0</span></div><div class="line">        &#125;;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<h3 id="事件对象："><a href="#事件对象：" class="headerlink" title="事件对象："></a>事件对象：</h3><blockquote>
-<p>在执行事件的时候，需要一些和事件相关的数据<br>[每一个事件都有一个对象]<br>在触发事件的时候，会产生一个事件对象event，这个对象中    包含了与事件相关的信息</p>
-</blockquote>
-<ul>
-<li>常用属性：<ul>
-<li><code>screenX与screenY</code><ul>
-<li>光标相对于屏幕左上角的水平位置与垂直位置</li>
-</ul>
-</li>
-<li><code>clientX与clientY</code><ul>
-<li>光标相对于页面可视区左上角的水平位置和垂直位置</li>
-</ul>
-</li>
-<li><code>pageX与pageY</code><ul>
-<li>光标相对于网页（文档）左上角的水平位置与垂直位置（<code>推荐使用</code>）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>获取事件对象</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function getEvent(event) &#123;</div><div class="line">	return event || window.event;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>获取pageX与pageY</strong></p>
-<ul>
-<li>在IE678中，没有pageX与pageY属性，但是我们可以通过scrollTop + clientY的方式进行计算来获得<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//获取事件对象的pageX</div><div class="line">function getPageX(event) &#123;</div><div class="line">	return event.pageX || event.clientX + document.documentElement.scrollLeft;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//获取事件对象pageY</div><div class="line">function getPageY(event) &#123;</div><div class="line">	return event.pageY || event.clientY + document.documentElement.scrollTop;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>引用类型比较的是地址（console.log([] == [])    返回false）</strong></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="/2016/03/01/BOM/#comment" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
  
 <nav id="pagination">
   
-    <a href="/page/4/" class="alignleft prev">Prev</a>
+    <a href="/page/4/" class="alignleft prev">上一页</a>
   
   
-    <a href="/page/6/" class="alignright next">Next</a>
+    <a href="/page/6/" class="alignright next">下一页</a>
   
   <div class="clearfix"></div>
 </nav>
@@ -2914,8 +2896,8 @@
       <aside id="sidebar" class="alignright">
   
 <div class="widget tag">
-  <h3 class="title" id="categories">Categories</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MV/">MV*</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">3</span></li></ul> 
+  <h3 class="title" id="categories">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MV/">MV*</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">3</span></li></ul> 
 </div>
  
 
@@ -2930,7 +2912,7 @@
 
 
   <div class="widget tag">
-  <h3 class="title">Calendar</h3>
+  <h3 class="title">日历云</h3>
   <div id="calendar"></div>
 </div>
 
@@ -2963,7 +2945,7 @@
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Tag Cloud</h3>
+  <h3 class="title">标签云</h3>
   <div class="entry">
     <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 15px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/window-document/" style="font-size: 10px;">window document</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/布局方式/" style="font-size: 10px;">布局方式</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/模块化/" style="font-size: 15px;">模块化</a> <a href="/tags/状态码/" style="font-size: 10px;">状态码</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 15px;">继承</a> <a href="/tags/进制/" style="font-size: 10px;">进制</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/预解析/" style="font-size: 10px;">预解析</a>
   </div>
@@ -2973,7 +2955,7 @@
   
   <div class="widget tag">
     <h3 class="title">归档</h3>
-	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">45</span></li></ul>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">45</span></li></ul>
   </div>
 
 </aside>

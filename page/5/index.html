@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>第 5 页 | Hexo</title>
+  <title>Page 5 | Hexo</title>
   <meta name="author" content="John Doe">
   
   
@@ -53,20 +53,20 @@
 	<div class='header-nav-content inner'>
 		<div id="main-nav" class="alignleft">
 		    		
-		    		  <a href="/"><i class="fa fa-home"></i>首页</a>
+		    		  <a href="/"><i class="fa fa-home"></i>Home</a>
 		    		
-		    		  <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+		    		  <a href="/archives"><i class="fa fa-archive"></i>Archives</a>
 		    		
-		    		  <a href=""><i class="fa fa-book"></i>电子书</a>
+		    		  <a href=""><i class="fa fa-book"></i>Books</a>
 		    		
-		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>我的简历</a>
+		    		  <a href="http://cyf0611.pw"><i class="fa fa-user"></i>About</a>
 		    		
 		</div>
 		<div id="sub-nav" class="alignright">
 		    
-		      <a href=""><i class="fa fa-rss"></i>订阅</a>
+		      <a href=""><i class="fa fa-rss"></i>Rss</a>
 		    
-		      <a href=""><i class="fa fa-question-circle"></i>留言</a>
+		      <a href=""><i class="fa fa-question-circle"></i>Customization</a>
 		    
 		</div>
 	</div>
@@ -76,6 +76,113 @@
   
     <div id="content" class="inner">
       <div id="main-col" class="alignleft"><div id="wrapper">
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+        <div class="icon"></div>
+        
+        <time datetime="2016-05-20T10:58:19.000Z"><a href="/2016/05/20/Object.prototype内的方法/">2016-05-20</a></time>
+        
+  
+    <h1 class="title"><a href="/2016/05/20/Object.prototype内的方法/">Object.prototype内的方法</a></h1>
+  
+
+    </header>
+
+    <div class="entry">
+      
+        
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#hasOwnproperty-是否有自己的特性"><span class="toc-text">hasOwnproperty:  (是否有自己的特性)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#propertyIsEnumerable-特性是否可枚举"><span class="toc-text">propertyIsEnumerable: (特性是否可枚举)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#isPrototypeOf-判断是不是原型对象"><span class="toc-text">isPrototypeOf():(判断是不是原型对象)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#toString-判断内置对象类型"><span class="toc-text">toString:(判断内置对象类型)</span></a></li></ol>
+    </div>
+
+        <p>[TOC]</p>
+<h3 id="hasOwnproperty-是否有自己的特性"><a href="#hasOwnproperty-是否有自己的特性" class="headerlink" title="hasOwnproperty:  (是否有自己的特性)"></a><code>hasOwnproperty</code>:  <strong>(是否有自己的特性)</strong></h3><ul>
+<li>作用：<ul>
+<li>判断一个对象是否含有自己的某个属性</li>
+</ul>
+</li>
+<li>语法：<ul>
+<li><code>对象. hasOwnproperty (要判断的属性名)</code></li>
+</ul>
+</li>
+<li>返回值：<ul>
+<li>boolean</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</div><div class="line"><span class="built_in">console</span>.log(obj.hasOwnProperty(<span class="string">'a'</span>));  <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(obj.hasOwnProperty(<span class="string">'b'</span>));  <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(obj.hasOwnProperty(<span class="string">'constructor'</span>));  <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.hasOwnProperty(<span class="string">'hasOwnProperty'</span>));  <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<h3 id="propertyIsEnumerable-特性是否可枚举"><a href="#propertyIsEnumerable-特性是否可枚举" class="headerlink" title="propertyIsEnumerable: (特性是否可枚举)"></a><code>propertyIsEnumerable</code>: <strong>(特性是否可枚举)</strong></h3><ul>
+<li>作用：<ul>
+<li>判断一个对象是否含有<strong>自己</strong>的某个属性，并且还判断这个属性<strong>是否可枚举(遍历)</strong>【双重判断，是<code>hasOwnproperty</code>的加强版】</li>
+</ul>
+</li>
+<li>语法：<ul>
+<li><code>对象.  propertyIsEnumerable (要判断的属性名)</code></li>
+</ul>
+</li>
+<li>返回值：<ul>
+<li>boolean</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj2 = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</div><div class="line"><span class="built_in">console</span>.log(obj2.propertyIsEnumerable(<span class="string">'a'</span>));  <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj2.propertyIsEnumerable(<span class="string">'b'</span>)); <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj2.propertyIsEnumerable(<span class="string">'constructor'</span>));  <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.propertyIsEnumerable(<span class="string">'hasOwnProperty'</span>));  <span class="comment">// false</span></div></pre></td></tr></table></figure>
+<h3 id="isPrototypeOf-判断是不是原型对象"><a href="#isPrototypeOf-判断是不是原型对象" class="headerlink" title="isPrototypeOf():(判断是不是原型对象)"></a><code>isPrototypeOf()</code>:<strong>(判断是不是原型对象)</strong></h3><ul>
+<li>作用：<ul>
+<li>判断一个<code>对象</code>是不是<code>另一个对象</code>的<strong>原型对象</strong>,如果传入的不是一个对象，或不是另一对象的原型，返回false</li>
+</ul>
+</li>
+<li>语法：<ul>
+<li><code>被判断的对象. isPrototypeOf (对象)</code></li>
+</ul>
+</li>
+<li>返回值：<ul>
+<li>boolean</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj2 = &#123;<span class="attr">a</span> : <span class="number">1</span>&#125;;</div><div class="line"><span class="built_in">console</span>.log( <span class="built_in">Object</span>.prototype.isPrototypeOf( obj2 ) );  <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log( <span class="built_in">Object</span>.prototype.isPrototypeOf( <span class="built_in">Object</span> ) );  <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log( <span class="built_in">Function</span>.prototype.isPrototypeOf( <span class="built_in">Function</span> ) ); <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log( <span class="built_in">Function</span>.prototype.isPrototypeOf( <span class="built_in">Math</span> ) );  <span class="comment">// false，因为Math只继承Object.prototype</span></div></pre></td></tr></table></figure>
+<h3 id="toString-判断内置对象类型"><a href="#toString-判断内置对象类型" class="headerlink" title="toString:(判断内置对象类型)"></a><code>toString</code>:<strong>(判断内置对象类型)</strong></h3><ul>
+<li><p>作用：</p>
+<ul>
+<li>根据方法执行时内部的this指向，返回一个类似于<code>[&quot;object  this指向的对象的类型名称&quot;]</code>字符串</li>
+<li>一般用来判断<code>ECMAScript</code>内置的十大对象类型<strong>(9大构造函数的实例 + Math)</strong></li>
+<li>在内置9大构造函数中，它们的<code>prototype</code>显示原型对象中，都定义了自己的<code>toString</code>方法，所以它们的实例会优先使用自己的<code>toString</code>方法</li>
+<li>通过这个字符串可以得知<strong>内部对象</strong>指向的类型</li>
+</ul>
+</li>
+<li><p>语法：</p>
+<ul>
+<li><code>Object.prototype.toString(要判断的对象)</code></li>
+<li>简写 <code>([]).toString.call(要判断的对象)</code></li>
+</ul>
+</li>
+<li>返回值：<ul>
+<li>boolean<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.prototype.toString(); <span class="comment">//Object.prototype 内部的toString方法，调用后返回字符串 '[object Object]'</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call([<span class="number">1</span>, <span class="number">2</span>])); <span class="comment">// [object Array]</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">Array</span>)); <span class="comment">// [object Function]</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">Math</span>)); <span class="comment">// [object Math]</span></div><div class="line"><span class="comment">//利用 call 方法可以使 [1,2]、Array、Math等对象，使用Object.prototype的toString方法，来查看自己所属的类型</span></div></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="alignright">
+          <a href="/2016/05/20/Object.prototype内的方法/#comment" class="comment-link">Comments</a>
+        </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
     <article class="post">
   
   <div class="post-content">
@@ -2386,509 +2493,13 @@
 
 
 
-
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-03-08T13:15:24.000Z"><a href="/2016/03/08/canvas/">2016-03-08</a></time>
-        
-  
-    <h1 class="title"><a href="/2016/03/08/canvas/">canvas 使用方法</a></h1>
-  
-
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#矩形"><span class="toc-text">矩形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#线"><span class="toc-text">线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#圆弧"><span class="toc-text">圆弧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文本"><span class="toc-text">文本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#绘制图片"><span class="toc-text">绘制图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#状态"><span class="toc-text">状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#平移"><span class="toc-text">平移</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#旋转"><span class="toc-text">旋转</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#缩放"><span class="toc-text">缩放</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#requestAnimationFrame"><span class="toc-text">requestAnimationFrame</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#路径点判断"><span class="toc-text">路径点判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#画布保存"><span class="toc-text">画布保存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#线性渐变"><span class="toc-text">线性渐变</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#放射渐变"><span class="toc-text">放射渐变</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#重复填充"><span class="toc-text">重复填充</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#阴影"><span class="toc-text">阴影</span></a></li></ol>
-    </div>
-
-        <p>[TOC]</p>
-<blockquote>
-<p>canvas 是 HTML5 提供的一个用于展示绘图效果的标签. </p>
-<p>canvas 原意画布, 帆布. 在 HTML 页面中用于展示绘图效果<br><code>&lt;canvas&gt;&lt;/canvas&gt;</code>使用 canvas 标签, 即可在页面中开辟一格区域</p>
-<p>默认 canvas 的宽高为 300 和 150<strong>(设置不带单位)</strong><br>用CSS设置canvas的宽高属性会拉伸内容，和设置图片类似，只是放大缩小了画布的缩放比，画布本身没改变，所以要<strong>用属性来设置</strong></p>
-<p>如果浏览器不支持 canvas 标签, 那么就会将其解释为 div 标签.<br>因此常常在 canvas 中嵌入文本, 以提示用户浏览器的能力 </p>
-<p>canvas 本身不能绘图，只是一个展示图像的标签. 是使用 JavaScript 来完成绘图的. canvas 对象提供了各种绘图用的 api</p>
-<p><code>Canvas.getContext(&quot; &quot;)</code>用于绘制上下文工具<br>如果是绘制平面图形使用 <code>&#39;2d&#39;</code>作为参数,返回 <code>CanvasRenderingContext2D</code> 类型的对象<br>如果绘制立体图形使用<code>&#39;webgl&#39;</code>返回 <code>WebGLRenderingContext</code>类型的对象</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=&quot;cvs&quot; width=&quot;500&quot; height=&quot;500&quot;&gt;&lt;/canvas&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">    // 获取元素</div><div class="line">    var cvs = document.getElementById(&quot;cvs&quot;);</div><div class="line"></div><div class="line">    //调用 getContext 方法，得到CanvasRenderingContext2D 类型的对象</div><div class="line">    //使用 CanvasRenderingContext2D 对象提供的方法进行绘图</div><div class="line">    var context = cvs.getContext(&quot;2d&quot;);</div><div class="line"></div><div class="line">    //设置开始绘图的位置(起点)</div><div class="line">    context.moveTo( 10, 10 );</div><div class="line"></div><div class="line">    //设置从开始画直线到的位置</div><div class="line">    context.lineTo(110, 10);</div><div class="line">    context.lineTo(110, 110);</div><div class="line">    context.lineTo(10, 110);</div><div class="line">    context.lineTo(10, 10);</div><div class="line">    </div><div class="line">    //闭合路径</div><div class="line">    context.closePath();</div><div class="line"></div><div class="line">    //描边绘制</div><div class="line">    context.stroke();</div><div class="line"></div><div class="line">    //填充绘制(颜色填充)</div><div class="line">    context.fill();</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li><p><strong>设置起点：</strong></p>
-<ul>
-<li>语法：<ul>
-<li><code>context.moveTo(x坐标，y坐标);</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>画线：</strong></p>
-<ul>
-<li>语法：<ul>
-<li><code>context.lineTo(x坐标，y坐标)</code></li>
-<li><code>lineTo</code>也可以设置路径的起点</li>
-<li>在一个没有路径起点的路径中，第一个lineTo就相当于moveTo</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>描边：</strong></p>
-<ul>
-<li>语法：<ul>
-<li><code>context.stroke();</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>描边色：</strong></p>
-<ul>
-<li>语法：<ul>
-<li><code>context.strokeStyle = &quot;颜色样式&quot;</code></li>
-<li>写在<code>context.stroke()</code>之前；</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>解决<code>context.stroke()</code><strong>会重绘之前的路径</strong>问题</p>
-<blockquote>
-<p>在之前画好的图形<code>context.stroke()</code>后添加<code>context.beginPath()</code>清除之前的路径<br>或在开始画图之前添加<code>context.beginPath()</code>清除之前的路径，避免和之后的路径重合</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><p><strong>闭合路径</strong></p>
-<ul>
-<li>语法：<ul>
-<li><code>context.closePath()</code></li>
-<li>写在画线之后，设置闭合路径可以不画最后一条线</li>
-<li>也可以解决因设置了线宽而带来的<strong>锯齿问题</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>颜色填充：</strong></p>
-<ul>
-<li>语法：<ul>
-<li><code>context.fill()</code></li>
-<li>默认为黑色</li>
-<li>调用方法时，会先自动<code>closePath()</code>，再填充颜色</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>填充色：</strong></p>
-<ul>
-<li>语法：<ul>
-<li><code>context.fillStyle = &quot;颜色样式&quot;</code></li>
-<li>写在<code>context.fill()</code>之前</li>
-<li><strong>写在<code>context.stroke()</code>之前，和之后效果不一样</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>非零环绕原则：</strong></p>
-<ul>
-<li>判断画布中的哪些地方需要填充<blockquote>
-<p>原理：</p>
-<p>任意一个区域内，找一个点向外发射一条射线，然后会进行计数判断(初始值为0)，如果射线遇到的边是相对于这个点，如果是逆时针环绕的，就计数为-1，顺时针记+1，最终结果如果为0，则判断该区域被填充（射线经过奇数边肯定被填充）</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="矩形"><a href="#矩形" class="headerlink" title="矩形"></a>矩形</h4><ul>
-<li><p><strong>矩形路径</strong></p>
-<ul>
-<li>语法：<ul>
-<li><code>context.rect(x,y,w,h);</code></li>
-<li>需要自己描边<code>context.stroke()</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>绘制描边矩形</strong></p>
-<ul>
-<li>语法：<ul>
-<li><code>context.strokeRect(x,y,w,h)</code></li>
-</ul>
-</li>
-<li>不会产生任何路径</li>
-</ul>
-</li>
-<li><p><strong>绘制填充矩形</strong></p>
-<ul>
-<li>语法：<ul>
-<li><code>context.fillRect(x,y,w,h)</code></li>
-</ul>
-</li>
-<li>不会产生任何路径</li>
-</ul>
-</li>
-<li><p><strong>清除画布(清除矩形区域)</strong></p>
-<ul>
-<li>语法：<ul>
-<li><code>context.clearRect(擦除图形左上角x轴坐标，擦除图形左上角y轴坐标，擦除宽度，擦除高度);</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="线"><a href="#线" class="headerlink" title="线"></a>线</h4><ul>
-<li><p><strong>线宽：</strong></p>
-<ul>
-<li>语法：<ul>
-<li><code>context.lineWidth = 宽度</code></li>
-<li>写在<code>context.stroke()</code>之前；</li>
-<li><strong>设置线宽时，路径在线宽中间</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>线帽样式：</strong></p>
-<ul>
-<li>语法：<ul>
-<li><code>context.lineCap = &quot;butt&quot;、&quot;round&quot;、&quot;square&quot;;</code><ul>
-<li><code>butt</code>(默认样式)</li>
-<li><code>round</code>(两端使用圆角结束)</li>
-<li><code>square</code>(两端使用线宽的一半结束)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>交点样式：</strong></p>
-<ul>
-<li>语法：<ul>
-<li><code>context.lineJion =  &#39;round&#39;, &#39;bevel&#39;, &#39;miter&#39;</code><ul>
-<li><code>miter</code>(默认)</li>
-<li><code>round</code>(使用圆角连接)</li>
-<li><code>bevel</code>(使用平切连接)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p><strong>如果线帽与交点样式不一致，优先按照<code>交点</code>样式处理</strong></p>
-</blockquote>
-<ul>
-<li><p><strong>虚线</strong></p>
-<ul>
-<li><p>1、设置虚线</p>
-<ul>
-<li>语法：<ul>
-<li><code>context.setLineDash ([实线部分长度，虚线部分长度])</code></li>
-<li>可以传入一个参数，或多个</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>2、获取虚线</p>
-<ul>
-<li>语法：<ul>
-<li><code>context.getLineDash()</code></li>
-<li>直接调用</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>3、设置绘制虚线时的偏移量</p>
-<ul>
-<li>语法：<ul>
-<li><code>context.lineDashOffset()</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="圆弧"><a href="#圆弧" class="headerlink" title="圆弧"></a>圆弧</h4><ul>
-<li><strong>绘制圆弧</strong><ul>
-<li><strong>语法：</strong><ul>
-<li><code>context.arc(圆心x坐标,圆心y坐标,半径[radius],起始弧度[startAngle],结束弧度[endAngle],是否逆时针画[可选])</code></li>
-</ul>
-</li>
-<li><strong>参数：</strong><ul>
-<li>圆心x坐标,圆心y坐标<ul>
-<li>坐标</li>
-</ul>
-</li>
-<li>半径<code>[radius]</code>,起始弧度<code>[startAngle]</code><ul>
-<li>弧度</li>
-</ul>
-</li>
-<li>是否逆时针画[可选])<ul>
-<li>true/false</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>绘制相切弧</strong><ul>
-<li><strong>语法：</strong><ul>
-<li><code>context.arc(线段1的起点x1坐标,线段1的终点y1坐标，线段2的起点x2坐标,线段2的终点y2，半径[radius])</code></li>
-</ul>
-</li>
-<li><strong>参数：</strong><ul>
-<li>圆心x坐标,圆心y坐标<ul>
-<li>坐标</li>
-</ul>
-</li>
-<li>半径<code>[radius]</code>,起始弧度<code>[startAngle]</code><ul>
-<li>弧度</li>
-</ul>
-</li>
-<li>是否逆时针画[可选])<ul>
-<li>true/false</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h4><ul>
-<li><p><strong>描边文本：</strong></p>
-<ul>
-<li>语法<ul>
-<li><code>context.strokeText(&quot;文本&quot;，x,y,限制文本最大长度[可选])</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>填充文本：</strong></p>
-<ul>
-<li>语法<ul>
-<li><code>context.FillText(&quot;文本&quot;，x,y,限制文本最大长度[可选])</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>字体：</strong></p>
-<ul>
-<li>语法<ul>
-<li><code>context.font = 粗细[100--900]，大小[px、em]，字体样式</code></li>
-<li><code>style | variant | weight | size/line-height | family</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>水平排列方式：</strong></p>
-<ul>
-<li>语法<ul>
-<li><code>context.textAlign = start(left)、center、end(right)</code></li>
-<li>默认为值为<code>start(left)</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p><strong>垂直排列文本：</strong></p>
-<ul>
-<li>语法<ul>
-<li><code>context.textBaseline= top、middle、bottom、alphabetic、 hanging、ideographic</code></li>
-<li>默认为值为<code>alphabetic(字母基线)</code></li>
-<li><code>top</code>在四线三格的上面；</li>
-<li><code>middle</code>在四线三格的中间；</li>
-<li><code>bottom</code>在四线三格的下间；</li>
-<li><code>alphabetic</code>在四线三格中第三条线；</li>
-<li><code>hanging</code>相当于四线三格中第一条线；</li>
-<li><code>ideographic</code>表示和<code>bottom</code>基本一致。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>文本宽度预测：</strong></p>
-<ul>
-<li>语法：<ul>
-<li><code>context.measureText(&quot;文本&quot;).width</code></li>
-<li>检测文本的宽度</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h4><blockquote>
-<p>可以绘制图片，也可以绘制canvas<br>第一个参数可以是img，canvas，video</p>
-</blockquote>
-<ul>
-<li><p><strong>图片监听事件：</strong></p>
-<ul>
-<li><code>img.onload = function () {}</code></li>
-<li>图片加载后，再执行function里面的代码</li>
-</ul>
-</li>
-<li><p><strong>3参数语法：</strong></p>
-<ul>
-<li><code>context.drawImage(图像资源,x坐标,y坐标)</code></li>
-<li>把图像绘制到指定位置</li>
-</ul>
-</li>
-<li><p><strong>5参数语法：</strong></p>
-<ul>
-<li><code>context.drawImage(图像资源,x坐标,y坐标,图像显示的宽，图片显示的高)</code></li>
-<li>把图片按照指定大小，绘制到指定位置</li>
-</ul>
-</li>
-<li><p><strong>9参数语法：</strong></p>
-<ul>
-<li><code>context.drawImage(图像资源,开始剪切x坐标,开始剪切y坐标,剪切宽度，剪切高度，x坐标,y坐标,图像显示的宽，图片显示的高)</code></li>
-<li>把剪裁的图片按照指定大小，绘制到指定位置</li>
-</ul>
-</li>
-</ul>
-<h4 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h4><ul>
-<li><p><strong>状态保存：</strong></p>
-<ul>
-<li><code>context.save()</code></li>
-<li>保存当前状态</li>
-<li>会把绘图环境自身的所有属性保存一份(可见和不可见)    </li>
-</ul>
-</li>
-<li><p><strong>状态回滚：</strong></p>
-<ul>
-<li><code>context.restore()</code></li>
-<li>回滚到上次保存的状态</li>
-</ul>
-</li>
-</ul>
-<p><strong>没有和路径相关的状态，<code>save和restore</code>不能保存路径</strong></p>
-<h4 id="平移"><a href="#平移" class="headerlink" title="平移"></a>平移</h4><ul>
-<li>语法：<ul>
-<li><code>context.translate(在当前的基础上x轴平移多少,在当前的基础上y轴平移多少)</code></li>
-<li>平移的是画布的坐标系，不会影响已经绘制好的图</li>
-<li><strong>会累加</strong></li>
-</ul>
-</li>
-</ul>
-<h4 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h4><ul>
-<li>语法：<ul>
-<li><code>context.rotate(在当前的基础上旋转多少弧度)</code></li>
-<li>旋转的是画布的坐标系，不会影响已经绘制好的图</li>
-<li><strong>会累加</strong></li>
-</ul>
-</li>
-</ul>
-<h4 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h4><ul>
-<li>语法：<ul>
-<li><code>context.scale(在当前的基础x轴缩放多少倍,在当前的基础y轴缩放多少倍)</code></li>
-<li>缩放的是画布的坐标系，不会影响已经绘制好的图</li>
-<li>参数 x 控制水平缩放倍率. 传参 1 表示不缩放, 传入大于 1 的数字表示扩大</li>
-<li>参数 y 控制垂直缩放倍率. 传参 1 表示不缩放, 传入大于 1 的数字表示扩大</li>
-<li><strong>会累加</strong></li>
-</ul>
-</li>
-</ul>
-<h4 id="requestAnimationFrame"><a href="#requestAnimationFrame" class="headerlink" title="requestAnimationFrame"></a>requestAnimationFrame</h4><ul>
-<li>请求动画帧，用法和setTimeout一致，只是不需要传时间</li>
-<li>浏览器刷新页面时，才会调用该方法的回掉函数，执行频率比较稳定，是专门制作动画用的</li>
-</ul>
-<h4 id="路径点判断"><a href="#路径点判断" class="headerlink" title="路径点判断"></a>路径点判断</h4><ul>
-<li>语法：<ul>
-<li><code>context.isPointInPath(x坐标,y坐标)</code></li>
-<li>判断指定坐标的点在不在<strong>当前路径</strong>内</li>
-</ul>
-</li>
-<li>返回值<ul>
-<li>boolean(在为true)</li>
-</ul>
-</li>
-</ul>
-<h4 id="画布保存"><a href="#画布保存" class="headerlink" title="画布保存"></a>画布保存</h4><ul>
-<li>语法: <ul>
-<li><code>Canvas.ToDataURL( type, encoderOptions )</code><ul>
-<li>type 表示输出类型. 例如: <code>image/png</code> 或 <code>image/jpeg</code> 等</li>
-<li>encoderOptions 表示图片输出质量, 其取值在 0 到 1 之间. </li>
-<li>如果是 1, 表示无损压缩, 必须使用 <code>image/jpeg</code> 或 <code>image/webp</code> 才起作用</li>
-<li><code>png</code>类型不会压缩</li>
-</ul>
-</li>
-<li>该方法可以将画布转换成 <code>base64</code> 格式的数据</li>
-</ul>
-</li>
-</ul>
-<h4 id="线性渐变"><a href="#线性渐变" class="headerlink" title="线性渐变"></a>线性渐变</h4><ul>
-<li>语法: <ul>
-<li><code>context.createLinearGradient( x0, y0, x1, y1 )</code></li>
-</ul>
-</li>
-</ul>
-<h4 id="放射渐变"><a href="#放射渐变" class="headerlink" title="放射渐变"></a>放射渐变</h4><ul>
-<li>语法：<ul>
-<li><code>context.createRadialGradient( x0, y0, r0, x1, y1, r1 )</code></li>
-</ul>
-</li>
-</ul>
-<h4 id="重复填充"><a href="#重复填充" class="headerlink" title="重复填充"></a>重复填充</h4><ul>
-<li>语法;<ul>
-<li><code>context.createPattern( img, repetition )</code></li>
-<li><strong>默认就是 <code>repeat</code> </strong></li>
-<li>表示使用图片来填充的设置方法. </li>
-<li>需要两个参数, 一个是图片, 一个是重复的方式</li>
-<li>图片允许是 img 标签, 图片, canvas 等对象</li>
-<li>可选择的重复方式与 CSS 一致. 有:<ul>
-<li><code>repeat, repeat-x, repeat-y, no-repeat</code></li>
-</ul>
-</li>
-<li>如果是 空或<code>&quot;&quot;</code>, 但不是 undefined, 默认就是 repeat </li>
-</ul>
-</li>
-</ul>
-<h4 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h4><ul>
-<li><code>context.shadowBlur</code><ul>
-<li>表示模糊程度</li>
-</ul>
-</li>
-<li><code>context.shadowColor</code><ul>
-<li>表示模糊颜色</li>
-</ul>
-</li>
-<li><code>context.shadowOffsetX</code><ul>
-<li>表示模糊位置 x 坐标偏移</li>
-</ul>
-</li>
-<li><code>context.shadowOffsetX</code><ul>
-<li>表示模糊位置 y 坐标偏移</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-        <div class="alignright">
-          <a href="/2016/03/08/canvas/#comment" class="comment-link">Comments</a>
-        </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
  
 <nav id="pagination">
   
-    <a href="/page/4/" class="alignleft prev">上一页</a>
+    <a href="/page/4/" class="alignleft prev">Prev</a>
   
   
-    <a href="/page/6/" class="alignright next">下一页</a>
+    <a href="/page/6/" class="alignright next">Next</a>
   
   <div class="clearfix"></div>
 </nav>
@@ -2896,8 +2507,8 @@
       <aside id="sidebar" class="alignright">
   
 <div class="widget tag">
-  <h3 class="title" id="categories">分类</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MV/">MV*</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">3</span></li></ul> 
+  <h3 class="title" id="categories">Categories</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MV/">MV*</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/RegExp/">RegExp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/兼容/">兼容</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/markdown/">markdown</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/">模块化</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/SeaJS/">SeaJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模块化/介绍/">介绍</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动WEB/">移动WEB</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站相关/">网站相关</a><span class="category-list-count">3</span></li></ul> 
 </div>
  
 
@@ -2912,7 +2523,7 @@
 
 
   <div class="widget tag">
-  <h3 class="title">日历云</h3>
+  <h3 class="title">Calendar</h3>
   <div id="calendar"></div>
 </div>
 
@@ -2945,9 +2556,9 @@
 
   
 <div class="widget tagcloud">
-  <h3 class="title">标签云</h3>
+  <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 15px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/window-document/" style="font-size: 10px;">window document</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/布局方式/" style="font-size: 10px;">布局方式</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/模块化/" style="font-size: 15px;">模块化</a> <a href="/tags/状态码/" style="font-size: 10px;">状态码</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 15px;">继承</a> <a href="/tags/进制/" style="font-size: 10px;">进制</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/预解析/" style="font-size: 10px;">预解析</a>
+    <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 15px;">Angular</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML-SEO/" style="font-size: 10px;">HTML SEO</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JSONP/" style="font-size: 10px;">JSONP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/SeaJS-模块化/" style="font-size: 10px;">SeaJS 模块化</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/window-document/" style="font-size: 10px;">window document</a> <a href="/tags/事件委托/" style="font-size: 10px;">事件委托</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/函数调用/" style="font-size: 10px;">函数调用</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/布局方式/" style="font-size: 10px;">布局方式</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/模块化/" style="font-size: 15px;">模块化</a> <a href="/tags/状态码/" style="font-size: 10px;">状态码</a> <a href="/tags/移动WEB/" style="font-size: 15px;">移动WEB</a> <a href="/tags/继承/" style="font-size: 15px;">继承</a> <a href="/tags/进制/" style="font-size: 10px;">进制</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/预解析/" style="font-size: 10px;">预解析</a>
   </div>
 </div>
 
@@ -2955,7 +2566,7 @@
   
   <div class="widget tag">
     <h3 class="title">归档</h3>
-	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">45</span></li></ul>
+	<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">公元 2017 年</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">公元 2016 年</a><span class="archive-list-count">45</span></li></ul>
   </div>
 
 </aside>

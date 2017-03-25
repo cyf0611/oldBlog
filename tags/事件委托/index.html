@@ -3,28 +3,13 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Node基础 | Hexo</title>
+  <title>事件委托 | Hexo</title>
   <meta name="author" content="John Doe">
-  
-  <meta name="description" content="Node 基础Node 中的 JavaScript
-REPL运行环境
-
-R：read
-E：Eval
-P：Print
-L：Loop
-
-
-ECMAScript  
-
-Node 对最新的 ECMAScript 语言标准支持的非常好
-对最新的 ES6 支持了将近 96% 的语法
-Node 除了官方的 ECM">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Node基础"/>
+  
   <meta property="og:site_name" content="Hexo"/>
 
   
@@ -90,212 +75,36 @@ Node 除了官方的 ECM">
 </header>
   
     <div id="content" class="inner">
-      <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
-  
-  <div class="post-content">
-    <header>
-        <div class="icon"></div>
-        
-        <time datetime="2016-09-27T01:01:05.000Z"><a href="/2016/09/27/Node基础/">2016-09-27</a></time>
-        
-  
-    <h1 class="title">Node基础</h1>
-  
+      <div id="main-col" class="alignleft"><div id="wrapper">
 
-    </header>
-
-    <div class="entry">
-      
-        
-    <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-基础"><span class="toc-text">Node 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-中的-JavaScript"><span class="toc-text">Node 中的 JavaScript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-中的模块系统"><span class="toc-text">Node 中的模块系统</span></a></li></ol></li></ol>
-    </div>
-
-        <h2 id="Node-基础"><a href="#Node-基础" class="headerlink" title="Node 基础"></a>Node 基础</h2><h3 id="Node-中的-JavaScript"><a href="#Node-中的-JavaScript" class="headerlink" title="Node 中的 JavaScript"></a>Node 中的 JavaScript</h3><ul>
-<li><p>REPL运行环境</p>
-<ul>
-<li>R：read</li>
-<li>E：Eval</li>
-<li>P：Print</li>
-<li>L：Loop</li>
-</ul>
-</li>
-<li><p>ECMAScript  </p>
-<ul>
-<li>Node 对最新的 ECMAScript 语言标准支持的非常好</li>
-<li>对最新的 ES6 支持了将近 96% 的语法</li>
-<li>Node 除了官方的 ECMAScript 语言规范</li>
-<li>同时将 console 对象、定时器等函数也移植到 Node 中</li>
-</ul>
-</li>
-<li><p>全局对象</p>
-<ul>
-<li>global<ul>
-<li>相对于浏览器中的的全局对象 window</li>
-<li>全局作用域和模块作用域的概念</li>
-</ul>
-</li>
-<li>Console<ul>
-<li>log</li>
-<li>info</li>
-<li>warn</li>
-<li>error</li>
-</ul>
-</li>
-<li>process<ul>
-<li>进程对象</li>
-</ul>
-</li>
-<li>Buffer</li>
-</ul>
-</li>
-<li><p>全局函数</p>
-<ul>
-<li>setInterval 和 clearInterval</li>
-<li>setTimeout 和 clearTimeout</li>
-<li>setImmediate 和 clearImmediate</li>
-</ul>
-</li>
-<li><p>模块内成员</p>
-<ul>
-<li><strong>dirname 和 </strong>filename</li>
-<li>require</li>
-<li>exports</li>
-<li>module</li>
-</ul>
-</li>
-</ul>
-<h3 id="Node-中的模块系统"><a href="#Node-中的模块系统" class="headerlink" title="Node 中的模块系统"></a>Node 中的模块系统</h3><ul>
-<li>Node 根据 <code>CommonJS</code> 规范实现了自己的一套模块系统</li>
-<li>一个单独的文件就是一个模块<ul>
-<li>如何定义模块：</li>
-<li>Node 天生就已经实现了一个模块系统解决方案</li>
-<li>默认在Node中运行的 JavaScript 脚本文件，就是一个模块，而且是私有作用域</li>
-</ul>
-</li>
-<li>每一个模块都是一个单独的作用域<ul>
-<li>没有浏览器中 window 全局作用域的概念了</li>
-</ul>
-</li>
-<li>每个文件对外接口是 <code>module.exports</code> 对象</li>
-<li><code>require</code> 方法用于加载模块<ul>
-<li>执行被加载模块中的 JavaScript 代码</li>
-<li>得到模块的 <code>module.exports</code> 接口对象</li>
-</ul>
-</li>
-<li>核心模块和文件模块</li>
-</ul>
-<p>以下是常用的核心模块：</p>
-<table>
-<thead>
-<tr>
-<th>模块名称</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>fs</td>
-<td>文件操作</td>
-</tr>
-<tr>
-<td>http</td>
-<td>http服务</td>
-</tr>
-<tr>
-<td>net</td>
-<td>Socket网络编程</td>
-</tr>
-<tr>
-<td>os</td>
-<td>操作系统相关</td>
-</tr>
-<tr>
-<td>path</td>
-<td>路径操作</td>
-</tr>
-<tr>
-<td>querystring</td>
-<td>处理查询字符串</td>
-</tr>
-<tr>
-<td>url</td>
-<td>处理url路径</td>
-</tr>
-<tr>
-<td>util</td>
-<td>工具函数</td>
-</tr>
-</tbody>
-</table>
-
-      
-    </div>
-    <footer>
-      
-        
-  
-  <div class="categories">
-    <a href="/categories/Node/">Node</a>
-  </div>
-
-        
+<h2 class="archive-title fa-tag">事件委托</h2>
+<div class="archive">
+   
+    <article class="post">
+      <div class="post-content">
+        <header>
+          <div class="icon"></div>
+          <time datetime="2017-01-25T11:49:12.000Z"><a href="/2017/01/25/事件委托/">2017-01-25</a></time>
+          
+            <h1 class="title"><a href="/2017/01/25/事件委托/">事件委托</a></h1>
+          
+        </header>
+        <div class='archive-tags'>
+          
   <div class="tags">
-    <a href="/tags/Node/">Node</a>
+    <a href="/tags/事件委托/">事件委托</a>
   </div>
 
-        <div class = "counter">
-  <span id="busuanzi_container_page_pv" style="display:none">
-      总访问&nbsp<span id="busuanzi_value_page_pv"></span>&nbsp次
-  </span>
+        </div>
+      </div>
+    </article>
+    
 </div>
-        
-  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
-  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
+<nav id="pagination">
   
-<section id = "relate">
-	
-                <div id="快乐人生ddd"></div>
-	
-</section>
-
-
   
-    <section id="comment">
-    <!--   <h1 class="title">Comments</h1> -->
-    
-    
-        <!-- 多说评论框 start -->
-        <div class="ds-thread" data-thread-key="2016/09/27/Node基础/" data-title="Node基础" data-url="http://yoursite.com/2016/09/27/Node基础/"></div>
-        <!-- 多说评论框 end -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:"lupeng-test"};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0] 
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-          </script>
-        <!-- 多说公共JS代码 end -->
-
-      
-    </section>
-
-
-
-
-</div></div>
+  <div class="clearfix"></div>
+</nav></div></div>
       <aside id="sidebar" class="alignright">
   
 <div class="widget tag">
